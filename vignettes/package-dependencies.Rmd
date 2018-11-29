@@ -1,0 +1,132 @@
+---
+title: "Package Dependencies"
+author: "Michael Rustler"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Install R Package Dependencies
+
+```{r, eval = FALSE}
+
+#secrets_csv <-"secrets.csv"
+#secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
+#pkgs <- pkgmeta::get_github_packages(github_token = secrets$github_token)
+#saveRDS(pkgs,file = "rpackages.RData")
+
+pkgs <- readRDS("rpackages.RData")
+
+installed_packages <- rownames(installed.packages())
+
+pkglib <- "pkg-lib"
+fs::dir_create(pkglib)
+
+
+withr::with_libpaths(new = pkglib, remotes::install_github("UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2",
+                                                           upgrade = "always"))
+withr::with_libpaths(new = pkglib, install.packages("codemetar", repos = "https://cloud.r-project.org/"))
+withr::with_libpaths(new = pkglib, install.packages("purrr", repos = "https://cloud.r-project.org/"))
+
+```
+
+
+
+## Install KWB packages (with dependencies in own library)
+
+Required for "pkgnet" reports
+
+```{r, eval = FALSE}
+for(pkg in pkgs$name) {
+
+withr::with_libpaths(new = pkglib,
+                     code = remotes::install_github(repo = sprintf("kwb-r/%s",
+                                                                      pkg),
+                                                    dependencies = TRUE,
+                                                    upgrade = "always",
+                     auth_token =  secrets$github_token))
+}
+```
+
+## Download KWB packages as "source" 
+
+Required for pkgnet "covr" and "codemetar"
+
+```{r, eval = FALSE}
+pkgsource_dir <- "pkg-source"
+pkgsource_zip_dir <- file.path(pkgsource_dir, "zip")
+pkgsource_unzip_dir <- file.path(pkgsource_dir, "unzip")
+fs::dir_create(path = c(pkgsource_zip_dir, pkgsource_unzip_dir))
+
+for(pkg in pkgs$name) {
+  pkgmeta::download_github(repo = sprintf("kwb-r/%s", pkg),
+                  dest_dir = pkgsource_zip_dir,
+                  use_zip = TRUE,
+                  auth_token = secrets$github_token)
+}
+zipfiles <- list.files(pkgsource_zip_dir,full.names = TRUE)
+
+invisible(lapply(zipfiles, function(x) {
+  message(glue::glue("Unzipping {x} to {pkgsource_unzip_dir}"))
+  unzip(x, exdir = pkgsource_unzip_dir)}))
+
+```
+
+# Perform Package Meta Analysis
+
+## With R package "pkgnet"
+
+```{r, eval = FALSE}
+pkgnet_dir <- "pkgnet"
+fs::dir_create(pkgnet_dir)
+
+withr::with_libpaths(new = pkglib,
+                     code = for(x in pkgs$name) {
+   print(sprintf("Write report for R package: %s", x))
+   pkg_src_unzipped <- dir(pkgsource_unzip_dir, pattern = x)
+   if(length(pkg_src_unzipped) > 1) {
+      stop(glue::glue("Multiple unzipped pkg sources found in {pkgsource_unzip_dir}:
+                      {paste(pkg_src_unzipped, collapse = ', ')}.
+                      Please delete the oldest one(s) manually"))
+     #pkg_path <- file.path(pkgsource_unzip_dir, pkg_src_unzipped),
+     #sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})
+    } else if(length(pkg_src_unzipped) == 0)  {
+      stop(glue::glue("No unzipped pkg sources found in {pkgsource_unzip_dir}"))
+    } else {
+      try(pkgnet::CreatePackageReport(
+         pkg_name = x,
+         pkg_path = file.path(pkgsource_unzip_dir, pkg_src_unzipped),
+         report_path = file.path(pkgnet_dir, paste0(x, ".html"))
+        ))
+  }})
+
+
+```
+
+## With R package "codemetar"
+
+Generating "codemetar.json" file
+
+```{r, eval = FALSE}
+pkgs_codemetar <- withr::with_libpaths(new = pkglib,
+              code =lapply(pkgs$name,codemetar::create_codemeta))
+
+
+jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
+                       useBytes = TRUE,
+                       pretty = TRUE,
+                       auto_unbox = TRUE)
+
+```
+

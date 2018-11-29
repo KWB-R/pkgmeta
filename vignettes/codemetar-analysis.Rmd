@@ -1,0 +1,118 @@
+---
+title: "Codemetar Analysis"
+author: "Michael Rustler"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+```{r, eval = TRUE}
+
+library(jsonld)
+library(jsonlite)
+library(magrittr)
+library(codemetar)
+library(purrr)
+library(dplyr)
+library(printr)
+library(tibble)
+
+frame <- system.file("schema/frame_schema.json", package="codemetar")
+
+corpus <-
+  jsonld::jsonld_frame("codemetar.json", frame) %>%
+  jsonlite::fromJSON(simplifyVector = FALSE) %>%
+  getElement("@graph")
+
+## deal with nulls explicitly by starting with map
+pkgs <- purrr::map(corpus, "name") %>%
+  purrr::compact() %>%
+  as.character()
+
+# keep only those with package identifiers (names)
+keep <- purrr::map_lgl(corpus, ~ length(.x$identifier) > 0)
+corpus <- corpus[keep]
+
+## now we can just do
+all_pkgs <- purrr::map_chr(corpus, "name")
+head(all_pkgs)
+
+## 3 unique maintainers
+purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
+  unique() %>%
+  length()
+
+
+## Mostly Hauke
+purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
+  tibble::as_tibble() %>%
+  dplyr::group_by(value) %>%
+  dplyr::tally(sort=TRUE)
+
+## number of co-authors ...
+purrr::map_int(corpus, function(r) length(r$author)) %>%
+  tibble::as_tibble() %>%
+  dplyr::group_by(value) %>%
+  dplyr::tally(sort=TRUE)
+
+## Contributors isn't used as much...
+purrr::map_int(corpus, function(r) length(r$contributor)) %>%
+  tibble::as_tibble() %>%
+  dplyr::group_by(value) %>%
+  dplyr::tally(sort=TRUE)
+
+purrr::map_int(corpus, function(r) length(r$softwareRequirements))  %>%
+  tibble::as_tibble() %>%
+  dplyr::group_by(value) %>%
+  dplyr::tally(sort=TRUE)
+
+corpus %>%
+  map_df(function(x){
+    ## single, unboxed dep
+    if("name" %in% names(x$softwareRequirements))
+      dep <- x$identifier
+    else if("name" %in% names(x$softwareRequirements[[1]]))
+      dep <- map_chr(x$softwareRequirements, "name")
+    else { ## No requirementsß
+      dep <- NA
+    }
+
+    tibble(identifier = x$identifier, dep = dep)
+  }) %>%
+  dplyr::mutate(identifier = gsub("/", "", identifier),
+                dep = gsub("/", "", dep)) %>%
+  dplyr::filter(!is.na(dep)) -> dep_df
+
+
+#which dependencies are used most frequently?
+dep_df %>%
+  dplyr::group_by(dep) %>%
+  dplyr::tally(sort = TRUE)
+
+#Alternate approach using a frame instead of purrr functions for subsetting the
+#Note that this gets all Depends and suggests (really all SoftwareApplication
+#types mentioned)
+dep_frame <- '{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+"@explicit": "true",
+"name": {}
+}'
+jsonld_frame("codemetar.json", dep_frame) %>%
+  fromJSON() %>%
+  getElement("@graph") %>%
+  filter(type == "SoftwareApplication") %>%
+  group_by(name) %>%
+  tally(sort = TRUE)
+
+```

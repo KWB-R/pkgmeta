@@ -6,6 +6,8 @@ sudo: required
 r_packages:
 - devtools
 - covr
+before_install:
+- sudo apt-get install libv8-3.14-dev
 after_success:
 - Rscript -e 'covr::codecov()'
 

@@ -152,116 +152,120 @@
 <td align="left">r, rstats, data-import, data-visualisation, automated-reporting, data-aggregation, data-export</td>
 </tr>
 <tr class="even">
+<td align="left">datacamp</td>
+<td align="left">data-management, data-science-training</td>
+</tr>
+<tr class="odd">
 <td align="left">kwb.base</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.code</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.datetime</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.db</td>
 <td align="left">r, rstats, data-import</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.default</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.demeau</td>
 <td align="left">r, rstats, groundwater-modelling</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.dwa.m150</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.en13508.2</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.event</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.fakin</td>
 <td align="left">research, r, rstats, data-management</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.geosalz</td>
 <td align="left">r, rstats, data-import, data-cleaning, data-visualization</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.hantush</td>
 <td align="left">r, rstats, infiltration-basin, groundwater-mounding, groundwater-modelling</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.lca</td>
 <td align="left">r, rstats, data-import, data-aggregation, data-visualisation, data-export</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.logger</td>
 <td align="left">r, rstats, data-import</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.monitoring</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.orcid</td>
 <td align="left">r, rstats, data-management, publication</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.pkgbuild</td>
 <td align="left">r, rstats, r-package-automation, data-management, publication</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.pkgstatus</td>
 <td align="left">r, rstats, data-management, publication</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.plot</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.qmra</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.readxl</td>
 <td align="left">r, rstats, data-import</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.resilience</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.test</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.umberto</td>
 <td align="left">r, rstats, data-import, data-aggregation, data-visualisation, lca-modelling, modelling</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.utils</td>
 <td align="left">r, rstats</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.vs2dh</td>
 <td align="left">r, stats, groundwater-modelling</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">kwb.wtaq</td>
 <td align="left">r, rstats, groundwater-modelling, drawdown-model</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">pkgmeta</td>
-<td align="left"></td>
+<td align="left">r, rstats</td>
 </tr>
 </tbody>
 </table>
@@ -291,12 +295,12 @@
 <a class="sourceLine" id="cb2-24" data-line-number="24">## now we can just do</a>
 <a class="sourceLine" id="cb2-25" data-line-number="25">all_pkgs &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/purrr/topics/map">map_chr</a></span>(corpus, <span class="st">"name"</span>)</a>
 <a class="sourceLine" id="cb2-26" data-line-number="26"><span class="kw">head</span>(all_pkgs)</a>
-<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; [1] "aquanes.report: Automated Reporting Tool for Water Suppliers"                           </span></a>
-<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; [2] "kwb.event: Generate Events from Time Series and work with Events"                       </span></a>
-<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; [3] "kwb.fakin: Functions Used in Our Fakin Project"                                         </span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt; [4] "kwb.geosalz: R Package for Documenting Workflow Used in Project \"geosalz\""            </span></a>
-<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt; [5] "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration\n        Basin"</span></a>
-<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; [6] "kwb.lca: Functions to Be Used in Life Cycle Assessment (LCA) Projects"</span></a>
+<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; [1] "aquanes.report: Automated Reporting Tool for Water Suppliers"                  </span></a>
+<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; [2] "kwb.demeau: Heat tracer study SVH"                                             </span></a>
+<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; [3] "kwb.dwa.m150: Read Sewer Condition Data according to DWA-M 150 XML format"     </span></a>
+<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt; [4] "kwb.en13508.2: Read and Write CCTV Inspection Data According to Norm EN13508-2"</span></a>
+<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt; [5] "kwb.event: Generate Events from Time Series and work with Events"              </span></a>
+<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; [6] "kwb.fakin: Functions Used in Our Fakin Project"</span></a>
 <a class="sourceLine" id="cb2-33" data-line-number="33"></a>
 <a class="sourceLine" id="cb2-34" data-line-number="34">## 3 unique maintainers</a>
 <a class="sourceLine" id="cb2-35" data-line-number="35">purrr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/purrr/topics/map">map_chr</a></span>(corpus, <span class="kw">c</span>(<span class="st">"maintainer"</span>, <span class="st">"familyName"</span>)) <span class="op">%&gt;%</span></a>
@@ -322,7 +326,7 @@
 </tr>
 <tr class="even">
 <td align="left">Rustler</td>
-<td align="right">11</td>
+<td align="right">12</td>
 </tr>
 <tr class="odd">
 <td align="left">Matzinger</td>
@@ -343,7 +347,7 @@
 </tr></thead>
 <tbody><tr class="odd">
 <td align="right">0</td>
-<td align="right">29</td>
+<td align="right">30</td>
 </tr></tbody>
 </table>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
@@ -360,7 +364,7 @@
 <tbody>
 <tr class="odd">
 <td align="right">0</td>
-<td align="right">26</td>
+<td align="right">27</td>
 </tr>
 <tr class="even">
 <td align="right">5</td>
@@ -428,6 +432,10 @@
 <td align="right">1</td>
 </tr>
 <tr class="odd">
+<td align="right">20</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
 <td align="right">26</td>
 <td align="right">1</td>
 </tr>
@@ -468,15 +476,15 @@
 </tr>
 <tr class="even">
 <td align="left">dplyr</td>
-<td align="right">8</td>
+<td align="right">9</td>
 </tr>
 <tr class="odd">
 <td align="left">magrittr</td>
-<td align="right">8</td>
+<td align="right">9</td>
 </tr>
 <tr class="even">
 <td align="left">stringr</td>
-<td align="right">8</td>
+<td align="right">9</td>
 </tr>
 <tr class="odd">
 <td align="left">R</td>
@@ -484,66 +492,74 @@
 </tr>
 <tr class="even">
 <td align="left">data.table</td>
-<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="odd">
 <td align="left">ggplot2</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.datetime</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">lattice</td>
-<td align="right">5</td>
+<td align="right">6</td>
 </tr>
 <tr class="even">
 <td align="left">fs</td>
-<td align="right">4</td>
+<td align="right">5</td>
 </tr>
 <tr class="odd">
-<td align="left">kwb.event</td>
-<td align="right">4</td>
+<td align="left">kwb.datetime</td>
+<td align="right">5</td>
 </tr>
 <tr class="even">
-<td align="left">kwb.plot</td>
-<td align="right">4</td>
+<td align="left">lattice</td>
+<td align="right">5</td>
 </tr>
 <tr class="odd">
 <td align="left">lubridate</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">tidyr</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="left">janitor</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td align="left">readxl</td>
+<td align="left">kwb.event</td>
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td align="left">tidyr</td>
+<td align="left">kwb.plot</td>
 <td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">readr</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">readxl</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">xml2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">httr</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
 <td align="left">hydroGOF</td>
 <td align="right">3</td>
 </tr>
 <tr class="odd">
-<td align="left">janitor</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
 <td align="left">kwb.db</td>
 <td align="right">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">plyr</td>
 <td align="right">3</td>
 </tr>
-<tr class="even">
-<td align="left">readr</td>
-<td align="right">3</td>
-</tr>
 <tr class="odd">
-<td align="left">xml2</td>
+<td align="left">rvest</td>
 <td align="right">3</td>
 </tr>
 <tr class="even">
@@ -559,19 +575,27 @@
 <td align="right">2</td>
 </tr>
 <tr class="odd">
+<td align="left">forcats</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
 <td align="left">ggforce</td>
 <td align="right">2</td>
 </tr>
-<tr class="even">
-<td align="left">httr</td>
+<tr class="odd">
+<td align="left">glue</td>
 <td align="right">2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.code</td>
 <td align="right">2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">openxlsx</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">purrr</td>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
@@ -579,7 +603,7 @@
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td align="left">rvest</td>
+<td align="left">scales</td>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
@@ -623,19 +647,11 @@
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td align="left">forcats</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
 <td align="left">fst</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
-<td align="left">gh</td>
-<td align="right">1</td>
-</tr>
 <tr class="even">
-<td align="left">glue</td>
+<td align="left">gh</td>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
@@ -691,43 +707,43 @@
 <td align="right">1</td>
 </tr>
 <tr class="even">
+<td align="left">networkD3</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
 <td align="left">plotrix</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
-<td align="left">purrr</td>
+<tr class="even">
+<td align="left">qdapTools</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">qmrparser</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">RCurl</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">remotes</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">reshape</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">RMySQL</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">RODBC</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
-<td align="left">rorcid</td>
-<td align="right">1</td>
-</tr>
 <tr class="odd">
-<td align="left">scales</td>
+<td align="left">rorcid</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
@@ -747,18 +763,22 @@
 <td align="right">1</td>
 </tr>
 <tr class="even">
+<td align="left">tibble</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
 <td align="left">treemap</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">usethis</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">withr</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">XML</td>
 <td align="right">1</td>
 </tr>
@@ -795,42 +815,50 @@
 </tr>
 <tr class="odd">
 <td align="left">knitr</td>
-<td align="right">15</td>
+<td align="right">17</td>
 </tr>
 <tr class="even">
 <td align="left">rmarkdown</td>
-<td align="right">15</td>
+<td align="right">17</td>
 </tr>
 <tr class="odd">
 <td align="left">covr</td>
-<td align="right">12</td>
+<td align="right">13</td>
 </tr>
 <tr class="even">
 <td align="left">dplyr</td>
-<td align="right">8</td>
+<td align="right">9</td>
 </tr>
 <tr class="odd">
 <td align="left">magrittr</td>
-<td align="right">8</td>
+<td align="right">9</td>
 </tr>
 <tr class="even">
 <td align="left">stringr</td>
-<td align="right">8</td>
+<td align="right">9</td>
 </tr>
 <tr class="odd">
 <td align="left">ggplot2</td>
-<td align="right">7</td>
+<td align="right">8</td>
 </tr>
 <tr class="even">
 <td align="left">R</td>
 <td align="right">7</td>
 </tr>
 <tr class="odd">
-<td align="left">kwb.datetime</td>
+<td align="left">data.table</td>
 <td align="right">6</td>
 </tr>
 <tr class="even">
-<td align="left">data.table</td>
+<td align="left">kwb.datetime</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="left">lubridate</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="left">fs</td>
 <td align="right">5</td>
 </tr>
 <tr class="odd">
@@ -838,11 +866,11 @@
 <td align="right">5</td>
 </tr>
 <tr class="even">
-<td align="left">lubridate</td>
+<td align="left">tidyr</td>
 <td align="right">5</td>
 </tr>
 <tr class="odd">
-<td align="left">fs</td>
+<td align="left">janitor</td>
 <td align="right">4</td>
 </tr>
 <tr class="even">
@@ -854,39 +882,39 @@
 <td align="right">4</td>
 </tr>
 <tr class="even">
-<td align="left">readxl</td>
+<td align="left">readr</td>
 <td align="right">4</td>
 </tr>
 <tr class="odd">
-<td align="left">tidyr</td>
+<td align="left">readxl</td>
 <td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="left">xml2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">httr</td>
+<td align="right">3</td>
 </tr>
 <tr class="even">
 <td align="left">hydroGOF</td>
 <td align="right">3</td>
 </tr>
 <tr class="odd">
-<td align="left">janitor</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
 <td align="left">jsonlite</td>
 <td align="right">3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">kwb.db</td>
 <td align="right">3</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">plyr</td>
 <td align="right">3</td>
 </tr>
-<tr class="odd">
-<td align="left">readr</td>
-<td align="right">3</td>
-</tr>
 <tr class="even">
-<td align="left">xml2</td>
+<td align="left">rvest</td>
 <td align="right">3</td>
 </tr>
 <tr class="odd">
@@ -906,11 +934,19 @@
 <td align="right">2</td>
 </tr>
 <tr class="odd">
-<td align="left">ggforce</td>
+<td align="left">forcats</td>
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td align="left">httr</td>
+<td align="left">ggforce</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">glue</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">networkD3</td>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
@@ -918,11 +954,19 @@
 <td align="right">2</td>
 </tr>
 <tr class="even">
-<td align="left">rvest</td>
+<td align="left">purrr</td>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
+<td align="left">scales</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
 <td align="left">shiny</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="left">tibble</td>
 <td align="right">2</td>
 </tr>
 <tr class="even">
@@ -970,23 +1014,15 @@
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td align="left">forcats</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
 <td align="left">fst</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">ggrepel</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
-<td align="left">gh</td>
-<td align="right">1</td>
-</tr>
 <tr class="odd">
-<td align="left">glue</td>
+<td align="left">gh</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
@@ -1042,55 +1078,47 @@
 <td align="right">1</td>
 </tr>
 <tr class="odd">
-<td align="left">networkD3</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
 <td align="left">PKI</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">plotrix</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">printr</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
-<td align="left">purrr</td>
+<tr class="even">
+<td align="left">qdapTools</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">qmrparser</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">RCurl</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">remotes</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">reshape</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">RMySQL</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">RODBC</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
-<td align="left">rorcid</td>
-<td align="right">1</td>
-</tr>
 <tr class="odd">
-<td align="left">scales</td>
+<td align="left">rorcid</td>
 <td align="right">1</td>
 </tr>
 <tr class="even">
@@ -1110,18 +1138,14 @@
 <td align="right">1</td>
 </tr>
 <tr class="even">
-<td align="left">tibble</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
 <td align="left">treemap</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">withr</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">XML</td>
 <td align="right">1</td>
 </tr>

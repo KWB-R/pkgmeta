@@ -23,7 +23,8 @@ knitr::opts_chunk$set(
 
 secrets_csv <-"secrets.csv"
 secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
-options(github_token = secrets$github_token)
+options(GITHUB_PAT = secrets$github_token, 
+        github_token = secrets$github_token)
 #pkgs <- pkgmeta::get_github_packages(github_token = secrets$github_token)
 #saveRDS(pkgs,file = "rpackages.RData")
 
@@ -38,7 +39,7 @@ fs::dir_create(pkglib)
 
 withr::with_libpaths(new = pkglib, remotes::install_github("UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2",
                                                            upgrade = "always"))
-withr::with_libpaths(new = pkglib, remotes::install_github("mrustl/codemetar"))
+withr::with_libpaths(new = pkglib, remotes::install_github("ropensci/codemetar@dev"))
 withr::with_libpaths(new = pkglib, install.packages("purrr", repos = "https://cloud.r-project.org/"))
 
 ```
@@ -56,8 +57,8 @@ withr::with_libpaths(new = pkglib,
                      code = remotes::install_github(repo = sprintf("kwb-r/%s",
                                                                       pkg),
                                                     dependencies = TRUE,
-                                                    upgrade = "always"#,
-                     #auth_token =  secrets$github_token
+                                                    upgrade = "always",
+                     auth_token =  secrets$github_token
                      ))
 }
 ```

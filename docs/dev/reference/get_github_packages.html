@@ -152,42 +152,10 @@ repositories (default: getOption("github_token"))</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>pkgs</span> <span class='kw'>&lt;-</span> <span class='fu'>get_github_packages</span>()
-<span class='fu'>head</span>(<span class='no'>pkgs</span>)</div><div class='output co'>#&gt;              name            full_name                                     url
-#&gt; 9  aquanes.report KWB-R/aquanes.report https://github.com/KWB-R/aquanes.report
-#&gt; 23       kwb.base       KWB-R/kwb.base       https://github.com/KWB-R/kwb.base
-#&gt; 29       kwb.code       KWB-R/kwb.code       https://github.com/KWB-R/kwb.code
-#&gt; 12   kwb.datetime   KWB-R/kwb.datetime   https://github.com/KWB-R/kwb.datetime
-#&gt; 22         kwb.db         KWB-R/kwb.db         https://github.com/KWB-R/kwb.db
-#&gt; 6     kwb.default    KWB-R/kwb.default    https://github.com/KWB-R/kwb.default
-#&gt;              created_at            pushed_at open_issues license_key
-#&gt; 9  2017-02-28T12:44:26Z 2018-08-29T12:32:38Z           0         mit
-#&gt; 23 2018-06-15T15:46:06Z 2018-07-07T14:13:40Z           0         mit
-#&gt; 29 2018-07-08T23:23:47Z 2018-09-27T14:46:17Z           2         mit
-#&gt; 12 2017-11-06T14:59:51Z 2018-07-10T17:02:40Z           1         mit
-#&gt; 22 2018-06-14T17:55:29Z 2018-10-23T13:59:56Z           0         mit
-#&gt; 6  2016-08-27T13:03:12Z 2018-07-10T17:17:46Z           0         mit
-#&gt;    license_short                                                license_link
-#&gt; 9            MIT https://github.com/KWB-R/aquanes.report/blob/master/LICENSE
-#&gt; 23           MIT       https://github.com/KWB-R/kwb.base/blob/master/LICENSE
-#&gt; 29           MIT       https://github.com/KWB-R/kwb.code/blob/master/LICENSE
-#&gt; 12           MIT   https://github.com/KWB-R/kwb.datetime/blob/master/LICENSE
-#&gt; 22           MIT         https://github.com/KWB-R/kwb.db/blob/master/LICENSE
-#&gt; 6            MIT    https://github.com/KWB-R/kwb.default/blob/master/LICENSE
-#&gt;                                                   Repository
-#&gt; 9  [aquanes.report](https://github.com/KWB-R/aquanes.report)
-#&gt; 23             [kwb.base](https://github.com/KWB-R/kwb.base)
-#&gt; 29             [kwb.code](https://github.com/KWB-R/kwb.code)
-#&gt; 12     [kwb.datetime](https://github.com/KWB-R/kwb.datetime)
-#&gt; 22                 [kwb.db](https://github.com/KWB-R/kwb.db)
-#&gt; 6        [kwb.default](https://github.com/KWB-R/kwb.default)
-#&gt;                                                               License
-#&gt; 9  [MIT](https://github.com/KWB-R/aquanes.report/blob/master/LICENSE)
-#&gt; 23       [MIT](https://github.com/KWB-R/kwb.base/blob/master/LICENSE)
-#&gt; 29       [MIT](https://github.com/KWB-R/kwb.code/blob/master/LICENSE)
-#&gt; 12   [MIT](https://github.com/KWB-R/kwb.datetime/blob/master/LICENSE)
-#&gt; 22         [MIT](https://github.com/KWB-R/kwb.db/blob/master/LICENSE)
-#&gt; 6     [MIT](https://github.com/KWB-R/kwb.default/blob/master/LICENSE)</div><div class='input'>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>pkgs</span> <span class='kw'>&lt;-</span> <span class='fu'>get_github_packages</span>()
+<span class='fu'>head</span>(<span class='no'>pkgs</span>)
+<span class='co'># }</span><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

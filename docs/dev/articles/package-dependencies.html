@@ -104,23 +104,24 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">secrets_csv &lt;-<span class="st">"secrets.csv"</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3">secrets &lt;-<span class="st"> </span><span class="kw">read.csv</span>(secrets_csv, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">options</span>(<span class="dt">github_token =</span> secrets<span class="op">$</span>github_token)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages(github_token = secrets$github_token)</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#saveRDS(pkgs,file = "rpackages.RData")</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8">pkgs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">"rpackages.RData"</span>)</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages()</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">installed_packages &lt;-<span class="st"> </span><span class="kw">rownames</span>(<span class="kw">installed.packages</span>())</a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb1-13" data-line-number="13">pkglib &lt;-<span class="st"> "pkg-lib"</span></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(pkglib)</a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">options</span>(<span class="dt">GITHUB_PAT =</span> secrets<span class="op">$</span>github_token, </a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">        <span class="dt">github_token =</span> secrets<span class="op">$</span>github_token)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages(github_token = secrets$github_token)</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#saveRDS(pkgs,file = "rpackages.RData")</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">pkgs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">"rpackages.RData"</span>)</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages()</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">installed_packages &lt;-<span class="st"> </span><span class="kw">rownames</span>(<span class="kw">installed.packages</span>())</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">pkglib &lt;-<span class="st"> "pkg-lib"</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(pkglib)</a>
 <a class="sourceLine" id="cb1-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb1-17" data-line-number="17">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2"</span>,</a>
-<a class="sourceLine" id="cb1-18" data-line-number="18">                                                           <span class="dt">upgrade =</span> <span class="st">"always"</span>))</a>
-<a class="sourceLine" id="cb1-19" data-line-number="19">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"mrustl/codemetar"</span>))</a>
-<a class="sourceLine" id="cb1-20" data-line-number="20">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, <span class="kw">install.packages</span>(<span class="st">"purrr"</span>, <span class="dt">repos =</span> <span class="st">"https://cloud.r-project.org/"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb1-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb1-18" data-line-number="18">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2"</span>,</a>
+<a class="sourceLine" id="cb1-19" data-line-number="19">                                                           <span class="dt">upgrade =</span> <span class="st">"always"</span>))</a>
+<a class="sourceLine" id="cb1-20" data-line-number="20">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"ropensci/codemetar@dev"</span>))</a>
+<a class="sourceLine" id="cb1-21" data-line-number="21">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, <span class="kw">install.packages</span>(<span class="st">"purrr"</span>, <span class="dt">repos =</span> <span class="st">"https://cloud.r-project.org/"</span>))</a></code></pre></div>
 <div id="install-kwb-packages-with-dependencies-in-own-library" class="section level2">
 <h2 class="hasAnchor">
 <a href="#install-kwb-packages-with-dependencies-in-own-library" class="anchor"></a>Install KWB packages (with dependencies in own library)</h2>
@@ -131,8 +132,8 @@
 <a class="sourceLine" id="cb2-4" data-line-number="4">                     <span class="dt">code =</span> remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="dt">repo =</span> <span class="kw">sprintf</span>(<span class="st">"kwb-r/%s"</span>,</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5">                                                                      pkg),</a>
 <a class="sourceLine" id="cb2-6" data-line-number="6">                                                    <span class="dt">dependencies =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">                                                    <span class="dt">upgrade =</span> <span class="st">"always"</span><span class="co">#,</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">                     <span class="co">#auth_token =  secrets$github_token</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">                                                    <span class="dt">upgrade =</span> <span class="st">"always"</span>,</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">                     <span class="dt">auth_token =</span>  secrets<span class="op">$</span>github_token</a>
 <a class="sourceLine" id="cb2-9" data-line-number="9">                     ))</a>
 <a class="sourceLine" id="cb2-10" data-line-number="10">}</a></code></pre></div>
 </div>

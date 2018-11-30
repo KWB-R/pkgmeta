@@ -1930,7 +1930,7 @@
     "identifier": "kwb.hantush",
     "description": "Calculation groundwater mounding beneath an infiltration basin\n    based on the Hantush (1967) equation (http://doi.org/10.1029/WR003i001p00227).\n    The correct implementation is shown with a verification example based on a USGS\n    report (page 25, http://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf).",
     "name": "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration\n        Basin",
-    "codeRepository": "http://kwb-r.github.io/kwb.hantush/",
+    "codeRepository": "http://github.com/KWB-R/kwb.hantush/",
     "issueTracker": "https://github.com/KWB-R/kwb.hantush/issues",
     "license": "https://spdx.org/licenses/MIT",
     "version": "0.2.1.9000",
@@ -1990,7 +1990,7 @@
         "@type": "SoftwareApplication",
         "identifier": "R",
         "name": "R",
-        "version": ">= 3.0.0"
+        "version": ">= 3.0"
       },
       {
         "@type": "SoftwareApplication",
@@ -2019,9 +2019,11 @@
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
     "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
+    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
+        "datePublished": "2018",
         "author": [
           {
             "@type": "Person",
@@ -2031,12 +2033,12 @@
             "@id": "https://orcid.org/0000-0003-0647-7726"
           }
         ],
-        "name": "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration Basin",
-        "url": "http://kwb-r.github.io/kwb.hantush/",
+        "name": "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration\nBasin",
+        "url": "http://github.com/KWB-R/kwb.hantush/",
         "description": "R package version 0.2.1.9000"
       }
     ],
-    "relatedLink": "https://github.com/kwb-r/kwb.hantush/commit/c3b8834"
+    "relatedLink": "https://github.com/kwb-r/kwb.hantush/commit/910045f"
   },
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
@@ -2954,6 +2956,8 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
+    "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-management", "publication"],
     "citation": [
       {
@@ -3129,7 +3133,7 @@
     "identifier": "kwb.qmra",
     "description": "QMRA for water supply systems.",
     "name": "kwb.qmra: QMRA (quantitative microbial risk assessment)",
-    "codeRepository": "http://kwb-r.github.io/kwb.qmra/",
+    "codeRepository": "http://github.com/KWB-R/kwb.qmra/",
     "issueTracker": "https://github.com/KWB-R/kwb.qmra/issues",
     "license": "https://spdx.org/licenses/MIT",
     "version": "0.1.1.9000",
@@ -3380,9 +3384,11 @@
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
     "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
+    "keywords": ["r", "rstats"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
+        "datePublished": "2018",
         "author": [
           {
             "@type": "Person",
@@ -3393,7 +3399,7 @@
           }
         ],
         "name": "kwb.qmra: QMRA (quantitative microbial risk assessment)",
-        "url": "http://kwb-r.github.io/kwb.qmra/",
+        "url": "http://github.com/KWB-R/kwb.qmra/",
         "description": "R package version 0.1.1.9000"
       }
     ]
@@ -4678,9 +4684,12 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
+    "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "citation": [
       {
         "@type": "SoftwareSourceCode",
+        "datePublished": "2018",
         "author": [
           {
             "@type": "Person",

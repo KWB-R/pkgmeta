@@ -134,7 +134,8 @@ https://github.com/r-lib/remotes/blob/bd970d723facc6ede2ff0f54ce4ae917526a37f8/i
     </div>
 
     <pre class="usage"><span class='fu'>download_github</span>(<span class='no'>repo</span>, <span class='kw'>ref</span> <span class='kw'>=</span> <span class='st'>"master"</span>, <span class='kw'>dest_dir</span> <span class='kw'>=</span> <span class='fu'>tempdir</span>(),
-  <span class='kw'>use_zip</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>auth_token</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>use_zip</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>auth_token</span> <span class='kw'>=</span> <span class='fu'>getOption</span>(<span class='st'>"github_token"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,7 +163,8 @@ https://github.com/r-lib/remotes/blob/bd970d723facc6ede2ff0f54ce4ae917526a37f8/i
     </tr>
     <tr>
       <th>auth_token</th>
-      <td><p>auth_token (needed to download "private" repos), default: NULL</p></td>
+      <td><p>auth_token (needed to download "private" repos), default:
+getOption("github_token")</p></td>
     </tr>
     </table>
     

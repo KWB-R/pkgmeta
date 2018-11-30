@@ -38,7 +38,7 @@ fs::dir_create(pkglib)
 
 withr::with_libpaths(new = pkglib, remotes::install_github("UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2",
                                                            upgrade = "always"))
-withr::with_libpaths(new = pkglib, install.packages("codemetar", repos = "https://cloud.r-project.org/"))
+withr::with_libpaths(new = pkglib, remotes::install_github("mrustl/codemetar"))
 withr::with_libpaths(new = pkglib, install.packages("purrr", repos = "https://cloud.r-project.org/"))
 
 ```

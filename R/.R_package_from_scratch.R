@@ -26,3 +26,4 @@ sapply(pkg_dependencies, usethis::use_package)
 
 usethis::use_vignette("Package Dependencies")
 usethis::use_vignette("Codemetar Analysis")
+usethis::use_vignette("Visualisation")

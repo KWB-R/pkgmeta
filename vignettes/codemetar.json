@@ -431,6 +431,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export"],
     "citation": [
       {
@@ -550,6 +551,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -632,6 +634,7 @@
         "sameAs": "https://github.com/github::kwb-r/kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -715,6 +718,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -816,6 +820,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import"],
     "citation": [
       {
@@ -915,6 +920,7 @@
       }
     ],
     "softwareRequirements": [],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -1099,6 +1105,7 @@
         "sameAs": "https://CRAN.R-project.org/package=sp"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "groundwater-modelling"],
     "citation": [
       {
@@ -1193,6 +1200,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -1288,6 +1296,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -1383,6 +1392,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -1644,6 +1654,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["research", "r", "rstats", "data-management"],
     "citation": [
       {
@@ -1893,6 +1904,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-cleaning", "data-visualization"],
     "citation": [
       {
@@ -2006,6 +2018,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2143,6 +2156,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "data-export"],
     "citation": [
       {
@@ -2256,6 +2270,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import"],
     "citation": [
       {
@@ -2442,6 +2457,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -2566,6 +2582,7 @@
         "sameAs": "https://github.com/github::ropensci/rorcid"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-management", "publication"],
     "citation": [
       {
@@ -2739,6 +2756,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package-automation", "data-management", "publication"],
     "citation": [
       {
@@ -3085,6 +3103,7 @@
         "sameAs": "https://CRAN.R-project.org/package=gridExtra"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -3360,6 +3379,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3513,6 +3533,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import"],
     "citation": [
       {
@@ -3643,6 +3664,7 @@
         "sameAs": "https://github.com/github::KWB-R/kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -3749,6 +3771,7 @@
         "sameAs": "https://github.com/github::kwb-r/kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -3958,6 +3981,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "lca-modelling", "modelling"],
     "citation": [
       {
@@ -4059,6 +4083,7 @@
     ],
     "softwareRequirements": [],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats"],
     "citation": [
       {
@@ -4177,6 +4202,7 @@
         "sameAs": "https://github.com/github::kwb-r/kwb.db"
       }
     ],
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "stats", "groundwater-modelling"],
     "citation": [
       {
@@ -4341,6 +4367,7 @@
       }
     ],
     "releaseNotes": "https://github.com/kwb-r/pkgmeta/blob/master/NEWS.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "groundwater-modelling", "drawdown-model"],
     "citation": [
       {
@@ -4357,6 +4384,315 @@
         "name": "kwb.wtaq: Interface to WTAQ Drawdown Model (http://water.usgs.gov/ogw/wtaq/)",
         "url": "https://github.com/KWB-R/kwb.wtaq",
         "description": "R package version 0.2.1"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
+    "identifier": "pkgmeta",
+    "description": "R Package for meta-analysis of KWB-R packages\n    on Github. It is a wrapper to the R packages 'codemetar' and 'pkgnet'\n    for providing insights into the development of the R packages on\n    Github.",
+    "name": "pkgmeta: R Package for Meta-Analysis of KWB-R Packages on Github",
+    "codeRepository": "https://github.com/KWB-R/pkgmeta",
+    "issueTracker": "https://github.com/KWB-R/pkgmeta/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.1.0.9000",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "3.5.1",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 3.5.1 (2018-07-02)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+      }
+    ],
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "knitr",
+        "name": "knitr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rmarkdown",
+        "name": "rmarkdown",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "jsonld",
+        "name": "jsonld",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=jsonld"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "jsonlite",
+        "name": "jsonlite",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=jsonlite"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "printr",
+        "name": "printr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=printr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "codemetar",
+        "name": "codemetar",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=codemetar"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.pkgstatus",
+        "name": "kwb.pkgstatus",
+        "sameAs": "https://github.com/github::kwb-r/kwb.pkgstatus"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "withr",
+        "name": "withr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=withr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "scales",
+        "name": "scales",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=scales"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "purrr",
+        "name": "purrr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=purrr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "ggplot2",
+        "name": "ggplot2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "glue",
+        "name": "glue",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=glue"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "forcats",
+        "name": "forcats",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=forcats"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "dplyr",
+        "name": "dplyr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=dplyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "remotes",
+        "name": "remotes",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=remotes"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magrittr",
+        "name": "magrittr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      }
+    ],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Michael",
+            "familyName": "Rustler",
+            "email": "michael.rustler@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0003-0647-7726"
+          }
+        ],
+        "name": "pkgmeta: R Package for Meta-Analysis of KWB-R Packages on Github",
+        "url": "https://github.com/KWB-R/pkgmeta",
+        "description": "R package version 0.1.0.9000"
       }
     ]
   }

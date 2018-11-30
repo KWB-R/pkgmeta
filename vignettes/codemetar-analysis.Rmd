@@ -4,7 +4,7 @@ author: "Michael Rustler"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Codemetar Analysis}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -27,13 +27,37 @@ library(purrr)
 library(dplyr)
 library(printr)
 library(tibble)
+##################################################################
+### Importing "codemetar.json" 
+##################################################################
+
+
+### Option 2: working as expected
+
+corpus <- jsonlite::fromJSON("codemetar.json",
+                             simplifyVector = FALSE)
+
+### add Github topics to R package names
+pkg_topics <- tibble::tibble(
+       name = purrr::map_chr(corpus, "identifier"),
+       topic = purrr::map_chr(
+               lapply(purrr::map(corpus, "keywords"), 
+                      function(x) {paste(unlist(x), 
+                                         collapse = ", ")}),1))
+pkg_topics
+
+
+### Option 1:
+### Not working correctly (-> gives list that is twice as long as just
+### using jsonlite::fromJSON as defined below
 
 frame <- system.file("schema/frame_schema.json", package="codemetar")
 
-corpus <-
-  jsonld::jsonld_frame("codemetar.json", frame) %>%
-  jsonlite::fromJSON(simplifyVector = FALSE) %>%
+corpus <- jsonld::jsonld_frame("codemetar.json", frame) %>%
+ jsonlite::fromJSON("codemetar.json",
+                             simplifyVector = FALSE) %>%
   getElement("@graph")
+
 
 ## deal with nulls explicitly by starting with map
 pkgs <- purrr::map(corpus, "name") %>%

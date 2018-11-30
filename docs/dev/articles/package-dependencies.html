@@ -58,6 +58,9 @@
     <li>
       <a href="../articles/package-dependencies.html">Package Dependencies</a>
     </li>
+    <li>
+      <a href="../articles/visualisation.html">Visualisation</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -86,7 +89,7 @@
       <h1>Package Dependencies</h1>
                         <h4 class="author">Michael Rustler</h4>
             
-            <h4 class="date">2018-11-29</h4>
+            <h4 class="date">2018-11-30</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/package-dependencies.Rmd"><code>vignettes/package-dependencies.Rmd</code></a></small>
       <div class="hidden name"><code>package-dependencies.Rmd</code></div>
@@ -99,23 +102,25 @@
 <h1 class="hasAnchor">
 <a href="#install-r-package-dependencies" class="anchor"></a>Install R Package Dependencies</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#secrets_csv &lt;-"secrets.csv"</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#secrets &lt;- read.csv(secrets_csv, stringsAsFactors = FALSE)</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages(github_token = secrets$github_token)</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#saveRDS(pkgs,file = "rpackages.RData")</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7">pkgs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">"rpackages.RData"</span>)</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">installed_packages &lt;-<span class="st"> </span><span class="kw">rownames</span>(<span class="kw">installed.packages</span>())</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">secrets_csv &lt;-<span class="st">"secrets.csv"</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">secrets &lt;-<span class="st"> </span><span class="kw">read.csv</span>(secrets_csv, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">options</span>(<span class="dt">github_token =</span> secrets<span class="op">$</span>github_token)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages(github_token = secrets$github_token)</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#saveRDS(pkgs,file = "rpackages.RData")</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">pkgs &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">"rpackages.RData"</span>)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages()</span></a>
 <a class="sourceLine" id="cb1-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">pkglib &lt;-<span class="st"> "pkg-lib"</span></a>
-<a class="sourceLine" id="cb1-12" data-line-number="12">fs<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/fs/topics/create">dir_create</a></span>(pkglib)</a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb1-15" data-line-number="15">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2"</span>,</a>
-<a class="sourceLine" id="cb1-16" data-line-number="16">                                                           <span class="dt">upgrade =</span> <span class="st">"always"</span>))</a>
-<a class="sourceLine" id="cb1-17" data-line-number="17">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, <span class="kw">install.packages</span>(<span class="st">"codemetar"</span>, <span class="dt">repos =</span> <span class="st">"https://cloud.r-project.org/"</span>))</a>
-<a class="sourceLine" id="cb1-18" data-line-number="18">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, <span class="kw">install.packages</span>(<span class="st">"purrr"</span>, <span class="dt">repos =</span> <span class="st">"https://cloud.r-project.org/"</span>))</a></code></pre></div>
+<a class="sourceLine" id="cb1-11" data-line-number="11">installed_packages &lt;-<span class="st"> </span><span class="kw">rownames</span>(<span class="kw">installed.packages</span>())</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">pkglib &lt;-<span class="st"> "pkg-lib"</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(pkglib)</a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2"</span>,</a>
+<a class="sourceLine" id="cb1-18" data-line-number="18">                                                           <span class="dt">upgrade =</span> <span class="st">"always"</span>))</a>
+<a class="sourceLine" id="cb1-19" data-line-number="19">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, <span class="kw">install.packages</span>(<span class="st">"codemetar"</span>, <span class="dt">repos =</span> <span class="st">"https://cloud.r-project.org/"</span>))</a>
+<a class="sourceLine" id="cb1-20" data-line-number="20">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib, <span class="kw">install.packages</span>(<span class="st">"purrr"</span>, <span class="dt">repos =</span> <span class="st">"https://cloud.r-project.org/"</span>))</a></code></pre></div>
 <div id="install-kwb-packages-with-dependencies-in-own-library" class="section level2">
 <h2 class="hasAnchor">
 <a href="#install-kwb-packages-with-dependencies-in-own-library" class="anchor"></a>Install KWB packages (with dependencies in own library)</h2>
@@ -126,9 +131,10 @@
 <a class="sourceLine" id="cb2-4" data-line-number="4">                     <span class="dt">code =</span> remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="dt">repo =</span> <span class="kw">sprintf</span>(<span class="st">"kwb-r/%s"</span>,</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5">                                                                      pkg),</a>
 <a class="sourceLine" id="cb2-6" data-line-number="6">                                                    <span class="dt">dependencies =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">                                                    <span class="dt">upgrade =</span> <span class="st">"always"</span>,</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8">                     <span class="dt">auth_token =</span>  secrets<span class="op">$</span>github_token))</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9">}</a></code></pre></div>
+<a class="sourceLine" id="cb2-7" data-line-number="7">                                                    <span class="dt">upgrade =</span> <span class="st">"always"</span><span class="co">#,</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">                     <span class="co">#auth_token =  secrets$github_token</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">                     ))</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">}</a></code></pre></div>
 </div>
 <div id="download-kwb-packages-as-source" class="section level2">
 <h2 class="hasAnchor">
@@ -137,7 +143,7 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">pkgsource_dir &lt;-<span class="st"> "pkg-source"</span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">pkgsource_zip_dir &lt;-<span class="st"> </span><span class="kw">file.path</span>(pkgsource_dir, <span class="st">"zip"</span>)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3">pkgsource_unzip_dir &lt;-<span class="st"> </span><span class="kw">file.path</span>(pkgsource_dir, <span class="st">"unzip"</span>)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">fs<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/fs/topics/create">dir_create</a></span>(<span class="dt">path =</span> <span class="kw">c</span>(pkgsource_zip_dir, pkgsource_unzip_dir))</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(<span class="dt">path =</span> <span class="kw">c</span>(pkgsource_zip_dir, pkgsource_unzip_dir))</a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="cf">for</span>(pkg <span class="cf">in</span> pkgs<span class="op">$</span>name) {</a>
 <a class="sourceLine" id="cb3-7" data-line-number="7">  pkgmeta<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/pkgmeta/topics/download_github">download_github</a></span>(<span class="dt">repo =</span> <span class="kw">sprintf</span>(<span class="st">"kwb-r/%s"</span>, pkg),</a>
@@ -159,10 +165,10 @@
 <h2 class="hasAnchor">
 <a href="#with-r-package-pkgnet" class="anchor"></a>With R package “pkgnet”</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">pkgnet_dir &lt;-<span class="st"> "pkgnet"</span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">fs<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/fs/topics/create">dir_create</a></span>(pkgnet_dir)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(pkgnet_dir)</a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib,</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5">                     <span class="dt">code =</span> <span class="cf">for</span>(x <span class="cf">in</span> pkgs<span class="op">$</span>name) {</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">                     <span class="dt">code =</span> <span class="cf">for</span>(x <span class="cf">in</span> pkgs<span class="op">$</span>name[<span class="dv">29</span>]) {</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6">   <span class="kw">print</span>(<span class="kw">sprintf</span>(<span class="st">"Write report for R package: %s"</span>, x))</a>
 <a class="sourceLine" id="cb4-7" data-line-number="7">   pkg_src_unzipped &lt;-<span class="st"> </span><span class="kw">dir</span>(pkgsource_unzip_dir, <span class="dt">pattern =</span> x)</a>
 <a class="sourceLine" id="cb4-8" data-line-number="8">   <span class="cf">if</span>(<span class="kw">length</span>(pkg_src_unzipped) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) {</a>
@@ -186,13 +192,17 @@
 <a href="#with-r-package-codemetar" class="anchor"></a>With R package “codemetar”</h2>
 <p>Generating “codemetar.json” file</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">pkgs_codemetar &lt;-<span class="st"> </span>withr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> pkglib,</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">              <span class="dt">code =</span><span class="kw">lapply</span>(pkgs<span class="op">$</span>name,codemetar<span class="op">::</span>create_codemeta))</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">jsonlite<span class="op">:::</span><span class="kw">write_json</span>(pkgs_codemetar,<span class="st">"codemetar.json"</span>,</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">                       <span class="dt">useBytes =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">                       <span class="dt">pretty =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">                       <span class="dt">auto_unbox =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb5-2" data-line-number="2">              <span class="dt">code =</span><span class="kw">lapply</span>(pkgs<span class="op">$</span>name,</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">                           <span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">                           <span class="kw">print</span>(glue<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"Writing codemeta for R package {x}"</span>))</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">                           codemetar<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/codemetar/topics/create_codemeta">create_codemeta</a></span>(<span class="dt">pkg =</span> x)}))</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">                                                     </a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">jsonlite<span class="op">:::</span><span class="kw">write_json</span>(pkgs_codemetar,<span class="st">"codemetar.json"</span>,</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">                       <span class="dt">useBytes =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">                       <span class="dt">pretty =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">                       <span class="dt">auto_unbox =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 </div>
   </div>

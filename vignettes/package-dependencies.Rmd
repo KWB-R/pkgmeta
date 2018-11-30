@@ -4,7 +4,7 @@ author: "Michael Rustler"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Package Dependencies}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,12 +21,14 @@ knitr::opts_chunk$set(
 
 ```{r, eval = FALSE}
 
-#secrets_csv <-"secrets.csv"
-#secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
+secrets_csv <-"secrets.csv"
+secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
+options(github_token = secrets$github_token)
 #pkgs <- pkgmeta::get_github_packages(github_token = secrets$github_token)
 #saveRDS(pkgs,file = "rpackages.RData")
 
 pkgs <- readRDS("rpackages.RData")
+#pkgs <- pkgmeta::get_github_packages()
 
 installed_packages <- rownames(installed.packages())
 
@@ -54,8 +56,9 @@ withr::with_libpaths(new = pkglib,
                      code = remotes::install_github(repo = sprintf("kwb-r/%s",
                                                                       pkg),
                                                     dependencies = TRUE,
-                                                    upgrade = "always",
-                     auth_token =  secrets$github_token))
+                                                    upgrade = "always"#,
+                     #auth_token =  secrets$github_token
+                     ))
 }
 ```
 
@@ -92,7 +95,7 @@ pkgnet_dir <- "pkgnet"
 fs::dir_create(pkgnet_dir)
 
 withr::with_libpaths(new = pkglib,
-                     code = for(x in pkgs$name) {
+                     code = for(x in pkgs$name[29]) {
    print(sprintf("Write report for R package: %s", x))
    pkg_src_unzipped <- dir(pkgsource_unzip_dir, pattern = x)
    if(length(pkg_src_unzipped) > 1) {
@@ -120,7 +123,11 @@ Generating "codemetar.json" file
 
 ```{r, eval = FALSE}
 pkgs_codemetar <- withr::with_libpaths(new = pkglib,
-              code =lapply(pkgs$name,codemetar::create_codemeta))
+              code =lapply(pkgs$name,
+                           function(x) {
+                           print(glue::glue("Writing codemeta for R package {x}"))
+                           codemetar::create_codemeta(pkg = x)}))
+                                                     
 
 
 jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
@@ -129,4 +136,6 @@ jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
                        auto_unbox = TRUE)
 
 ```
+
+
 

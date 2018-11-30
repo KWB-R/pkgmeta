@@ -5,7 +5,8 @@
 \title{Helper function: download private repos from Github}
 \usage{
 download_github(repo, ref = "master", dest_dir = tempdir(),
-  use_zip = FALSE, quiet = FALSE, auth_token = NULL)
+  use_zip = FALSE, quiet = FALSE,
+  auth_token = getOption("github_token"))
 }
 \arguments{
 \item{repo}{Github repo (e.g. "kwb-r/kwb.utils")}
@@ -19,7 +20,8 @@ download_github(repo, ref = "master", dest_dir = tempdir(),
 
 \item{quiet}{print messages (default: TRUE)}
 
-\item{auth_token}{auth_token (needed to download "private" repos), default: NULL}
+\item{auth_token}{auth_token (needed to download "private" repos), default:
+getOption("github_token")}
 }
 \value{
 downloaded repo in dest. folder

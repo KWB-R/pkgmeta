@@ -7,9 +7,9 @@
 # pkgmeta
 
 R Package for meta-analysis of KWB-R packages
-on Github. It is a wrapper to the R packages 'codemetar' and 'pkgnet'
+on Github. It is a wrapper to the R packages [codemetar](http://codemeta.github.io/codemetar/) and [pkgnet](http://uptakeopensource.github.io/pkgnet/)
 for providing insights into the development of the R packages on
-Github
+Github.
 
 ## Installation
 

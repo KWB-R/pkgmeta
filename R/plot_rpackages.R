@@ -1,6 +1,7 @@
 #' Plot Github Packages Over Time
 #'
 #' @param df_pkgs data frame with pkgs as retrieved with get_github_packages()
+#' @param last_update default: Sys.time()
 #' @return ggplot of temporal development of R packages on Github
 #' @export
 #' @importFrom lubridate as_datetime
@@ -13,7 +14,8 @@
 #' pkgs <- get_github_packages()
 #' plot_github_pkgs_over_time(pkgs)
 #'
-plot_github_pkgs_over_time <- function(df_pkgs) {
+plot_github_pkgs_over_time <- function(df_pkgs,
+                                       last_update = Sys.time()) {
 
 fakin_date_start <- lubridate::as_datetime("2017-05-01")
 
@@ -29,12 +31,13 @@ df_pkgs %>%
                arrow = ggplot2::arrow(length = ggplot2::unit(0.1, "inches"))) +
   ggplot2::theme_bw() +
   ggplot2::labs(title = "Temporal development of KWB-R packages on Github",
+                subtitle = glue::glue("Last update: {last_update}"),
                 y = "Repository Name",
                 x = "Date",
                 caption = glue::glue("Start of the arrow is the first release on Github, while the end of the arrow
 represents the lasted 'push' activity to the repository. The vertical grey line
 stands for the start date ({fakin_date_start}) of the FAKIN project at KWB which
-serves as a booster of this publishing process"))
+serves as a booster of this publishing process (last update: {last_update}"))
 }
 
 

@@ -42,6 +42,7 @@ Imports:
     remotes,
     magrittr
 Remotes:
-    github::kwb-r/kwb.pkgstatus
+    github::kwb-r/kwb.pkgstatus,
+    github::mrustl/codemetar
 VignetteBuilder: knitr
 RoxygenNote: 6.1.0

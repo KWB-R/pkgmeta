@@ -1,0 +1,27 @@
+---
+title: "Visualisation"
+author: "Michael Rustler"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Visualisation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# KWB-R Packages on Github Over Time
+
+
+```{r, eval = TRUE}
+#pkgs <- pkgmeta::get_github_packages()
+pkgs <- readRDS("rpackages.RData")
+pkgmeta::plot_github_pkgs_over_time(pkgs)
+
+```

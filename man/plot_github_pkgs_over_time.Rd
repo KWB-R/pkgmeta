@@ -4,10 +4,12 @@
 \alias{plot_github_pkgs_over_time}
 \title{Plot Github Packages Over Time}
 \usage{
-plot_github_pkgs_over_time(df_pkgs)
+plot_github_pkgs_over_time(df_pkgs, last_update = Sys.time())
 }
 \arguments{
 \item{df_pkgs}{data frame with pkgs as retrieved with get_github_packages()}
+
+\item{last_update}{default: Sys.time()}
 }
 \value{
 ggplot of temporal development of R packages on Github

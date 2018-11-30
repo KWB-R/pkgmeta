@@ -11,7 +11,7 @@ get_github_packages(group = "KWB-R",
 \item{group}{default: "KWB-R"}
 
 \item{github_token}{optionally a Github token in order to access private
-repositories (default: NULL)}
+repositories (default: getOption("github_token"))}
 }
 \value{
 data frame with R packages on Github

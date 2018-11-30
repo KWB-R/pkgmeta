@@ -4,4 +4,5 @@ pkgdown_sha: ~
 articles:
   codemetar-analysis: codemetar-analysis.html
   package-dependencies: package-dependencies.html
+  visualisation: visualisation.html
 

@@ -6,8 +6,9 @@
 #' @export
 #' @importFrom kwb.pkgstatus get_github_repos get_non_r_packages
 #' @examples
+#' \dontrun{
 #' pkgs <- get_github_packages()
-#' head(pkgs)
+#' head(pkgs)}
 #'
 get_github_packages <- function(group = "KWB-R", github_token = getOption("github_token")) {
   repos <- kwb.pkgstatus::get_github_repos(group, github_token)

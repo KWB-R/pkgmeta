@@ -18,7 +18,8 @@ ggplot of temporal development of R packages on Github
 Plot Github Packages Over Time
 }
 \examples{
+\dontrun{
 pkgs <- get_github_packages()
-plot_github_pkgs_over_time(pkgs)
+plot_github_pkgs_over_time(pkgs)}
 
 }

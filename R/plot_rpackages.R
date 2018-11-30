@@ -11,8 +11,9 @@
 #' @importFrom dplyr mutate
 #' @importFrom magrittr %>%
 #' @examples
+#'\dontrun{
 #' pkgs <- get_github_packages()
-#' plot_github_pkgs_over_time(pkgs)
+#' plot_github_pkgs_over_time(pkgs)}
 #'
 plot_github_pkgs_over_time <- function(df_pkgs,
                                        last_update = Sys.time()) {

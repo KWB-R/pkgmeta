@@ -20,7 +20,8 @@ data frame with R packages on Github
 Get Github R Packages
 }
 \examples{
+\dontrun{
 pkgs <- get_github_packages()
-head(pkgs)
+head(pkgs)}
 
 }

@@ -159,15 +159,13 @@ pkgs_codemetar <- lapply(pkgs$name,
                            function(x) {
                            print(glue::glue("Writing codemeta for R package {x}"))
                            codemetar::create_codemeta(pkg = x)})
-}
-                                                     
-```
 
-```{r}
+
 jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
                        useBytes = TRUE,
                        pretty = TRUE,
                        auto_unbox = TRUE)
+}
 
 ```
 

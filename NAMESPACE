@@ -3,6 +3,7 @@
 export(download_github)
 export(get_github_packages)
 export(plot_github_pkgs_over_time)
+export(travis_pkg_install_script)
 import(ggplot2)
 import(remotes)
 importFrom(dplyr,mutate)

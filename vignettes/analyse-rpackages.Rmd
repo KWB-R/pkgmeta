@@ -14,17 +14,17 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+to_skip <- if (identical(Sys.getenv("TRAVIS"), "true")) {
+        FALSE } else { TRUE }
 ```
 
 
 
 # Get Public KWB-R Github Package 
 
-```{r, eval = TRUE}
+```{r, eval = to_skip}
 
-run_code <- if("pkgdown" %in% installed.packages()[,"Package"]) { TRUE } else {FALSE}
-
-if(run_code) {
   
 secrets_csv <- "secrets.csv"
 
@@ -43,8 +43,8 @@ options(github_token = Sys.getenv("GITHUB_PAT"))
 pkgs <- pkgmeta::get_github_packages()
 
 #Just test for four packages (including "pkgmeta" which is required")
-pkgs <- pkgs[31:34,]
-}
+#pkgs <- pkgs[31:34,]
+
 #saveRDS(pkgs,file = "rpackages.RData")
 
 #pkgs <- readRDS("rpackages.RData")
@@ -54,7 +54,7 @@ pkgs <- pkgs[31:34,]
 
 # Define paths 
 
-```{r}
+```{r eval = TRUE}
 # Define paths and resolve placeholders
 
 paths_list <- list(
@@ -68,6 +68,7 @@ paths_list <- list(
 
 
 paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
+
 ```
 
 
@@ -77,8 +78,8 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 
 in own library required for "codemetar" and "pkgnet" reports
 
-```{r, eval = TRUE}
-if(run_code) {
+```{r, eval = to_skip}
+
 
 fs::dir_create(paths$pkglib, recursive = TRUE)
 
@@ -93,7 +94,6 @@ withr::with_libpaths(new = paths$pkglib, {
   dependencies = TRUE,
   upgrade = "always",
   auth_token =  Sys.getenv("GITHUB_PAT"))})
- }
 }
 
 ```
@@ -131,7 +131,6 @@ invisible(lapply(zipfiles, function(x) {
 Generating "codemetar.json" file
 
 ```{r, eval = TRUE}
-if(run_code) {
 
 pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
               code =lapply(pkgs$name,
@@ -146,7 +145,6 @@ jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
                        pretty = TRUE,
                        auto_unbox = TRUE)
 
-}
 ```
 
 

@@ -36,6 +36,7 @@ Sys.setenv(GITHUB_PAT = secrets$github_token)
   ### GITHUB_PAT environment variable needs to be set in TRAVIS with access 
   ### rights limited to public repos (otherwise also private repos will be 
   ### analysed!)
+
 }
 
 options(github_token = Sys.getenv("GITHUB_PAT"))
@@ -81,17 +82,20 @@ if(run_code) {
 
 fs::dir_create(paths$pkglib, recursive = TRUE)
 
+withr::with_libpaths(new = paths$pkglib,  {
+  install.packages("remotes", repos = "https://cran.rstudio.org")  }
+)
+
 for(pkg in pkgs$name) {
 
 withr::with_libpaths(new = paths$pkglib, {
   code = remotes::install_github(repo = sprintf("kwb-r/%s", pkg),
   dependencies = TRUE,
   upgrade = "always",
-  auth_token =  Sys.getenv("GITHUB_PAT"))}
-  )
+  auth_token =  Sys.getenv("GITHUB_PAT"))})
+ }
 }
 
-}
 ```
 
 

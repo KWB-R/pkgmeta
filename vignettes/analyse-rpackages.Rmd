@@ -151,6 +151,8 @@ pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
 
 ```{r, echo = !to_skip, eval = !to_skip}
 
+pkgs <- pkgmeta::get_github_packages()
+
 pkgs_codemetar <- lapply(pkgs$name,
                            function(x) {
                            print(glue::glue("Writing codemeta for R package {x}"))

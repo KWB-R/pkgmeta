@@ -99,7 +99,7 @@ withr::with_libpaths(new = paths$pkglib, {
 
 required for pkgnet "covr":
 
-```{r, eval = TRUE}
+```{r, eval = FALSE}
 
 fs::dir_create(path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
                recursive = TRUE)

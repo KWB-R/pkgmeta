@@ -22,6 +22,10 @@ knitr::opts_chunk$set(
 
 ```{r, eval = TRUE}
 
+run_code <- if("pkgdown" %in% installed.packages()[,"Package"]) { TRUE } else {FALSE}
+
+if(run_code) {
+  
 secrets_csv <- "secrets.csv"
 
 if(file.exists(secrets_csv)) {
@@ -39,7 +43,7 @@ pkgs <- pkgmeta::get_github_packages()
 
 #Just test for four packages (including "pkgmeta" which is required")
 pkgs <- pkgs[31:34,]
-
+}
 #saveRDS(pkgs,file = "rpackages.RData")
 
 #pkgs <- readRDS("rpackages.RData")
@@ -73,6 +77,7 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 in own library required for "codemetar" and "pkgnet" reports
 
 ```{r, eval = TRUE}
+if(run_code) {
 
 fs::dir_create(paths$pkglib, recursive = TRUE)
 
@@ -84,6 +89,8 @@ withr::with_libpaths(new = paths$pkglib, {
   upgrade = "always",
   auth_token =  Sys.getenv("GITHUB_PAT"))}
   )
+}
+
 }
 ```
 
@@ -120,6 +127,8 @@ invisible(lapply(zipfiles, function(x) {
 Generating "codemetar.json" file
 
 ```{r, eval = TRUE}
+if(run_code) {
+
 pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
               code =lapply(pkgs$name,
                            function(x) {
@@ -133,6 +142,7 @@ jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
                        pretty = TRUE,
                        auto_unbox = TRUE)
 
+}
 ```
 
 

@@ -20,8 +20,10 @@ knitr::opts_chunk$set(
 
 
 ```{r, eval = TRUE}
-#pkgs <- pkgmeta::get_github_packages()
-pkgs <- readRDS("rpackages.RData")
+options(github_token = Sys.getenv("GITHUB_PAT"))
+pkgs <- pkgmeta::get_github_packages()
+
+#pkgs <- readRDS("rpackages.RData")
 pkgmeta::plot_github_pkgs_over_time(pkgs)
 
 ```

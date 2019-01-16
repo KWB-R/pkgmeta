@@ -1,6 +1,6 @@
 Package: pkgmeta
 Title: R Package for Meta-Analysis of KWB-R Packages on Github
-Version: 0.1.0.9000
+Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Michael",
              family = "Rustler",
@@ -9,23 +9,12 @@ Authors@R:
              comment = c(ORCID = "0000-0003-0647-7726")),
       person(given = "Kompetenzzentrum Wasser Berlin gGmbH (KWB)",
              role = "cph"))
-Description: R Package for meta-analysis of KWB-R packages
-    on Github. It is a wrapper to the R packages 'codemetar' and 'pkgnet'
-    for providing insights into the development of the R packages on
-    Github.
+Description: R Package for meta-analysis of KWB-R packages on
+    Github. It is a wrapper to the R packages 'codemetar' and 'pkgnet' for
+    providing insights into the development of the R packages on Github.
 License: MIT + file LICENSE
 URL: https://github.com/KWB-R/pkgmeta
 BugReports: https://github.com/KWB-R/pkgmeta/issues
-Encoding: UTF-8
-LazyData: true
-Suggests: 
-    covr,
-    knitr,
-    rmarkdown,
-    jsonld, 
-    jsonlite, 
-    printr,
-    tibble
 Imports: 
     codemetar,
     lubridate,
@@ -41,8 +30,19 @@ Imports:
     dplyr,
     remotes,
     magrittr
+Suggests: 
+    covr,
+    knitr,
+    rmarkdown,
+    jsonld,
+    jsonlite,
+    printr,
+    tibble
+VignetteBuilder: 
+    knitr
 Remotes:
     github::kwb-r/kwb.pkgstatus,
     github::ropensci/codemetar@dev
-VignetteBuilder: knitr
+Encoding: UTF-8
+LazyData: true
 RoxygenNote: 6.1.0

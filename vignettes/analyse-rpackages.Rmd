@@ -1,10 +1,10 @@
 ---
-title: "Package Dependencies"
+title: "Analyse R Packages on Github"
 author: "Michael Rustler"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Package Dependencies}
+  %\VignetteIndexEntry{Analyse R Packages}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -19,28 +19,56 @@ knitr::opts_chunk$set(
 
 # Install R Package Dependencies
 
+## Get Public Github Package 
 ```{r, eval = FALSE}
 
 secrets_csv <-"secrets.csv"
 secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
-options(GITHUB_PAT = secrets$github_token, 
-        github_token = secrets$github_token)
-#pkgs <- pkgmeta::get_github_packages(github_token = secrets$github_token)
+Sys.setenv(GITHUB_PAT = secrets$github_token)
+options(github_token = Sys.getenv("GITHUB_PAT"))
+pkgs <- pkgmeta::get_github_packages()
 #saveRDS(pkgs,file = "rpackages.RData")
 
-pkgs <- readRDS("rpackages.RData")
+#pkgs <- readRDS("rpackages.RData")
 #pkgs <- pkgmeta::get_github_packages()
 
-installed_packages <- rownames(installed.packages())
+#installed_packages <- rownames(installed.packages())
+```` 
 
-pkglib <- "pkg-lib"
-fs::dir_create(pkglib)
+## Define paths 
+
+```{r}
+# Define paths and resolve placeholders
+
+paths_list <- list(
+  root_dir = tempdir(),
+  pkglib = "<root_dir>/pkg-lib",
+  pkgsource_dir = "<root_dir>/pkg-source",
+  pkgnet_dir = "<root_dir>/pkgnet",
+  pkgsource_zip_dir = "<pkgsource_dir>/zip",
+  pkgsource_unzip_dir = "<pkgsource_dir>/unzip"
+  )
 
 
-withr::with_libpaths(new = pkglib, remotes::install_github("UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2",
-                                                           upgrade = "always"))
-withr::with_libpaths(new = pkglib, remotes::install_github("ropensci/codemetar@dev"))
-withr::with_libpaths(new = pkglib, install.packages("purrr", repos = "https://cloud.r-project.org/"))
+paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
+```
+
+
+
+
+```{r}
+fs::dir_create(paths$pkglib, recursive = TRUE)
+
+
+withr::with_libpaths(new = paths$pkglib, {
+  remotes::install_github("UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2",
+  upgrade = "always")})
+withr::with_libpaths(new = paths$pkglib, {
+  remotes::install_github("ropensci/codemetar@dev")}
+  )
+withr::with_libpaths(new = paths$pkglib, {
+  install.packages("purrr", repos = "https://cloud.r-project.org/")}
+  )
 
 ```
 
@@ -53,13 +81,12 @@ Required for "pkgnet" reports
 ```{r, eval = FALSE}
 for(pkg in pkgs$name) {
 
-withr::with_libpaths(new = pkglib,
-                     code = remotes::install_github(repo = sprintf("kwb-r/%s",
-                                                                      pkg),
-                                                    dependencies = TRUE,
-                                                    upgrade = "always",
-                     auth_token =  secrets$github_token
-                     ))
+withr::with_libpaths(new = paths$pkglib, {
+  code = remotes::install_github(repo = sprintf("kwb-r/%s", pkg),
+  dependencies = TRUE,
+  upgrade = "always",
+  auth_token =  Sys.getenv("GITHUB_PAT"))}
+  )
 }
 ```
 
@@ -68,22 +95,21 @@ withr::with_libpaths(new = pkglib,
 Required for pkgnet "covr" and "codemetar"
 
 ```{r, eval = FALSE}
-pkgsource_dir <- "pkg-source"
-pkgsource_zip_dir <- file.path(pkgsource_dir, "zip")
-pkgsource_unzip_dir <- file.path(pkgsource_dir, "unzip")
-fs::dir_create(path = c(pkgsource_zip_dir, pkgsource_unzip_dir))
+
+fs::dir_create(path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
+               recursive = TRUE)
 
 for(pkg in pkgs$name) {
   pkgmeta::download_github(repo = sprintf("kwb-r/%s", pkg),
-                  dest_dir = pkgsource_zip_dir,
-                  use_zip = TRUE,
-                  auth_token = secrets$github_token)
+                           dest_dir = paths$pkgsource_zip_dir,
+                           use_zip = TRUE,
+                           auth_token = Sys.getenv("GITHUB_PAT"))
 }
-zipfiles <- list.files(pkgsource_zip_dir,full.names = TRUE)
+zipfiles <- list.files(paths$pkgsource_zip_dir,full.names = TRUE)
 
 invisible(lapply(zipfiles, function(x) {
   message(glue::glue("Unzipping {x} to {pkgsource_unzip_dir}"))
-  unzip(x, exdir = pkgsource_unzip_dir)}))
+  unzip(x, exdir = paths$pkgsource_unzip_dir)}))
 
 ```
 
@@ -92,13 +118,12 @@ invisible(lapply(zipfiles, function(x) {
 ## With R package "pkgnet"
 
 ```{r, eval = FALSE}
-pkgnet_dir <- "pkgnet"
-fs::dir_create(pkgnet_dir)
+fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
 
-withr::with_libpaths(new = pkglib,
-                     code = for(x in pkgs$name[29]) {
+withr::with_libpaths(new = path$pkglib,
+                     code = for(x in pkgs$name) {
    print(sprintf("Write report for R package: %s", x))
-   pkg_src_unzipped <- dir(pkgsource_unzip_dir, pattern = x)
+   pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, pattern = x)
    if(length(pkg_src_unzipped) > 1) {
       stop(glue::glue("Multiple unzipped pkg sources found in {pkgsource_unzip_dir}:
                       {paste(pkg_src_unzipped, collapse = ', ')}.
@@ -110,8 +135,8 @@ withr::with_libpaths(new = pkglib,
     } else {
       try(pkgnet::CreatePackageReport(
          pkg_name = x,
-         pkg_path = file.path(pkgsource_unzip_dir, pkg_src_unzipped),
-         report_path = file.path(pkgnet_dir, paste0(x, ".html"))
+         pkg_path = file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
+         report_path = file.path(paths$pkgnet_dir, paste0(x, ".html"))
         ))
   }})
 
@@ -123,7 +148,7 @@ withr::with_libpaths(new = pkglib,
 Generating "codemetar.json" file
 
 ```{r, eval = FALSE}
-pkgs_codemetar <- withr::with_libpaths(new = pkglib,
+pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
               code =lapply(pkgs$name,
                            function(x) {
                            print(glue::glue("Writing codemeta for R package {x}"))

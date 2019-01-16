@@ -22,9 +22,20 @@ knitr::opts_chunk$set(
 ## Get Public Github Package 
 ```{r, eval = FALSE}
 
-secrets_csv <-"secrets.csv"
+
+
+secrets_csv <- "secrets.csv"
+
+if(file.exists(secrets_csv))
 secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
+
 Sys.setenv(GITHUB_PAT = secrets$github_token)
+} else {
+  ### GITHUB_PAT environment variable needs to be set in TRAVIS with access 
+  ### rights limited to public repos (otherwise also private repos will be 
+  ### analysed!)
+}
+
 options(github_token = Sys.getenv("GITHUB_PAT"))
 pkgs <- pkgmeta::get_github_packages()
 #saveRDS(pkgs,file = "rpackages.RData")

@@ -54,7 +54,7 @@ pkgs <- pkgmeta::get_github_packages()
 
 # Define paths 
 
-```{r eval = TRUE}
+```{r, eval = to_skip}
 # Define paths and resolve placeholders
 
 paths_list <- list(
@@ -78,7 +78,7 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 
 in own library required for "codemetar" and "pkgnet" reports
 
-```{r, eval = to_skip}
+```{r, echo = to_skip, eval = to_skip}
 
 
 fs::dir_create(paths$pkglib, recursive = TRUE)
@@ -97,6 +97,15 @@ withr::with_libpaths(new = paths$pkglib, {
 }
 
 ```
+```{r, echo = !to_skip, eval = FALSE}
+### On Travis already installed within .travis configuration
+### https://github.com/KWB-R/pkgmeta/blob/master/.travis.yml
+### with function 
+pkgmeta::travis_pkg_install_script()
+```
+
+
+
 
 
 ## Source Packages 
@@ -130,7 +139,7 @@ invisible(lapply(zipfiles, function(x) {
 
 Generating "codemetar.json" file
 
-```{r, eval = TRUE}
+```{r, echo = to_skip, eval = to_skip}
 
 pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
               code =lapply(pkgs$name,
@@ -138,8 +147,18 @@ pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
                            print(glue::glue("Writing codemeta for R package {x}"))
                            codemetar::create_codemeta(pkg = x)}))
                                                      
+```
 
+```{r, echo = !to_skip, eval = !to_skip}
 
+pkgs_codemetar <- lapply(pkgs$name,
+                           function(x) {
+                           print(glue::glue("Writing codemeta for R package {x}"))
+                           codemetar::create_codemeta(pkg = x)})
+                                                     
+```
+
+```{r}
 jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
                        useBytes = TRUE,
                        pretty = TRUE,

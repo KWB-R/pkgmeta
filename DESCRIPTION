@@ -37,11 +37,13 @@ Suggests:
     jsonld,
     jsonlite,
     printr,
-    tibble
+    tibble,
+    kwb.utils
 VignetteBuilder: 
     knitr
 Remotes:
     github::kwb-r/kwb.pkgstatus,
+    github::kwb-r/kwb.utils,
     github::ropensci/codemetar@dev
 Encoding: UTF-8
 LazyData: true

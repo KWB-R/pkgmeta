@@ -20,13 +20,13 @@ knitr::opts_chunk$set(
 # Install R Package Dependencies
 
 ## Get Public Github Package 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 
 
 
 secrets_csv <- "secrets.csv"
 
-if(file.exists(secrets_csv))
+if(file.exists(secrets_csv)) {
 secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
 
 Sys.setenv(GITHUB_PAT = secrets$github_token)
@@ -85,7 +85,7 @@ withr::with_libpaths(new = paths$pkglib, {
 
 ## Download KWB packages as "source" 
 
-Required for pkgnet "covr"
+Required for pkgnet "covr" and "codemetar"
 
 ```{r, eval = TRUE}
 

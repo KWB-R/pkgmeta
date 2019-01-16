@@ -17,12 +17,10 @@ knitr::opts_chunk$set(
 ```
 
 
-# Install R Package Dependencies
 
-## Get Public Github Package 
+# Get Public KWB-R Github Package 
+
 ```{r, eval = TRUE}
-
-
 
 secrets_csv <- "secrets.csv"
 
@@ -38,15 +36,18 @@ Sys.setenv(GITHUB_PAT = secrets$github_token)
 
 options(github_token = Sys.getenv("GITHUB_PAT"))
 pkgs <- pkgmeta::get_github_packages()
+
+#Just test for four packages (including "pkgmeta" which is required")
+pkgs <- pkgs[31:34,]
+
 #saveRDS(pkgs,file = "rpackages.RData")
 
 #pkgs <- readRDS("rpackages.RData")
 #pkgs <- pkgmeta::get_github_packages()
 
-#installed_packages <- rownames(installed.packages())
-```` 
+``` 
 
-## Define paths 
+# Define paths 
 
 ```{r}
 # Define paths and resolve placeholders
@@ -64,9 +65,12 @@ paths_list <- list(
 paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 ```
 
-## Install KWB packages (with dependencies in own library)
 
-Required for "pkgnet" reports
+# Download dependencies
+
+## Install Packages
+
+in own library required for "codemetar" and "pkgnet" reports
 
 ```{r, eval = TRUE}
 
@@ -83,9 +87,10 @@ withr::with_libpaths(new = paths$pkglib, {
 }
 ```
 
-## Download KWB packages as "source" 
 
-Required for pkgnet "covr" and "codemetar"
+## Source Packages 
+
+required for pkgnet "covr":
 
 ```{r, eval = TRUE}
 
@@ -101,40 +106,14 @@ for(pkg in pkgs$name) {
 zipfiles <- list.files(paths$pkgsource_zip_dir,full.names = TRUE)
 
 invisible(lapply(zipfiles, function(x) {
-  message(glue::glue("Unzipping {x} to {pkgsource_unzip_dir}"))
+  message(glue::glue("Unzipping {x} to {paths$pkgsource_unzip_dir}"))
   unzip(x, exdir = paths$pkgsource_unzip_dir)}))
 
 ```
 
+
+
 # Perform Package Meta Analysis
-
-## With R package "pkgnet"
-
-```{r, eval = FALSE}
-fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
-
-withr::with_libpaths(new = path$pkglib,
-                     code = for(x in pkgs$name) {
-   print(sprintf("Write report for R package: %s", x))
-   pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, pattern = x)
-   if(length(pkg_src_unzipped) > 1) {
-      stop(glue::glue("Multiple unzipped pkg sources found in {pkgsource_unzip_dir}:
-                      {paste(pkg_src_unzipped, collapse = ', ')}.
-                      Please delete the oldest one(s) manually"))
-     #pkg_path <- file.path(pkgsource_unzip_dir, pkg_src_unzipped),
-     #sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})
-    } else if(length(pkg_src_unzipped) == 0)  {
-      stop(glue::glue("No unzipped pkg sources found in {pkgsource_unzip_dir}"))
-    } else {
-      try(pkgnet::CreatePackageReport(
-         pkg_name = x,
-         pkg_path = file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
-         report_path = file.path(paths$pkgnet_dir, paste0(x, ".html"))
-        ))
-  }})
-
-
-```
 
 ## With R package "codemetar"
 
@@ -155,6 +134,38 @@ jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
                        auto_unbox = TRUE)
 
 ```
+
+
+## With R package "pkgnet"
+
+Create Reports with "pkgnet
+
+```{r, eval = FALSE}
+fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
+
+withr::with_libpaths(new = path$pkglib,
+                     code = for(x in pkgs$name) {
+   print(sprintf("Write report for R package: %s", x))
+   pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, pattern = x)
+   if(length(pkg_src_unzipped) > 1) {
+      stop(glue::glue("Multiple unzipped pkg sources found in {paths$pkgsource_unzip_dir}:
+                      {paste(pkg_src_unzipped, collapse = ', ')}.
+                      Please delete the oldest one(s) manually"))
+     #pkg_path <- file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
+     #sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})
+    } else if(length(pkg_src_unzipped) == 0)  {
+      stop(glue::glue("No unzipped pkg sources found in {paths$pkgsource_unzip_dir}"))
+    } else {
+      try(pkgnet::CreatePackageReport(
+         pkg_name = x,
+         pkg_path = file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
+         report_path = file.path(paths$pkgnet_dir, paste0(x, ".html"))
+        ))
+  }})
+
+
+```
+
 
 
 

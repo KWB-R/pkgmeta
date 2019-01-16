@@ -64,32 +64,14 @@ paths_list <- list(
 paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 ```
 
-
-
-
-```{r}
-fs::dir_create(paths$pkglib, recursive = TRUE)
-
-
-withr::with_libpaths(new = paths$pkglib, {
-  remotes::install_github("UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2",
-  upgrade = "always")})
-withr::with_libpaths(new = paths$pkglib, {
-  remotes::install_github("ropensci/codemetar@dev")}
-  )
-withr::with_libpaths(new = paths$pkglib, {
-  install.packages("purrr", repos = "https://cloud.r-project.org/")}
-  )
-
-```
-
-
-
 ## Install KWB packages (with dependencies in own library)
 
 Required for "pkgnet" reports
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
+
+fs::dir_create(paths$pkglib, recursive = TRUE)
+
 for(pkg in pkgs$name) {
 
 withr::with_libpaths(new = paths$pkglib, {
@@ -103,9 +85,9 @@ withr::with_libpaths(new = paths$pkglib, {
 
 ## Download KWB packages as "source" 
 
-Required for pkgnet "covr" and "codemetar"
+Required for pkgnet "covr"
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 
 fs::dir_create(path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
                recursive = TRUE)
@@ -158,7 +140,7 @@ withr::with_libpaths(new = path$pkglib,
 
 Generating "codemetar.json" file
 
-```{r, eval = FALSE}
+```{r, eval = TRUE}
 pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
               code =lapply(pkgs$name,
                            function(x) {

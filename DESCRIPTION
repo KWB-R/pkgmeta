@@ -20,6 +20,7 @@ Imports:
     lubridate,
     jsonlite,
     kwb.pkgstatus,
+    kwb.utils,
     stringr,
     withr,
     scales,
@@ -38,8 +39,7 @@ Suggests:
     jsonld,
     pkgnet,
     printr,
-    tibble,
-    kwb.utils
+    tibble
 VignetteBuilder: 
     knitr
 Remotes:

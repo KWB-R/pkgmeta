@@ -141,21 +141,27 @@ Generating "codemetar.json" file
 
 ```{r, echo = to_skip, eval = to_skip}
 
-pkgs_codemetar <- pkgmeta::create_pkg_codemeta(pkgs, paths$pkglib)
+pkgs_codemetar <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
+
+codemeta <- pkgmeta::create_pkg_codemeta(pkgs_codemetar, 
+                                         libpath = paths$pkglib)
+
+
+pkgmeta::write_pkg_codemeta(codemeta, file = path_codmeta)
                                                      
 ```
 
-```{r, echo = !to_skip, eval = FALSE}
-
-pkgs <- pkgmeta::get_github_packages()
-
-if(all(pkgs$name %in% installed.packages()[,"Package"])) {
-
-pkgs_codemetar <-  pkgmeta::create_pkg_codemeta(pkgs, libpath = "/home/travis/R/Library")
+```{r, echo = !to_skip, eval = !to_skip}
 
 
-pkgmeta::write_pkg_codemeta(pkgs_codemetar,"codemetar.json")
-}
+pkgs_codemetar <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
+
+codemeta <- pkgmeta::create_pkg_codemeta(pkgs_codemetar, 
+                                         libpath = "/home/travis/R/Library")
+
+
+
+pkgmeta::write_pkg_codemeta(codemeta, file = path_codemeta)
 
 ```
 

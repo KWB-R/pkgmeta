@@ -5,13 +5,15 @@
 \title{Write codemeta}
 \usage{
 write_pkg_codemeta(codemeta = create_pkg_codemeta(),
-  file = "codemetar.json")
+  file = "./codemetar.json", dbg = TRUE)
 }
 \arguments{
 \item{codemeta}{codemeta object (as retrieved by create_codemeta()),
 default: create_pkg_codemeta())}
 
 \item{file}{path where to save codemeta.json}
+
+\item{dbg}{should debug messages be printed? (default: TRUE)}
 }
 \value{
 writes "codemeta.json"

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • pkgmeta</title>
+<title>deploy_local_with_extra_files — deploy_local_with_extra_files • pkgmeta</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,11 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="deploy_local_with_extra_files — deploy_local_with_extra_files" />
+
+<meta property="og:description" content="for details see pkgdown::deploy_local(), only parameter
+vignettes_file_pattern_to_copy added" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -115,84 +119,65 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>deploy_local_with_extra_files</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/deploy_site_github_with_extra_files.R'><code>R/deploy_site_github_with_extra_files.R</code></a></small>
+    <div class="hidden name"><code>deploy_local_with_extra_files.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>for details see pkgdown::deploy_local(), only parameter
+vignettes_file_pattern_to_copy added</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="create_pkg_codemeta.html">create_pkg_codemeta()</a></code> </p>
-        </td>
-        <td><p>Create codemeta</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="deploy_local_with_extra_files.html">deploy_local_with_extra_files()</a></code> </p>
-        </td>
-        <td><p>deploy_local_with_extra_files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="deploy_site_github_with_extra_files.html">deploy_site_github_with_extra_files()</a></code> </p>
-        </td>
-        <td><p>deploy_site_github_with_extra_files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_github.html">download_github()</a></code> </p>
-        </td>
-        <td><p>Helper function: download private repos from Github</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_github_packages.html">get_github_packages()</a></code> </p>
-        </td>
-        <td><p>Get Github R Packages</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_github_pkgs_over_time.html">plot_github_pkgs_over_time()</a></code> </p>
-        </td>
-        <td><p>Plot Github Packages Over Time</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="travis_pkg_install_script.html">travis_pkg_install_script()</a></code> </p>
-        </td>
-        <td><p>Travis Package Install Script</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="write_pkg_codemeta.html">write_pkg_codemeta()</a></code> </p>
-        </td>
-        <td><p>Write codemeta</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>deploy_local_with_extra_files</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>,
+  <span class='kw'>vignettes_file_pattern_to_copy</span> <span class='kw'>=</span> <span class='st'>"\\.json$"</span>, <span class='kw'>repo_slug</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>commit_message</span> <span class='kw'>=</span> <span class='kw pkg'>pkgdown</span><span class='kw ns'>:::</span><span class='fu'>construct_commit_message</span>(<span class='no'>pkg</span>), <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>pkg</th>
+      <td><p>"."</p></td>
+    </tr>
+    <tr>
+      <th>vignettes_file_pattern_to_copy</th>
+      <td><p>file patern for copying files from
+vignettes directory into deploy directory (default: "\.json$")</p></td>
+    </tr>
+    <tr>
+      <th>repo_slug</th>
+      <td><p>repo_slug Sys.getenv("TRAVIS_REPO_SLUG", "")</p></td>
+    </tr>
+    <tr>
+      <th>commit_message</th>
+      <td><p>commit_message pkgdown:::construct_commit_message(pkg)</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional arguments passed to  pkgdown::build_site()</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>deploy pkgdown site including additional files in "vignettes" source
+folder to "gh-pages"</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 

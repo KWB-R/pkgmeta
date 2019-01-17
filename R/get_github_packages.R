@@ -19,16 +19,17 @@ get_github_packages <- function(group = "KWB-R",
                                 github_token = getOption("github_token")) {
   repos <- kwb.pkgstatus::get_github_repos(group, github_token)
 
-  pkgs <- repos[!repos$name %in% kwb.pkgstatus::get_non_r_packages(),]
+  pkgs <- repos[!repos$name %in% kwb.pkgstatus::get_non_r_packages(), ]
 
-  if(!is.null(ignore_pkgs)) {
-     ignore_condition <- pkgs$name %in% ignore_pkgs
-        if(any(ignore_condition)) {
-          message(sprintf("Ignoring R packages %s as requested!",
-                          paste(ignore_pkgs, collapse = ", ")))
-          pkgs <- pkgs[!ignore_condition,]
+  if (!is.null(ignore_pkgs)) {
+    ignore_condition <- pkgs$name %in% ignore_pkgs
+    if (any(ignore_condition)) {
+      message(sprintf(
+        "Ignoring R packages %s as requested!",
+        paste(ignore_pkgs, collapse = ", ")
+      ))
+      pkgs <- pkgs[!ignore_condition, ]
     }
   }
   return(pkgs)
 }
-

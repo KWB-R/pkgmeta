@@ -12,14 +12,14 @@
 write_pkg_codemeta <- function(codemeta = create_pkg_codemeta(),
                                file = file.path(getwd(), "codemetar.json"),
                                dbg = TRUE) {
-
   kwb.utils::catAndRun(sprintf("Writting codemeta to '%s'", file),
-                       expr = {
-                         jsonlite::write_json(codemeta, file,
-                                              useBytes = TRUE,
-                                              pretty = TRUE,
-                                              auto_unbox = TRUE)},
-                       dbg = dbg)
-
-
+    expr = {
+      jsonlite::write_json(codemeta, file,
+        useBytes = TRUE,
+        pretty = TRUE,
+        auto_unbox = TRUE
+      )
+    },
+    dbg = dbg
+  )
 }

@@ -22,9 +22,7 @@ download_github <- function(repo,
                             use_zip = FALSE,
                             quiet = FALSE,
                             auth_token = getOption("github_token")) {
-
-
-  repo_sep <- as.vector(stringr::str_split(repo,pattern = "/|@", n = 3, simplify = TRUE))
+  repo_sep <- as.vector(stringr::str_split(repo, pattern = "/|@", n = 3, simplify = TRUE))
 
   reference <- if (repo_sep[3] == "") {
     ref
@@ -32,11 +30,13 @@ download_github <- function(repo,
     repo_sep[3]
   }
 
-  x <- list(username = repo_sep[1] ,
-            repo = repo_sep[2],
-            ref = reference,
-            host = "api.github.com",
-            auth_token = auth_token)
+  x <- list(
+    username = repo_sep[1],
+    repo = repo_sep[2],
+    ref = reference,
+    host = "api.github.com",
+    auth_token = auth_token
+  )
 
   # if(use_zip) {
   #
@@ -54,12 +54,14 @@ download_github <- function(repo,
   dest <- file.path(dest_dir, paste0(x$repo, file_ext))
 
   if (!quiet) {
-    message("Downloading GitHub repo ", x$username, "/", x$repo, "@", x$ref,
-            " to: ", dest)
+    message(
+      "Downloading GitHub repo ", x$username, "/", x$repo, "@", x$ref,
+      " to: ", dest
+    )
   }
 
 
   src_root <- remotes:::build_url(x$host, "repos", x$username, x$repo)
-  src <- paste0(src_root,  src_dir, utils::URLencode(x$ref, reserved = TRUE))
+  src <- paste0(src_root, src_dir, utils::URLencode(x$ref, reserved = TRUE))
   remotes:::download(dest, src, auth_token = x$auth_token)
 }

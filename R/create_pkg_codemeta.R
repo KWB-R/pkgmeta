@@ -10,24 +10,29 @@
 #' @importFrom utils installed.packages
 #' @export
 create_pkg_codemeta <- function(pkgs = get_github_packages(),
-                            libpath = "/home/travis/R/Library",
-                            dbg = TRUE) {
-
-
+                                libpath = "/home/travis/R/Library",
+                                dbg = TRUE) {
   kwb.utils::catAndRun("Creating codemeta object",
-                       expr = {
-  withr::with_libpaths(new = libpath,
-                     code = {
-                       lapply(pkgs$name,
-  function(x) {
-  if(x %in% utils::installed.packages()[,"Package"]) {
-  print(glue::glue("Writing codemeta for R package {x}"))
-  codemetar::create_codemeta(pkg = x)}
-  else {
-  message(sprintf("Package '%s' is not installed in
-  %s", x, libpath))}})})},
-  dbg = dbg)
-
-
+    expr = {
+      withr::with_libpaths(
+        new = libpath,
+        code = {
+          lapply(
+            pkgs$name,
+            function(x) {
+              if (x %in% utils::installed.packages()[, "Package"]) {
+                print(glue::glue("Writing codemeta for R package {x}"))
+                codemetar::create_codemeta(pkg = x)
+              }
+              else {
+                message(sprintf("Package '%s' is not installed in
+  %s", x, libpath))
+              }
+            }
+          )
+        }
+      )
+    },
+    dbg = dbg
+  )
 }
-

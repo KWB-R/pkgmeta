@@ -5,11 +5,11 @@
 #' @return installs kwb-r packages
 #' @export
 travis_pkg_install_script <- function(pkgs = pkgmeta::get_github_packages()) {
-
-for(pkg in pkgs$name) {
-
-remotes::install_github(repo = sprintf("kwb-r/%s", pkg),
-                                   dependencies = TRUE,
-                                   upgrade = "always")
-}
+  for (pkg in pkgs$name) {
+    remotes::install_github(
+      repo = sprintf("kwb-r/%s", pkg),
+      dependencies = TRUE,
+      upgrade = "always"
+    )
+  }
 }

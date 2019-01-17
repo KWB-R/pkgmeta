@@ -17,7 +17,7 @@ matrix:
     - Rscript -e 'remotes::install_cran("pkgdown")'
     - Rscript -e 'remotes::install_github("kwb-r/pkgmeta")'
     - Rscript -e 'pkgmeta::travis_pkg_install_script()'
-    - Rscript -e 'pkgmeta::write_pkg_codemeta(codemeta = create_pkg_codemeta(pkgs = get_github_packages(ignore_pkgs = "kwb.read")))'
+    - Rscript -e 'pkgmeta::write_pkg_codemeta(codemeta = pkgmeta::create_pkg_codemeta(pkgs = pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")))'
     deploy:
       provider: script
       script: Rscript -e 'pkgdown::deploy_site_github(verbose = TRUE)'

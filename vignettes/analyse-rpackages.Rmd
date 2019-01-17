@@ -130,7 +130,7 @@ pkgmeta::write_pkg_codemeta(codemeta)
 ```
 
 
-```{r, echo=FALSE, eval = is_travis}
+```{r, echo=FALSE, eval = TRUE}
 
 all_pkgs_installed <- all(pkgs$name %in% installed.packages()[,"Package"])
 

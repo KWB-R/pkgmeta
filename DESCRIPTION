@@ -18,6 +18,7 @@ BugReports: https://github.com/KWB-R/pkgmeta/issues
 Imports: 
     callr,
     codemetar,
+    gh,
     lubridate,
     jsonlite,
     kwb.pkgstatus,

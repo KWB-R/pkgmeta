@@ -20,15 +20,34 @@ is_travis <- if (identical(Sys.getenv("TRAVIS"), "true")) {
 ```
 
 
+# Get Metadata for All KWB-R Github Repos
 
-# Get Public KWB-R Github Package 
+For all Github repos also includes non R packages
 
 ```{r, eval = TRUE}
 
   
+pkgmeta::write_github_repos_json()
+
+
+```
+
+
+# Get Public KWB-R Github Package 
+
+Now limit only "public" KWB-R repos which are R packages.
+
+```{r, eval = TRUE}
+
+
 pkgs <- pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
 
+
 ``` 
+
+
+
+
 
 # Define paths 
 
@@ -125,7 +144,7 @@ codemeta <- pkgmeta::create_pkg_codemeta(pkgs,
                                          libpath = paths$pkglib)
 
 
-pkgmeta::write_pkg_codemeta(codemeta)
+pkgmeta::write_pkg_codemeta_json(codemeta)
                                                      
 ```
 
@@ -150,7 +169,7 @@ codemeta <- pkgmeta::create_pkg_codemeta(pkgs,
 
 
 
-pkgmeta::write_pkg_codemeta(codemeta)
+pkgmeta::write_pkg_codemeta_json(codemeta)
 
 ```
 

@@ -14,7 +14,7 @@ withr::with_libpaths(new = libpath,
                      code = {
                        lapply(pkgs$name,
   function(x) {
-  if(x %in% installed.packages()[,"Packages"]) {
+  if(x %in% installed.packages()[,"Package"]) {
   print(glue::glue("Writing codemeta for R package {x}"))
   codemetar::create_codemeta(pkg = x)}
   else {

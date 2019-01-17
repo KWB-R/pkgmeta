@@ -1,5 +1,8 @@
 #' Get Github R Packages
 #' @param group default: "KWB-R"
+#' @param ignore_pkgs vector of pkg names that should be ignored to prevent
+#' problems with codemeta generation (e.g. "kwb.read" fails due to missing
+#' metadata on the license!)
 #' @param github_token optionally a Github token in order to access private
 #' repositories (default: getOption("github_token"))
 #' @return data frame with R packages on Github
@@ -8,12 +11,24 @@
 #' @examples
 #' \dontrun{
 #' pkgs <- get_github_packages()
-#' head(pkgs)}
+#' head(pkgs)
+#' }
 #'
-get_github_packages <- function(group = "KWB-R", github_token = getOption("github_token")) {
+get_github_packages <- function(group = "KWB-R",
+                                ignore_pkgs = NULL,
+                                github_token = getOption("github_token")) {
   repos <- kwb.pkgstatus::get_github_repos(group, github_token)
 
   pkgs <- repos[!repos$name %in% kwb.pkgstatus::get_non_r_packages(),]
+
+  if(!is.null(ignore_pkgs)) {
+     ignore_condition <- pkgs$name %in% ignore_pkgs
+        if(any(ignore_condition)) {
+          message(sprintf("Ignoring R packages %s as requested!",
+                          paste(ignore_pkgs, collapse = ", ")))
+          pkgs <- pkgs[!ignore_condition,]
+    }
+  }
   return(pkgs)
 }
 

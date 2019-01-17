@@ -4,11 +4,15 @@
 \alias{get_github_packages}
 \title{Get Github R Packages}
 \usage{
-get_github_packages(group = "KWB-R",
+get_github_packages(group = "KWB-R", ignore_pkgs = NULL,
   github_token = getOption("github_token"))
 }
 \arguments{
 \item{group}{default: "KWB-R"}
+
+\item{ignore_pkgs}{vector of pkg names that should be ignored to prevent
+problems with codemeta generation (e.g. "kwb.read" fails due to missing
+metadata on the license!)}
 
 \item{github_token}{optionally a Github token in order to access private
 repositories (default: getOption("github_token"))}
@@ -22,6 +26,7 @@ Get Github R Packages
 \examples{
 \dontrun{
 pkgs <- get_github_packages()
-head(pkgs)}
+head(pkgs)
+}
 
 }

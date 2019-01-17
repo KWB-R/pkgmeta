@@ -155,10 +155,12 @@ pkgs <- pkgmeta::get_github_packages()
 
 if(all(pkgs$name %in% installed.packages()[,"Package"])) {
 
-pkgs_codemetar <- lapply(pkgs$name,
-                           function(x) {
+pkgs_codemetar <- withr::with_libpaths(new = "/home/travis/R/Library",
+                                       code = {
+                                       lapply(pkgs$name,
+                                                function(x) {
                            print(glue::glue("Writing codemeta for R package {x}"))
-                           codemetar::create_codemeta(pkg = x)})
+                           codemetar::create_codemeta(pkg = x)})})
 
 
 jsonlite:::write_json(pkgs_codemetar,"codemetar.json",

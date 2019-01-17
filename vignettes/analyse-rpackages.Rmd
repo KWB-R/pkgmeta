@@ -15,46 +15,24 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-to_skip <- if (identical(Sys.getenv("TRAVIS"), "true")) {
-        FALSE } else { TRUE }
+is_travis <- if (identical(Sys.getenv("TRAVIS"), "true")) {
+        TRUE } else { FALSE }
 ```
 
 
 
 # Get Public KWB-R Github Package 
 
-```{r, eval = to_skip}
+```{r, eval = TRUE}
 
   
-secrets_csv <- "secrets.csv"
-
-if(file.exists(secrets_csv)) {
-secrets <- read.csv(secrets_csv, stringsAsFactors = FALSE)
-
-Sys.setenv(GITHUB_PAT = secrets$github_token)
-} else {
-  ### GITHUB_PAT environment variable needs to be set in TRAVIS with access 
-  ### rights limited to public repos (otherwise also private repos will be 
-  ### analysed!)
-
-}
-
-options(github_token = Sys.getenv("GITHUB_PAT"))
-pkgs <- pkgmeta::get_github_packages()
-
-#Just test for four packages (including "pkgmeta" which is required")
-#pkgs <- pkgs[31:34,]
-
-#saveRDS(pkgs,file = "rpackages.RData")
-
-#pkgs <- readRDS("rpackages.RData")
-#pkgs <- pkgmeta::get_github_packages()
+pkgs <- pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
 
 ``` 
 
 # Define paths 
 
-```{r, eval = to_skip}
+```{r, eval = !is_travis}
 # Define paths and resolve placeholders
 
 paths_list <- list(
@@ -78,7 +56,7 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 
 in own library required for "codemetar" and "pkgnet" reports
 
-```{r, echo = to_skip, eval = to_skip}
+```{r, echo = !is_travis, eval = !is_travis}
 
 
 fs::dir_create(paths$pkglib, recursive = TRUE)
@@ -97,7 +75,7 @@ withr::with_libpaths(new = paths$pkglib, {
 }
 
 ```
-```{r, echo = !to_skip, eval = FALSE}
+```{r, echo = is_travis, eval = FALSE}
 ### On Travis already installed within .travis configuration
 ### https://github.com/KWB-R/pkgmeta/blob/master/.travis.yml
 ### with function 
@@ -112,7 +90,7 @@ pkgmeta::travis_pkg_install_script()
 
 required for pkgnet "covr":
 
-```{r, eval = FALSE}
+```{r, echo = !is_travis, eval = !is_travis}
 
 fs::dir_create(path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
                recursive = TRUE)
@@ -139,11 +117,11 @@ invisible(lapply(zipfiles, function(x) {
 
 Generating "codemetar.json" file
 
-```{r, echo = to_skip, eval = to_skip}
+```{r, echo = !is_travis, eval = !is_travis}
 
-pkgs_codemetar <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
+pkgs <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
 
-codemeta <- pkgmeta::create_pkg_codemeta(pkgs_codemetar, 
+codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
                                          libpath = paths$pkglib)
 
 
@@ -151,12 +129,23 @@ pkgmeta::write_pkg_codemeta(codemeta)
                                                      
 ```
 
-```{r, echo = !to_skip, eval = !to_skip}
+
+```{r, echo=FALSE, eval = is_travis}
+
+all_pkgs_installed <- all(pkgs$name %in% installed.packages()[,"Package"])
+
+is_travis_and_all_pkgs_installed <-  is_travis && all_pkgs_installed
+
+```
+
+
+
+```{r, echo = is_travis, eval = is_travis_and_all_pkgs_installed}
 
 
 pkgs_codemetar <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
 
-codemeta <- pkgmeta::create_pkg_codemeta(pkgs_codemetar, 
+codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
                                          libpath = "/home/travis/R/Library")
 
 
@@ -170,7 +159,7 @@ pkgmeta::write_pkg_codemeta(codemeta)
 
 Create Reports with "pkgnet
 
-```{r, eval = FALSE}
+```{r, echo = !is_travis, eval = !is_travis}
 fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
 
 withr::with_libpaths(new = path$pkglib,

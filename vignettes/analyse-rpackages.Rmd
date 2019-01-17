@@ -147,7 +147,7 @@ codemeta <- pkgmeta::create_pkg_codemeta(pkgs_codemetar,
                                          libpath = paths$pkglib)
 
 
-pkgmeta::write_pkg_codemeta(codemeta, file = path_codmeta)
+pkgmeta::write_pkg_codemeta(codemeta)
                                                      
 ```
 
@@ -161,7 +161,7 @@ codemeta <- pkgmeta::create_pkg_codemeta(pkgs_codemetar,
 
 
 
-pkgmeta::write_pkg_codemeta(codemeta, file = path_codemeta)
+pkgmeta::write_pkg_codemeta(codemeta)
 
 ```
 

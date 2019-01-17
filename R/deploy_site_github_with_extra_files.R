@@ -45,7 +45,7 @@ deploy_site_github_with_extra_files  <- function (pkg = ".",
   ssh_id_file <- "~/.ssh/id_rsa"
   pkgdown:::rule("Setting up SSH id", line = 1)
   pkgdown:::cat_line("Copying private key to: ", ssh_id_file)
-  write_lines(rawToChar(openssl::base64_decode(ssh_id)), ssh_id_file)
+  pkgdown:::write_lines(rawToChar(openssl::base64_decode(ssh_id)), ssh_id_file)
   pkgdown:::cat_line("Setting private key permissions to 0600")
   fs::file_chmod(ssh_id_file, "0600")
 

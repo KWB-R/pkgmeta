@@ -103,29 +103,8 @@
 <a href="#get-public-kwb-r-github-package" class="anchor"></a>Get Public KWB-R Github Package</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">  </a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">secrets_csv &lt;-<span class="st"> "secrets.csv"</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="cf">if</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/files">file.exists</a></span>(secrets_csv)) {</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">secrets &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/read.table">read.csv</a></span>(secrets_csv, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.setenv">Sys.setenv</a></span>(<span class="dt">GITHUB_PAT =</span> secrets<span class="op">$</span>github_token)</a>
-<a class="sourceLine" id="cb1-9" data-line-number="9">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">  ### GITHUB_PAT environment variable needs to be set in TRAVIS with access </a>
-<a class="sourceLine" id="cb1-11" data-line-number="11">  ### rights limited to public repos (otherwise also private repos will be </a>
-<a class="sourceLine" id="cb1-12" data-line-number="12">  ### analysed!)</a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb1-14" data-line-number="14">}</a>
-<a class="sourceLine" id="cb1-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="dt">github_token =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.getenv">Sys.getenv</a></span>(<span class="st">"GITHUB_PAT"</span>))</a>
-<a class="sourceLine" id="cb1-17" data-line-number="17">pkgs &lt;-<span class="st"> </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/get_github_packages">get_github_packages</a></span>()</a>
-<a class="sourceLine" id="cb1-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb1-19" data-line-number="19"><span class="co">#Just test for four packages (including "pkgmeta" which is required")</span></a>
-<a class="sourceLine" id="cb1-20" data-line-number="20"><span class="co">#pkgs &lt;- pkgs[31:34,]</span></a>
-<a class="sourceLine" id="cb1-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb1-22" data-line-number="22"><span class="co">#saveRDS(pkgs,file = "rpackages.RData")</span></a>
-<a class="sourceLine" id="cb1-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb1-24" data-line-number="24"><span class="co">#pkgs &lt;- readRDS("rpackages.RData")</span></a>
-<a class="sourceLine" id="cb1-25" data-line-number="25"><span class="co">#pkgs &lt;- pkgmeta::get_github_packages()</span></a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3">pkgs &lt;-<span class="st"> </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/get_github_packages">get_github_packages</a></span>(<span class="dt">ignore_pkgs =</span> <span class="st">"kwb.read"</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; Ignoring R packages kwb.read as requested!</span></a></code></pre></div>
 </div>
 <div id="define-paths" class="section level1">
 <h1 class="hasAnchor">
@@ -160,21 +139,6 @@
 <h2 class="hasAnchor">
 <a href="#source-packages" class="anchor"></a>Source Packages</h2>
 <p>required for pkgnet “covr”:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(<span class="dt">path =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(paths<span class="op">$</span>pkgsource_zip_dir, paths<span class="op">$</span>pkgsource_unzip_dir), </a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">               <span class="dt">recursive =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="cf">for</span>(pkg <span class="cf">in</span> pkgs<span class="op">$</span>name) {</a>
-<a class="sourceLine" id="cb4-6" data-line-number="6">  pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/download_github">download_github</a></span>(<span class="dt">repo =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/sprintf">sprintf</a></span>(<span class="st">"kwb-r/%s"</span>, pkg),</a>
-<a class="sourceLine" id="cb4-7" data-line-number="7">                           <span class="dt">dest_dir =</span> paths<span class="op">$</span>pkgsource_zip_dir,</a>
-<a class="sourceLine" id="cb4-8" data-line-number="8">                           <span class="dt">use_zip =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb4-9" data-line-number="9">                           <span class="dt">auth_token =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.getenv">Sys.getenv</a></span>(<span class="st">"GITHUB_PAT"</span>))</a>
-<a class="sourceLine" id="cb4-10" data-line-number="10">}</a>
-<a class="sourceLine" id="cb4-11" data-line-number="11">zipfiles &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list.files">list.files</a></span>(paths<span class="op">$</span>pkgsource_zip_dir,<span class="dt">full.names =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/invisible">invisible</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/lapply">lapply</a></span>(zipfiles, <span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb4-14" data-line-number="14">  <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/message">message</a></span>(glue<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"Unzipping {x} to {paths$pkgsource_unzip_dir}"</span>))</a>
-<a class="sourceLine" id="cb4-15" data-line-number="15">  <span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/unzip">unzip</a></span>(x, <span class="dt">exdir =</span> paths<span class="op">$</span>pkgsource_unzip_dir)}))</a></code></pre></div>
 </div>
 </div>
 <div id="perform-package-meta-analysis" class="section level1">
@@ -184,42 +148,59 @@
 <h2 class="hasAnchor">
 <a href="#with-r-package-codemetar" class="anchor"></a>With R package “codemetar”</h2>
 <p>Generating “codemetar.json” file</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">pkgs &lt;-<span class="st"> </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/get_github_packages">get_github_packages</a></span>()</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="cf">if</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/all">all</a></span>(pkgs<span class="op">$</span>name <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/installed.packages">installed.packages</a></span>()[,<span class="st">"Package"</span>])) {</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">pkgs_codemetar &lt;-<span class="st">  </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/create_pkg_codemeta">create_pkg_codemeta</a></span>(pkgs, <span class="dt">libpath =</span> <span class="st">"/home/travis/R/Library"</span>)</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/write_pkg_codemeta">write_pkg_codemeta</a></span>(pkgs_codemetar,<span class="st">"codemetar.json"</span>)</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">}</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">pkgs_codemetar &lt;-<span class="st">  </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/get_github_packages">get_github_packages</a></span>(<span class="dt">ignore_pkgs =</span> <span class="st">"kwb.read"</span>)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; Ignoring R packages kwb.read as requested!</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">codemeta &lt;-<span class="st"> </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/create_pkg_codemeta">create_pkg_codemeta</a></span>(pkgs, </a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">                                         <span class="dt">libpath =</span> <span class="st">"/home/travis/R/Library"</span>)</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; Creating codemeta object ... Writing codemeta for R package aquanes.report</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; Writing codemeta for R package kwb.base</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; Writing codemeta for R package kwb.code</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; Writing codemeta for R package kwb.datetime</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; Writing codemeta for R package kwb.db</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; Writing codemeta for R package kwb.default</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; Writing codemeta for R package kwb.demeau</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; Writing codemeta for R package kwb.dwa.m150</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; Writing codemeta for R package kwb.en13508.2</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt; Writing codemeta for R package kwb.endnote</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">#&gt; Writing codemeta for R package kwb.event</span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="co">#&gt; Writing codemeta for R package kwb.fakin</span></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">#&gt; Writing codemeta for R package kwb.file</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co">#&gt; Writing codemeta for R package kwb.geosalz</span></a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">#&gt; Writing codemeta for R package kwb.hantush</span></a>
+<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">#&gt; Writing codemeta for R package kwb.lca</span></a>
+<a class="sourceLine" id="cb4-24" data-line-number="24"><span class="co">#&gt; Writing codemeta for R package kwb.logger</span></a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">#&gt; Writing codemeta for R package kwb.monitoring</span></a>
+<a class="sourceLine" id="cb4-26" data-line-number="26"><span class="co">#&gt; Writing codemeta for R package kwb.orcid</span></a>
+<a class="sourceLine" id="cb4-27" data-line-number="27"><span class="co">#&gt; Writing codemeta for R package kwb.pkgbuild</span></a>
+<a class="sourceLine" id="cb4-28" data-line-number="28"><span class="co">#&gt; Writing codemeta for R package kwb.pkgstatus</span></a>
+<a class="sourceLine" id="cb4-29" data-line-number="29"><span class="co">#&gt; Writing codemeta for R package kwb.plot</span></a>
+<a class="sourceLine" id="cb4-30" data-line-number="30"><span class="co">#&gt; Writing codemeta for R package kwb.pubs</span></a>
+<a class="sourceLine" id="cb4-31" data-line-number="31"><span class="co">#&gt; Writing codemeta for R package kwb.qmra</span></a>
+<a class="sourceLine" id="cb4-32" data-line-number="32"><span class="co">#&gt; Writing codemeta for R package kwb.readxl</span></a>
+<a class="sourceLine" id="cb4-33" data-line-number="33"><span class="co">#&gt; Writing codemeta for R package kwb.resilience</span></a>
+<a class="sourceLine" id="cb4-34" data-line-number="34"><span class="co">#&gt; Writing codemeta for R package kwb.svn</span></a>
+<a class="sourceLine" id="cb4-35" data-line-number="35"><span class="co">#&gt; Writing codemeta for R package kwb.test</span></a>
+<a class="sourceLine" id="cb4-36" data-line-number="36"><span class="co">#&gt; Writing codemeta for R package kwb.umberto</span></a>
+<a class="sourceLine" id="cb4-37" data-line-number="37"><span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/home/travis/R/Library/kwb.umberto/.')</span></a>
+<a class="sourceLine" id="cb4-38" data-line-number="38"><span class="co">#&gt; Writing codemeta for R package kwb.utils</span></a>
+<a class="sourceLine" id="cb4-39" data-line-number="39"><span class="co">#&gt; Writing codemeta for R package kwb.vs2dh</span></a>
+<a class="sourceLine" id="cb4-40" data-line-number="40"><span class="co">#&gt; Writing codemeta for R package kwb.wtaq</span></a>
+<a class="sourceLine" id="cb4-41" data-line-number="41"><span class="co">#&gt; Writing codemeta for R package pkgmeta</span></a>
+<a class="sourceLine" id="cb4-42" data-line-number="42"><span class="co">#&gt; ok.</span></a>
+<a class="sourceLine" id="cb4-43" data-line-number="43"></a>
+<a class="sourceLine" id="cb4-44" data-line-number="44"></a>
+<a class="sourceLine" id="cb4-45" data-line-number="45"></a>
+<a class="sourceLine" id="cb4-46" data-line-number="46">pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/write_pkg_codemeta">write_pkg_codemeta</a></span>(codemeta)</a>
+<a class="sourceLine" id="cb4-47" data-line-number="47"><span class="co">#&gt; Writting codemeta to '/home/travis/build/KWB-R/pkgmeta/vignettes/codemetar.json' ... ok.</span></a>
+<a class="sourceLine" id="cb4-48" data-line-number="48"><span class="co">#&gt; NULL</span></a></code></pre></div>
 </div>
 <div id="with-r-package-pkgnet" class="section level2">
 <h2 class="hasAnchor">
 <a href="#with-r-package-pkgnet" class="anchor"></a>With R package “pkgnet”</h2>
 <p>Create Reports with "pkgnet</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">fs<span class="op">::</span><span class="kw"><a href="http://fs.r-lib.org/reference/create.html">dir_create</a></span>(paths<span class="op">$</span>pkgnet_dir, <span class="dt">recursive =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3">withr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/withr/topics/with_libpaths">with_libpaths</a></span>(<span class="dt">new =</span> path<span class="op">$</span>pkglib,</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">                     <span class="dt">code =</span> <span class="cf">for</span>(x <span class="cf">in</span> pkgs<span class="op">$</span>name) {</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">   <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/sprintf">sprintf</a></span>(<span class="st">"Write report for R package: %s"</span>, x))</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">   pkg_src_unzipped &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list.files">dir</a></span>(paths<span class="op">$</span>pkgsource_unzip_dir, <span class="dt">pattern =</span> x)</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">   <span class="cf">if</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(pkg_src_unzipped) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) {</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">      <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/stop">stop</a></span>(glue<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"Multiple unzipped pkg sources found in {paths$pkgsource_unzip_dir}:</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="st">                      {paste(pkg_src_unzipped, collapse = ', ')}.</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="st">                      Please delete the oldest one(s) manually"</span>))</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">     <span class="co">#pkg_path &lt;- file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12">     <span class="co">#sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13">    } <span class="cf">else</span> <span class="cf">if</span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(pkg_src_unzipped) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)  {</a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">      <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/stop">stop</a></span>(glue<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/glue/topics/glue">glue</a></span>(<span class="st">"No unzipped pkg sources found in {paths$pkgsource_unzip_dir}"</span>))</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15">    } <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">      <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/try">try</a></span>(pkgnet<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgnet/topics/CreatePackageReport">CreatePackageReport</a></span>(</a>
-<a class="sourceLine" id="cb6-17" data-line-number="17">         <span class="dt">pkg_name =</span> x,</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18">         <span class="dt">pkg_path =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/file.path">file.path</a></span>(paths<span class="op">$</span>pkgsource_unzip_dir, pkg_src_unzipped),</a>
-<a class="sourceLine" id="cb6-19" data-line-number="19">         <span class="dt">report_path =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/file.path">file.path</a></span>(paths<span class="op">$</span>pkgnet_dir, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste0</a></span>(x, <span class="st">".html"</span>))</a>
-<a class="sourceLine" id="cb6-20" data-line-number="20">        ))</a>
-<a class="sourceLine" id="cb6-21" data-line-number="21">  }})</a></code></pre></div>
 </div>
 </div>
   </div>

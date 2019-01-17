@@ -132,7 +132,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>write_pkg_codemeta</span>(<span class='kw'>codemeta</span> <span class='kw'>=</span> <span class='fu'><a href='create_pkg_codemeta.html'>create_pkg_codemeta</a></span>(),
-  <span class='kw'>file</span> <span class='kw'>=</span> <span class='st'>"codemetar.json"</span>)</pre>
+  <span class='kw'>file</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/file.path'>file.path</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>getwd</a></span>(), <span class='st'>"codemetar.json"</span>), <span class='kw'>dbg</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,7 +144,12 @@ default: create_pkg_codemeta())</p></td>
     </tr>
     <tr>
       <th>file</th>
-      <td><p>path where to save codemeta.json</p></td>
+      <td><p>path where to save codemeta.json (default: file.path(getwd(),
+"codemetar.json"))</p></td>
+    </tr>
+    <tr>
+      <th>dbg</th>
+      <td><p>should debug messages be printed? (default: TRUE)</p></td>
     </tr>
     </table>
     

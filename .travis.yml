@@ -20,5 +20,5 @@ matrix:
     - Rscript -e 'pkgmeta::write_pkg_codemeta(codemeta = pkgmeta::create_pkg_codemeta(pkgs = pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")))'
     deploy:
       provider: script
-      script: Rscript -e 'pkgdown::deploy_site_github(verbose = TRUE)'
+      script: Rscript -e 'pkgmeta::deploy_site_github_with_extra_files()'
       skip_cleanup: 'true'

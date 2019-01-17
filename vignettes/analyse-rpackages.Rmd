@@ -141,32 +141,20 @@ Generating "codemetar.json" file
 
 ```{r, echo = to_skip, eval = to_skip}
 
-pkgs_codemetar <- withr::with_libpaths(new = paths$pkglib,
-              code =lapply(pkgs$name,
-                           function(x) {
-                           print(glue::glue("Writing codemeta for R package {x}"))
-                           codemetar::create_codemeta(pkg = x)}))
+pkgs_codemetar <- pkgmeta::create_pkg_codemeta(pkgs, paths$pkglib)
                                                      
 ```
 
-```{r, echo = !to_skip, eval = !to_skip}
+```{r, echo = !to_skip, eval = FALSE}
 
 pkgs <- pkgmeta::get_github_packages()
 
 if(all(pkgs$name %in% installed.packages()[,"Package"])) {
 
-pkgs_codemetar <- withr::with_libpaths(new = "/home/travis/R/Library",
-                                       code = {
-                                       lapply(pkgs$name,
-                                                function(x) {
-                           print(glue::glue("Writing codemeta for R package {x}"))
-                           codemetar::create_codemeta(pkg = x)})})
+pkgs_codemetar <-  pkgmeta::create_pkg_codemeta(pkgs, libpath = "/home/travis/R/Library")
 
 
-jsonlite:::write_json(pkgs_codemetar,"codemetar.json",
-                       useBytes = TRUE,
-                       pretty = TRUE,
-                       auto_unbox = TRUE)
+pkgmeta::write_pkg_codemeta(pkgs_codemetar,"codemetar.json")
 }
 
 ```

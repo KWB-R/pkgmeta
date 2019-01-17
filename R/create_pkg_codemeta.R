@@ -7,6 +7,7 @@
 #' @return codemetar object for R packages
 #' @importFrom codemetar create_codemeta
 #' @importFrom glue glue
+#' @importFrom utils installed.packages
 #' @export
 create_pkg_codemeta <- function(pkgs = get_github_packages(),
                             libpath = "/home/travis/R/Library",
@@ -19,7 +20,7 @@ create_pkg_codemeta <- function(pkgs = get_github_packages(),
                      code = {
                        lapply(pkgs$name,
   function(x) {
-  if(x %in% installed.packages()[,"Package"]) {
+  if(x %in% utils::installed.packages()[,"Package"]) {
   print(glue::glue("Writing codemeta for R package {x}"))
   codemetar::create_codemeta(pkg = x)}
   else {

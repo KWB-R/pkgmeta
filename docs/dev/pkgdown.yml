@@ -1,8 +1,0 @@
-pandoc: 2.2.1
-pkgdown: 1.1.0
-pkgdown_sha: ~
-articles:
-  codemetar-analysis: codemetar-analysis.html
-  package-dependencies: package-dependencies.html
-  visualisation: visualisation.html
-

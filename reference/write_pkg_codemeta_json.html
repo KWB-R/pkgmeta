@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • pkgmeta</title>
+<title>Write codemeta — write_pkg_codemeta_json • pkgmeta</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Write codemeta — write_pkg_codemeta_json" />
+
+<meta property="og:description" content="Write codemeta" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +50,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -115,96 +118,55 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Write codemeta</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/write_pkg_codemeta_json.R'><code>R/write_pkg_codemeta_json.R</code></a></small>
+    <div class="hidden name"><code>write_pkg_codemeta_json.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Write codemeta</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="create_pkg_codemeta.html">create_pkg_codemeta()</a></code> </p>
-        </td>
-        <td><p>Create codemeta</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="deploy_local_with_extra_files.html">deploy_local_with_extra_files()</a></code> </p>
-        </td>
-        <td><p>deploy_local_with_extra_files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="deploy_site_github_with_extra_files.html">deploy_site_github_with_extra_files()</a></code> </p>
-        </td>
-        <td><p>deploy_site_github_with_extra_files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="download_github.html">download_github()</a></code> </p>
-        </td>
-        <td><p>Helper function: download private repos from Github</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_github_packages.html">get_github_packages()</a></code> </p>
-        </td>
-        <td><p>Get Github R Packages</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_github_repos.html">get_github_repos()</a></code> </p>
-        </td>
-        <td><p>Helper function: Get Github Metadata For Repos</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_github_pkgs_over_time.html">plot_github_pkgs_over_time()</a></code> </p>
-        </td>
-        <td><p>Plot Github Packages Over Time</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="travis_pkg_install_script.html">travis_pkg_install_script()</a></code> </p>
-        </td>
-        <td><p>Travis Package Install Script</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="write_github_repos_json.html">write_github_repos_json()</a></code> </p>
-        </td>
-        <td><p>Write Github Metadata to JSON</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="write_pkg_codemeta_json.html">write_pkg_codemeta_json()</a></code> </p>
-        </td>
-        <td><p>Write codemeta</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>write_pkg_codemeta_json</span>(<span class='kw'>codemeta</span> <span class='kw'>=</span> <span class='fu'><a href='create_pkg_codemeta.html'>create_pkg_codemeta</a></span>(),
+  <span class='kw'>file</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/file.path'>file.path</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/getwd'>getwd</a></span>(), <span class='st'>"codemetar.json"</span>), <span class='kw'>dbg</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>codemeta</th>
+      <td><p>codemeta object (as retrieved by create_codemeta()),
+default: create_pkg_codemeta())</p></td>
+    </tr>
+    <tr>
+      <th>file</th>
+      <td><p>path where to save codemeta.json (default: file.path(getwd(),
+"codemetar.json"))</p></td>
+    </tr>
+    <tr>
+      <th>dbg</th>
+      <td><p>should debug messages be printed? (default: TRUE)</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>writes "codemeta.json"</p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 

@@ -28,7 +28,8 @@ get_github_repos <- function (group = "KWB-R",
 
 #' Write Github Metadata to JSON
 #'
-#' @param pkgs data frame with R packages (default: get_github_packages())
+#' @param github_repos  as retrieved by get_github_repos(), default:
+#' get_github_repos()
 #' @param file path where to save github.json (default: file.path(getwd(),
 #' "github.json"))
 #' @param dbg should debug messages be printed? (default: TRUE)

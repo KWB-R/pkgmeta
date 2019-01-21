@@ -16,7 +16,6 @@ License: MIT + file LICENSE
 URL: https://github.com/KWB-R/pkgmeta
 BugReports: https://github.com/KWB-R/pkgmeta/issues
 Imports: 
-    callr,
     codemetar,
     gh,
     lubridate,
@@ -32,9 +31,6 @@ Imports:
     glue,
     forcats,
     dplyr,
-    pkgdown,
-    openssl,
-    rematch2,
     remotes,
     magrittr
 Suggests: 

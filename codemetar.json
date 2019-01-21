@@ -3294,39 +3294,39 @@
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
-        "identifier": "stringr",
-        "name": "stringr",
+        "identifier": "assertthat",
+        "name": "assertthat",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
           "name": "Comprehensive R Archive Network (CRAN)",
           "url": "https://cran.r-project.org"
         },
-        "sameAs": "https://CRAN.R-project.org/package=stringr"
+        "sameAs": "https://CRAN.R-project.org/package=assertthat"
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "usethis",
-        "name": "usethis",
+        "identifier": "callr",
+        "name": "callr",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
           "name": "Comprehensive R Archive Network (CRAN)",
           "url": "https://cran.r-project.org"
         },
-        "sameAs": "https://CRAN.R-project.org/package=usethis"
+        "sameAs": "https://CRAN.R-project.org/package=callr"
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "yaml",
-        "name": "yaml",
+        "identifier": "desc",
+        "name": "desc",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
           "name": "Comprehensive R Archive Network (CRAN)",
           "url": "https://cran.r-project.org"
         },
-        "sameAs": "https://CRAN.R-project.org/package=yaml"
+        "sameAs": "https://CRAN.R-project.org/package=desc"
       },
       {
         "@type": "SoftwareApplication",
@@ -3354,32 +3354,15 @@
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "desc",
-        "name": "desc",
+        "identifier": "openssl",
+        "name": "openssl",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
           "name": "Comprehensive R Archive Network (CRAN)",
           "url": "https://cran.r-project.org"
         },
-        "sameAs": "https://CRAN.R-project.org/package=desc"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "travis",
-        "name": "travis"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "assertthat",
-        "name": "assertthat",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=assertthat"
+        "sameAs": "https://CRAN.R-project.org/package=openssl"
       },
       {
         "@type": "SoftwareApplication",
@@ -3392,6 +3375,59 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=pkgdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rematch2",
+        "name": "rematch2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rematch2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "travis",
+        "name": "travis"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "usethis",
+        "name": "usethis",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=usethis"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "yaml",
+        "name": "yaml",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
     "keywords": ["r", "rstats", "r-package-automation", "data-management", "publication", "project-fakin"],
@@ -5395,18 +5431,6 @@
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
-        "identifier": "callr",
-        "name": "callr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=callr"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "codemetar",
         "name": "codemetar",
         "provider": {
@@ -5572,42 +5596,6 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=dplyr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "pkgdown",
-        "name": "pkgdown",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=pkgdown"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "openssl",
-        "name": "openssl",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=openssl"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "rematch2",
-        "name": "rematch2",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=rematch2"
       },
       {
         "@type": "SoftwareApplication",

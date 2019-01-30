@@ -1151,7 +1151,7 @@
         "sameAs": "https://CRAN.R-project.org/package=sp"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1618,7 +1618,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["data-management", "publications", "project-fakin", "knowledge-repo"],
+    "keywords": ["data-management", "project-fakin", "knowledge-repo", "publication", "literature-data-management"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2007,7 +2007,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
-    "keywords": ["research", "r", "rstats", "data-management", "project-fakin"],
+    "keywords": ["r", "rstats", "project-fakin", "research-data-management"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2389,7 +2389,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-cleaning", "data-visualization", "project-fakin"],
+    "keywords": ["r", "rstats", "data-import", "data-cleaning", "data-visualization", "project-fakin", "project-geosalz"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2528,7 +2528,7 @@
         "sameAs": "https://CRAN.R-project.org/package=hydroGOF"
       }
     ],
-    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling"],
+    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling", "project-demeau"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3390,6 +3390,18 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "sessioninfo",
+        "name": "sessioninfo",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "stringr",
         "name": "stringr",
         "provider": {
@@ -3867,10 +3879,137 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.endnote",
+        "name": "kwb.endnote",
+        "sameAs": "https://github.com/kwb-r/kwb.endnote"
       }
     ],
-    "softwareRequirements": [],
-    "keywords": ["r", "rstats", "publications", "hugo-academic", "knowledge-repo", "project-fakin"],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "blogdown",
+        "name": "blogdown",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://github.com/rstudio/blogdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "dplyr",
+        "name": "dplyr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=dplyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magick",
+        "name": "magick",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magick"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magrittr",
+        "name": "magrittr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rlang",
+        "name": "rlang",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rlang"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tidyr",
+        "name": "tidyr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tidyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringi",
+        "name": "stringi",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringi"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "withr",
+        "name": "withr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=withr"
+      }
+    ],
+    "keywords": ["r", "rstats", "hugo-academic", "knowledge-repo", "project-fakin", "publications", "publication"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4147,7 +4286,7 @@
         "sameAs": "https://CRAN.R-project.org/package=ggplot2"
       }
     ],
-    "keywords": ["r", "rstats", "project-demoware", "project-aquanes"],
+    "keywords": ["r", "rstats", "project-demoware", "project-aquanes", "qmra-webapp-backend-engine"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4469,83 +4608,6 @@
         "name": "kwb.resilience: R Package for the Quantification of Technical Resilience",
         "url": "https://github.com/KWB-R/kwb.resilience",
         "description": "R package version 0.1.0"
-      }
-    ]
-  },
-  {
-    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
-    "@type": "SoftwareSourceCode",
-    "identifier": "kwb.svn",
-    "description": "Helper Functions for Migration from Svn to Git.",
-    "name": "kwb.svn: Helper Functions for Migration from Svn to Git",
-    "codeRepository": "https://github.com/KWB-R/kwb.svn",
-    "issueTracker": "https://github.com/KWB-R/kwb.svn/issues",
-    "license": "https://spdx.org/licenses/MIT",
-    "version": "0.0.0.9000",
-    "programmingLanguage": {
-      "@type": "ComputerLanguage",
-      "name": "R",
-      "version": "3.5.2",
-      "url": "https://r-project.org"
-    },
-    "runtimePlatform": "R version 3.5.2 (2017-01-27)",
-    "author": [
-      {
-        "@type": "Person",
-        "givenName": "Michael",
-        "familyName": "Rustler",
-        "email": "michael.rustler@kompetenz-wasser.de",
-        "@id": "https://orcid.org/0000-0003-0647-7726"
-      }
-    ],
-    "contributor": {},
-    "copyrightHolder": [
-      {
-        "@type": "Organization",
-        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
-      }
-    ],
-    "funder": {},
-    "maintainer": [
-      {
-        "@type": "Person",
-        "givenName": "Michael",
-        "familyName": "Rustler",
-        "email": "michael.rustler@kompetenz-wasser.de",
-        "@id": "https://orcid.org/0000-0003-0647-7726"
-      }
-    ],
-    "softwareSuggestions": [
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "covr",
-        "name": "covr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=covr"
-      }
-    ],
-    "softwareRequirements": [],
-    "citation": [
-      {
-        "@type": "SoftwareSourceCode",
-        "datePublished": "2019",
-        "author": [
-          {
-            "@type": "Person",
-            "givenName": "Michael",
-            "familyName": "Rustler",
-            "email": "michael.rustler@kompetenz-wasser.de",
-            "@id": "https://orcid.org/0000-0003-0647-7726"
-          }
-        ],
-        "name": "kwb.svn: Helper Functions for Migration from Svn to Git",
-        "url": "https://github.com/KWB-R/kwb.svn",
-        "description": "R package version 0.0.0.9000"
       }
     ]
   },
@@ -5108,7 +5170,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.db"
       }
     ],
-    "keywords": ["r", "stats", "groundwater-modelling"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5620,6 +5682,18 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
       }
     ],
     "keywords": ["r", "rstats", "project-fakin", "knowledge-repo"],

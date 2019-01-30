@@ -41,7 +41,8 @@ Suggests:
     jsonld,
     pkgnet,
     printr,
-    tibble, 
+    tibble,
+    tidyr,
     wordcloud2
 VignetteBuilder: 
     knitr

@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Topics
 
 ```{r, eval = TRUE}
 
@@ -31,6 +32,9 @@ library(tibble)
 ### Importing "codemetar.json" 
 ##################################################################
 
+#"https://kwb-r.github.io/pkgmeta/codemetar.json" %>%  
+#  jsonlite::fromJSON() %>% 
+#  jsonlite::write_json("codemetar.json")
 
 ### Option 2: working as expected
 
@@ -46,7 +50,23 @@ pkg_topics <- tibble::tibble(
                                          collapse = ", ")}),1))
 pkg_topics
 
+```
 
+```{r, eval = TRUE}
+tidyr::separate_rows(pkg_topics, topic, sep = ",\\s+") %>% 
+  dplyr::count(topic) %>% 
+  dplyr::filter(!topic %in% c("r", "rstats")) %>% 
+  dplyr::arrange(dplyr::desc(n)) %>% 
+  dplyr::rename(word = topic,
+                freq = n) %>% 
+  wordcloud2::wordcloud2()
+
+```
+
+
+# Authors
+
+```{r, eval = TRUE}
 ### Option 1:
 ### Not working correctly (-> gives list that is twice as long as just
 ### using jsonlite::fromJSON as defined below
@@ -76,28 +96,47 @@ head(all_pkgs)
 purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
   unique() %>%
   length()
+```
 
+## Maintainer
 
+```{r, eval = TRUE}
 ## Mostly Hauke
 purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
-  tibble::as_tibble() %>%
+  tibble::enframe(name = NULL) %>%
   dplyr::group_by(value) %>%
-  dplyr::tally(sort=TRUE)
+  dplyr::tally(sort=TRUE) %>%
+  dplyr::rename(word = value,
+                freq = n) %>% 
+  wordcloud2::wordcloud2(minSize = 0.2, 
+                         size = 0.7)
 
+```
+
+
+```{r, eval = TRUE}
 ## number of co-authors ...
 purrr::map_int(corpus, function(r) length(r$author)) %>%
-  tibble::as_tibble() %>%
+  tibble::enframe() %>%
   dplyr::group_by(value) %>%
-  dplyr::tally(sort=TRUE)
+  dplyr::tally(sort=TRUE) 
 
 ## Contributors isn't used as much...
 purrr::map_int(corpus, function(r) length(r$contributor)) %>%
-  tibble::as_tibble() %>%
+  tibble::enframe() %>%
   dplyr::group_by(value) %>%
   dplyr::tally(sort=TRUE)
 
+```
+
+# Package Dependencies
+
+
+## Depends Imports
+
+```{r, eval = TRUE}
 purrr::map_int(corpus, function(r) length(r$softwareRequirements))  %>%
-  tibble::as_tibble() %>%
+  tibble::enframe() %>%
   dplyr::group_by(value) %>%
   dplyr::tally(sort=TRUE)
 
@@ -122,8 +161,16 @@ corpus %>%
 #which dependencies are used most frequently?
 dep_df %>%
   dplyr::group_by(dep) %>%
-  dplyr::tally(sort = TRUE)
+  dplyr::tally(sort = TRUE) %>%
+  dplyr::rename(word = dep,
+                freq = n) %>% 
+  wordcloud2::wordcloud2()
 
+```
+
+## Depends Imports and Suggests
+
+```{r, eval = TRUE}
 #Alternate approach using a frame instead of purrr functions for subsetting the
 #Note that this gets all Depends and suggests (really all SoftwareApplication
 #types mentioned)
@@ -137,6 +184,9 @@ jsonld_frame("codemetar.json", dep_frame) %>%
   getElement("@graph") %>%
   filter(type == "SoftwareApplication") %>%
   group_by(name) %>%
-  tally(sort = TRUE)
+  tally(sort = TRUE) %>%
+  dplyr::rename(word = name,
+                freq = n) %>% 
+  wordcloud2::wordcloud2()
 
 ```

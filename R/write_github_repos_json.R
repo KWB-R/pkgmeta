@@ -1,3 +1,53 @@
+#' Helper function: Get Github Topics
+#' @param full_names vector with full_names to Github repo e.g.
+#' c("kwb-r/kwb.utils", "kwb-r/kwb.base"), default: get_github_full_names()
+#' @export
+#' @importFrom gh gh
+#' @importFrom tibble tibble
+#' @importFrom dplyr bind_rows
+#'
+get_github_topics <- function(full_names = get_github_full_names()) {
+
+
+  repos <- lapply(full_names, FUN = function(full_name) {
+    topics <- try(silent = TRUE, gh::gh(
+    endpoint = "GET /repos/:full_name/topics",
+    full_name = full_name,
+    .send_headers = c(Accept = "application/vnd.github.mercy-preview+json")
+  ))
+
+  if (! inherits(topics, "try-error")) {
+
+    topics_vector <- unlist(topics$names)
+
+    if(length(topics_vector) > 0) {
+
+    tibble::tibble(full_name = full_name,
+                   topics = topics_vector)
+    } else {
+      tibble::tibble(full_name = full_name,
+                     topics = NA_character_)
+    }
+
+  } else {
+
+    tibble::tibble(full_name = full_name,
+                   topics = NA_character_)
+  }
+
+  })
+
+  dplyr::bind_rows(repos)
+
+}
+
+#' @keywords internal
+#' @noRd
+#'
+get_github_full_names <- function(github_repos = get_github_repos()) {
+  vapply(github_repos, "[[", "", "full_name")
+}
+
 #' Helper function: Get Github Metadata For Repos
 #'
 #' @param group organisation (default: "KWB-R")

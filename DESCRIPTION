@@ -32,7 +32,8 @@ Imports:
     forcats,
     dplyr,
     remotes,
-    magrittr
+    magrittr,
+    tibble
 Suggests: 
     covr,
     knitr,

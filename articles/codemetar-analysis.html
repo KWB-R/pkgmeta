@@ -83,7 +83,8 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
+      </header><script src="codemetar-analysis_files/htmlwidgets-1.3/htmlwidgets.js"></script><link href="codemetar-analysis_files/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet">
+<script src="codemetar-analysis_files/wordcloud2-0.0.1/wordcloud2-all.js"></script><script src="codemetar-analysis_files/wordcloud2-0.0.1/hover.js"></script><script src="codemetar-analysis_files/wordcloud2-binding-0.2.1/wordcloud2.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Codemetar Analysis</h1>
@@ -98,6 +99,9 @@
 
     
     
+<div id="topics" class="section level1">
+<h1 class="hasAnchor">
+<a href="#topics" class="anchor"></a>Topics</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(jsonld)</a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(jsonlite)</a>
@@ -127,20 +131,23 @@
 <a class="sourceLine" id="cb1-27" data-line-number="27">### Importing "codemetar.json" </a>
 <a class="sourceLine" id="cb1-28" data-line-number="28">##################################################################</a>
 <a class="sourceLine" id="cb1-29" data-line-number="29"></a>
-<a class="sourceLine" id="cb1-30" data-line-number="30"></a>
-<a class="sourceLine" id="cb1-31" data-line-number="31">### Option 2: working as expected</a>
-<a class="sourceLine" id="cb1-32" data-line-number="32"></a>
-<a class="sourceLine" id="cb1-33" data-line-number="33">corpus &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonlite/topics/fromJSON">fromJSON</a></span>(<span class="st">"codemetar.json"</span>,</a>
-<a class="sourceLine" id="cb1-34" data-line-number="34">                             <span class="dt">simplifyVector =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1-30" data-line-number="30"><span class="co">#"https://kwb-r.github.io/pkgmeta/codemetar.json" %&gt;%  </span></a>
+<a class="sourceLine" id="cb1-31" data-line-number="31"><span class="co">#  jsonlite::fromJSON() %&gt;% </span></a>
+<a class="sourceLine" id="cb1-32" data-line-number="32"><span class="co">#  jsonlite::write_json("codemetar.json")</span></a>
+<a class="sourceLine" id="cb1-33" data-line-number="33"></a>
+<a class="sourceLine" id="cb1-34" data-line-number="34">### Option 2: working as expected</a>
 <a class="sourceLine" id="cb1-35" data-line-number="35"></a>
-<a class="sourceLine" id="cb1-36" data-line-number="36">### add Github topics to R package names</a>
-<a class="sourceLine" id="cb1-37" data-line-number="37">pkg_topics &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(</a>
-<a class="sourceLine" id="cb1-38" data-line-number="38">       <span class="dt">name =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="st">"identifier"</span>),</a>
-<a class="sourceLine" id="cb1-39" data-line-number="39">       <span class="dt">topic =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(</a>
-<a class="sourceLine" id="cb1-40" data-line-number="40">               <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/lapply">lapply</a></span>(purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span>(corpus, <span class="st">"keywords"</span>), </a>
-<a class="sourceLine" id="cb1-41" data-line-number="41">                      <span class="cf">function</span>(x) {<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/unlist">unlist</a></span>(x), </a>
-<a class="sourceLine" id="cb1-42" data-line-number="42">                                         <span class="dt">collapse =</span> <span class="st">", "</span>)}),<span class="dv">1</span>))</a>
-<a class="sourceLine" id="cb1-43" data-line-number="43">pkg_topics</a></code></pre></div>
+<a class="sourceLine" id="cb1-36" data-line-number="36">corpus &lt;-<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonlite/topics/fromJSON">fromJSON</a></span>(<span class="st">"codemetar.json"</span>,</a>
+<a class="sourceLine" id="cb1-37" data-line-number="37">                             <span class="dt">simplifyVector =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb1-38" data-line-number="38"></a>
+<a class="sourceLine" id="cb1-39" data-line-number="39">### add Github topics to R package names</a>
+<a class="sourceLine" id="cb1-40" data-line-number="40">pkg_topics &lt;-<span class="st"> </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(</a>
+<a class="sourceLine" id="cb1-41" data-line-number="41">       <span class="dt">name =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="st">"identifier"</span>),</a>
+<a class="sourceLine" id="cb1-42" data-line-number="42">       <span class="dt">topic =</span> purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(</a>
+<a class="sourceLine" id="cb1-43" data-line-number="43">               <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/lapply">lapply</a></span>(purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span>(corpus, <span class="st">"keywords"</span>), </a>
+<a class="sourceLine" id="cb1-44" data-line-number="44">                      <span class="cf">function</span>(x) {<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/paste">paste</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/unlist">unlist</a></span>(x), </a>
+<a class="sourceLine" id="cb1-45" data-line-number="45">                                         <span class="dt">collapse =</span> <span class="st">", "</span>)}),<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb1-46" data-line-number="46">pkg_topics</a></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">name</th>
@@ -277,79 +284,73 @@
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">### Option 1:</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">### Not working correctly (-&gt; gives list that is twice as long as just</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">### using jsonlite::fromJSON as defined below</a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">frame &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"schema/frame_schema.json"</span>, <span class="dt">package=</span><span class="st">"codemetar"</span>)</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9">corpus &lt;-<span class="st"> </span>jsonld<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonld/topics/jsonld">jsonld_frame</a></span>(<span class="st">"codemetar.json"</span>, frame) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="st"> </span>jsonlite<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonlite/topics/fromJSON">fromJSON</a></span>(<span class="st">"codemetar.json"</span>,</a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">                             <span class="dt">simplifyVector =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extract">getElement</a></span>(<span class="st">"@graph"</span>)</a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15">## deal with nulls explicitly by starting with map</a>
-<a class="sourceLine" id="cb2-16" data-line-number="16">pkgs &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span>(corpus, <span class="st">"name"</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="st">  </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/keep.html">compact</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/character">as.character</a></span>()</a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co"># keep only those with package identifiers (names)</span></a>
-<a class="sourceLine" id="cb2-21" data-line-number="21">keep &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_lgl</a></span>(corpus, <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(.x<span class="op">$</span>identifier) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb2-22" data-line-number="22">corpus &lt;-<span class="st"> </span>corpus[keep]</a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb2-24" data-line-number="24">## now we can just do</a>
-<a class="sourceLine" id="cb2-25" data-line-number="25">all_pkgs &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="st">"name"</span>)</a>
-<a class="sourceLine" id="cb2-26" data-line-number="26"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(all_pkgs)</a>
-<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; [1] "aquanes.report: Automated Reporting Tool for Water Suppliers"                               </span></a>
-<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; [2] "kwb.dwa.m150: Read Sewer Condition Data according to DWA-M 150 XML format"                  </span></a>
-<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; [3] "kwb.en13508.2: Read and Write CCTV Inspection Data According to Norm EN13508-2"             </span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt; [4] "kwb.endnote: Helper Functions for Analysing KWB Endnote Library (Exported as\n        .xml)"</span></a>
-<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt; [5] "kwb.event: Generate Events from Time Series and work with Events"                           </span></a>
-<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; [6] "kwb.fakin: Functions Used in Our Fakin Project"</span></a>
-<a class="sourceLine" id="cb2-33" data-line-number="33"></a>
-<a class="sourceLine" id="cb2-34" data-line-number="34">## 3 unique maintainers</a>
-<a class="sourceLine" id="cb2-35" data-line-number="35">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"maintainer"</span>, <span class="st">"familyName"</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-36" data-line-number="36"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/unique">unique</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-37" data-line-number="37"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>()</a>
-<a class="sourceLine" id="cb2-38" data-line-number="38"><span class="co">#&gt; [1] 3</span></a>
-<a class="sourceLine" id="cb2-39" data-line-number="39"></a>
-<a class="sourceLine" id="cb2-40" data-line-number="40"></a>
-<a class="sourceLine" id="cb2-41" data-line-number="41">## Mostly Hauke</a>
-<a class="sourceLine" id="cb2-42" data-line-number="42">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"maintainer"</span>, <span class="st">"familyName"</span>)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-43" data-line-number="43"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-44" data-line-number="44"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-45" data-line-number="45"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb2-46" data-line-number="46"><span class="co">#&gt; Warning: Calling `as_tibble()` on a vector is discouraged, because the behavior is likely to change in the future. Use `enframe(name = NULL)` instead.</span></a>
-<a class="sourceLine" id="cb2-47" data-line-number="47"><span class="co">#&gt; This warning is displayed once per session.</span></a></code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">value</th>
-<th align="right">n</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Sonnenberg</td>
-<td align="right">18</td>
-</tr>
-<tr class="even">
-<td align="left">Rustler</td>
-<td align="right">13</td>
-</tr>
-<tr class="odd">
-<td align="left">Matzinger</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">## number of co-authors ...</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span>(corpus, <span class="cf">function</span>(r) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(r<span class="op">$</span>author)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html">separate_rows</a></span>(pkg_topics, topic, <span class="dt">sep =</span> <span class="st">",</span><span class="ch">\\</span><span class="st">s+"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">count</a></span>(topic) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="op">!</span>topic <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"r"</span>, <span class="st">"rstats"</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="dt">word =</span> topic,</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">                <span class="dt">freq =</span> n) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="st">  </span>wordcloud2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/wordcloud2/topics/wordcloud2">wordcloud2</a></span>()</a></code></pre></div>
+<div id="htmlwidget-481a524f9f2ae8100bc2" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-481a524f9f2ae8100bc2">{"x":{"word":["project-fakin","data-import","publication","data-management","groundwater-modelling","data-aggregation","data-visualisation","knowledge-repo","project-demeau","data-export","life-cycle-assessment","project-aquanes","automated-reporting","data-cleaning","data-visualization","drawdown-model","groundwater-mounding","hugo-academic","infiltration-basin","lca-modelling","literature-data-management","modelling","project-demoware","project-geosalz","project-networks4","project-optiwells2","publications","qmra-webapp-backend-engine","r-package-automation","research-data-management"],"freq":[14,7,5,4,4,3,3,3,3,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":12.8571428571429,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+</div>
+<div id="authors" class="section level1">
+<h1 class="hasAnchor">
+<a href="#authors" class="anchor"></a>Authors</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">### Option 1:</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">### Not working correctly (-&gt; gives list that is twice as long as just</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">### using jsonlite::fromJSON as defined below</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">frame &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"schema/frame_schema.json"</span>, <span class="dt">package=</span><span class="st">"codemetar"</span>)</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">corpus &lt;-<span class="st"> </span>jsonld<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonld/topics/jsonld">jsonld_frame</a></span>(<span class="st">"codemetar.json"</span>, frame) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="st"> </span>jsonlite<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonlite/topics/fromJSON">fromJSON</a></span>(<span class="st">"codemetar.json"</span>,</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">                             <span class="dt">simplifyVector =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extract">getElement</a></span>(<span class="st">"@graph"</span>)</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">## deal with nulls explicitly by starting with map</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14">pkgs &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span>(corpus, <span class="st">"name"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="st">  </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/keep.html">compact</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/character">as.character</a></span>()</a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co"># keep only those with package identifiers (names)</span></a>
+<a class="sourceLine" id="cb3-19" data-line-number="19">keep &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_lgl</a></span>(corpus, <span class="op">~</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(.x<span class="op">$</span>identifier) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb3-20" data-line-number="20">corpus &lt;-<span class="st"> </span>corpus[keep]</a>
+<a class="sourceLine" id="cb3-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb3-22" data-line-number="22">## now we can just do</a>
+<a class="sourceLine" id="cb3-23" data-line-number="23">all_pkgs &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="st">"name"</span>)</a>
+<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(all_pkgs)</a>
+<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">#&gt; [1] "aquanes.report: Automated Reporting Tool for Water Suppliers"                               </span></a>
+<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="co">#&gt; [2] "kwb.dwa.m150: Read Sewer Condition Data according to DWA-M 150 XML format"                  </span></a>
+<a class="sourceLine" id="cb3-27" data-line-number="27"><span class="co">#&gt; [3] "kwb.en13508.2: Read and Write CCTV Inspection Data According to Norm EN13508-2"             </span></a>
+<a class="sourceLine" id="cb3-28" data-line-number="28"><span class="co">#&gt; [4] "kwb.endnote: Helper Functions for Analysing KWB Endnote Library (Exported as\n        .xml)"</span></a>
+<a class="sourceLine" id="cb3-29" data-line-number="29"><span class="co">#&gt; [5] "kwb.event: Generate Events from Time Series and work with Events"                           </span></a>
+<a class="sourceLine" id="cb3-30" data-line-number="30"><span class="co">#&gt; [6] "kwb.fakin: Functions Used in Our Fakin Project"</span></a>
+<a class="sourceLine" id="cb3-31" data-line-number="31"></a>
+<a class="sourceLine" id="cb3-32" data-line-number="32">## 3 unique maintainers</a>
+<a class="sourceLine" id="cb3-33" data-line-number="33">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"maintainer"</span>, <span class="st">"familyName"</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-34" data-line-number="34"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/unique">unique</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-35" data-line-number="35"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>()</a>
+<a class="sourceLine" id="cb3-36" data-line-number="36"><span class="co">#&gt; [1] 3</span></a></code></pre></div>
+<div id="maintainer" class="section level2">
+<h2 class="hasAnchor">
+<a href="#maintainer" class="anchor"></a>Maintainer</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">## Mostly Hauke</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(corpus, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"maintainer"</span>, <span class="st">"familyName"</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span>(<span class="dt">name =</span> <span class="ot">NULL</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="dt">word =</span> value,</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">                <span class="dt">freq =</span> n) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="st">  </span>wordcloud2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/wordcloud2/topics/wordcloud2">wordcloud2</a></span>(<span class="dt">minSize =</span> <span class="fl">0.2</span>, </a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">                         <span class="dt">size =</span> <span class="fl">0.7</span>)</a></code></pre></div>
+<div id="htmlwidget-309e5a01ab85c0bb72e4" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-309e5a01ab85c0bb72e4">{"x":{"word":["Sonnenberg","Rustler","Matzinger"],"freq":[18,13,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.2,"weightFactor":7,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script><div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">## number of co-authors ...</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span>(corpus, <span class="cf">function</span>(r) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(r<span class="op">$</span>author)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>) </a></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">value</th>
@@ -360,12 +361,12 @@
 <td align="right">32</td>
 </tr></tbody>
 </table>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">## Contributors isn't used as much...</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span>(corpus, <span class="cf">function</span>(r) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(r<span class="op">$</span>contributor)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">## Contributors isn't used as much...</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span>(corpus, <span class="cf">function</span>(r) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(r<span class="op">$</span>contributor)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>)</a></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">value</th>
@@ -390,11 +391,18 @@
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span>(corpus, <span class="cf">function</span>(r) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(r<span class="op">$</span>softwareRequirements))  <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+</div>
+</div>
+<div id="package-dependencies" class="section level1">
+<h1 class="hasAnchor">
+<a href="#package-dependencies" class="anchor"></a>Package Dependencies</h1>
+<div id="depends-imports" class="section level2">
+<h2 class="hasAnchor">
+<a href="#depends-imports" class="anchor"></a>Depends Imports</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span>(corpus, <span class="cf">function</span>(r) <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/length">length</a></span>(r<span class="op">$</span>softwareRequirements))  <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(value) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort=</span><span class="ot">TRUE</span>)</a></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">value</th>
@@ -434,852 +442,113 @@
 <td align="right">2</td>
 </tr>
 <tr class="odd">
-<td align="right">15</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
 <td align="right">5</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="right">7</td>
 <td align="right">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="right">9</td>
 <td align="right">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="right">10</td>
 <td align="right">1</td>
 </tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">1</td>
+</tr>
 <tr class="even">
-<td align="right">18</td>
+<td align="right">16</td>
 <td align="right">1</td>
 </tr>
 <tr class="odd">
+<td align="right">18</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
 <td align="right">26</td>
 <td align="right">1</td>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">corpus <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span>(<span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4">    ## single, unboxed dep</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5">    <span class="cf">if</span>(<span class="st">"name"</span> <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(x<span class="op">$</span>softwareRequirements))</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6">      dep &lt;-<span class="st"> </span>x<span class="op">$</span>identifier</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7">    <span class="cf">else</span> <span class="cf">if</span>(<span class="st">"name"</span> <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(x<span class="op">$</span>softwareRequirements[[<span class="dv">1</span>]]))</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8">      dep &lt;-<span class="st"> </span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(x<span class="op">$</span>softwareRequirements, <span class="st">"name"</span>)</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9">    <span class="cf">else</span> { ## No requirementsß</a>
-<a class="sourceLine" id="cb6-10" data-line-number="10">      dep &lt;-<span class="st"> </span><span class="ot">NA</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11">    }</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13">    <span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">tibble</a></span>(<span class="dt">identifier =</span> x<span class="op">$</span>identifier, <span class="dt">dep =</span> dep)</a>
-<a class="sourceLine" id="cb6-14" data-line-number="14">  }) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">identifier =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">gsub</a></span>(<span class="st">"/"</span>, <span class="st">""</span>, identifier),</a>
-<a class="sourceLine" id="cb6-16" data-line-number="16">                <span class="dt">dep =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">gsub</a></span>(<span class="st">"/"</span>, <span class="st">""</span>, dep)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dep)) -&gt;<span class="st"> </span>dep_df</a>
-<a class="sourceLine" id="cb6-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb6-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">#which dependencies are used most frequently?</span></a>
-<a class="sourceLine" id="cb6-21" data-line-number="21">dep_df <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-22" data-line-number="22"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(dep) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb6-23" data-line-number="23"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">dep</th>
-<th align="right">n</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">kwb.utils</td>
-<td align="right">19</td>
-</tr>
-<tr class="even">
-<td align="left">dplyr</td>
-<td align="right">12</td>
-</tr>
-<tr class="odd">
-<td align="left">magrittr</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">stringr</td>
-<td align="right">11</td>
-</tr>
-<tr class="odd">
-<td align="left">R</td>
-<td align="right">7</td>
-</tr>
-<tr class="even">
-<td align="left">tidyr</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="left">fs</td>
-<td align="right">6</td>
-</tr>
-<tr class="even">
-<td align="left">ggplot2</td>
-<td align="right">6</td>
-</tr>
-<tr class="odd">
-<td align="left">data.table</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.datetime</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">lattice</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.event</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.plot</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="left">lubridate</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="left">readxl</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="left">xml2</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="left">digest</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">hydroGOF</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">janitor</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.db</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">openxlsx</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">plyr</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">readr</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">rlang</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">yaml</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">cellranger</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">crayon</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">forcats</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">ggforce</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">gh</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">httr</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">jsonlite</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.fakin</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.file</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">rmarkdown</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">rvest</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">shiny</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">tibble</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">usethis</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">withr</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">xts</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">assertthat</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">blogdown</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">callr</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">codemetar</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">colorRamps</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">dbplyr</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">desc</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">dygraphs</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">EnvStats</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">fasttime</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">fst</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">glue</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">gplots</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">gridExtra</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.base</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.code</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.en13508.2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.pkgstatus</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.read</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.readxl</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.vs2dh</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">latticeExtra</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">leaflet</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">magick</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">manipulate</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">openssl</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">pkgdown</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">plotrix</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">purrr</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">qmrparser</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">RCurl</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">rematch2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">remotes</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">reshape</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">RMySQL</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">RODBC</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">rorcid</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">scales</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">sessioninfo</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">sfsmisc</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">shapefiles</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">shinythemes</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">sp</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">stringi</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">travis</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">treemap</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">wordcloud2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">XML</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#Alternate approach using a frame instead of purrr functions for subsetting the</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co">#Note that this gets all Depends and suggests (really all SoftwareApplication</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#types mentioned)</span></a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">dep_frame &lt;-<span class="st"> '{</span></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="st">  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",</span></a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="st">"@explicit": "true",</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="st">"name": {}</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">}'</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonld/topics/jsonld">jsonld_frame</a></span>(<span class="st">"codemetar.json"</span>, dep_frame) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonlite/topics/fromJSON">fromJSON</a></span>() <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extract">getElement</a></span>(<span class="st">"@graph"</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> "SoftwareApplication"</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(name) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<table class="table">
-<thead><tr class="header">
-<th align="left">name</th>
-<th align="right">n</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">testthat</td>
-<td align="right">28</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.utils</td>
-<td align="right">22</td>
-</tr>
-<tr class="odd">
-<td align="left">knitr</td>
-<td align="right">18</td>
-</tr>
-<tr class="even">
-<td align="left">rmarkdown</td>
-<td align="right">18</td>
-</tr>
-<tr class="odd">
-<td align="left">covr</td>
-<td align="right">15</td>
-</tr>
-<tr class="even">
-<td align="left">dplyr</td>
-<td align="right">12</td>
-</tr>
-<tr class="odd">
-<td align="left">magrittr</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="left">stringr</td>
-<td align="right">11</td>
-</tr>
-<tr class="odd">
-<td align="left">ggplot2</td>
-<td align="right">8</td>
-</tr>
-<tr class="even">
-<td align="left">R</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="left">tidyr</td>
-<td align="right">7</td>
-</tr>
-<tr class="even">
-<td align="left">fs</td>
-<td align="right">6</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.datetime</td>
-<td align="right">6</td>
-</tr>
-<tr class="even">
-<td align="left">data.table</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">lattice</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">lubridate</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.event</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.plot</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="left">readxl</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="left">xml2</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="left">digest</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">hydroGOF</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">janitor</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">jsonlite</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.db</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">openxlsx</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">plyr</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">readr</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">rlang</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">tibble</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">withr</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="left">yaml</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="left">cellranger</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">crayon</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">devtools</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">forcats</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">ggforce</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">gh</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">httr</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.fakin</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.file</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">rvest</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">shiny</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">usethis</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="left">xts</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="left">assertthat</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">blogdown</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">callr</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">codemetar</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">colorRamps</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">compare</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">dbplyr</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">desc</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">dygraphs</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">EnvStats</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">fasttime</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">fst</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">ggrepel</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">glue</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">gplots</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">gridExtra</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">jsonld</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.base</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.code</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.endnote</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.logger</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.pkgstatus</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.read</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">kwb.readxl</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">kwb.vs2dh</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">latticeExtra</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">leaflet</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">magick</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">manipulate</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">networkD3</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">openssl</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">pkgdown</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">pkgnet</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">PKI</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">plotrix</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">printr</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">purrr</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">qmrparser</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">RCurl</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">rematch2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">remotes</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">reshape</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">RMySQL</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">RODBC</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">rorcid</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">scales</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">sessioninfo</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">sfsmisc</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">shapefiles</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">shinythemes</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">sp</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">stringi</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">travis</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">treemap</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="left">wordcloud2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="left">XML</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">corpus <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_df</a></span>(<span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">    ## single, unboxed dep</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">    <span class="cf">if</span>(<span class="st">"name"</span> <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(x<span class="op">$</span>softwareRequirements))</a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">      dep &lt;-<span class="st"> </span>x<span class="op">$</span>identifier</a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">    <span class="cf">else</span> <span class="cf">if</span>(<span class="st">"name"</span> <span class="op">%in%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(x<span class="op">$</span>softwareRequirements[[<span class="dv">1</span>]]))</a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">      dep &lt;-<span class="st"> </span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map.html">map_chr</a></span>(x<span class="op">$</span>softwareRequirements, <span class="st">"name"</span>)</a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">    <span class="cf">else</span> { ## No requirementsß</a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">      dep &lt;-<span class="st"> </span><span class="ot">NA</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">    <span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">tibble</a></span>(<span class="dt">identifier =</span> x<span class="op">$</span>identifier, <span class="dt">dep =</span> dep)</a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">  }) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">identifier =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">gsub</a></span>(<span class="st">"/"</span>, <span class="st">""</span>, identifier),</a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">                <span class="dt">dep =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">gsub</a></span>(<span class="st">"/"</span>, <span class="st">""</span>, dep)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(dep)) -&gt;<span class="st"> </span>dep_df</a>
+<a class="sourceLine" id="cb8-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb8-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb8-20" data-line-number="20"><span class="co">#which dependencies are used most frequently?</span></a>
+<a class="sourceLine" id="cb8-21" data-line-number="21">dep_df <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-22" data-line-number="22"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(dep) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-23" data-line-number="23"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-24" data-line-number="24"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="dt">word =</span> dep,</a>
+<a class="sourceLine" id="cb8-25" data-line-number="25">                <span class="dt">freq =</span> n) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb8-26" data-line-number="26"><span class="st">  </span>wordcloud2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/wordcloud2/topics/wordcloud2">wordcloud2</a></span>()</a></code></pre></div>
+<div id="htmlwidget-83f55c03ae50c4a8c6b4" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-83f55c03ae50c4a8c6b4">{"x":{"word":["kwb.utils","dplyr","magrittr","stringr","R","tidyr","fs","ggplot2","data.table","kwb.datetime","lattice","kwb.event","kwb.plot","lubridate","readxl","rlang","xml2","digest","hydroGOF","janitor","kwb.db","openxlsx","plyr","readr","yaml","cellranger","crayon","forcats","ggforce","gh","httr","jsonlite","kwb.fakin","kwb.file","rmarkdown","rvest","shiny","tibble","usethis","withr","xts","assertthat","blogdown","callr","codemetar","colorRamps","dbplyr","desc","dygraphs","EnvStats","fasttime","fst","glue","gplots","gridExtra","kwb.base","kwb.code","kwb.en13508.2","kwb.pkgstatus","kwb.read","kwb.readxl","kwb.vs2dh","latticeExtra","leaflet","magick","manipulate","openssl","pkgdown","plotrix","purrr","qmrparser","RCurl","rematch2","remotes","reshape","RMySQL","RODBC","rorcid","scales","sessioninfo","sfsmisc","shapefiles","shinythemes","sp","stringi","travis","treemap","wordcloud2","XML"],"freq":[19,12,11,11,7,7,6,6,5,5,5,4,4,4,4,4,4,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":9.47368421052632,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
 </div>
+<div id="depends-imports-and-suggests" class="section level2">
+<h2 class="hasAnchor">
+<a href="#depends-imports-and-suggests" class="anchor"></a>Depends Imports and Suggests</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co">#Alternate approach using a frame instead of purrr functions for subsetting the</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#Note that this gets all Depends and suggests (really all SoftwareApplication</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#types mentioned)</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">dep_frame &lt;-<span class="st"> '{</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="st">  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="st">"@explicit": "true",</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="st">"name": {}</span></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="st">}'</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonld/topics/jsonld">jsonld_frame</a></span>(<span class="st">"codemetar.json"</span>, dep_frame) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/jsonlite/topics/fromJSON">fromJSON</a></span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Extract">getElement</a></span>(<span class="st">"@graph"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(type <span class="op">==</span><span class="st"> "SoftwareApplication"</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(name) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/tally.html">tally</a></span>(<span class="dt">sort =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="dt">word =</span> name,</a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">                <span class="dt">freq =</span> n) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="st">  </span>wordcloud2<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/wordcloud2/topics/wordcloud2">wordcloud2</a></span>()</a></code></pre></div>
+<div id="htmlwidget-4d956c45aa17b3872e57" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4d956c45aa17b3872e57">{"x":{"word":["testthat","kwb.utils","knitr","rmarkdown","covr","dplyr","magrittr","stringr","ggplot2","tidyr","R","fs","kwb.datetime","data.table","lattice","lubridate","kwb.event","kwb.plot","readxl","rlang","xml2","digest","hydroGOF","janitor","jsonlite","kwb.db","openxlsx","plyr","readr","tibble","withr","yaml","cellranger","crayon","devtools","forcats","ggforce","gh","httr","kwb.fakin","kwb.file","rvest","shiny","usethis","wordcloud2","xts","assertthat","blogdown","callr","codemetar","colorRamps","compare","dbplyr","desc","dygraphs","EnvStats","fasttime","fst","ggrepel","glue","gplots","gridExtra","jsonld","kwb.base","kwb.code","kwb.endnote","kwb.logger","kwb.pkgstatus","kwb.read","kwb.readxl","kwb.vs2dh","latticeExtra","leaflet","magick","manipulate","networkD3","openssl","pkgdown","pkgnet","PKI","plotrix","printr","purrr","qmrparser","RCurl","rematch2","remotes","reshape","RMySQL","RODBC","rorcid","scales","sessioninfo","sfsmisc","shapefiles","shinythemes","sp","stringi","travis","treemap","XML"],"freq":[28,22,18,18,15,12,11,11,8,8,7,6,6,5,5,5,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":6.42857142857143,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+</div>
+</div>
+  </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="#topics">Topics</a></li>
+      <li>
+<a href="#authors">Authors</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#maintainer">Maintainer</a></li>
+      </ul>
+</li>
+      <li>
+<a href="#package-dependencies">Package Dependencies</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#depends-imports">Depends Imports</a></li>
+      <li><a href="#depends-imports-and-suggests">Depends Imports and Suggests</a></li>
+      </ul>
+</li>
+      </ul>
+</div>
       </div>
 
 </div>

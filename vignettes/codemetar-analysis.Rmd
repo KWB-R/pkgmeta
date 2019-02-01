@@ -53,14 +53,21 @@ pkg_topics
 ```
 
 ```{r, eval = TRUE}
-tidyr::separate_rows(pkg_topics, topic, sep = ",\\s+") %>% 
+topics <- tidyr::separate_rows(pkg_topics, topic, sep = ",\\s+") %>% 
   dplyr::count(topic) %>% 
   dplyr::filter(!topic %in% c("r", "rstats")) %>% 
   dplyr::arrange(dplyr::desc(n)) %>% 
   dplyr::rename(word = topic,
-                freq = n) %>% 
-  wordcloud2::wordcloud2()
+                freq = n) 
 
+
+knitr::kable(topics)
+
+
+```
+
+```{r wordcloud_topics, eval = TRUE}
+wordcloud2::wordcloud2(topics)
 ```
 
 
@@ -102,15 +109,21 @@ purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
 
 ```{r, eval = TRUE}
 ## Mostly Hauke
-purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
+maintainer <- purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
   tibble::enframe(name = NULL) %>%
   dplyr::group_by(value) %>%
   dplyr::tally(sort=TRUE) %>%
   dplyr::rename(word = value,
-                freq = n) %>% 
-  wordcloud2::wordcloud2(minSize = 0.2, 
-                         size = 0.7)
+                freq = n) 
 
+knitr::kable(maintainer)
+
+```
+
+```{r wordcloud_maintainer, eval = TRUE}
+wordcloud2::wordcloud2(maintainer,
+                       minSize = 0.4, 
+                       size = 0.8)
 ```
 
 
@@ -159,13 +172,20 @@ corpus %>%
 
 
 #which dependencies are used most frequently?
-dep_df %>%
+dep_count <- dep_df %>%
   dplyr::group_by(dep) %>%
   dplyr::tally(sort = TRUE) %>%
   dplyr::rename(word = dep,
-                freq = n) %>% 
-  wordcloud2::wordcloud2()
+                freq = n)
 
+knitr::kable(dep_count)
+
+```
+
+```{r wordcloud_depends_imports, eval = TRUE}
+wordcloud2::wordcloud2(dep_count,
+                       minSize = 0.4, 
+                       size = 1)
 ```
 
 ## Depends Imports and Suggests
@@ -179,14 +199,54 @@ dep_frame <- '{
 "@explicit": "true",
 "name": {}
 }'
-jsonld_frame("codemetar.json", dep_frame) %>%
+dep_sug_count <- jsonld_frame("codemetar.json", dep_frame) %>%
   fromJSON() %>%
   getElement("@graph") %>%
   filter(type == "SoftwareApplication") %>%
   group_by(name) %>%
   tally(sort = TRUE) %>%
   dplyr::rename(word = name,
-                freq = n) %>% 
-  wordcloud2::wordcloud2()
+                freq = n) 
+
+knitr::kable(dep_sug_count)
+
+```
+
+```{r wordcloud_depends_imports_suggests, eval = TRUE}
+wordcloud2::wordcloud2(dep_sug_count,
+                       minSize = 0.4, 
+                       size = 1)
+```
+
+# 7 Session Info 
+
+## Plattform
+
+```{r plattform, eval = TRUE, echo= FALSE}
+environment <- sessioninfo::session_info()  
+
+knitr::kable(tibble::enframe(unlist(environment$platform)))
+
+```
+
+## Packages
+
+```{r packages, eval = TRUE, echo= FALSE}
+
+print(environment$packages)
+
+```
+
+### Pandoc
+
+```{r pandoc, eval = TRUE, echo= FALSE}
+
+if(rmarkdown::pandoc_available()) {
+data.frame(pandoc_directory = rmarkdown::pandoc_exec(),
+           pandoc_version = as.character(rmarkdown::pandoc_version()), 
+           stringsAsFactors = FALSE)
+} else {
+  print("No PANDOC installed!")
+}
 
 ```

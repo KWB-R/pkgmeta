@@ -41,12 +41,14 @@ Suggests:
     jsonld,
     pkgnet,
     printr,
+    sessioninfo,
     tibble,
     tidyr,
     wordcloud2
 VignetteBuilder: 
     knitr
 Remotes:
+    github::Lchiffon/wordcloud2,
     github::kwb-r/kwb.pkgstatus,
     github::kwb-r/kwb.utils,
     github::ropensci/codemetar@dev,

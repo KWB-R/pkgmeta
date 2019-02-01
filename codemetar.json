@@ -5527,6 +5527,18 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "sessioninfo",
+        "name": "sessioninfo",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "tibble",
         "name": "tibble",
         "provider": {
@@ -5559,7 +5571,7 @@
           "name": "Comprehensive R Archive Network (CRAN)",
           "url": "https://cran.r-project.org"
         },
-        "sameAs": "https://CRAN.R-project.org/package=wordcloud2"
+        "sameAs": "https://github.com/Lchiffon/wordcloud2"
       }
     ],
     "softwareRequirements": [

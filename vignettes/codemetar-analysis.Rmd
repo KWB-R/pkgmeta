@@ -123,7 +123,7 @@ knitr::kable(maintainer)
 ```{r wordcloud_maintainer, eval = TRUE}
 wordcloud2::wordcloud2(maintainer,
                        minSize = 0.4, 
-                       size = 0.8)
+                       size = 0.6)
 ```
 
 

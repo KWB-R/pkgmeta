@@ -40,7 +40,7 @@ Now limit only "public" KWB-R repos which are R packages.
 ```{r, eval = TRUE}
 
 
-pkgs <- pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
+pkgs <- pkgmeta::get_github_packages()
 
 
 ``` 
@@ -138,7 +138,7 @@ Generating "codemetar.json" file
 
 ```{r, echo = !is_travis, eval = !is_travis}
 
-pkgs <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
+pkgs <-  pkgmeta::get_github_packages()
 
 codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
                                          libpath = paths$pkglib)
@@ -162,7 +162,7 @@ is_travis_and_all_pkgs_installed <-  is_travis && all_pkgs_installed
 ```{r, echo = is_travis, eval = is_travis_and_all_pkgs_installed}
 
 
-pkgs_codemetar <-  pkgmeta::get_github_packages(ignore_pkgs = "kwb.read")
+pkgs_codemetar <-  pkgmeta::get_github_packages()
 
 codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
                                          libpath = "/home/travis/R/Library")

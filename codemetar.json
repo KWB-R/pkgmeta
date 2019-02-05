@@ -4357,6 +4357,140 @@
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
+    "identifier": "kwb.read",
+    "description": "Functions reading specific input data, e.g. files\n    provided by BWB.  E.g. rain data (5 min values) and rain correction\n    tables (on daily basis).",
+    "name": "kwb.read: Functions reading specific input data, e.g. files provided by\n        BWB",
+    "codeRepository": "https://github.com/KWB-R/kwb.read",
+    "issueTracker": "https://github.com/KWB-R/kwb.read/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.0.0.9000",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "3.5.2",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 3.5.2 (2017-01-27)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de"
+      }
+    ],
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH"
+      }
+    ],
+    "funder": {},
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.base",
+        "name": "kwb.base",
+        "sameAs": "https://github.com/kwb-r/kwb.base"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.datetime",
+        "name": "kwb.datetime",
+        "sameAs": "https://github.com/kwb-r/kwb.datetime"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.db",
+        "name": "kwb.db",
+        "sameAs": "https://github.com/kwb-r/kwb.db"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.en13508.2",
+        "name": "kwb.en13508.2",
+        "sameAs": "https://github.com/kwb-r/kwb.en13508.2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.fakin",
+        "name": "kwb.fakin",
+        "sameAs": "https://github.com/kwb-r/kwb.fakin"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "xml2",
+        "name": "xml2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=xml2"
+      }
+    ],
+    "keywords": ["r", "rstats", "data-import"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2019",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Hauke",
+            "familyName": "Sonnenberg",
+            "email": "hauke.sonnenberg@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0001-9134-2871"
+          }
+        ],
+        "name": "kwb.read: Functions reading specific input data, e.g. files provided by\nBWB",
+        "url": "https://github.com/KWB-R/kwb.read",
+        "description": "R package version 0.0.0.9000"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
     "identifier": "kwb.readxl",
     "description": "This package is based on the package readxl. It provides functions that read all Excel sheets as pure text and then try to split each sheet into a set of line ranges that are assumed to represent single tables.",
     "name": "kwb.readxl: Read Data From Excel Files",
@@ -4772,12 +4906,12 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.umberto",
-    "description": "Helper functions for data import, aggregation and\n            visualisation of UMBERTO (https://www.ifu.com/umberto/) model output.",
+    "description": "Helper functions for data import, aggregation and\n    visualisation of UMBERTO (https://www.ifu.com/umberto/) model output.",
     "name": "kwb.umberto: R package supporting UMERTO LCA at KWB",
     "codeRepository": "https://github.com/KWB-R/kwb.umberto",
-    "issueTracker": "https:/github.com/KWB-R/kwb.umberto/issues",
+    "issueTracker": "https://github.com/KWB-R/kwb.umberto/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0.9000",
+    "version": "0.0.0.9000",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -4794,7 +4928,15 @@
         "@id": "https://orcid.org/0000-0003-0647-7726"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
@@ -4862,6 +5004,18 @@
       }
     ],
     "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "data.table",
+        "name": "data.table",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=data.table"
+      },
       {
         "@type": "SoftwareApplication",
         "identifier": "dplyr",
@@ -4975,7 +5129,7 @@
         ],
         "name": "kwb.umberto: R package supporting UMERTO LCA at KWB",
         "url": "https://github.com/KWB-R/kwb.umberto",
-        "description": "R package version 0.1.0.9000"
+        "description": "R package version 0.0.0.9000"
       }
     ]
   },

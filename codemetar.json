@@ -431,7 +431,7 @@
         "sameAs": "https://CRAN.R-project.org/package=janitor"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes"],
+    "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes", "shiny-app"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2425,7 +2425,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-cleaning", "data-visualization", "project-fakin", "project-geosalz"],
+    "keywords": ["r", "rstats", "data-import", "data-cleaning", "project-fakin", "project-geosalz", "data-visualisation"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2564,7 +2564,7 @@
         "sameAs": "https://CRAN.R-project.org/package=hydroGOF"
       }
     ],
-    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling", "project-demeau"],
+    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling", "project-demeau", "modelling", "shiny-app"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4045,7 +4045,7 @@
         "sameAs": "https://CRAN.R-project.org/package=withr"
       }
     ],
-    "keywords": ["r", "rstats", "hugo-academic", "knowledge-repo", "project-fakin", "publications", "publication"],
+    "keywords": ["r", "rstats", "hugo-academic", "knowledge-repo", "project-fakin", "publication"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5113,7 +5113,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "lca-modelling", "modelling", "project-fakin", "life-cycle-assessment"],
+    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "modelling", "project-fakin", "life-cycle-assessment"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5543,7 +5543,7 @@
         "sameAs": "https://CRAN.R-project.org/package=reshape"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "drawdown-model", "project-optiwells2"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "drawdown-model", "project-optiwells2", "modelling", "shiny-app"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5934,7 +5934,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tibble"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin", "knowledge-repo"],
+    "keywords": ["r", "rstats", "project-fakin", "knowledge-repo", "metadata", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

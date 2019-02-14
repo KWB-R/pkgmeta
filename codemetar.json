@@ -431,7 +431,7 @@
         "sameAs": "https://CRAN.R-project.org/package=janitor"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes", "shiny-app"],
+    "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes", "shiny-app", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -552,7 +552,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xts"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -667,7 +667,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin"],
+    "keywords": ["r", "rstats", "project-fakin", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -752,7 +752,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "datetime"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -862,7 +862,7 @@
         "sameAs": "https://CRAN.R-project.org/package=RODBC"
       }
     ],
-    "keywords": ["r", "rstats", "data-import"],
+    "keywords": ["r", "rstats", "data-import", "r-package", "database-access", "database-connection", "rodbc"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -964,7 +964,7 @@
       }
     ],
     "softwareRequirements": [],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1151,7 +1151,7 @@
         "sameAs": "https://CRAN.R-project.org/package=sp"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau", "r-package", "modelling"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1248,7 +1248,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "data-import", "sewer-classification", "dwa"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1345,7 +1345,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "data-import", "data-export", "cctv-inspection", "sewer-classification"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1618,7 +1618,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["data-management", "project-fakin", "knowledge-repo", "publication", "literature-data-management"],
+    "keywords": ["project-fakin", "knowledge-repo", "publication", "literature-data-management", "r-package", "r", "rstats", "endnote"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1715,7 +1715,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.datetime"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "data-aggregation"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2007,7 +2007,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin", "research-data-management"],
+    "keywords": ["r", "rstats", "project-fakin", "research-data-management", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2140,7 +2140,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin"],
+    "keywords": ["r", "rstats", "project-fakin", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2164,12 +2164,12 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.geosalz",
-    "description": "R Package for Documenting Workflow Used in Project \"geosalz\".",
+    "description": "R Package for Documenting Workflow Used in Project\n    \"geosalz\".",
     "name": "kwb.geosalz: R Package for Documenting Workflow Used in Project \"geosalz\"",
     "codeRepository": "https://github.com/KWB-R/kwb.geosalz",
     "issueTracker": "https://github.com/KWB-R/kwb.geosalz/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0.9000",
+    "version": "0.1.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -2216,6 +2216,7 @@
         "@type": "SoftwareApplication",
         "identifier": "covr",
         "name": "covr",
+        "version": ">= 3.2.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2228,6 +2229,7 @@
         "@type": "SoftwareApplication",
         "identifier": "ggplot2",
         "name": "ggplot2",
+        "version": ">= 3.1.0",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2240,6 +2242,7 @@
         "@type": "SoftwareApplication",
         "identifier": "knitr",
         "name": "knitr",
+        "version": ">= 1.21",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2252,6 +2255,7 @@
         "@type": "SoftwareApplication",
         "identifier": "rmarkdown",
         "name": "rmarkdown",
+        "version": ">= 1.11",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2264,6 +2268,7 @@
         "@type": "SoftwareApplication",
         "identifier": "tibble",
         "name": "tibble",
+        "version": ">= 2.0.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2276,6 +2281,7 @@
         "@type": "SoftwareApplication",
         "identifier": "sessioninfo",
         "name": "sessioninfo",
+        "version": ">= 1.1.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2290,6 +2296,7 @@
         "@type": "SoftwareApplication",
         "identifier": "cellranger",
         "name": "cellranger",
+        "version": ">= 1.1.0",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2302,6 +2309,7 @@
         "@type": "SoftwareApplication",
         "identifier": "crayon",
         "name": "crayon",
+        "version": ">= 1.3.4",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2314,6 +2322,7 @@
         "@type": "SoftwareApplication",
         "identifier": "data.table",
         "name": "data.table",
+        "version": ">=\n        1.12.0",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2326,6 +2335,7 @@
         "@type": "SoftwareApplication",
         "identifier": "dplyr",
         "name": "dplyr",
+        "version": ">= 0.7.8",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2338,6 +2348,7 @@
         "@type": "SoftwareApplication",
         "identifier": "fs",
         "name": "fs",
+        "version": ">= 1.2.6",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2350,6 +2361,7 @@
         "@type": "SoftwareApplication",
         "identifier": "janitor",
         "name": "janitor",
+        "version": ">= 1.1.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2362,12 +2374,14 @@
         "@type": "SoftwareApplication",
         "identifier": "kwb.utils",
         "name": "kwb.utils",
+        "version": ">= 0.4.0.9000",
         "sameAs": "https://github.com/KWB-R/kwb.utils"
       },
       {
         "@type": "SoftwareApplication",
         "identifier": "magrittr",
         "name": "magrittr",
+        "version": ">= 1.5",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2380,6 +2394,7 @@
         "@type": "SoftwareApplication",
         "identifier": "readxl",
         "name": "readxl",
+        "version": ">=\n        1.2.0",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2392,6 +2407,7 @@
         "@type": "SoftwareApplication",
         "identifier": "rlang",
         "name": "rlang",
+        "version": ">= 0.3.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2404,6 +2420,7 @@
         "@type": "SoftwareApplication",
         "identifier": "stringr",
         "name": "stringr",
+        "version": ">= 1.4.0",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2416,6 +2433,7 @@
         "@type": "SoftwareApplication",
         "identifier": "tidyr",
         "name": "tidyr",
+        "version": ">= 0.8.2",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2425,7 +2443,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-cleaning", "project-fakin", "project-geosalz", "data-visualisation"],
+    "keywords": ["r", "rstats", "data-import", "data-cleaning", "project-fakin", "project-geosalz", "data-visualisation", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2441,7 +2459,7 @@
         ],
         "name": "kwb.geosalz: R Package for Documenting Workflow Used in Project \"geosalz\"",
         "url": "https://github.com/KWB-R/kwb.geosalz",
-        "description": "R package version 0.1.0.9000"
+        "description": "R package version 0.1.0"
       }
     ]
   },
@@ -2564,7 +2582,7 @@
         "sameAs": "https://CRAN.R-project.org/package=hydroGOF"
       }
     ],
-    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling", "project-demeau", "modelling", "shiny-app"],
+    "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling", "project-demeau", "modelling", "shiny-app", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2594,7 +2612,7 @@
     "codeRepository": "https://github.com/KWB-R/kwb.lca",
     "issueTracker": "https://github.com/KWB-R/kwb.lca/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0.9000",
+    "version": "0.0.0.9000",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -2611,7 +2629,15 @@
         "@id": "https://orcid.org/0000-0001-9134-2871"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
@@ -2716,7 +2742,7 @@
         "sameAs": "https://CRAN.R-project.org/package=openxlsx"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "data-export", "project-fakin", "life-cycle-assessment"],
+    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "data-export", "project-fakin", "life-cycle-assessment", "modelling", "project-smartplant"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -2732,7 +2758,7 @@
         ],
         "name": "kwb.lca: Functions to Be Used in Life Cycle Assessment (LCA) Projects",
         "url": "https://github.com/KWB-R/kwb.lca",
-        "description": "R package version 0.1.0.9000"
+        "description": "R package version 0.0.0.9000"
       }
     ]
   },
@@ -2740,7 +2766,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.logger",
-    "description": "Functions to read measurement data from logger files.",
+    "description": "Functions to read measurement data from logger\n    files.",
     "name": "kwb.logger: Functions to read measurement data from logger files",
     "codeRepository": "https://github.com/KWB-R/kwb.logger",
     "issueTracker": "https://github.com/KWB-R/kwb.logger/issues",
@@ -2762,11 +2788,19 @@
         "@id": "https://orcid.org/0000-0001-9134-2871"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
-        "name": "Kompetenzzentrum Wasser Berlin gGmbH"
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
       }
     ],
     "funder": {},
@@ -2831,7 +2865,7 @@
         "sameAs": "https://CRAN.R-project.org/package=XML"
       }
     ],
-    "keywords": ["r", "rstats", "data-import"],
+    "keywords": ["r", "rstats", "data-import", "data-logger", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3025,7 +3059,7 @@
         "sameAs": "https://CRAN.R-project.org/package=manipulate"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "monitoring"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3195,7 +3229,7 @@
         "sameAs": "https://CRAN.R-project.org/package=rlang"
       }
     ],
-    "keywords": ["r", "rstats", "data-management", "publication", "project-fakin"],
+    "keywords": ["r", "rstats", "publication", "project-fakin", "r-package", "research-data-management", "orcid"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3478,7 +3512,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
-    "keywords": ["r", "rstats", "r-package-automation", "data-management", "publication", "project-fakin"],
+    "keywords": ["r", "rstats", "r-package-automation", "publication", "project-fakin", "r-package", "best-practices"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3689,7 +3723,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
-    "keywords": ["r", "rstats", "data-management", "publication", "project-fakin"],
+    "keywords": ["r", "rstats", "data-management", "publication", "project-fakin", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3840,7 +3874,7 @@
         "sameAs": "https://CRAN.R-project.org/package=gridExtra"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "data-visualisation"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4045,7 +4079,7 @@
         "sameAs": "https://CRAN.R-project.org/package=withr"
       }
     ],
-    "keywords": ["r", "rstats", "hugo-academic", "knowledge-repo", "project-fakin", "publication"],
+    "keywords": ["r", "rstats", "hugo-academic", "knowledge-repo", "project-fakin", "publication", "r-package", "hugo-site"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4334,7 +4368,7 @@
         "sameAs": "https://CRAN.R-project.org/package=ggplot2"
       }
     ],
-    "keywords": ["r", "rstats", "project-demoware", "project-aquanes", "qmra-webapp-backend-engine"],
+    "keywords": ["r", "rstats", "project-demoware", "project-aquanes", "qmra-webapp-backend-engine", "r-package", "qmra"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4468,7 +4502,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["r", "rstats", "data-import"],
+    "keywords": ["r", "rstats", "data-import", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4625,7 +4659,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "project-fakin"],
+    "keywords": ["r", "rstats", "data-import", "project-fakin", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4773,7 +4807,7 @@
         "sameAs": "https://github.com/KWB-R/kwb.event"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin", "project-networks4"],
+    "keywords": ["r", "rstats", "project-fakin", "project-networks4", "r-package", "resilience"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4882,7 +4916,7 @@
         "sameAs": "https://CRAN.R-project.org/package=usethis"
       }
     ],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package", "test"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5113,7 +5147,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "modelling", "project-fakin", "life-cycle-assessment"],
+    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "modelling", "project-fakin", "life-cycle-assessment", "project-smartplant"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5239,7 +5273,7 @@
       }
     ],
     "softwareRequirements": [],
-    "keywords": ["r", "rstats"],
+    "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

@@ -1642,10 +1642,10 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.event",
-    "description": "Functions to generate events from time series and work with events.",
-    "name": "kwb.event: Generate Events from Time Series and work with Events",
-    "codeRepository": "https://github.com/kwb-r/kwb.event",
-    "issueTracker": "https://github.com/kwb-r/kwb.event/issues",
+    "description": "Functions to generate events from time series and\n    work with events.",
+    "name": "kwb.event: Generate Events from Time Series and Work with Events",
+    "codeRepository": "https://github.com/KWB-R/kwb.event",
+    "issueTracker": "https://github.com/KWB-R/kwb.event/issues",
     "license": "https://spdx.org/licenses/MIT",
     "version": "0.3.0",
     "programmingLanguage": {
@@ -1664,11 +1664,19 @@
         "@id": "https://orcid.org/0000-0001-9134-2871"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
-        "name": "Kompetenzzentrum Wasser Berlin gGmbH"
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
       }
     ],
     "funder": {},
@@ -1682,6 +1690,18 @@
       }
     ],
     "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
       {
         "@type": "SoftwareApplication",
         "identifier": "testthat",
@@ -1698,12 +1718,6 @@
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
-        "identifier": "kwb.plot",
-        "name": "kwb.plot",
-        "sameAs": "https://github.com/kwb-r/kwb.plot"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "kwb.utils",
         "name": "kwb.utils",
         "sameAs": "https://github.com/kwb-r/kwb.utils"
@@ -1713,6 +1727,12 @@
         "identifier": "kwb.datetime",
         "name": "kwb.datetime",
         "sameAs": "https://github.com/kwb-r/kwb.datetime"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.plot",
+        "name": "kwb.plot",
+        "sameAs": "https://github.com/kwb-r/kwb.plot"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "data-aggregation"],
@@ -1729,8 +1749,8 @@
             "@id": "https://orcid.org/0000-0001-9134-2871"
           }
         ],
-        "name": "kwb.event: Generate Events from Time Series and work with Events",
-        "url": "https://github.com/kwb-r/kwb.event",
+        "name": "kwb.event: Generate Events from Time Series and Work with Events",
+        "url": "https://github.com/KWB-R/kwb.event",
         "description": "R package version 0.3.0"
       }
     ]
@@ -2889,7 +2909,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.monitoring",
-    "description": "Functions used within different KWB projects dealing with \n    monitoring data.",
+    "description": "Functions used within different KWB projects\n    dealing with monitoring data.",
     "name": "kwb.monitoring: Functions Used Within Different Kwb Monitoring Projects",
     "codeRepository": "https://github.com/KWB-R/kwb.monitoring",
     "issueTracker": "https://github.com/KWB-R/kwb.monitoring/issues",
@@ -4526,12 +4546,12 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.readxl",
-    "description": "This package is based on the package readxl. It provides functions that read all Excel sheets as pure text and then try to split each sheet into a set of line ranges that are assumed to represent single tables.",
+    "description": "This package is based on the package readxl.\n    It provides functions that read all Excel sheets as pure text and then\n    try to split each sheet into a set of line ranges that are assumed to\n    represent single tables.",
     "name": "kwb.readxl: Read Data From Excel Files",
     "codeRepository": "https://github.com/KWB-R/kwb.readxl",
     "issueTracker": "https://github.com/KWB-R/kwb.readxl/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0.9000",
+    "version": "0.0.0.9000",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -4548,11 +4568,18 @@
         "@id": "https://orcid.org/0000-0001-9134-2871"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
-        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH"
       }
     ],
     "funder": {},
@@ -4659,7 +4686,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "project-fakin", "r-package"],
+    "keywords": ["r", "rstats", "data-import", "project-fakin", "r-package", "project-geosalz"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -4675,7 +4702,7 @@
         ],
         "name": "kwb.readxl: Read Data From Excel Files",
         "url": "https://github.com/KWB-R/kwb.readxl",
-        "description": "R package version 0.1.0.9000"
+        "description": "R package version 0.0.0.9000"
       }
     ]
   },

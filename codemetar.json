@@ -454,6 +454,161 @@
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
+    "identifier": "fhpredict",
+    "description": "This R package provides all functions that are\n    required for the Web application that is developed within the\n    Flusshygiene project.",
+    "name": "fhpredict: R Package for the Project Flusshygiene",
+    "codeRepository": "https://github.com/KWB-R/fhpredict",
+    "issueTracker": "https://github.com/KWB-R/fhpredict/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.0.0.9000",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "3.5.2",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 3.5.2 (2017-01-27)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Wolfgang",
+        "familyName": "Seis",
+        "email": "wolfgang.seis@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0002-7436-8575"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+      }
+    ],
+    "funder": {},
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magrittr",
+        "name": "magrittr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
+      }
+    ],
+    "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2019",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Wolfgang",
+            "familyName": "Seis",
+            "email": "wolfgang.seis@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0002-7436-8575"
+          },
+          {
+            "@type": "Person",
+            "givenName": "Hauke",
+            "familyName": "Sonnenberg",
+            "email": "hauke.sonnenberg@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0001-9134-2871"
+          }
+        ],
+        "name": "fhpredict: R Package for the Project Flusshygiene",
+        "url": "https://github.com/KWB-R/fhpredict",
+        "description": "R package version 0.0.0.9000"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
     "identifier": "kwb.base",
     "description": "This package originally contained all the different helper \n    functions developed and used at KWB. As it grew, functions were extracted \n    into new packages that are dedicated to certain topics. The database access \n    functions, for example, that were originally contained here, are now in the\n    package kwb.db. Functions that help to create event information from \n    time series data have been moved to kwb.event and date/time related \n    functions are now in kwb.datetime. This package still contains some \n    functions that are used in different scripts of different KWB projects.\n    Currently, when loading this package, the packages kwb.datetime, kwb.db,\n    kwb.event, kwb.plot and kwb.utils are automaticallc loaded. I plan to change \n    this behaviour with the next release so that you need to load the other\n    packages explicitly, i.e. with library(kwb.datetime), library(kwb.db), etc.",
     "name": "kwb.base: Functions supporting data analysis with R at KWB",

@@ -4300,14 +4300,38 @@
         "@id": "https://orcid.org/0000-0003-0647-7726"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Wolfgang",
+        "familyName": "Seis",
+        "email": "wolfgang.seis@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0002-7436-8575"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
         "name": "Kompetenzzentrum Wasser Berlin gGmbH"
       }
     ],
-    "funder": {},
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "AquaNES"
+      },
+      {
+        "@type": "Organization",
+        "name": "DEMOWARE"
+      }
+    ],
     "maintainer": [
       {
         "@type": "Person",
@@ -4329,6 +4353,12 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
       },
       {
         "@type": "SoftwareApplication",

@@ -3428,7 +3428,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.pkgbuild",
-    "description": "Helper functions for automating R package development at KWB\n   to a predefined style.",
+    "description": "Helper functions for automating R package\n    development at KWB to a predefined style.",
     "name": "kwb.pkgbuild: R Package for Standardised Development at KWB",
     "codeRepository": "https://github.com/KWB-R/kwb.pkgbuild",
     "issueTracker": "https://github.com/KWB-R/kwb.pkgbuild/issues",
@@ -3486,6 +3486,12 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.orcid",
+        "name": "kwb.orcid",
+        "sameAs": "https://github.com/kwb-r/kwb.orcid"
       },
       {
         "@type": "SoftwareApplication",

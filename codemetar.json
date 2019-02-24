@@ -491,6 +491,13 @@
         "familyName": "Rustler",
         "email": "michael.rustler@kompetenz-wasser.de",
         "@id": "https://orcid.org/0000-0003-0647-7726"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Fabian",
+        "familyName": "Morón Zirfas",
+        "email": "moron-zirfas@technologiestiftung-berlin.de",
+        "@id": "https://orcid.org/0000-0002-9777-7283"
       }
     ],
     "copyrightHolder": [
@@ -577,6 +584,18 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=stringr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "jsonlite",
+        "name": "jsonlite",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=jsonlite"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
@@ -1420,6 +1439,145 @@
         "name": "kwb.dwa.m150: Read Sewer Condition Data according to DWA-M 150 XML format",
         "url": "https://github.com/kwb-r/kwb.dwa.m150",
         "description": "R package version 0.0.9.9000"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
+    "identifier": "kwb.dwd",
+    "description": "This package provides functions to simplify\n    the access to the data provided online by the Deutscher Wetterdienst\n    (DWD).",
+    "name": "kwb.dwd: Access Information from Deutscher Wetterdienst (DWD)",
+    "codeRepository": "https://github.com/KWB-R/kwb.dwd",
+    "issueTracker": "https://github.com/KWB-R/kwb.dwd/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.0.0.9000",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "3.5.2",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 3.5.2 (2017-01-27)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "contributor": {},
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+      }
+    ],
+    "funder": {},
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "version": ">= 3.2.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "version": ">= 1.2.6",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "version": ">= 0.4.0",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "version": ">= 1.7.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magrittr",
+        "name": "magrittr",
+        "version": ">= 1.5",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "version": ">= 1.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
+      }
+    ],
+    "keywords": ["r", "rstats", "r-package", "dwd", "rain", "data-import"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2019",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Hauke",
+            "familyName": "Sonnenberg",
+            "email": "hauke.sonnenberg@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0001-9134-2871"
+          }
+        ],
+        "name": "kwb.dwd: Access Information from Deutscher Wetterdienst (DWD)",
+        "url": "https://github.com/KWB-R/kwb.dwd",
+        "description": "R package version 0.0.0.9000"
       }
     ]
   },
@@ -4380,6 +4538,18 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "sessioninfo",
+        "name": "sessioninfo",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "testthat",
         "name": "testthat",
         "provider": {
@@ -4389,6 +4559,23 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=testthat"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "qmra.db",
+        "name": "qmra.db"
       }
     ],
     "softwareRequirements": [

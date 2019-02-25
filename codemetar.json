@@ -1446,7 +1446,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.dwd",
-    "description": "This package provides functions to simplify\n    the access to the data provided online by the Deutscher Wetterdienst\n    (DWD).",
+    "description": "This package provides functions to simplify the access to the data \n    provided online by the Deutscher Wetterdienst (DWD, https://www.dwd.de).\n    It currently contains a function \\code{get_radolan_urls} that returns the\n    internet addresses (Unified Resource Locators, URLs) to the zip files \n    containing rain data from the RADOLAN system in daily or hourly resolution\n    (see https://www.dwd.de/DE/leistungen/radolan/radolan.html). The function\n    \\code{download_radolan} helps you to download these files. But take care,\n    you should rescrict the time period as each file contains the data for \n    all of Germany.",
     "name": "kwb.dwd: Access Information from Deutscher Wetterdienst (DWD)",
     "codeRepository": "https://github.com/KWB-R/kwb.dwd",
     "issueTracker": "https://github.com/KWB-R/kwb.dwd/issues",

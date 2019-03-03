@@ -3586,8 +3586,8 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.pkgbuild",
-    "description": "Helper functions for automating R package\n    development at KWB to a predefined style.",
-    "name": "kwb.pkgbuild: R Package for Standardised Development at KWB",
+    "description": "Helper functions for automating R package development at KWB\n   to a predefined style.",
+    "name": "kwb.pkgbuild: R package for standardised development at KWB",
     "codeRepository": "https://github.com/KWB-R/kwb.pkgbuild",
     "issueTracker": "https://github.com/KWB-R/kwb.pkgbuild/issues",
     "license": "https://spdx.org/licenses/MIT",
@@ -3763,6 +3763,12 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "openssl",
         "name": "openssl",
         "provider": {
@@ -3851,7 +3857,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
-    "keywords": ["r", "rstats", "r-package-automation", "publication", "project-fakin", "r-package", "best-practices"],
+    "keywords": ["r", "rstats", "r-package-automation", "publication", "project-fakin", "r-package", "best-practices", "automation"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3865,7 +3871,7 @@
             "@id": "https://orcid.org/0000-0003-0647-7726"
           }
         ],
-        "name": "kwb.pkgbuild: R Package for Standardised Development at KWB",
+        "name": "kwb.pkgbuild: R package for standardised development at KWB",
         "url": "https://github.com/KWB-R/kwb.pkgbuild",
         "description": "R package version 0.0.0.9000"
       }

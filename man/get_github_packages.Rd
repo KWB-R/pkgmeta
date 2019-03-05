@@ -5,6 +5,7 @@
 \title{Get Github R Packages}
 \usage{
 get_github_packages(group = "KWB-R", ignore_pkgs = NULL,
+  non_r_packages = kwb.pkgstatus::get_non_r_packages(),
   github_token = getOption("github_token"))
 }
 \arguments{
@@ -13,6 +14,9 @@ get_github_packages(group = "KWB-R", ignore_pkgs = NULL,
 \item{ignore_pkgs}{vector of pkg names that should be ignored to prevent
 problems with codemeta generation (e.g. "kwb.read" fails due to missing
 metadata on the license!)}
+
+\item{non_r_packages}{vector with repos that are not R packages (default:
+kwb.pkgstatus::get_non_r_packages())}
 
 \item{github_token}{optionally a Github token in order to access private
 repositories (default: getOption("github_token"))}

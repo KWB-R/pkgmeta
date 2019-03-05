@@ -144,6 +144,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>get_github_packages</span>(<span class='kw'>group</span> <span class='kw'>=</span> <span class='st'>"KWB-R"</span>, <span class='kw'>ignore_pkgs</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>non_r_packages</span> <span class='kw'>=</span> <span class='kw pkg'>kwb.pkgstatus</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/kwb.pkgstatus/topics/get_non_r_packages'>get_non_r_packages</a></span>(),
   <span class='kw'>github_token</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>getOption</a></span>(<span class='st'>"github_token"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -158,6 +159,11 @@
       <td><p>vector of pkg names that should be ignored to prevent
 problems with codemeta generation (e.g. "kwb.read" fails due to missing
 metadata on the license!)</p></td>
+    </tr>
+    <tr>
+      <th>non_r_packages</th>
+      <td><p>vector with repos that are not R packages (default:
+kwb.pkgstatus::get_non_r_packages())</p></td>
     </tr>
     <tr>
       <th>github_token</th>

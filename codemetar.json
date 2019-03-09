@@ -2158,18 +2158,6 @@
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "lubridate",
-        "name": "lubridate",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=lubridate"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "networkD3",
         "name": "networkD3",
         "provider": {
@@ -2277,6 +2265,18 @@
         "identifier": "kwb.utils",
         "name": "kwb.utils",
         "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
       },
       {
         "@type": "SoftwareApplication",

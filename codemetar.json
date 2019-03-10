@@ -2776,7 +2776,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-cleaning", "project-fakin", "project-geosalz", "data-visualisation", "r-package"],
+    "keywords": ["r", "rstats", "data-import", "data-cleaning", "project-fakin", "project-geosalz", "data-visualisation", "r-package", "excel", "spreadsheets"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -3075,7 +3075,7 @@
         "sameAs": "https://CRAN.R-project.org/package=openxlsx"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "data-export", "project-fakin", "life-cycle-assessment", "modelling", "project-smartplant"],
+    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "data-export", "project-fakin", "life-cycle-assessment", "modelling", "project-smartplant", "excel", "template", "spreadsheets", "questionaires"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5076,7 +5076,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "project-fakin", "r-package", "project-geosalz"],
+    "keywords": ["r", "rstats", "data-import", "project-fakin", "r-package", "project-geosalz", "excel", "spreadsheets"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

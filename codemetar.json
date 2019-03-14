@@ -5142,6 +5142,12 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "kwb.file",
+        "name": "kwb.file",
+        "sameAs": "https://github.com/kwb-r/kwb.file"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "testthat",
         "name": "testthat",
         "provider": {
@@ -5183,18 +5189,6 @@
         "identifier": "kwb.event",
         "name": "kwb.event",
         "sameAs": "https://github.com/kwb-r/kwb.event"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "kwb.fakin",
-        "name": "kwb.fakin",
-        "sameAs": "https://github.com/kwb-r/kwb.fakin"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "kwb.file",
-        "name": "kwb.file",
-        "sameAs": "https://github.com/kwb-r/kwb.file"
       },
       {
         "@type": "SoftwareApplication",

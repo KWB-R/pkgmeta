@@ -6737,7 +6737,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tibble"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin", "knowledge-repo", "metadata", "r-package"],
+    "keywords": ["r", "rstats", "project-fakin", "knowledge-repo", "metadata", "r-package", "codemeta", "codemetar", "pkgnet", "github-topics", "github"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

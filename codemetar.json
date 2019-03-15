@@ -582,7 +582,7 @@
         "sameAs": "https://CRAN.R-project.org/package=janitor"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes", "shiny-app", "r-package"],
+    "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes", "shiny-app", "r-package", "pilot-plant"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -1476,7 +1476,7 @@
         "sameAs": "https://CRAN.R-project.org/package=sp"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau", "r-package", "modelling"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau", "r-package", "modelling", "vs2dh", "vs2dt", "usgs"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -5480,18 +5480,6 @@
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
-        "identifier": "fs",
-        "name": "fs",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=fs"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "dplyr",
         "name": "dplyr",
         "provider": {
@@ -5504,9 +5492,39 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.file",
+        "name": "kwb.file",
+        "sameAs": "https://github.com/kwb-r/kwb.file"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "kwb.utils",
         "name": "kwb.utils",
         "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magrittr",
+        "name": "magrittr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magrittr"
       },
       {
         "@type": "SoftwareApplication",
@@ -5555,18 +5573,6 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=XML"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "magrittr",
-        "name": "magrittr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
     "keywords": ["r", "rstats", "version-control", "r-package"],
@@ -6175,7 +6181,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.db"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau", "vs2dh", "usgs"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -6346,7 +6352,7 @@
         "sameAs": "https://CRAN.R-project.org/package=reshape"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "drawdown-model", "project-optiwells2", "modelling", "shiny-app"],
+    "keywords": ["r", "rstats", "groundwater-modelling", "drawdown-model", "project-optiwells2", "modelling", "shiny-app", "wtaq", "usgs"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

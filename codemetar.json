@@ -2407,6 +2407,12 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "kwb.pathdict",
+        "name": "kwb.pathdict",
+        "sameAs": "https://github.com/kwb-r/kwb.pathdict"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "kwb.plot",
         "name": "kwb.plot",
         "sameAs": "https://github.com/kwb-r/kwb.plot"
@@ -2452,18 +2458,6 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=stringr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "tidyr",
-        "name": "tidyr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=tidyr"
       },
       {
         "@type": "SoftwareApplication",
@@ -3736,6 +3730,121 @@
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
+    "identifier": "kwb.pathdict",
+    "description": "This package provides functions to work with what I call path \n    dictionaries. Path dictionaries are lists defining file and folder paths. \n    In order not to repeat sub-paths, placeholders can be used. The package \n    provides functions to find duplicated sub-paths and to define placeholders \n    accordingly.",
+    "name": "kwb.pathdict: Functions to Work with Path Dictionaries",
+    "codeRepository": "https://github.com/KWB-R/kwb.pathdict",
+    "issueTracker": "https://github.com/KWB-R/kwb.pathdict/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.0.0.9000",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "3.5.2",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 3.5.2 (2017-01-27)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "contributor": {},
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+      }
+    ],
+    "funder": {},
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "knitr",
+        "name": "knitr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rmarkdown",
+        "name": "rmarkdown",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.file",
+        "name": "kwb.file",
+        "sameAs": "https://github.com/kwb-r/kwb.file"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      }
+    ],
+    "keywords": ["r", "rstats", "r-package", "paths"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2019",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Hauke",
+            "familyName": "Sonnenberg",
+            "email": "hauke.sonnenberg@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0001-9134-2871"
+          }
+        ],
+        "name": "kwb.pathdict: Functions to Work with Path Dictionaries",
+        "url": "https://github.com/KWB-R/kwb.pathdict",
+        "description": "R package version 0.0.0.9000"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
     "identifier": "kwb.pkgbuild",
     "description": "Helper functions for automating R package development at KWB\n   to a predefined style.",
     "name": "kwb.pkgbuild: R package for standardised development at KWB",
@@ -3852,18 +3961,6 @@
       }
     ],
     "softwareRequirements": [
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "assertthat",
-        "name": "assertthat",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=assertthat"
-      },
       {
         "@type": "SoftwareApplication",
         "identifier": "callr",
@@ -6101,7 +6198,7 @@
     "codeRepository": "https://github.com/KWB-R/kwb.vs2dh/",
     "issueTracker": "https://github.com/KWB-R/kwb.vs2dh/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0.9000",
+    "version": "0.0.0.9000",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -6221,7 +6318,7 @@
         ],
         "name": "kwb.vs2dh: Interface to VS2DH",
         "url": "https://github.com/KWB-R/kwb.vs2dh/",
-        "description": "R package version 0.1.0.9000"
+        "description": "R package version 0.0.0.9000"
       }
     ]
   },

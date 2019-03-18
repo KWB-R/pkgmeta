@@ -3753,7 +3753,15 @@
         "@id": "https://orcid.org/0000-0001-9134-2871"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
@@ -3806,6 +3814,18 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "testthat",
+        "name": "testthat",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=testthat"
       }
     ],
     "softwareRequirements": [
@@ -3822,7 +3842,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "paths"],
+    "keywords": ["r", "rstats", "r-package", "paths", "project-fakin"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

@@ -1313,12 +1313,12 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.demeau",
-    "description": "Heat tracer study for SVH site using USGS VS2DH model.",
+    "description": "Heat tracer study for SVH site using USGS VS2DH\n    model.",
     "name": "kwb.demeau: Heat tracer study SVH",
     "codeRepository": "https://github.com/KWB-R/kwb.demeau",
     "issueTracker": "https://github.com/KWB-R/kwb.demeau/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0.9000",
+    "version": "0.0.0.9000",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -1492,7 +1492,7 @@
         ],
         "name": "kwb.demeau: Heat tracer study SVH",
         "url": "https://github.com/KWB-R/kwb.demeau",
-        "description": "R package version 0.1.0.9000"
+        "description": "R package version 0.0.0.9000"
       }
     ]
   },
@@ -3831,6 +3831,18 @@
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "kwb.file",
         "name": "kwb.file",
         "sameAs": "https://github.com/kwb-r/kwb.file"
@@ -3840,6 +3852,18 @@
         "identifier": "kwb.utils",
         "name": "kwb.utils",
         "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "qdapDictionaries",
+        "name": "qdapDictionaries",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=qdapDictionaries"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "paths", "project-fakin"],

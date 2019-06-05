@@ -43,7 +43,7 @@ corpus <- jsonlite::fromJSON("codemetar.json",
 
 ### add Github topics to R package names
 pkg_topics <- tibble::tibble(
-       name = purrr::map_chr(corpus, "identifier"),
+       name = purrr::map_chr(corpus, "schema:identifier"),
        topic = purrr::map_chr(
                lapply(purrr::map(corpus, "keywords"), 
                       function(x) {paste(unlist(x), 
@@ -92,7 +92,7 @@ pkgs <- purrr::map(corpus, "name") %>%
   as.character()
 
 # keep only those with package identifiers (names)
-keep <- purrr::map_lgl(corpus, ~ length(.x$identifier) > 0)
+keep <- purrr::map_lgl(corpus, ~ length(.x$`schema:identifier`) > 0)
 corpus <- corpus[keep]
 
 ## now we can just do
@@ -157,14 +157,14 @@ corpus %>%
   map_df(function(x){
     ## single, unboxed dep
     if("name" %in% names(x$softwareRequirements))
-      dep <- x$identifier
+      dep <- x$`schema:identifier`
     else if("name" %in% names(x$softwareRequirements[[1]]))
       dep <- map_chr(x$softwareRequirements, "name")
     else { ## No requirementsß
       dep <- NA
     }
 
-    tibble(identifier = x$identifier, dep = dep)
+    tibble(identifier = x$`schema:identifier`, dep = dep)
   }) %>%
   dplyr::mutate(identifier = gsub("/", "", identifier),
                 dep = gsub("/", "", dep)) %>%

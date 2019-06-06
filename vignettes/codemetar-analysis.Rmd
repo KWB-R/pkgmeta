@@ -43,7 +43,7 @@ corpus <- jsonlite::fromJSON("codemetar.json",
 
 ### add Github topics to R package names
 pkg_topics <- tibble::tibble(
-       name = purrr::map_chr(corpus, "schema:identifier"),
+       name = purrr::map_chr(corpus, "identifier"),
        topic = purrr::map_chr(
                lapply(purrr::map(corpus, "keywords"), 
                       function(x) {paste(unlist(x), 

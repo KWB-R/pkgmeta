@@ -97,7 +97,7 @@
       <h1>Visualisation</h1>
                         <h4 class="author">Michael Rustler</h4>
             
-            <h4 class="date">2019-06-16</h4>
+            <h4 class="date">2019-06-17</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/visualisation.Rmd"><code>vignettes/visualisation.Rmd</code></a></small>
       <div class="hidden name"><code>visualisation.Rmd</code></div>
@@ -111,14 +111,9 @@
 <a href="#kwb-r-packages-on-github-over-time" class="anchor"></a>KWB-R Packages on Github Over Time</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="dt">github_token =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.getenv">Sys.getenv</a></span>(<span class="st">"GITHUB_PAT"</span>))</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">pkgs &lt;-<span class="st"> </span>pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/get_github_packages">get_github_packages</a></span>()</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; Registered S3 methods overwritten by 'ggplot2':</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt;   method         from </span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt;   [.quosures     rlang</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="co">#&gt;   c.quosures     rlang</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt;   print.quosures rlang</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="co">#pkgs &lt;- readRDS("rpackages.RData")</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10">pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/plot_github_pkgs_over_time">plot_github_pkgs_over_time</a></span>(pkgs)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#pkgs &lt;- readRDS("rpackages.RData")</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">pkgmeta<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/pkgmeta/topics/plot_github_pkgs_over_time">plot_github_pkgs_over_time</a></span>(pkgs)</a></code></pre></div>
 <p><img src="visualisation_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
 </div>
   </div>

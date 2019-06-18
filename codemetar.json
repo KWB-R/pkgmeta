@@ -2874,6 +2874,7 @@
         "sameAs": "https://CRAN.R-project.org/package=fst"
       }
     ],
+    "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

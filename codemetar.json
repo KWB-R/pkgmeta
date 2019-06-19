@@ -2822,6 +2822,12 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "kwb.datetime",
+        "name": "kwb.datetime",
+        "sameAs": "https://github.com/kwb-r/kwb.datetime"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "kwb.utils",
         "name": "kwb.utils"
       },

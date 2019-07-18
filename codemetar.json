@@ -1693,9 +1693,41 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "knitr",
+        "name": "knitr",
+        "version": ">= 1.22",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rmarkdown",
+        "name": "rmarkdown",
+        "version": ">= 1.12",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
       }
     ],
     "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "R",
+        "name": "R",
+        "version": ">= 3.0"
+      },
       {
         "@type": "SoftwareApplication",
         "identifier": "fs",
@@ -1744,6 +1776,19 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "raster",
+        "name": "raster",
+        "version": ">= 2.8",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=raster"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "stringr",
         "name": "stringr",
         "version": ">= 1.4.0",
@@ -1754,6 +1799,58 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=stringr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "sf",
+        "name": "sf",
+        "version": ">=\n        0.7.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=sf"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "sp",
+        "name": "sp",
+        "version": ">= 1.3.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=sp"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "bitops",
+        "name": "bitops",
+        "version": ">= 1.0.6",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=bitops"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "RCurl",
+        "name": "RCurl",
+        "version": ">= 1.95.4.11",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=RCurl"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "dwd", "rain", "data-import"],
@@ -2397,6 +2494,19 @@
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
+        "identifier": "cowplot",
+        "name": "cowplot",
+        "version": ">= 0.9.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=cowplot"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "data.table",
         "name": "data.table",
         "version": ">= 1.11.8",
@@ -2412,7 +2522,7 @@
         "@type": "SoftwareApplication",
         "identifier": "digest",
         "name": "digest",
-        "version": ">= 0.6.18",
+        "version": ">=\n        0.6.18",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2451,6 +2561,7 @@
         "@type": "SoftwareApplication",
         "identifier": "ggplot2",
         "name": "ggplot2",
+        "version": ">= 3.2.0",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2470,7 +2581,7 @@
         "@type": "SoftwareApplication",
         "identifier": "kwb.file",
         "name": "kwb.file",
-        "version": ">=\n        0.0.0.9000",
+        "version": ">= 0.0.0.9000",
         "sameAs": "https://github.com/kwb-r/kwb.file"
       },
       {
@@ -2484,15 +2595,14 @@
         "@type": "SoftwareApplication",
         "identifier": "kwb.plot",
         "name": "kwb.plot",
-        "version": ">=\n        0.2.0.9000",
+        "version": ">= 0.2.0.9000",
         "sameAs": "https://github.com/kwb-r/kwb.plot"
       },
       {
         "@type": "SoftwareApplication",
         "identifier": "kwb.utils",
         "name": "kwb.utils",
-        "version": ">= 0.4.1",
-        "sameAs": "https://github.com/kwb-r/kwb.utils"
+        "version": ">= 0.4.1"
       },
       {
         "@type": "SoftwareApplication",
@@ -2509,6 +2619,11 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "methods",
+        "name": "methods"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "magrittr",
         "name": "magrittr",
         "version": ">= 1.5",
@@ -2519,6 +2634,50 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "pathlist",
+        "name": "pathlist"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "readr",
+        "name": "readr",
+        "version": ">= 1.3.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=readr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rlang",
+        "name": "rlang",
+        "version": ">= 0.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rlang"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringi",
+        "name": "stringi",
+        "version": ">= 1.2.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringi"
       },
       {
         "@type": "SoftwareApplication",
@@ -2550,7 +2709,7 @@
         "@type": "SoftwareApplication",
         "identifier": "yaml",
         "name": "yaml",
-        "version": "> 2.1",
+        "version": ">\n        2.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2722,7 +2881,7 @@
     "codeRepository": "https://github.com/KWB-R/kwb.flusshygiene.app",
     "issueTracker": "https://github.com/KWB-R/kwb.flusshygiene.app/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.0.0.9000",
+    "version": "0.9.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -2774,6 +2933,7 @@
         "@type": "SoftwareApplication",
         "identifier": "covr",
         "name": "covr",
+        "version": ">= 3.2.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2781,13 +2941,103 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "testthat",
+        "name": "testthat",
+        "version": ">= 2.0.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=testthat"
       }
     ],
     "softwareRequirements": [
       {
         "@type": "SoftwareApplication",
+        "identifier": "R",
+        "name": "R",
+        "version": ">= 3.0.0"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "dplyr",
+        "name": "dplyr",
+        "version": ">= 0.8.0.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=dplyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "fst",
+        "name": "fst",
+        "version": ">= 0.8.10",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fst"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "httr",
+        "name": "httr",
+        "version": ">= 1.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=httr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.datetime",
+        "name": "kwb.datetime",
+        "version": ">= 0.3.1.9000"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.dwd",
+        "name": "kwb.dwd",
+        "version": ">= 0.0.0.9000"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "version": ">= 0.4.2.9000"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "version": ">= 1.7.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "magrittr",
         "name": "magrittr",
+        "version": ">=\n        1.5",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2800,6 +3050,7 @@
         "@type": "SoftwareApplication",
         "identifier": "RCurl",
         "name": "RCurl",
+        "version": ">= 1.95.4.11",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2810,55 +3061,9 @@
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "dplyr",
-        "name": "dplyr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=dplyr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "kwb.datetime",
-        "name": "kwb.datetime",
-        "sameAs": "https://github.com/kwb-r/kwb.datetime"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "kwb.utils",
-        "name": "kwb.utils"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "lubridate",
-        "name": "lubridate",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=lubridate"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "stringr",
-        "name": "stringr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=stringr"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "rlang",
         "name": "rlang",
+        "version": ">= 0.3.4",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -2869,15 +3074,29 @@
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "fst",
-        "name": "fst",
+        "identifier": "rstanarm",
+        "name": "rstanarm",
+        "version": ">=\n        2.18.2",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
           "name": "Comprehensive R Archive Network (CRAN)",
           "url": "https://cran.r-project.org"
         },
-        "sameAs": "https://CRAN.R-project.org/package=fst"
+        "sameAs": "https://CRAN.R-project.org/package=rstanarm"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "version": ">= 1.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
@@ -2909,7 +3128,7 @@
         ],
         "name": "kwb.flusshygiene.app: R Package Implementing the Flusshygiene Application",
         "url": "https://github.com/KWB-R/kwb.flusshygiene.app",
-        "description": "R package version 0.0.0.9000"
+        "description": "R package version 0.9.0"
       }
     ]
   },
@@ -5020,7 +5239,7 @@
     "codeRepository": "http://github.com/KWB-R/kwb.qmra/",
     "issueTracker": "https://github.com/KWB-R/kwb.qmra/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.1.9000",
+    "version": "0.2.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -5355,7 +5574,7 @@
         ],
         "name": "kwb.qmra: QMRA (quantitative microbial risk assessment)",
         "url": "http://github.com/KWB-R/kwb.qmra/",
-        "description": "R package version 0.1.1.9000"
+        "description": "R package version 0.2.0"
       }
     ]
   },

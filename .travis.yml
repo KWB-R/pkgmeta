@@ -1,14 +1,31 @@
 language: r
 sudo: required
-before_install:
-  - sudo apt-get install libv8-dev
-  - sudo apt-get install libgit2-dev
-  - sudo apt-get install libudunits2-dev
-  - sudo apt-get install libmagick++-dev
 cache: packages
+# from https://github.com/stan-dev/rstanarm/blob/master/.travis.yml
+before_install:
+- mkdir -p ~/.R/
+- echo "CXX14 = g++-7 -fPIC -flto=2" >> ~/.R/Makevars
+- echo "CXX14FLAGS = -mtune=native -march=native -Wno-unused-variable -Wno-unused-function -Wno-unused-local-typedefs -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-attributes -O3" >> ~/.R/Makevars
+apt_packages:
+- libgdal-dev
+- libgit2-dev
+- libmagick++-dev
+- libspatialite-dev
+- libudunits2-dev
+- libv8-dev
 r_packages:
 - remotes
 - covr
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-7
+env:
+  global:
+    - MAKEFLAGS="-j 2"
+    - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 matrix:
   include:
   - r: release

@@ -623,7 +623,7 @@
     "codeRepository": "https://github.com/KWB-R/fakin.path.app",
     "issueTracker": "https://github.com/KWB-R/fakin.path.app/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.0.0.9000",
+    "version": "0.1.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -688,23 +688,63 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "gdata",
+        "name": "gdata",
+        "version": ">= 2.18.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=gdata"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "ggplot2",
+        "name": "ggplot2",
+        "version": ">= 3.2.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "jsTree",
+        "name": "jsTree",
+        "version": ">=\n        1.0.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=jsTree"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "kwb.fakin",
         "name": "kwb.fakin",
-        "version": ">= 0.3.0.9000",
+        "version": ">= 0.4.0",
         "sameAs": "https://github.com/kwb-r/kwb.fakin"
       },
       {
         "@type": "SoftwareApplication",
         "identifier": "kwb.file",
         "name": "kwb.file",
-        "version": ">=\n        0.0.0.9000",
+        "version": ">= 0.2.0",
         "sameAs": "https://github.com/kwb-r/kwb.file"
       },
       {
         "@type": "SoftwareApplication",
         "identifier": "kwb.utils",
         "name": "kwb.utils",
-        "version": ">= 0.4.2.9000"
+        "version": ">= 0.4.3",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
       },
       {
         "@type": "SoftwareApplication",
@@ -723,7 +763,21 @@
         "@type": "SoftwareApplication",
         "identifier": "pathlist",
         "name": "pathlist",
-        "version": ">= 0.0.0.9000"
+        "version": ">= 0.2.0",
+        "sameAs": "https://github.com/hsonne/pathlist"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "plotly",
+        "name": "plotly",
+        "version": ">=\n        4.9.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=plotly"
       },
       {
         "@type": "SoftwareApplication",
@@ -737,6 +791,19 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=shiny"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "wordcloud",
+        "name": "wordcloud",
+        "version": ">= 2.6",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=wordcloud"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "project-fakin", "shiny-app", "path-analysis"],
@@ -755,7 +822,7 @@
         ],
         "name": "fakin.path.app: Shiny App to Visialise File Paths",
         "url": "https://github.com/KWB-R/fakin.path.app",
-        "description": "R package version 0.0.0.9000"
+        "description": "R package version 0.1.0"
       }
     ]
   },
@@ -2514,7 +2581,7 @@
     "codeRepository": "https://github.com/kwb-r/kwb.fakin",
     "issueTracker": "https://github.com/kwb-r/kwb.fakin/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.3.0.9000",
+    "version": "0.4.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -2880,7 +2947,7 @@
         ],
         "name": "kwb.fakin: Functions Used in Our Fakin Project",
         "url": "https://github.com/kwb-r/kwb.fakin",
-        "description": "R package version 0.3.0.9000"
+        "description": "R package version 0.4.0"
       }
     ]
   },
@@ -2893,7 +2960,7 @@
     "codeRepository": "https://github.com/KWB-R/kwb.file",
     "issueTracker": "https://github.com/KWB-R/kwb.file/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.0.0.9000",
+    "version": "0.2.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -3013,7 +3080,7 @@
         ],
         "name": "kwb.file: Functions Related to File and Path Operations",
         "url": "https://github.com/KWB-R/kwb.file",
-        "description": "R package version 0.0.0.9000"
+        "description": "R package version 0.2.0"
       }
     ]
   },
@@ -6755,7 +6822,7 @@
     "codeRepository": "https://github.com/kwb-r/kwb.utils",
     "issueTracker": "https://github.com/kwb-r/kwb.utils/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.4.2",
+    "version": "0.4.3",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -6868,7 +6935,7 @@
         ],
         "name": "kwb.utils: General Utility Functions Developed at KWB",
         "url": "https://github.com/kwb-r/kwb.utils",
-        "description": "R package version 0.4.2"
+        "description": "R package version 0.4.3"
       }
     ]
   },

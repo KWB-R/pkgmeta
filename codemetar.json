@@ -1858,7 +1858,7 @@
     "codeRepository": "https://github.com/KWB-R/kwb.dwd",
     "issueTracker": "https://github.com/KWB-R/kwb.dwd/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.0.0.9000",
+    "version": "0.1.0.9000",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -2081,7 +2081,7 @@
         ],
         "name": "kwb.dwd: Access Information from Deutscher Wetterdienst (DWD)",
         "url": "https://github.com/KWB-R/kwb.dwd",
-        "description": "R package version 0.0.0.9000"
+        "description": "R package version 0.1.0.9000"
       }
     ]
   },

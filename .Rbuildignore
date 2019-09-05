@@ -5,7 +5,8 @@
 ^pkgmeta\.Rproj$
 ^\.Rproj\.user$
 ^.gitlab-ci\.yml$
-^.travis\.yml$
+^\.travis\.yml$
 ^appveyor\.yml$
 ^index\.Rmd$
+^index\.md$
 ^README\.md$

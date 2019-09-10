@@ -1259,7 +1259,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.base",
-    "description": "This package originally contained all the different helper \n    functions developed and used at KWB. As it grew, functions were extracted \n    into new packages that are dedicated to certain topics. The database access \n    functions, for example, that were originally contained here, are now in the\n    package kwb.db. Functions that help to create event information from \n    time series data have been moved to kwb.event and date/time related \n    functions are now in kwb.datetime. This package still contains some \n    functions that are used in different scripts of different KWB projects.\n    Currently, when loading this package, the packages kwb.datetime, kwb.db,\n    kwb.event, kwb.plot and kwb.utils are automaticallc loaded. I plan to change \n    this behaviour with the next release so that you need to load the other\n    packages explicitly, i.e. with library(kwb.datetime), library(kwb.db), etc.",
+    "description": "This package originally contained all the\n    different helper functions developed and used at KWB. As it grew,\n    functions were extracted into new packages that are dedicated to\n    certain topics. The database access functions, for example, that were\n    originally contained here, are now in the package kwb.db. Functions\n    that help to create event information from time series data have been\n    moved to kwb.event and date/time related functions are now in\n    kwb.datetime. This package still contains some functions that are used\n    in different scripts of different KWB projects.  Currently, when\n    loading this package, the packages kwb.datetime, kwb.db, kwb.event,\n    kwb.plot and kwb.utils are automaticallc loaded. I plan to change this\n    behaviour with the next release so that you need to load the other\n    packages explicitly, i.e. with library(kwb.datetime), library(kwb.db),\n    etc.",
     "name": "kwb.base: Functions supporting data analysis with R at KWB",
     "codeRepository": "https://github.com/KWB-R/kwb.base/",
     "issueTracker": "https://github.com/KWB-R/kwb.base/issues",
@@ -2011,7 +2011,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.dwa.m150",
-    "description": "Read Sewer Condition Data according to DWA-M 150 XML format.",
+    "description": "Read Sewer Condition Data according to DWA-M 150\n    XML format.",
     "name": "kwb.dwa.m150: Read Sewer Condition Data according to DWA-M 150 XML format",
     "codeRepository": "https://github.com/kwb-r/kwb.dwa.m150",
     "issueTracker": "https://github.com/kwb-r/kwb.dwa.m150/issues",
@@ -2344,7 +2344,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.en13508.2",
-    "description": "functions to read and write CCTV inspections according to \n    EN13508-2.",
+    "description": "functions to read and write CCTV inspections\n    according to EN13508-2.",
     "name": "kwb.en13508.2: Read and Write CCTV Inspection Data According to Norm EN13508-2",
     "codeRepository": "https://github.com/kwb-r/kwb.en13508.2",
     "issueTracker": "https://github.com/kwb-r/kwb.en13508.2/issues",
@@ -3919,7 +3919,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.hantush",
-    "description": "Calculation groundwater mounding beneath an infiltration basin\n    based on the Hantush (1967) equation (http://doi.org/10.1029/WR003i001p00227).\n    The correct implementation is shown with a verification example based on a USGS\n    report (page 25, http://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf#page=35).",
+    "description": "Calculation groundwater mounding beneath an\n    infiltration basin based on the Hantush (1967) equation\n    (http://doi.org/10.1029/WR003i001p00227).  The correct implementation\n    is shown with a verification example based on a USGS report (page 25,\n    http://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf#page=35).",
     "name": "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration\n        Basin",
     "codeRepository": "http://github.com/KWB-R/kwb.hantush/",
     "issueTracker": "https://github.com/KWB-R/kwb.hantush/issues",
@@ -4053,7 +4053,7 @@
         "description": "R package version 0.2.1.9000"
       }
     ],
-    "relatedLink": "https://github.com/kwb-r/kwb.hantush/commit/79b56c4"
+    "relatedLink": "https://github.com/kwb-r/kwb.hantush/commit/d1579ab"
   },
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
@@ -6745,7 +6745,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.test",
-    "description": "Functions to test whether different functions return the same\n    results. I use these functions to test whether a function still returns the\n    same result after cleaning code.",
+    "description": "Functions to test whether different functions\n    return the same results. I use these functions to test whether a\n    function still returns the same result after cleaning code.",
     "name": "kwb.test: Test whether Different Functions Return the Same",
     "codeRepository": "https://github.com/kwb-r/kwb.test",
     "issueTracker": "https://github.com/kwb-r/kwb.test/issues",
@@ -7344,7 +7344,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.wtaq",
-    "description": "Functions enabling the writing of WTAQ input files, running of WTAQ\n    and reading of WTAQ output files.",
+    "description": "Functions enabling the writing of WTAQ input files,\n    running of WTAQ and reading of WTAQ output files.",
     "name": "kwb.wtaq: Interface to WTAQ Drawdown Model\n        (http://water.usgs.gov/ogw/wtaq/)",
     "codeRepository": "https://github.com/KWB-R/kwb.wtaq",
     "issueTracker": "https://github.com/KWB-R/kwb.wtaq/issues",

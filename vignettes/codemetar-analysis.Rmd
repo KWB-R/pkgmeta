@@ -32,6 +32,18 @@ library(tibble)
 ### Importing "codemetar.json" 
 ##################################################################
 
+### Option 1:
+### Not working correctly (-> gives list that is twice as long as just
+### using jsonlite::fromJSON as defined below
+
+# frame <- system.file("schema/frame_schema.json", package="codemetar")
+# 
+# corpus <- jsonld::jsonld_frame("codemetar.json", frame) %>%
+#  jsonlite::fromJSON("codemetar.json",
+#                              simplifyVector = FALSE) %>%
+#   getElement("@graph")
+
+
 #"https://kwb-r.github.io/pkgmeta/codemetar.json" %>%  
 #  jsonlite::fromJSON() %>% 
 #  jsonlite::write_json("codemetar.json")
@@ -74,17 +86,6 @@ wordcloud2::wordcloud2(topics)
 # Authors
 
 ```{r, eval = TRUE}
-### Option 1:
-### Not working correctly (-> gives list that is twice as long as just
-### using jsonlite::fromJSON as defined below
-
-frame <- system.file("schema/frame_schema.json", package="codemetar")
-
-corpus <- jsonld::jsonld_frame("codemetar.json", frame) %>%
- jsonlite::fromJSON("codemetar.json",
-                             simplifyVector = FALSE) %>%
-  getElement("@graph")
-
 
 ## deal with nulls explicitly by starting with map
 pkgs <- purrr::map(corpus, "name") %>%
@@ -92,7 +93,7 @@ pkgs <- purrr::map(corpus, "name") %>%
   as.character()
 
 # keep only those with package identifiers (names)
-keep <- purrr::map_lgl(corpus, ~ length(.x$`schema:identifier`) > 0)
+keep <- purrr::map_lgl(corpus, ~ length(.x$identifier) > 0)
 corpus <- corpus[keep]
 
 ## now we can just do
@@ -100,16 +101,22 @@ all_pkgs <- purrr::map_chr(corpus, "name")
 head(all_pkgs)
 
 ## 3 unique maintainers
-purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
+purrr::map(corpus, "maintainer") %>%  
+  purrr::map(1) %>%  
+  purrr::map("familyName") %>% 
   unique() %>%
   length()
+
 ```
 
 ## Maintainer
 
 ```{r, eval = TRUE}
 ## Mostly Hauke
-maintainer <- purrr::map_chr(corpus, c("maintainer", "familyName")) %>%
+maintainer <- purrr::map(corpus, "maintainer") %>%  
+  purrr::map(1) %>%  
+  purrr::map("familyName") %>%
+  unlist() %>% 
   tibble::enframe(name = NULL) %>%
   dplyr::group_by(value) %>%
   dplyr::tally(sort=TRUE) %>%
@@ -157,25 +164,39 @@ corpus %>%
   map_df(function(x){
     ## single, unboxed dep
     if("name" %in% names(x$softwareRequirements))
-      dep <- x$`schema:identifier`
-    else if("name" %in% names(x$softwareRequirements[[1]]))
+      dep <- x$identifier
+    else if("name" %in% names(x$softwareRequirements))
       dep <- map_chr(x$softwareRequirements, "name")
-    else { ## No requirementsß
+    else { ## No requirements
       dep <- NA
     }
 
-    tibble(identifier = x$`schema:identifier`, dep = dep)
-  }) %>%
-  dplyr::mutate(identifier = gsub("/", "", identifier),
-                dep = gsub("/", "", dep)) %>%
-  dplyr::filter(!is.na(dep)) -> dep_df
+    tibble(identifier = x$identifier, dep = dep)
+  }) 
+
+deps_df <- tibble(identifier = purrr::map_chr(corpus, "identifier"),
+       deps = lapply(purrr::map(corpus, "softwareRequirements"), 
+                     FUN = function(x) {
+                       deps <- purrr::map_chr(x, "name") %>%  
+                         unlist() %>%  
+                         paste(collapse = ",") %>% 
+                         as.character()
+                       
+                       deps <- ifelse(stringr::str_length(deps) > 0, deps, NA_character_)}))
+
+dep_df <- tidyr::separate_rows(deps_df, deps, sep = ",") %>% 
+  dplyr::select(deps, identifier) %>%
+  dplyr::arrange(deps, identifier) %>% 
+  dplyr::rename(dependancy = deps, used_in_r_package = identifier)
+
+
 
 
 #which dependencies are used most frequently?
 dep_count <- dep_df %>%
-  dplyr::group_by(dep) %>%
+  dplyr::group_by(dependancy) %>%
   dplyr::tally(sort = TRUE) %>%
-  dplyr::rename(word = dep,
+  dplyr::rename(word = dependancy,
                 freq = n)
 
 knitr::kable(dep_count)

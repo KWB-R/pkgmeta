@@ -3355,6 +3355,290 @@
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
+    "identifier": "kwb.flusshygiene",
+    "description": "Easy and transferable functions for creating and\n    managing models for hygiene data in rivers. This package is developed\n    within the FLUSSHYGIENE project.  See\n    https://bmbf.nawam-rewam.de/en/projekt/flusshygiene/ for details.",
+    "name": "kwb.flusshygiene: Functions used within FLUSSHYGIENE project (BMBF)",
+    "codeRepository": "https://github.com/KWB-R/kwb.flusshygiene",
+    "issueTracker": "https://github.com/KWB-R/kwb.flusshygiene/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.2.2",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "3.6.1",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 3.6.1 (2017-01-27)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Carsten",
+        "familyName": "Vick",
+        "email": "carsten.toad@gmail.com"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Wolfgang",
+        "familyName": "Seis",
+        "email": "wolfgang.seis@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0002-7436-8575"
+      }
+    ],
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Wolfgang",
+        "familyName": "Seis",
+        "email": "wolfgang.seis@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0002-7436-8575"
+      }
+    ],
+    "copyrightHolder": {},
+    "funder": {},
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "knitr",
+        "name": "knitr",
+        "version": ">= 1.23",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "readxl",
+        "name": "readxl",
+        "version": ">= 1.3.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=readxl"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rmarkdown",
+        "name": "rmarkdown",
+        "version": ">= 1.13",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "testthat",
+        "name": "testthat",
+        "version": ">= 2.2.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=testthat"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "R",
+        "name": "R",
+        "version": ">= 3.4"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stats",
+        "name": "stats"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "utils",
+        "name": "utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "graphics",
+        "name": "graphics"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "grDevices",
+        "name": "grDevices"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "MASS",
+        "name": "MASS",
+        "version": ">= 7.3-47",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=MASS"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "dplyr",
+        "name": "dplyr",
+        "version": ">= 0.7.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=dplyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tidyr",
+        "name": "tidyr",
+        "version": ">= 0.7.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tidyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "version": ">= 1.3.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "readr",
+        "name": "readr",
+        "version": ">= 1.1.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=readr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rlang",
+        "name": "rlang",
+        "version": ">= 0.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rlang"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "version": ">=\n        1.7.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "ggplot2",
+        "name": "ggplot2",
+        "version": ">= 2.2.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rstanarm",
+        "name": "rstanarm",
+        "version": ">= 2.15.3",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rstanarm"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "version": ">=\n        0.4.3",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      }
+    ],
+    "keywords": ["r", "rstats", "project-flusshygiene", "r-package", "modelling"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2019",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Carsten",
+            "familyName": "Vick",
+            "email": "carsten.toad@gmail.com"
+          },
+          {
+            "@type": "Person",
+            "givenName": "Wolfgang",
+            "familyName": "Seis",
+            "email": "wolfgang.seis@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0002-7436-8575"
+          }
+        ],
+        "name": "kwb.flusshygiene: Functions used within FLUSSHYGIENE project (BMBF)",
+        "url": "https://github.com/KWB-R/kwb.flusshygiene",
+        "description": "R package version 0.2.2"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
     "identifier": "kwb.flusshygiene.app",
     "description": "R Package Implementing the Flusshygiene\n    Application. This package provides the functions required to setup the\n    web application as it was developed during the KWB project\n    'Flusshygiene'.",
     "name": "kwb.flusshygiene.app: R Package Implementing the Flusshygiene Application",
@@ -7085,12 +7369,12 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.utils",
-    "description": "This package contains some small helper functions that aim at \n    improving the quality of code developed at Kompetenzzentrum Wasser gGmbH\n    (KWB).",
+    "description": "This package contains some small helper\n    functions that aim at improving the quality of code developed at\n    Kompetenzzentrum Wasser gGmbH (KWB).",
     "name": "kwb.utils: General Utility Functions Developed at KWB",
     "codeRepository": "https://github.com/kwb-r/kwb.utils",
     "issueTracker": "https://github.com/kwb-r/kwb.utils/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.4.3",
+    "version": "0.4.4",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -7107,7 +7391,15 @@
         "@id": "https://orcid.org/0000-0001-9134-2871"
       }
     ],
-    "contributor": {},
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
     "copyrightHolder": [
       {
         "@type": "Organization",
@@ -7203,7 +7495,7 @@
         ],
         "name": "kwb.utils: General Utility Functions Developed at KWB",
         "url": "https://github.com/kwb-r/kwb.utils",
-        "description": "R package version 0.4.3"
+        "description": "R package version 0.4.4"
       }
     ]
   },

@@ -4203,7 +4203,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.hantush",
-    "description": "Calculation groundwater mounding beneath an\n    infiltration basin based on the Hantush (1967) equation\n    (http://doi.org/10.1029/WR003i001p00227).  The correct implementation\n    is shown with a verification example based on a USGS report (page 25,\n    http://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf#page=35).",
+    "description": "Calculation groundwater mounding beneath an\n    infiltration basin based on the Hantush (1967) equation\n    (doi:10.1029/WR003i001p00227).  The correct implementation\n    is shown with a verification example based on a USGS report (page 25,\n    http://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf#page=35).",
     "name": "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration\n        Basin",
     "codeRepository": "http://github.com/KWB-R/kwb.hantush/",
     "issueTracker": "https://github.com/KWB-R/kwb.hantush/issues",
@@ -4337,7 +4337,7 @@
         "description": "R package version 0.2.1.9000"
       }
     ],
-    "relatedLink": "https://github.com/kwb-r/kwb.hantush/commit/d1579ab"
+    "relatedLink": "https://github.com/kwb-r/kwb.hantush/commit/8f4ed19"
   },
   {
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],

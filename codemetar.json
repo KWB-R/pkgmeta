@@ -4206,7 +4206,7 @@
     "description": "Calculation groundwater mounding beneath an\n    infiltration basin based on the Hantush (1967) equation\n    (<doi:10.1029/WR003i001p00227>). The correct implementation is shown\n    with a verification example based on a USGS report (page 25,\n    <https://pubs.usgs.gov/sir/2010/5102/support/sir2010-5102.pdf#page=35>).",
     "name": "kwb.hantush: Calculation of Groundwater Mounding Beneath an Infiltration\n        Basin",
     "codeRepository": "https://github.com/KWB-R/kwb.hantush",
-    "relatedLink": ["https://kwb-r.github.io/kwb.hantush", "https://github.com/kwb-r/kwb.hantush/commit/5ff76d0"],
+    "relatedLink": ["https://kwb-r.github.io/kwb.hantush", "https://github.com/KWB-R/kwb.hantush/commit/5ff76d0"],
     "issueTracker": "https://github.com/KWB-R/kwb.hantush/issues",
     "license": "https://spdx.org/licenses/MIT",
     "version": "0.3.0",

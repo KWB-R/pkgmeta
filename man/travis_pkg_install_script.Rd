@@ -7,7 +7,7 @@
 travis_pkg_install_script(pkgs = pkgmeta::get_github_packages())
 }
 \arguments{
-\item{pkgs}{datadframe with R packages as retrieved by
+\item{pkgs}{dataframe with R packages as retrieved by
 get_github_packages()}
 }
 \value{

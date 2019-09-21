@@ -6667,7 +6667,7 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.resilience",
-    "description": "kwb.resilience allows quantification of a number of \n    resilience indicators. Calculation requires a time series of\n    performance values of a technical system, as well as values \n    for acceptable and worst case performance.",
+    "description": "kwb.resilience allows quantification of a\n    number of resilience indicators. Calculation requires a time series of\n    performance values of a technical system, as well as values for\n    acceptable and worst case performance.",
     "name": "kwb.resilience: R Package for the Quantification of Technical Resilience",
     "codeRepository": "https://github.com/KWB-R/kwb.resilience",
     "issueTracker": "https://github.com/KWB-R/kwb.resilience/issues",

@@ -14,6 +14,7 @@ Github.
 ## Installation
 
 ```r
+# How to install R packages from GitHub
 #install.packages("remotes", repos = "https://cloud.r-project.org")
 remotes::install_github("KWB-R/pkgmeta")
 ```

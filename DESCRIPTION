@@ -31,6 +31,7 @@ Imports:
     glue,
     forcats,
     dplyr,
+    packrat,
     remotes,
     magrittr,
     tibble
@@ -42,7 +43,6 @@ Suggests:
     pkgnet,
     printr,
     sessioninfo,
-    tibble,
     tidyr,
     wordcloud2
 VignetteBuilder: 

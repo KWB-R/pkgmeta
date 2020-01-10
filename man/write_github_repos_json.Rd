@@ -4,8 +4,11 @@
 \alias{write_github_repos_json}
 \title{Write Github Metadata to JSON}
 \usage{
-write_github_repos_json(github_repos = get_github_repos(),
-  file = file.path(getwd(), "github.json"), dbg = TRUE)
+write_github_repos_json(
+  github_repos = get_github_repos(),
+  file = file.path(getwd(), "github.json"),
+  dbg = TRUE
+)
 }
 \arguments{
 \item{github_repos}{as retrieved by get_github_repos(), default:

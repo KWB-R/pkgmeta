@@ -4,8 +4,11 @@
 \alias{write_pkg_codemeta_json}
 \title{Write codemeta}
 \usage{
-write_pkg_codemeta_json(codemeta = create_pkg_codemeta(),
-  file = file.path(getwd(), "codemetar.json"), dbg = TRUE)
+write_pkg_codemeta_json(
+  codemeta = create_pkg_codemeta(),
+  file = file.path(getwd(), "codemetar.json"),
+  dbg = TRUE
+)
 }
 \arguments{
 \item{codemeta}{codemeta object (as retrieved by create_codemeta()),

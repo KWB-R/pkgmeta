@@ -4,9 +4,12 @@
 \alias{get_github_packages}
 \title{Get Github R Packages}
 \usage{
-get_github_packages(group = "KWB-R", ignore_pkgs = NULL,
+get_github_packages(
+  group = "KWB-R",
+  ignore_pkgs = NULL,
   non_r_packages = kwb.pkgstatus::get_non_r_packages(),
-  github_token = getOption("github_token"))
+  github_token = getOption("github_token")
+)
 }
 \arguments{
 \item{group}{default: "KWB-R"}

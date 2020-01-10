@@ -10,3 +10,4 @@
 ^index\.Rmd$
 ^index\.md$
 ^README\.md$
+^codemeta\.json$

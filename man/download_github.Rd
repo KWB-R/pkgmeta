@@ -4,9 +4,14 @@
 \alias{download_github}
 \title{Helper function: download private repos from Github}
 \usage{
-download_github(repo, ref = "master", dest_dir = tempdir(),
-  use_zip = FALSE, quiet = FALSE,
-  auth_token = getOption("github_token"))
+download_github(
+  repo,
+  ref = "master",
+  dest_dir = tempdir(),
+  use_zip = FALSE,
+  quiet = FALSE,
+  auth_token = getOption("github_token")
+)
 }
 \arguments{
 \item{repo}{Github repo (e.g. "kwb-r/kwb.utils")}

@@ -1,4 +1,6 @@
-# rstudioapi 0.1.0.9000
+# pkgmeta 0.1.0
+
+* first release on Zenodo
 
 * Added a `NEWS.md` file to track changes to the package.
 

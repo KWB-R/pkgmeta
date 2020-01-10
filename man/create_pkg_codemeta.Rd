@@ -4,8 +4,11 @@
 \alias{create_pkg_codemeta}
 \title{Create codemeta}
 \usage{
-create_pkg_codemeta(pkgs = get_github_packages(),
-  libpath = "/home/travis/R/Library", dbg = TRUE)
+create_pkg_codemeta(
+  pkgs = get_github_packages(),
+  libpath = "/home/travis/R/Library",
+  dbg = TRUE
+)
 }
 \arguments{
 \item{pkgs}{data frame with R packages (default: get_github_packages())}

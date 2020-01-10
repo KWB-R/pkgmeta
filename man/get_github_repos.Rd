@@ -4,8 +4,12 @@
 \alias{get_github_repos}
 \title{Helper function: Get Github Metadata For Repos}
 \usage{
-get_github_repos(group = "KWB-R",
-  github_token = getOption("github_token"), dbg = TRUE, ...)
+get_github_repos(
+  group = "KWB-R",
+  github_token = getOption("github_token"),
+  dbg = TRUE,
+  ...
+)
 }
 \arguments{
 \item{group}{organisation (default: "KWB-R")}

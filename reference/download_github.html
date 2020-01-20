@@ -77,7 +77,7 @@ https://github.com/r-lib/remotes/blob/bd970d723facc6ede2ff0f54ce4ae917526a37f8/i
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgmeta</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -151,9 +151,14 @@ https://github.com/r-lib/remotes/blob/bd970d723facc6ede2ff0f54ce4ae917526a37f8/i
 (required for downloading private repos!)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>download_github</span>(<span class='no'>repo</span>, <span class='kw'>ref</span> <span class='kw'>=</span> <span class='st'>"master"</span>, <span class='kw'>dest_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(),
-  <span class='kw'>use_zip</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>auth_token</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"github_token"</span>))</pre>
+    <pre class="usage"><span class='fu'>download_github</span>(
+  <span class='no'>repo</span>,
+  <span class='kw'>ref</span> <span class='kw'>=</span> <span class='st'>"master"</span>,
+  <span class='kw'>dest_dir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>(),
+  <span class='kw'>use_zip</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>auth_token</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"github_token"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

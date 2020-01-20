@@ -75,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgmeta</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -147,8 +147,11 @@
     <p>Write codemeta</p>
     </div>
 
-    <pre class="usage"><span class='fu'>write_pkg_codemeta_json</span>(<span class='kw'>codemeta</span> <span class='kw'>=</span> <span class='fu'><a href='create_pkg_codemeta.html'>create_pkg_codemeta</a></span>(),
-  <span class='kw'>file</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='st'>"codemetar.json"</span>), <span class='kw'>dbg</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>write_pkg_codemeta_json</span>(
+  <span class='kw'>codemeta</span> <span class='kw'>=</span> <span class='fu'><a href='create_pkg_codemeta.html'>create_pkg_codemeta</a></span>(),
+  <span class='kw'>file</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span>(), <span class='st'>"codemetar.json"</span>),
+  <span class='kw'>dbg</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

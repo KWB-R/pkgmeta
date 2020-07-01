@@ -51,7 +51,7 @@ Remotes:
     github::Lchiffon/wordcloud2,
     github::kwb-r/kwb.pkgstatus,
     github::kwb-r/kwb.utils,
-    github::ropensci/codemetar@0.1.8
+    github::ropensci/codemetar@0.1.8,
     github::UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2
 Encoding: UTF-8
 LazyData: true

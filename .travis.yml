@@ -31,13 +31,13 @@ matrix:
   - r: release
     after_success:
     - Rscript -e 'covr::codecov()'
-    before_deploy:
-    - Rscript -e 'remotes::install_cran("pkgdown")'
-    - Rscript -e 'remotes::install_github("kwb-r/pkgmeta")'
-    - Rscript -e 'remotes::install_github("kwb-r/kwb.pkgbuild")'
-    - Rscript -e 'pkgmeta::travis_pkg_install_script()'
-    - Rscript -e 'pkgmeta::write_pkg_codemeta_json(codemeta = pkgmeta::create_pkg_codemeta())'
-    deploy:
-      provider: script
-      script: Rscript -e 'kwb.pkgbuild::deploy_site_github_with_extra_files()'
-      skip_cleanup: 'true'
+#    before_deploy:
+#    - Rscript -e 'remotes::install_cran("pkgdown")'
+#    - Rscript -e 'remotes::install_github("kwb-r/pkgmeta")'
+#    - Rscript -e 'remotes::install_github("kwb-r/kwb.pkgbuild")'
+#    - Rscript -e 'pkgmeta::travis_pkg_install_script()'
+#    - Rscript -e 'pkgmeta::write_pkg_codemeta_json(codemeta = pkgmeta::create_pkg_codemeta())'
+#   deploy:
+#      provider: script
+#      script: Rscript -e 'kwb.pkgbuild::deploy_site_github_with_extra_files()'
+#      skip_cleanup: 'true'

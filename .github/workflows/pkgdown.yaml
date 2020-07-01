@@ -38,9 +38,9 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages("remotes")
-          remotes::install_deps(dependencies = TRUE)
           remotes::install_github("kwb-r/kwb.pkgbuild@github-actions")
           remotes::install_github("kwb-r/pkgmeta")
+          remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
       - name: Install package

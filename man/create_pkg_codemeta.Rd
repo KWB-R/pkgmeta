@@ -6,14 +6,14 @@
 \usage{
 create_pkg_codemeta(
   pkgs = get_github_packages(),
-  libpath = "/home/travis/R/Library",
+  libpath = Sys.getenv("R_LIBS_USER"),
   dbg = TRUE
 )
 }
 \arguments{
 \item{pkgs}{data frame with R packages (default: get_github_packages())}
 
-\item{libpath}{libpath  (default: "/home/travis/R/Library")}
+\item{libpath}{libpath  (default: Sys.getenv("R_LIBS_USER"))}
 
 \item{dbg}{should debug messages be printed? (default: TRUE)}
 }

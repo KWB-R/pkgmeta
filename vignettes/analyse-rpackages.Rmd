@@ -165,7 +165,7 @@ is_travis_and_all_pkgs_installed <-  is_travis_or_ghactions && all_pkgs_installe
 pkgs_codemetar <-  pkgmeta::get_github_packages()
 
 codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
-                                         libpath = "/home/travis/R/Library")
+                                         libpath = Sys.getenv("R_LIBS_USER"))
 
 
 

@@ -2,7 +2,7 @@
 #' Create codemeta
 #'
 #' @param pkgs data frame with R packages (default: get_github_packages())
-#' @param libpath libpath  (default: "/home/travis/R/Library")
+#' @param libpath libpath  (default: Sys.getenv("R_LIBS_USER"))
 #' @param dbg should debug messages be printed? (default: TRUE)
 #' @return codemetar object for R packages
 #' @importFrom codemetar create_codemeta
@@ -10,7 +10,7 @@
 #' @importFrom utils installed.packages
 #' @export
 create_pkg_codemeta <- function(pkgs = get_github_packages(),
-                                libpath = "/home/travis/R/Library",
+                                libpath = Sys.getenv("R_LIBS_USER"),
                                 dbg = TRUE) {
   kwb.utils::catAndRun("Creating codemeta object",
     expr = {

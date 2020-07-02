@@ -31,7 +31,6 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages("remotes")
-          remotes::install_github("kwb-r/kwb.pkgbuild@github-actions")
           remotes::install_github("kwb-r/pkgmeta")
           remotes::install_deps(dependencies = TRUE)
           pkgmeta::travis_pkg_install_script()
@@ -51,5 +50,6 @@ jobs:
         run: |
           codemeta <- pkgmeta::create_pkg_codemeta(pkgmeta::get_github_packages(), libpath = Sys.getenv("R_LIBS_USER"))
           pkgmeta::write_pkg_codemeta_json(codemeta)
+          remotes::install_github("kwb-r/kwb.pkgbuild@github-actions")
           kwb.pkgbuild::deploy_to_branch_with_extra_files(vignettes_file_pattern_to_copy = "\\.json$|\\.html$")
         shell: Rscript {0}

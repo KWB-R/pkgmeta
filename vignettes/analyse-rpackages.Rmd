@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-is_travis <- if (identical(Sys.getenv("TRAVIS"), "true")) {
+is_travis_or_ghactions <- if (identical(Sys.getenv("TRAVIS"), "true") | identical(Sys.getenv("CI"), "true")) {
         TRUE } else { FALSE }
 ```
 
@@ -51,7 +51,7 @@ pkgs <- pkgmeta::get_github_packages()
 
 # Define paths 
 
-```{r, eval = !is_travis}
+```{r, eval = !is_travis_or_ghactions}
 # Define paths and resolve placeholders
 
 paths_list <- list(
@@ -75,7 +75,7 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 
 in own library required for "codemetar" and "pkgnet" reports
 
-```{r, echo = !is_travis, eval = !is_travis}
+```{r, echo = !is_travis_or_ghactions, eval = !is_travis_or_ghactions}
 
 
 fs::dir_create(paths$pkglib, recursive = TRUE)
@@ -94,7 +94,7 @@ withr::with_libpaths(new = paths$pkglib, {
 }
 
 ```
-```{r, echo = is_travis, eval = FALSE}
+```{r, echo = is_travis_or_ghactions, eval = FALSE}
 ### On Travis already installed within .travis configuration
 ### https://github.com/KWB-R/pkgmeta/blob/master/.travis.yml
 ### with function 
@@ -109,7 +109,7 @@ pkgmeta::travis_pkg_install_script()
 
 required for pkgnet "covr":
 
-```{r, echo = !is_travis, eval = !is_travis}
+```{r, echo = !is_travis_or_ghactions, eval = !is_travis_or_ghactions}
 
 fs::dir_create(path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
                recursive = TRUE)
@@ -136,7 +136,7 @@ invisible(lapply(zipfiles, function(x) {
 
 Generating "codemetar.json" file
 
-```{r, echo = !is_travis, eval = !is_travis}
+```{r, echo = !is_travis_or_ghactions, eval = !is_travis_or_ghactions}
 
 pkgs <-  pkgmeta::get_github_packages()
 
@@ -153,13 +153,13 @@ pkgmeta::write_pkg_codemeta_json(codemeta)
 
 all_pkgs_installed <- all(pkgs$name %in% installed.packages()[,"Package"])
 
-is_travis_and_all_pkgs_installed <-  is_travis && all_pkgs_installed
+is_travis_and_all_pkgs_installed <-  is_travis_or_ghactions && all_pkgs_installed
 
 ```
 
 
 
-```{r, echo = is_travis, eval = is_travis_and_all_pkgs_installed}
+```{r, echo = is_travis_or_ghactions, eval = is_travis_and_all_pkgs_installed}
 
 
 pkgs_codemetar <-  pkgmeta::get_github_packages()
@@ -178,7 +178,7 @@ pkgmeta::write_pkg_codemeta_json(codemeta)
 
 Create Reports with "pkgnet
 
-```{r, echo = !is_travis, eval = !is_travis}
+```{r, echo = !is_travis_or_ghactions, eval = !is_travis_or_ghactions}
 fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
 
 withr::with_libpaths(new = path$pkglib,

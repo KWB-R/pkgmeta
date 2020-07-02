@@ -43,13 +43,19 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: Install package
-        run: R CMD INSTALL .
+#      - name: Install package
+#        run: R CMD INSTALL .
+
+      - name: Before deploy
+        run: |
+          codemeta <- pkgmeta::create_pkg_codemeta(pkgmeta::get_github_packages(), libpath = Sys.getenv("R_LIBS_USER"))
+          file_json <- file.path(getwd(), "codemetar.json")
+          print(file_json)
+          pkgmeta::write_pkg_codemeta_json(codemeta, file = file_json)
+          remotes::install_github("kwb-r/kwb.pkgbuild@github-actions")
+        shell: Rscript {0}
 
       - name: Deploy package
         run: |
-          codemeta <- pkgmeta::create_pkg_codemeta(pkgmeta::get_github_packages(), libpath = Sys.getenv("R_LIBS_USER"))
-          pkgmeta::write_pkg_codemeta_json(codemeta)
-          remotes::install_github("kwb-r/kwb.pkgbuild@github-actions")
           kwb.pkgbuild::deploy_to_branch_with_extra_files(vignettes_file_pattern_to_copy = "\\.json$|\\.html$")
         shell: Rscript {0}

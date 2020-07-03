@@ -1,3 +1,5 @@
+![pkgdown](https://github.com/KWB-R/pkgmeta/workflows/pkgdown/badge.svg)
+![R-CMD-check](https://github.com/KWB-R/pkgmeta/workflows/R-CMD-check/badge.svg)
 [![Appveyor build Status](https://ci.appveyor.com/api/projects/status/github/KWB-R/pkgmeta?branch=master&svg=true)](https://ci.appveyor.com/project/KWB-R/pkgmeta/branch/master)
 [![Travis build Status](https://travis-ci.org/KWB-R/pkgmeta.svg?branch=master)](https://travis-ci.org/KWB-R/pkgmeta)
 [![codecov](https://codecov.io/github/KWB-R/pkgmeta/branch/master/graphs/badge.svg)](https://codecov.io/github/KWB-R/pkgmeta)

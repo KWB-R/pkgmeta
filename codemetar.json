@@ -9221,7 +9221,7 @@
     "codeRepository": "https://github.com/kwb-r/kwb.utils",
     "issueTracker": "https://github.com/kwb-r/kwb.utils/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -9342,7 +9342,7 @@
         ],
         "name": "kwb.utils: General Utility Functions Developed at KWB",
         "url": "https://github.com/kwb-r/kwb.utils",
-        "description": "R package version 0.6.0"
+        "description": "R package version 0.7.0"
       }
     ]
   },
@@ -9807,7 +9807,14 @@
       {
         "@type": "SoftwareApplication",
         "identifier": "codemetar",
-        "name": "codemetar"
+        "name": "codemetar",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=codemetar"
       },
       {
         "@type": "SoftwareApplication",

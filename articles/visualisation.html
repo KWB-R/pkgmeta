@@ -99,7 +99,7 @@
       <h1 data-toc-skip>Visualisation</h1>
                         <h4 class="author">Michael Rustler</h4>
             
-            <h4 class="date">2020-09-07</h4>
+            <h4 class="date">2020-09-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/visualisation.Rmd"><code>vignettes/visualisation.Rmd</code></a></small>
       <div class="hidden name"><code>visualisation.Rmd</code></div>
@@ -111,11 +111,13 @@
 <div id="kwb-r-packages-on-github-over-time" class="section level1">
 <h1 class="hasAnchor">
 <a href="#kwb-r-packages-on-github-over-time" class="anchor"></a>KWB-R Packages on Github Over Time</h1>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">github_token</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span>(<span class="st">"GITHUB_PAT"</span>))
-<span class="no">pkgs</span> <span class="kw">&lt;-</span> <span class="kw pkg">pkgmeta</span><span class="kw ns">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span>()
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(github_token = <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span>(<span class="st">"GITHUB_PAT"</span>))
+<span class="kw">pkgs</span> <span class="op">&lt;-</span> <span class="kw">pkgmeta</span>::<span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span>()
 
 <span class="co">#pkgs &lt;- readRDS("rpackages.RData")</span>
-<span class="kw pkg">pkgmeta</span><span class="kw ns">::</span><span class="fu"><a href="../reference/plot_github_pkgs_over_time.html">plot_github_pkgs_over_time</a></span>(<span class="no">pkgs</span>)</pre></body></html></div>
+<span class="kw">pkgmeta</span>::<span class="fu"><a href="../reference/plot_github_pkgs_over_time.html">plot_github_pkgs_over_time</a></span>(<span class="kw">pkgs</span>)
+</pre></div>
 <p><img src="visualisation_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
 </div>
   </div>
@@ -135,7 +137,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

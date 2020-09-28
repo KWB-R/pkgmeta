@@ -150,12 +150,12 @@
     <p>Get Github R Packages</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_github_packages</span>(
-  group = <span class='st'>"KWB-R"</span>,
-  ignore_pkgs = <span class='kw'>NULL</span>,
-  non_r_packages = <span class='kw'>kwb.pkgstatus</span>::<span class='fu'><a href='https://rdrr.io/pkg/kwb.pkgstatus/man/get_non_r_packages.html'>get_non_r_packages</a></span>(),
-  github_token = <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span>(<span class='st'>"github_token"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>get_github_packages</span><span class='op'>(</span>
+  group <span class='op'>=</span> <span class='st'>"KWB-R"</span>,
+  ignore_pkgs <span class='op'>=</span> <span class='cn'>NULL</span>,
+  non_r_packages <span class='op'>=</span> <span class='fu'>kwb.pkgstatus</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/kwb.pkgstatus/man/get_non_r_packages.html'>get_non_r_packages</a></span><span class='op'>(</span><span class='op'>)</span>,
+  github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"github_token"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -187,10 +187,10 @@ repositories (default: getOption("github_token"))</p></td>
     <p>data frame with R packages on Github</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>pkgs</span> <span class='op'>&lt;-</span> <span class='fu'>get_github_packages</span>()
-<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='kw'>pkgs</span>)
-}
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>pkgs</span> <span class='op'>&lt;-</span> <span class='fu'>get_github_packages</span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>pkgs</span><span class='op'>)</span>
+<span class='op'>}</span>
 
 </div></pre>
   </div>

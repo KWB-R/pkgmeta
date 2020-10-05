@@ -9658,7 +9658,12 @@
         "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
       }
     ],
-    "funder": {},
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "OPTIWELLS-2"
+      }
+    ],
     "maintainer": [
       {
         "@type": "Person",

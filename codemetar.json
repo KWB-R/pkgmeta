@@ -12,10 +12,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -175,10 +175,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -627,10 +627,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -1042,10 +1042,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -1461,10 +1461,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -1582,10 +1582,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -1789,10 +1789,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -1904,10 +1904,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2017,10 +2017,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2137,10 +2137,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2247,10 +2247,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2434,10 +2434,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2531,10 +2531,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2766,10 +2766,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -2863,10 +2863,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -3136,10 +3136,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -3253,10 +3253,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -3633,10 +3633,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -3778,10 +3778,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -4075,10 +4075,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -4335,10 +4335,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -4639,10 +4639,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "provider": {
       "@id": "https://cran.r-project.org",
       "@type": "Organization",
@@ -4773,14 +4773,14 @@
     "codeRepository": "https://github.com/KWB-R/kwb.heatsine",
     "issueTracker": "https://github.com/KWB-R/kwb.heatsine/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5069,7 +5069,158 @@
         ],
         "name": "kwb.heatsine: R Package for Calculating Hydraulic Travel Times Based on Sinus\nTemperature Fitting",
         "url": "https://github.com/KWB-R/kwb.heatsine",
-        "description": "R package version 0.1.3"
+        "description": "R package version 0.1.4"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
+    "identifier": "kwb.heatsine.opencpu",
+    "description": "Contains higher level functions build on top of R\n    package kwb.heatsine for connecting with OPENCPU.",
+    "name": "kwb.heatsine.opencpu: Wrapper for R Package kwb.heatsine for OpenCPU Usage",
+    "codeRepository": "https://github.com/KWB-R/kwb.heatsine.opencpu",
+    "issueTracker": "https://github.com/KWB-R/kwb.heatsine.opencpu/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.1.0",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "4.0.3",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+      }
+    ],
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "Smart-Control"
+      }
+    ],
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "knitr",
+        "name": "knitr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rmarkdown",
+        "name": "rmarkdown",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "testthat",
+        "name": "testthat",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=testthat"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "R",
+        "name": "R",
+        "version": ">= 2.10"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "jsonlite",
+        "name": "jsonlite",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=jsonlite"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.heatsine",
+        "name": "kwb.heatsine"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
+      }
+    ],
+    "keywords": ["rstats", "r-package", "project-smart-control", "opencpu"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2020",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Michael",
+            "familyName": "Rustler",
+            "email": "michael.rustler@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0003-0647-7726"
+          }
+        ],
+        "name": "kwb.heatsine.opencpu: Wrapper for R Package kwb.heatsine for OpenCPU Usage",
+        "url": "https://github.com/KWB-R/kwb.heatsine.opencpu",
+        "description": "R package version 0.1.0"
       }
     ]
   },
@@ -5086,10 +5237,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5204,10 +5355,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5363,10 +5514,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5486,10 +5637,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5624,10 +5775,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5818,10 +5969,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -5985,10 +6136,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -6155,10 +6306,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -6314,10 +6465,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -6769,10 +6920,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -7100,10 +7251,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -7311,10 +7462,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -7462,10 +7613,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -7667,10 +7818,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -8015,10 +8166,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -8161,10 +8312,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -8349,10 +8500,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -8497,10 +8648,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -8810,10 +8961,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -9023,10 +9174,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -9132,10 +9283,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -9363,10 +9514,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -9497,10 +9648,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -9630,10 +9781,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -9806,10 +9957,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",
@@ -10197,10 +10348,10 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.0.2",
+      "version": "4.0.3",
       "url": "https://r-project.org"
     },
-    "runtimePlatform": "R version 4.0.2 (2020-06-22)",
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
     "author": [
       {
         "@type": "Person",

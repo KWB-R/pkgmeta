@@ -1038,7 +1038,7 @@
     "codeRepository": "https://github.com/KWB-R/fhpredict",
     "issueTracker": "https://github.com/KWB-R/fhpredict/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.15.0",
+    "version": "0.16.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -1383,19 +1383,6 @@
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "svglite",
-        "name": "svglite",
-        "version": ">= 1.2.2",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=svglite"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "tidyr",
         "name": "tidyr",
         "version": ">= 1.0.0",
@@ -1406,19 +1393,6 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "xml2",
-        "name": "xml2",
-        "version": ">= 1.2.2",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
     "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
@@ -1444,7 +1418,7 @@
         ],
         "name": "fhpredict: R Package for the Project Flusshygiene",
         "url": "https://github.com/KWB-R/fhpredict",
-        "description": "R package version 0.15.0"
+        "description": "R package version 0.16.0"
       }
     ]
   },
@@ -4773,316 +4747,7 @@
     "codeRepository": "https://github.com/KWB-R/kwb.heatsine",
     "issueTracker": "https://github.com/KWB-R/kwb.heatsine/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.4",
-    "programmingLanguage": {
-      "@type": "ComputerLanguage",
-      "name": "R",
-      "version": "4.0.3",
-      "url": "https://r-project.org"
-    },
-    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
-    "author": [
-      {
-        "@type": "Person",
-        "givenName": "Michael",
-        "familyName": "Rustler",
-        "email": "michael.rustler@kompetenz-wasser.de",
-        "@id": "https://orcid.org/0000-0003-0647-7726"
-      }
-    ],
-    "contributor": [
-      {
-        "@type": "Person",
-        "givenName": "Hauke",
-        "familyName": "Sonnenberg",
-        "email": "hauke.sonnenberg@kompetenz-wasser.de",
-        "@id": "https://orcid.org/0000-0001-9134-2871"
-      }
-    ],
-    "copyrightHolder": [
-      {
-        "@type": "Organization",
-        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
-      }
-    ],
-    "funder": {},
-    "maintainer": [
-      {
-        "@type": "Person",
-        "givenName": "Michael",
-        "familyName": "Rustler",
-        "email": "michael.rustler@kompetenz-wasser.de",
-        "@id": "https://orcid.org/0000-0003-0647-7726"
-      }
-    ],
-    "softwareSuggestions": [
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "covr",
-        "name": "covr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=covr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "htmlwidgets",
-        "name": "htmlwidgets",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=htmlwidgets"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "knitr",
-        "name": "knitr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=knitr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "rmarkdown",
-        "name": "rmarkdown",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "sessioninfo",
-        "name": "sessioninfo",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "testthat",
-        "name": "testthat",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=testthat"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "withr",
-        "name": "withr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=withr"
-      }
-    ],
-    "softwareRequirements": [
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "dplyr",
-        "name": "dplyr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=dplyr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "forcats",
-        "name": "forcats",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=forcats"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "ggplot2",
-        "name": "ggplot2",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=ggplot2"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "hydroGOF",
-        "name": "hydroGOF",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=hydroGOF"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "kwb.utils",
-        "name": "kwb.utils",
-        "sameAs": "https://github.com/kwb-r/kwb.utils"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "lubridate",
-        "name": "lubridate",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=lubridate"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "magrittr",
-        "name": "magrittr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=magrittr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "plotly",
-        "name": "plotly",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=plotly"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "readr",
-        "name": "readr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=readr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "rlang",
-        "name": "rlang",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=rlang"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "stringr",
-        "name": "stringr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=stringr"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "tibble",
-        "name": "tibble",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=tibble"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "identifier": "tidyr",
-        "name": "tidyr",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=tidyr"
-      }
-    ],
-    "keywords": ["rstats", "r-package", "project-smartcontrol"],
-    "citation": [
-      {
-        "@type": "SoftwareSourceCode",
-        "datePublished": "2020",
-        "author": [
-          {
-            "@type": "Person",
-            "givenName": "Michael",
-            "familyName": "Rustler",
-            "email": "michael.rustler@kompetenz-wasser.de",
-            "@id": "https://orcid.org/0000-0003-0647-7726"
-          }
-        ],
-        "name": "kwb.heatsine: R Package for Calculating Hydraulic Travel Times Based on Sinus\nTemperature Fitting",
-        "url": "https://github.com/KWB-R/kwb.heatsine",
-        "description": "R package version 0.1.4"
-      }
-    ]
-  },
-  {
-    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
-    "@type": "SoftwareSourceCode",
-    "identifier": "kwb.heatsine.opencpu",
-    "description": "Contains higher level functions build on top of R\n    package kwb.heatsine for connecting with OPENCPU.",
-    "name": "kwb.heatsine.opencpu: Wrapper for R Package kwb.heatsine for OpenCPU Usage",
-    "codeRepository": "https://github.com/KWB-R/kwb.heatsine.opencpu",
-    "issueTracker": "https://github.com/KWB-R/kwb.heatsine.opencpu/issues",
-    "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0",
+    "version": "0.1.5",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -5132,8 +4797,35 @@
     "softwareSuggestions": [
       {
         "@type": "SoftwareApplication",
+        "identifier": "covr",
+        "name": "covr",
+        "version": ">= 3.5.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=covr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "htmlwidgets",
+        "name": "htmlwidgets",
+        "version": ">= 1.5.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=htmlwidgets"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "knitr",
         "name": "knitr",
+        "version": ">= 1.30",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -5146,6 +4838,327 @@
         "@type": "SoftwareApplication",
         "identifier": "rmarkdown",
         "name": "rmarkdown",
+        "version": ">= 2.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "sessioninfo",
+        "name": "sessioninfo",
+        "version": ">= 1.1.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "testthat",
+        "name": "testthat",
+        "version": ">=\n        2.3.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=testthat"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "withr",
+        "name": "withr",
+        "version": ">= 2.3.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=withr"
+      }
+    ],
+    "softwareRequirements": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "R",
+        "name": "R",
+        "version": ">= 2.10"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "dplyr",
+        "name": "dplyr",
+        "version": ">= 1.0.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=dplyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "forcats",
+        "name": "forcats",
+        "version": ">= 0.5.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=forcats"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "ggplot2",
+        "name": "ggplot2",
+        "version": ">= 3.3.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "hydroGOF",
+        "name": "hydroGOF",
+        "version": ">= 0.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=hydroGOF"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "kwb.utils",
+        "name": "kwb.utils",
+        "version": ">= 0.7.0",
+        "sameAs": "https://github.com/kwb-r/kwb.utils"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "lubridate",
+        "name": "lubridate",
+        "version": ">=\n        1.7.9",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=lubridate"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "magrittr",
+        "name": "magrittr",
+        "version": ">= 1.5",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=magrittr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "plotly",
+        "name": "plotly",
+        "version": ">= 4.9.2.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=plotly"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "readr",
+        "name": "readr",
+        "version": ">=\n        1.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=readr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rlang",
+        "name": "rlang",
+        "version": ">= 0.4.8",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=rlang"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "stringr",
+        "name": "stringr",
+        "version": ">= 1.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=stringr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "version": ">=\n        3.0.4",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tidyr",
+        "name": "tidyr",
+        "version": ">= 1.1.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tidyr"
+      }
+    ],
+    "keywords": ["rstats", "r-package", "project-smartcontrol"],
+    "citation": [
+      {
+        "@type": "SoftwareSourceCode",
+        "datePublished": "2020",
+        "author": [
+          {
+            "@type": "Person",
+            "givenName": "Michael",
+            "familyName": "Rustler",
+            "email": "michael.rustler@kompetenz-wasser.de",
+            "@id": "https://orcid.org/0000-0003-0647-7726"
+          }
+        ],
+        "name": "kwb.heatsine: R Package for Calculating Hydraulic Travel Times Based on Sinus\nTemperature Fitting",
+        "url": "https://github.com/KWB-R/kwb.heatsine",
+        "description": "R package version 0.1.5"
+      }
+    ]
+  },
+  {
+    "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+    "@type": "SoftwareSourceCode",
+    "identifier": "kwb.heatsine.opencpu",
+    "description": "Contains higher level functions build on top of R\n    package kwb.heatsine for connecting with OpenCPU.",
+    "name": "kwb.heatsine.opencpu: Wrapper for R Package kwb.heatsine for OpenCPU Usage",
+    "codeRepository": "https://github.com/KWB-R/kwb.heatsine.opencpu",
+    "issueTracker": "https://github.com/KWB-R/kwb.heatsine.opencpu/issues",
+    "license": "https://spdx.org/licenses/MIT",
+    "version": "0.1.0",
+    "programmingLanguage": {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "version": "4.0.3",
+      "url": "https://r-project.org"
+    },
+    "runtimePlatform": "R version 4.0.3 (2020-10-10)",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Ralf",
+        "familyName": "Junghanns",
+        "email": "ralf.junghanns@tu-dresden.de"
+      }
+    ],
+    "contributor": [
+      {
+        "@type": "Person",
+        "givenName": "Hauke",
+        "familyName": "Sonnenberg",
+        "email": "hauke.sonnenberg@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0001-9134-2871"
+      }
+    ],
+    "copyrightHolder": [
+      {
+        "@type": "Organization",
+        "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
+      }
+    ],
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "Smart-Control"
+      }
+    ],
+    "maintainer": [
+      {
+        "@type": "Person",
+        "givenName": "Michael",
+        "familyName": "Rustler",
+        "email": "michael.rustler@kompetenz-wasser.de",
+        "@id": "https://orcid.org/0000-0003-0647-7726"
+      }
+    ],
+    "softwareSuggestions": [
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "knitr",
+        "name": "knitr",
+        "version": ">= 1.30",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=knitr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "rmarkdown",
+        "name": "rmarkdown",
+        "version": ">= 2.4",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -5158,6 +5171,7 @@
         "@type": "SoftwareApplication",
         "identifier": "testthat",
         "name": "testthat",
+        "version": ">= 2.3.2",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -5178,6 +5192,7 @@
         "@type": "SoftwareApplication",
         "identifier": "jsonlite",
         "name": "jsonlite",
+        "version": ">= 1.7.1",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -5189,12 +5204,14 @@
       {
         "@type": "SoftwareApplication",
         "identifier": "kwb.heatsine",
-        "name": "kwb.heatsine"
+        "name": "kwb.heatsine",
+        "version": ">= 0.1.5"
       },
       {
         "@type": "SoftwareApplication",
         "identifier": "tibble",
         "name": "tibble",
+        "version": ">=\n        3.0.4",
         "provider": {
           "@id": "https://cran.r-project.org",
           "@type": "Organization",
@@ -5216,6 +5233,12 @@
             "familyName": "Rustler",
             "email": "michael.rustler@kompetenz-wasser.de",
             "@id": "https://orcid.org/0000-0003-0647-7726"
+          },
+          {
+            "@type": "Person",
+            "givenName": "Ralf",
+            "familyName": "Junghanns",
+            "email": "ralf.junghanns@tu-dresden.de"
           }
         ],
         "name": "kwb.heatsine.opencpu: Wrapper for R Package kwb.heatsine for OpenCPU Usage",

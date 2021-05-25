@@ -60,5 +60,5 @@ jobs:
 
       - name: Deploy package
         run: |
-          kwb.pkgbuild::deploy_to_branch_with_extra_files(vignettes_file_pattern_to_copy = "\\.json$|\\.html$")
+          Rscript -e 'kwb.pkgbuild::deploy_to_branch_with_extra_files(vignettes_file_pattern_to_copy = "\\\.json$|\\\.html$")'
         shell: Rscript {0}

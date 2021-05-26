@@ -1,7 +1,7 @@
 #' Plot Github Package Releases Over Time
 #'
 #' @param pkgs_releases data frame with pkgs as retrieved by
-#' \link{\code{github_packages_versions}}
+#' \code{\link{github_packages_versions}}
 #' @param last_update default: Sys.time()
 #' @return ggplot of temporal development of R package releases on Github
 #' @export

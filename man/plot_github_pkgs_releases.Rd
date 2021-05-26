@@ -8,7 +8,7 @@ plot_github_pkgs_releases(pkgs_releases, last_update = Sys.time())
 }
 \arguments{
 \item{pkgs_releases}{data frame with pkgs as retrieved by
-\link{\code{github_packages_versions}}}
+\code{\link{github_packages_versions}}}
 
 \item{last_update}{default: Sys.time()}
 }

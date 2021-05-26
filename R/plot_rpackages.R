@@ -1,6 +1,7 @@
 #' Plot Github Packages Over Time
 #'
-#' @param df_pkgs data frame with pkgs as retrieved with get_github_packages()
+#' @param df_pkgs data frame with pkgs as retrieved by
+#' \code{\link{get_github_packages}}
 #' @param last_update default: Sys.time()
 #' @return ggplot of temporal development of R packages on Github
 #' @export

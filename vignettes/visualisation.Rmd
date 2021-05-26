@@ -16,7 +16,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-# KWB-R Packages on Github Over Time
+## R Packages on Github 
+
+### Temporal Development
 
 
 ```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
@@ -26,4 +28,11 @@ pkgs <- pkgmeta::get_github_packages()
 #pkgs <- readRDS("rpackages.RData")
 pkgmeta::plot_github_pkgs_over_time(pkgs)
 
+```
+
+### Releases
+
+```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
+pkgs_releases <- pkgmeta::github_packages_versions(repos = pkgs$full_name)
+pkgmeta::plot_github_pkgs_releases(pkgs_releases)
 ```

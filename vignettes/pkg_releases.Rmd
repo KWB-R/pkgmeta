@@ -1,0 +1,23 @@
+---
+title: "R Package Releases"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{pkg_releases}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+
+pkgs <- pkgmeta::get_github_packages()
+pkgs_releases <- pkgmeta::github_packages_versions(repos = pkgs$full_name)
+pkgmeta::plot_github_pkgs_releases(pkgs_releases)
+
+```

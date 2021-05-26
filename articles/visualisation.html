@@ -41,7 +41,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -73,7 +73,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/KWB-R/pkgmeta/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -93,14 +93,13 @@
 
       
 
-      </header><script src="visualisation_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="visualisation_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="visualisation_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="visualisation_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Visualisation</h1>
                         <h4 class="author">Michael Rustler</h4>
             
-            <h4 class="date">2020-11-02</h4>
+            <h4 class="date">2021-05-26</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/visualisation.Rmd"><code>vignettes/visualisation.Rmd</code></a></small>
       <div class="hidden name"><code>visualisation.Rmd</code></div>
@@ -112,12 +111,12 @@
 <div id="kwb-r-packages-on-github-over-time" class="section level1">
 <h1 class="hasAnchor">
 <a href="#kwb-r-packages-on-github-over-time" class="anchor"></a>KWB-R Packages on Github Over Time</h1>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>github_token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span><span class="op">)</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>github_token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span><span class="op">)</span>
 <span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co">#pkgs &lt;- readRDS("rpackages.RData")</span>
-<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_github_pkgs_over_time.html">plot_github_pkgs_over_time</a></span><span class="op">(</span><span class="va">pkgs</span><span class="op">)</span></pre></div>
+<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_github_pkgs_over_time.html">plot_github_pkgs_over_time</a></span><span class="op">(</span><span class="va">pkgs</span><span class="op">)</span></code></pre></div>
 <p><img src="visualisation_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
 </div>
   </div>

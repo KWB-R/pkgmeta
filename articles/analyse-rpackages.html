@@ -41,7 +41,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -73,7 +73,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/KWB-R/pkgmeta/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -93,14 +93,13 @@
 
       
 
-      </header><script src="analyse-rpackages_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="analyse-rpackages_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="analyse-rpackages_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="analyse-rpackages_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Analyse R Packages on Github</h1>
                         <h4 class="author">Michael Rustler</h4>
             
-            <h4 class="date">2020-11-02</h4>
+            <h4 class="date">2021-05-26</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/analyse-rpackages.Rmd"><code>vignettes/analyse-rpackages.Rmd</code></a></small>
       <div class="hidden name"><code>analyse-rpackages.Rmd</code></div>
@@ -113,16 +112,19 @@
 <h1 class="hasAnchor">
 <a href="#get-metadata-for-all-kwb-r-github-repos" class="anchor"></a>Get Metadata for All KWB-R Github Repos</h1>
 <p>For all Github repos also includes non R packages</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
   
 <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_github_repos_json.html">write_github_repos_json</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Fetching Github metadata for repos of organisation 'KWB-R' at 'https://github.com/KWB-R/' ... ok. (0.67s) </span>
-<span class="co">#&gt; Writting '/Users/runner/work/pkgmeta/pkgmeta/vignettes/github.json' file for 58 repos:</span>
+<span class="co">#&gt; Fetching Github metadata for repos of organisation 'KWB-R' at 'https://github.com/KWB-R/' ... ok. (0.99s) </span>
+<span class="co">#&gt; Writting '/Users/runner/work/pkgmeta/pkgmeta/vignettes/github.json' file for 82 repos:</span>
 <span class="co">#&gt; - algoliar: https://github.com/KWB-R/algoliar</span>
 <span class="co">#&gt; - apps: https://github.com/KWB-R/apps</span>
 <span class="co">#&gt; - aquanes.report: https://github.com/KWB-R/aquanes.report</span>
+<span class="co">#&gt; - basar.scripts: https://github.com/KWB-R/basar.scripts</span>
+<span class="co">#&gt; - dwc.ar4gw: https://github.com/KWB-R/dwc.ar4gw</span>
+<span class="co">#&gt; - dwc.wells: https://github.com/KWB-R/dwc.wells</span>
 <span class="co">#&gt; - fakin: https://github.com/KWB-R/fakin</span>
 <span class="co">#&gt; - fakin.blog: https://github.com/KWB-R/fakin.blog</span>
 <span class="co">#&gt; - fakin.doc: https://github.com/KWB-R/fakin.doc</span>
@@ -131,7 +133,10 @@
 <span class="co">#&gt; - flusshygiene: https://github.com/KWB-R/flusshygiene</span>
 <span class="co">#&gt; - GeoSalz: https://github.com/KWB-R/GeoSalz</span>
 <span class="co">#&gt; - HydroServerLite: https://github.com/KWB-R/HydroServerLite</span>
+<span class="co">#&gt; - ibathwater: https://github.com/KWB-R/ibathwater</span>
+<span class="co">#&gt; - keys.lid: https://github.com/KWB-R/keys.lid</span>
 <span class="co">#&gt; - kwb-r.github.io: https://github.com/KWB-R/kwb-r.github.io</span>
+<span class="co">#&gt; - kwb.abimo: https://github.com/KWB-R/kwb.abimo</span>
 <span class="co">#&gt; - kwb.base: https://github.com/KWB-R/kwb.base</span>
 <span class="co">#&gt; - kwb.budget: https://github.com/KWB-R/kwb.budget</span>
 <span class="co">#&gt; - kwb.code: https://github.com/KWB-R/kwb.code</span>
@@ -152,47 +157,65 @@
 <span class="co">#&gt; - kwb.hantush: https://github.com/KWB-R/kwb.hantush</span>
 <span class="co">#&gt; - kwb.heatsine: https://github.com/KWB-R/kwb.heatsine</span>
 <span class="co">#&gt; - kwb.heatsine.opencpu: https://github.com/KWB-R/kwb.heatsine.opencpu</span>
+<span class="co">#&gt; - kwb.infoworks: https://github.com/KWB-R/kwb.infoworks</span>
 <span class="co">#&gt; - kwb.kuras.db: https://github.com/KWB-R/kwb.kuras.db</span>
 <span class="co">#&gt; - kwb.lca: https://github.com/KWB-R/kwb.lca</span>
 <span class="co">#&gt; - kwb.logger: https://github.com/KWB-R/kwb.logger</span>
 <span class="co">#&gt; - kwb.matomo: https://github.com/KWB-R/kwb.matomo</span>
+<span class="co">#&gt; - kwb.ml: https://github.com/KWB-R/kwb.ml</span>
 <span class="co">#&gt; - kwb.monitoring: https://github.com/KWB-R/kwb.monitoring</span>
 <span class="co">#&gt; - kwb.nextcloud: https://github.com/KWB-R/kwb.nextcloud</span>
+<span class="co">#&gt; - kwb.odm: https://github.com/KWB-R/kwb.odm</span>
+<span class="co">#&gt; - kwb.ogre: https://github.com/KWB-R/kwb.ogre</span>
+<span class="co">#&gt; - kwb.ogre.model: https://github.com/KWB-R/kwb.ogre.model</span>
 <span class="co">#&gt; - kwb.orcid: https://github.com/KWB-R/kwb.orcid</span>
 <span class="co">#&gt; - kwb.pathdict: https://github.com/KWB-R/kwb.pathdict</span>
 <span class="co">#&gt; - kwb.pilot: https://github.com/KWB-R/kwb.pilot</span>
 <span class="co">#&gt; - kwb.pkgbuild: https://github.com/KWB-R/kwb.pkgbuild</span>
 <span class="co">#&gt; - kwb.pkgstatus: https://github.com/KWB-R/kwb.pkgstatus</span>
 <span class="co">#&gt; - kwb.plot: https://github.com/KWB-R/kwb.plot</span>
+<span class="co">#&gt; - kwb.prep: https://github.com/KWB-R/kwb.prep</span>
 <span class="co">#&gt; - kwb.pubs: https://github.com/KWB-R/kwb.pubs</span>
+<span class="co">#&gt; - kwb.python: https://github.com/KWB-R/kwb.python</span>
 <span class="co">#&gt; - kwb.qmra: https://github.com/KWB-R/kwb.qmra</span>
+<span class="co">#&gt; - kwb.quantum: https://github.com/KWB-R/kwb.quantum</span>
 <span class="co">#&gt; - kwb.read: https://github.com/KWB-R/kwb.read</span>
 <span class="co">#&gt; - kwb.readxl: https://github.com/KWB-R/kwb.readxl</span>
 <span class="co">#&gt; - kwb.resilience: https://github.com/KWB-R/kwb.resilience</span>
+<span class="co">#&gt; - kwb.satellite: https://github.com/KWB-R/kwb.satellite</span>
 <span class="co">#&gt; - kwb.site: https://github.com/KWB-R/kwb.site</span>
 <span class="co">#&gt; - kwb.svn: https://github.com/KWB-R/kwb.svn</span>
+<span class="co">#&gt; - kwb.swmm: https://github.com/KWB-R/kwb.swmm</span>
 <span class="co">#&gt; - kwb.test: https://github.com/KWB-R/kwb.test</span>
 <span class="co">#&gt; - kwb.umberto: https://github.com/KWB-R/kwb.umberto</span>
 <span class="co">#&gt; - kwb.utils: https://github.com/KWB-R/kwb.utils</span>
 <span class="co">#&gt; - kwb.vs2dh: https://github.com/KWB-R/kwb.vs2dh</span>
 <span class="co">#&gt; - kwb.wtaq: https://github.com/KWB-R/kwb.wtaq</span>
+<span class="co">#&gt; - maxflow: https://github.com/KWB-R/maxflow</span>
+<span class="co">#&gt; - pFromGrADS: https://github.com/KWB-R/pFromGrADS</span>
 <span class="co">#&gt; - pkgmeta: https://github.com/KWB-R/pkgmeta</span>
-<span class="co">#&gt; - qmra.db: https://github.com/KWB-R/qmra.db ... ok. (0.20s)</span></pre></div>
+<span class="co">#&gt; - qmra.db: https://github.com/KWB-R/qmra.db</span>
+<span class="co">#&gt; - r2q: https://github.com/KWB-R/r2q</span>
+<span class="co">#&gt; - riverPollution: https://github.com/KWB-R/riverPollution</span>
+<span class="co">#&gt; - sema.berlin.utils: https://github.com/KWB-R/sema.berlin.utils</span>
+<span class="co">#&gt; - status: https://github.com/KWB-R/status</span>
+<span class="co">#&gt; - urbanAnnualRunoff: https://github.com/KWB-R/urbanAnnualRunoff</span>
+<span class="co">#&gt; - wasserportal: https://github.com/KWB-R/wasserportal ... ok. (0.50s)</span></code></pre></div>
 </div>
 <div id="get-public-kwb-r-github-package" class="section level1">
 <h1 class="hasAnchor">
 <a href="#get-public-kwb-r-github-package" class="anchor"></a>Get Public KWB-R Github Package</h1>
 <p>Now limit only “public” KWB-R repos which are R packages.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
 
-
-<span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="define-paths" class="section level1">
 <h1 class="hasAnchor">
 <a href="#define-paths" class="anchor"></a>Define paths</h1>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="co"># Define paths and resolve placeholders</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Define paths and resolve placeholders</span>
 
 <span class="va">paths_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
   root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>,
@@ -204,7 +227,7 @@
   <span class="op">)</span>
 
 
-<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu">kwb.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.utils/man/resolve.html">resolve</a></span><span class="op">(</span><span class="va">paths_list</span>, root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></pre></div>
+<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu">kwb.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.utils/man/resolve.html">resolve</a></span><span class="op">(</span><span class="va">paths_list</span>, root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="download-dependencies" class="section level1">
 <h1 class="hasAnchor">
@@ -213,11 +236,11 @@
 <h2 class="hasAnchor">
 <a href="#install-packages" class="anchor"></a>Install Packages</h2>
 <p>in own library required for “codemetar” and “pkgnet” reports</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="co">### On Travis already installed within .travis configuration</span>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">### On Travis already installed within .travis configuration</span>
 <span class="co">### https://github.com/KWB-R/pkgmeta/blob/master/.travis.yml</span>
 <span class="co">### with function </span>
-<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/travis_pkg_install_script.html">travis_pkg_install_script</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/travis_pkg_install_script.html">travis_pkg_install_script</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="source-packages" class="section level2">
 <h2 class="hasAnchor">
@@ -232,8 +255,8 @@
 <h2 class="hasAnchor">
 <a href="#with-r-package-codemetar" class="anchor"></a>With R package “codemetar”</h2>
 <p>Generating “codemetar.json” file</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
 
 <span class="va">pkgs_codemetar</span> <span class="op">&lt;-</span>  <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span>
 
@@ -241,8 +264,13 @@
                                          libpath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"R_LIBS_USER"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Creating codemeta object ... Writing codemeta for R package algoliar</span>
 <span class="co">#&gt; Writing codemeta for R package aquanes.report</span>
+<span class="co">#&gt; Writing codemeta for R package dwc.ar4gw</span>
+<span class="co">#&gt; Writing codemeta for R package dwc.wells</span>
 <span class="co">#&gt; Writing codemeta for R package fakin.path.app</span>
 <span class="co">#&gt; Writing codemeta for R package fhpredict</span>
+<span class="co">#&gt; Writing codemeta for R package ibathwater</span>
+<span class="co">#&gt; Writing codemeta for R package keys.lid</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.abimo</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.base</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.budget</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.code</span>
@@ -263,25 +291,37 @@
 <span class="co">#&gt; Writing codemeta for R package kwb.hantush</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.heatsine</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.heatsine.opencpu</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.infoworks</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.kuras.db</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.lca</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.logger</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.matomo</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ml</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.monitoring</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.nextcloud</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.odm</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.odm/.')</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ogre</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ogre.model</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.orcid</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.pathdict</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.pilot</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.pkgbuild</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.pkgstatus</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.plot</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.prep</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.pubs</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.python</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.qmra</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.quantum</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.quantum/.')</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.read</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.readxl</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.resilience</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.satellite</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.site</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.svn</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.swmm</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.test</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.umberto</span>
 <span class="co">#&gt; Writing codemeta for R package kwb.utils</span>
@@ -289,12 +329,16 @@
 <span class="co">#&gt; Writing codemeta for R package kwb.wtaq</span>
 <span class="co">#&gt; Writing codemeta for R package pkgmeta</span>
 <span class="co">#&gt; Writing codemeta for R package qmra.db</span>
-<span class="co">#&gt; ok. (1.11s)</span>
+<span class="co">#&gt; Writing codemeta for R package r2q</span>
+<span class="co">#&gt; Writing codemeta for R package sema.berlin.utils</span>
+<span class="co">#&gt; Writing codemeta for R package urbanAnnualRunoff</span>
+<span class="co">#&gt; Writing codemeta for R package wasserportal</span>
+<span class="co">#&gt; ok. (1.41s)</span>
 
 
 
 <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_pkg_codemeta_json.html">write_pkg_codemeta_json</a></span><span class="op">(</span><span class="va">codemeta</span><span class="op">)</span>
-<span class="co">#&gt; Writting codemeta to '/Users/runner/work/pkgmeta/pkgmeta/vignettes/codemetar.json' ... ok. (0.24s)</span></pre></div>
+<span class="co">#&gt; Writting codemeta to '/Users/runner/work/pkgmeta/pkgmeta/vignettes/codemetar.json' ... ok. (0.37s)</span></code></pre></div>
 </div>
 <div id="with-r-package-pkgnet" class="section level2">
 <h2 class="hasAnchor">

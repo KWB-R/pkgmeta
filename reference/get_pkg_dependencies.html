@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • pkgmeta</title>
+<title>Get package dependencies — get_pkg_dependencies • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,7 +45,8 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Get package dependencies — get_pkg_dependencies" />
+<meta property="og:description" content="Get package dependencies" />
 
 
 
@@ -64,7 +65,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -140,27 +141,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Get package dependencies</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/get_pkg_dependencies.R'><code>R/get_pkg_dependencies.R</code></a></small>
+    <div class="hidden name"><code>get_pkg_dependencies.Rd</code></div>
     </div>
 
-    <div id="pkgmeta-010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#pkgmeta-010" class="anchor"></a>pkgmeta 0.1.0</h1>
-<ul>
-<li><p>first release on Zenodo</p></li>
-<li><p>Added a <code>NEWS.md</code> file to track changes to the package.</p></li>
-<li><p>see <a href="https://style.tidyverse.org/news.html" class="uri">https://style.tidyverse.org/news.html</a> for writing a good <code>NEWS.md</code></p></li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Get package dependencies</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>get_pkg_dependencies</span><span class='op'>(</span><span class='va'>pkgs</span>, library_path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/libPaths.html'>.libPaths</a></span><span class='op'>(</span><span class='op'>)</span>, dbg <span class='op'>=</span> <span class='cn'>TRUE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>pkgs</th>
+      <td><p>character vector with package names</p></td>
+    </tr>
+    <tr>
+      <th>library_path</th>
+      <td><p>character vector with path(s) to R library (default: .libPaths())</p></td>
+    </tr>
+    <tr>
+      <th>dbg</th>
+      <td><p>logical if debug should be shown (default: TRUE)</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional arguments passed to getPackageDependencies</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>list with package dependencies</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>pkgs</span> <span class='op'>&lt;-</span> <span class='fu'>pkgmeta</span><span class='fu'>::</span><span class='fu'><a href='get_github_packages.html'>get_github_packages</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'>get_pkg_dependencies</span><span class='op'>(</span><span class='va'>pkgs</span><span class='op'>$</span><span class='va'>name</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

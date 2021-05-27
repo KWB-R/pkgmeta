@@ -1,12 +1,12 @@
 on:
   push:
-    branches: 
+    branches:
       - master
       - dev
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 5 * * 1'
-  
+
 name: pkgdown
 
 jobs:
@@ -38,13 +38,13 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
           pkgmeta::travis_pkg_install_script()
         shell: Rscript {0}
-        
-      - name: Cache R packages
-        uses: actions/cache@v1
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+#      - name: Cache R packages
+#        uses: actions/cache@v1
+#        with:
+#          path: ${{ env.R_LIBS_USER }}
+#          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+#          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
 #      - name: Install package
 #        run: R CMD INSTALL .

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Helper function: Get Github Metadata For Repos — get_github_repos • pkgmeta</title>
+<title>Get Github Versions for One Repo — github_package_versions • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,8 +45,8 @@
 
 
 
-<meta property="og:title" content="Helper function: Get Github Metadata For Repos — get_github_repos" />
-<meta property="og:description" content="Helper function: Get Github Metadata For Repos" />
+<meta property="og:title" content="Get Github Versions for One Repo — github_package_versions" />
+<meta property="og:description" content="Get Github Versions for One Repo" />
 
 
 
@@ -141,45 +141,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Helper function: Get Github Metadata For Repos</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/write_github_repos_json.R'><code>R/write_github_repos_json.R</code></a></small>
-    <div class="hidden name"><code>get_github_repos.Rd</code></div>
+    <h1>Get Github Versions for One Repo</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/github_package_versions.R'><code>R/github_package_versions.R</code></a></small>
+    <div class="hidden name"><code>github_package_versions.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Helper function: Get Github Metadata For Repos</p>
+    <p>Get Github Versions for One Repo</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_github_repos</span><span class='op'>(</span>
-  group <span class='op'>=</span> <span class='st'>"KWB-R"</span>,
-  github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span>,
-  dbg <span class='op'>=</span> <span class='cn'>TRUE</span>,
-  <span class='va'>...</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>github_package_versions</span><span class='op'>(</span><span class='va'>repo</span>, github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>group</th>
-      <td><p>organisation (default: "KWB-R")</p></td>
+      <th>repo</th>
+      <td><p>full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")</p></td>
     </tr>
     <tr>
       <th>github_token</th>
       <td><p>default: Sys.getenv("GITHUB_PAT")</p></td>
     </tr>
-    <tr>
-      <th>dbg</th>
-      <td><p>should debug messages be printed? (default: TRUE)</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>additional arguments passed to gh:::gh_build_request(), see
-https://developer.github.com/v3/ (e.g. type = "public")</p></td>
-    </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>data frame</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>pkg_versions</span> <span class='op'>&lt;-</span> <span class='fu'>pkgmeta</span><span class='fu'>::</span><span class='fu'>github_package_versions</span><span class='op'>(</span><span class='st'>"kwb-r/kwb.utils"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>pkg_versions</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

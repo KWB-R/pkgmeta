@@ -12,7 +12,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -142,6 +141,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
+    "readme": "https://github.com/KWB-R/algoliar/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "algolia", "search", "api", "knowledge-repo", "hugo", "academic", "project-fakin"],
     "citation": [
       {
@@ -175,7 +175,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -594,6 +593,7 @@
         "sameAs": "https://CRAN.R-project.org/package=janitor"
       }
     ],
+    "readme": "https://github.com/KWB-R/aquanes.report/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-visualisation", "automated-reporting", "data-aggregation", "data-export", "project-aquanes", "shiny-app", "r-package", "pilot-plant"],
     "citation": [
       {
@@ -627,7 +627,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -828,6 +827,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
+    "readme": "https://github.com/KWB-R/dwc.ar4gw/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "project-dwc", "modflow", "flopy"],
     "citation": [
       {
@@ -861,7 +861,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -1060,6 +1059,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyselect"
       }
     ],
+    "readme": "https://github.com/KWB-R/dwc.wells/blob/dev/README.md",
     "keywords": ["r", "rstats", "r-package", "project-dwc", "machine-learning"],
     "citation": [
       {
@@ -1093,7 +1093,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -1475,6 +1474,7 @@
         "sameAs": "https://CRAN.R-project.org/package=wordcloud"
       }
     ],
+    "readme": "https://github.com/KWB-R/fakin.path.app/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "project-fakin", "shiny-app", "path-analysis"],
     "citation": [
       {
@@ -1508,7 +1508,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -1861,6 +1860,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
+    "readme": "https://github.com/KWB-R/fhpredict/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
     "citation": [
       {
@@ -1901,7 +1901,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2019,6 +2018,7 @@
       }
     ],
     "softwareRequirements": [],
+    "readme": "https://github.com/KWB-R/ibathwater/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "project-ibathwater", "bayesian-statistics", "water-quality", "surface-water", "prediction"],
     "citation": [
       {
@@ -2052,7 +2052,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2254,6 +2253,7 @@
         "sameAs": "https://CRAN.R-project.org/package=zoo"
       }
     ],
+    "readme": "https://github.com/KWB-R/keys.lid/blob/master/README.md",
     "keywords": ["r", "rstats", "project-keys", "swmm", "lid", "green-roof", "permeable-pavement", "bioretention-cell", "rain-barrel", "r-package"],
     "citation": [
       {
@@ -2294,7 +2294,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2395,6 +2394,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.abimo/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "water-balance-model", "abimo", "project-keys", "project-spur", "project-basar", "project-kuras", "project-ogre", "project-flusshygiene"],
     "citation": [
       {
@@ -2428,7 +2428,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2516,6 +2515,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xts"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.base/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
@@ -2549,7 +2549,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2716,6 +2715,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.budget/blob/master/README.md",
     "keywords": ["rstats", "r-package", "project-development"],
     "citation": [
       {
@@ -2756,7 +2756,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2838,6 +2837,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.code/blob/master/README.md",
     "keywords": ["r", "rstats", "project-fakin", "r-package"],
     "citation": [
       {
@@ -2871,7 +2871,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -2951,6 +2950,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.datetime/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "datetime"],
     "citation": [
       {
@@ -2984,7 +2984,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -3071,6 +3070,7 @@
         "sameAs": "https://CRAN.R-project.org/package=RODBC"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.db/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "r-package", "database-access", "database-connection", "rodbc"],
     "citation": [
       {
@@ -3104,7 +3104,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -3181,6 +3180,7 @@
       }
     ],
     "softwareRequirements": [],
+    "readme": "https://github.com/KWB-R/kwb.default/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
@@ -3214,7 +3214,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -3368,6 +3367,7 @@
         "sameAs": "https://CRAN.R-project.org/package=sp"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.demeau/blob/master/README.md",
     "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau", "r-package", "modelling", "vs2dh", "vs2dt", "usgs"],
     "citation": [
       {
@@ -3401,7 +3401,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -3465,6 +3464,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.dwa.m150/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "data-import", "sewer-classification", "dwa"],
     "citation": [
       {
@@ -3498,7 +3498,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -3700,6 +3699,7 @@
         "sameAs": "https://CRAN.R-project.org/package=RCurl"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.dwd/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "dwd", "rain", "data-import"],
     "citation": [
       {
@@ -3733,7 +3733,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -3797,6 +3796,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.en13508.2/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "data-import", "data-export", "cctv-inspection", "sewer-classification"],
     "citation": [
       {
@@ -3830,7 +3830,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -4070,6 +4069,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.endnote/blob/master/README.md",
     "keywords": ["project-fakin", "knowledge-repo", "publication", "literature-data-management", "r-package", "r", "rstats", "endnote"],
     "citation": [
       {
@@ -4103,7 +4103,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -4187,6 +4186,7 @@
         "sameAs": "https://github.com/kwb-r/kwb.plot"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.event/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "data-aggregation"],
     "citation": [
       {
@@ -4220,7 +4220,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -4567,6 +4566,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.fakin/blob/master/README.md",
     "keywords": ["r", "rstats", "project-fakin", "research-data-management", "r-package"],
     "citation": [
       {
@@ -4600,7 +4600,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -4712,6 +4711,7 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.file/blob/master/README.md",
     "keywords": ["r", "rstats", "project-fakin", "r-package"],
     "citation": [
       {
@@ -4745,7 +4745,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -5003,6 +5002,7 @@
         "sameAs": "https://CRAN.R-project.org/package=purrr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.flusshygiene/blob/master/README.md",
     "keywords": ["r", "rstats", "project-flusshygiene", "r-package", "modelling"],
     "citation": [
       {
@@ -5042,7 +5042,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -5256,6 +5255,7 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.flusshygiene.app/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "project-flusshygiene"],
     "citation": [
       {
@@ -5302,7 +5302,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -5572,6 +5571,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.geosalz/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-cleaning", "project-fakin", "project-geosalz", "data-visualisation", "r-package", "excel", "spreadsheets"],
     "citation": [
       {
@@ -5606,7 +5606,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -5712,6 +5711,7 @@
         "sameAs": "https://CRAN.R-project.org/package=hydroGOF"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.hantush/blob/master/README.md",
     "keywords": ["r", "rstats", "infiltration-basin", "groundwater-mounding", "groundwater-modelling", "project-demeau", "modelling", "shiny-app", "r-package"],
     "citation": [
       {
@@ -5744,7 +5744,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6051,6 +6050,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.heatsine/blob/master/README.md",
     "keywords": ["rstats", "r-package", "project-smartcontrol"],
     "citation": [
       {
@@ -6084,7 +6084,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6214,6 +6213,7 @@
         "sameAs": "https://CRAN.R-project.org/package=tibble"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.heatsine.opencpu/blob/main/README.md",
     "keywords": ["rstats", "r-package", "opencpu", "project-smartcontrol"],
     "citation": [
       {
@@ -6253,7 +6253,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6349,6 +6348,7 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.infoworks/blob/main/README.md",
     "keywords": ["r", "rstats", "r-package", "infoworks", "gerris"],
     "citation": [
       {
@@ -6382,7 +6382,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6467,6 +6466,7 @@
         "name": "kwb.utils"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.kuras.db/blob/master/README.md",
     "keywords": ["r", "rstats", "project-kuras"],
     "citation": [
       {
@@ -6500,7 +6500,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6626,6 +6625,7 @@
         "sameAs": "https://CRAN.R-project.org/package=openxlsx"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.lca/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "data-export", "project-fakin", "life-cycle-assessment", "modelling", "project-smartplant", "excel", "template", "spreadsheets", "questionaires"],
     "citation": [
       {
@@ -6659,7 +6659,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6749,6 +6748,7 @@
         "sameAs": "https://CRAN.R-project.org/package=XML"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.logger/blob/master/README.md",
     "keywords": ["r", "rstats", "data-import", "data-logger", "r-package"],
     "citation": [
       {
@@ -6782,7 +6782,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -6888,6 +6887,7 @@
         "sameAs": "https://CRAN.R-project.org/package=data.table"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.matomo/blob/master/README.md",
     "keywords": ["r", "rstats", "rpackage", "matomo"],
     "citation": [
       {
@@ -6921,7 +6921,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7042,6 +7041,7 @@
         "sameAs": "https://CRAN.R-project.org/package=raster"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.ml/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "machine-learning", "project-keys", "project-mbr40"],
     "citation": [
       {
@@ -7075,7 +7075,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7236,6 +7235,7 @@
         "sameAs": "https://CRAN.R-project.org/package=manipulate"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.monitoring/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "monitoring"],
     "citation": [
       {
@@ -7269,7 +7269,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7398,6 +7397,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.nextcloud/blob/master/README.md",
     "keywords": ["r-package", "nextcloud", "api"],
     "citation": [
       {
@@ -7438,7 +7438,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7506,7 +7505,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7630,6 +7628,7 @@
         "sameAs": "https://CRAN.R-project.org/package=manipulate"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.ogre/blob/master/README.md",
     "keywords": ["r", "rstats", "project-ogre", "r-package"],
     "citation": [
       {
@@ -7663,7 +7662,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7771,6 +7769,7 @@
         "sameAs": "https://CRAN.R-project.org/package=rlang"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.ogre.model/blob/master/README.md",
     "keywords": ["r", "rstats", "project-ogre", "modelling", "data-import", "r-package"],
     "citation": [
       {
@@ -7811,7 +7810,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -7948,6 +7946,7 @@
         "sameAs": "https://CRAN.R-project.org/package=rlang"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.orcid/blob/master/README.md",
     "keywords": ["r", "rstats", "publication", "project-fakin", "r-package", "research-data-management", "orcid"],
     "citation": [
       {
@@ -7981,7 +7980,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -8107,6 +8105,7 @@
         "sameAs": "https://CRAN.R-project.org/package=qdapDictionaries"
       }
     ],
+    "readme": "https://github.com/KWB-R/kwb.pathdict/blob/master/README.md",
     "keywords": ["r", "rstats", "r-package", "paths", "project-fakin"],
     "citation": [
       {
@@ -8140,7 +8139,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -8633,7 +8631,7 @@
         "sameAs": "https://CRAN.R-project.org/package=xts"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "data-import", "data-aggregation", "data-visualisation", "project-aquanes", "project-suleman", "project-mbr40"],
+    "readme": "https://github.com/KWB-R/kwb.pilot/blob/master/README.md",
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -8666,7 +8664,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -8964,7 +8961,6 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
-    "keywords": ["r", "rstats", "r-package-automation", "publication", "project-fakin", "r-package", "best-practices", "automation"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -8997,7 +8993,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -9193,7 +9188,6 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
-    "keywords": ["r", "rstats", "data-management", "publication", "project-fakin", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -9226,7 +9220,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -9344,7 +9337,6 @@
         "sameAs": "https://CRAN.R-project.org/package=gridExtra"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "data-visualisation"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -9377,7 +9369,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -9529,7 +9520,6 @@
         "sameAs": "https://CRAN.R-project.org/package=yaml"
       }
     ],
-    "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -9562,7 +9552,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -9734,7 +9723,6 @@
         "sameAs": "https://CRAN.R-project.org/package=withr"
       }
     ],
-    "keywords": ["r", "rstats", "hugo-academic", "knowledge-repo", "project-fakin", "publication", "r-package", "hugo-site"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -9767,7 +9755,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -9870,7 +9857,6 @@
         "sameAs": "https://CRAN.R-project.org/package=reticulate"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "project-keys", "project-dwc", "python", "conda-export", "environment-yml"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -9903,7 +9889,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -10288,7 +10273,6 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["r", "rstats", "project-demoware", "project-aquanes", "qmra-webapp-backend-engine", "r-package", "qmra", "project-smartcontrol"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -10328,7 +10312,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -10371,7 +10354,6 @@
         "sameAs": "https://CRAN.R-project.org/package=RCurl"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "project-miacso", "r-package", "quantum-hydrometrie"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -10402,7 +10384,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -10527,7 +10508,6 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -10560,7 +10540,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -10715,7 +10694,6 @@
         "sameAs": "https://CRAN.R-project.org/package=stringr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "project-fakin", "r-package", "project-geosalz", "excel", "spreadsheets"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -10748,7 +10726,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -10863,7 +10840,6 @@
         "sameAs": "https://github.com/KWB-R/kwb.event"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin", "project-networks4", "r-package", "resilience"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -10896,7 +10872,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -11061,7 +11036,6 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "satellite-data", "copernicus", "google-earth-engine", "copernicus-climate-data-store", "project-keys"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -11094,7 +11068,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -11374,7 +11347,6 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "web-scraping", "website", "knowledge-repo", "project-fakin", "rvest", "r-selenium"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -11407,7 +11379,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -11580,7 +11551,6 @@
         "sameAs": "https://CRAN.R-project.org/package=XML"
       }
     ],
-    "keywords": ["r", "rstats", "version-control", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -11620,7 +11590,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -11851,7 +11820,6 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "stormwater-management-model", "swmm", "project-keys"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -11884,7 +11852,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -11960,7 +11927,6 @@
         "sameAs": "https://CRAN.R-project.org/package=usethis"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "test"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -11993,7 +11959,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -12191,7 +12156,6 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["r", "rstats", "data-import", "data-aggregation", "data-visualisation", "modelling", "project-fakin", "life-cycle-assessment", "project-smartplant"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -12224,7 +12188,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -12325,7 +12288,6 @@
       }
     ],
     "softwareRequirements": [],
-    "keywords": ["r", "rstats", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -12358,7 +12320,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -12458,7 +12419,6 @@
         "sameAs": "https://github.com/kwb-r/kwb.db"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "project-demeau", "vs2dh", "usgs"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -12491,7 +12451,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -12634,7 +12593,6 @@
         "sameAs": "https://CRAN.R-project.org/package=reshape"
       }
     ],
-    "keywords": ["r", "rstats", "groundwater-modelling", "drawdown-model", "project-optiwells2", "modelling", "shiny-app", "wtaq", "usgs"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -12667,7 +12625,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -13018,7 +12975,6 @@
         "sameAs": "https://CRAN.R-project.org/package=tibble"
       }
     ],
-    "keywords": ["r", "rstats", "project-fakin", "knowledge-repo", "metadata", "r-package", "codemeta", "codemetar", "pkgnet", "github-topics", "github"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -13051,7 +13007,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -13260,7 +13215,6 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
-    "keywords": ["project-aquanes", "mc-access-database", "r", "rstats", "r-package", "qmra", "backend"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -13300,7 +13254,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -13511,7 +13464,6 @@
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
       }
     ],
-    "keywords": ["rstats", "project-r2q", "r-package"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -13551,7 +13503,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -13615,7 +13566,6 @@
         "sameAs": "https://github.com/kwb-r/kwb.utils"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "project-sema-berlin-2"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -13648,7 +13598,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -13881,7 +13830,6 @@
         "sameAs": "https://CRAN.R-project.org/package=magrittr"
       }
     ],
-    "keywords": ["rstats", "r-package", "project-keys", "abimo"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -13914,7 +13862,6 @@
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
-      "version": "4.1.0",
       "url": "https://r-project.org"
     },
     "runtimePlatform": "R version 4.1.0 (2021-05-18)",
@@ -14218,7 +14165,6 @@
         "sameAs": "https://CRAN.R-project.org/package=xml2"
       }
     ],
-    "keywords": ["r", "rstats", "r-package", "real-time-data", "surface-water", "groundwater", "wasserportal-berlin", "project-dwc"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",

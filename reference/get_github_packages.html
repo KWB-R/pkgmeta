@@ -154,7 +154,7 @@
   group <span class='op'>=</span> <span class='st'>"KWB-R"</span>,
   ignore_pkgs <span class='op'>=</span> <span class='cn'>NULL</span>,
   non_r_packages <span class='op'>=</span> <span class='fu'>kwb.pkgstatus</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/kwb.pkgstatus/man/get_non_r_packages.html'>get_non_r_packages</a></span><span class='op'>(</span><span class='op'>)</span>,
-  github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/options.html'>getOption</a></span><span class='op'>(</span><span class='st'>"github_token"</span><span class='op'>)</span>
+  github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -178,7 +178,7 @@ kwb.pkgstatus::get_non_r_packages())</p></td>
     <tr>
       <th>github_token</th>
       <td><p>optionally a Github token in order to access private
-repositories (default: getOption("github_token"))</p></td>
+repositories (default: Sys.getenv("GITHUB_PAT"))</p></td>
     </tr>
     </table>
 

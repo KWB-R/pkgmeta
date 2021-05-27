@@ -19,7 +19,7 @@ Get Github Versions for One Repo
 }
 \examples{
 \dontrun{
-pkg_versions <- github_packages_versions("kwb-r/kwb.utils")
+pkg_versions <- pkgmeta::github_package_versions("kwb-r/kwb.utils")
 head(pkg_versions)
 }
 }

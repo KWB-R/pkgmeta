@@ -21,7 +21,7 @@ Get Github Versions for Multiple Repos
 \examples{
 \dontrun{
 repos <- paste0("kwb-r/", c("aquanes.report", "kwb.ml", "kwb.utils")
-pkgs_versions <- github_packages_versions(repos)
+pkgs_versions <- pkgmeta::github_packages_versions(repos)
 head(pkgs_versions)
 }
 }

@@ -12,7 +12,7 @@
 #' @importFrom purrr map_chr map
 #' @examples
 #' \dontrun{
-#' pkg_versions <- github_packages_versions("kwb-r/kwb.utils")
+#' pkg_versions <- pkgmeta::github_package_versions("kwb-r/kwb.utils")
 #' head(pkg_versions)
 #'}
 github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
@@ -48,7 +48,7 @@ github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"
 #' @examples
 #' \dontrun{
 #' repos <- paste0("kwb-r/", c("aquanes.report", "kwb.ml", "kwb.utils")
-#' pkgs_versions <- github_packages_versions(repos)
+#' pkgs_versions <- pkgmeta::github_packages_versions(repos)
 #' head(pkgs_versions)
 #' }
 github_packages_versions <- function(repos, github_token = Sys.getenv("GITHUB_PAT"))

@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ### wait for 60 seconds in order to be in line with GitHub API limit
 ### <= 80/minute and <=5000/hour
-Sys.sleep(60)
+#Sys.sleep(60)
 ```
 
 ## R Packages on Github 
@@ -26,16 +26,16 @@ Sys.sleep(60)
 
 ```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
 pkgmeta::get_gh_ratelimit()
-pkgs <- pkgmeta::get_github_packages()
+#pkgs <- pkgmeta::get_github_packages()
 
 #pkgs <- readRDS("rpackages.RData")
-pkgmeta::plot_github_pkgs_over_time(pkgs)
+#pkgmeta::plot_github_pkgs_over_time(pkgs)
 
 ```
 
 ### Releases
 
-```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
+```{r, eval = FALSE,  fig.height = 9, fig.width = 7}
 ### wait for 60 seconds in order to be in line with GitHub API limit
 ### <= 80/minute and <=5000/hour
 Sys.sleep(60)

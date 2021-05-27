@@ -2,7 +2,7 @@
 #' Get Github Versions for One Repo
 #'
 #' @param repo full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")
-#' @param github_token default: NULL
+#' @param github_token default: Sys.getenv("GITHUB_PAT")
 #'
 #' @return data frame
 #' @export
@@ -11,10 +11,11 @@
 #' @importFrom kwb.utils selectElements
 #' @importFrom purrr map_chr map
 #' @examples
+#' \dontrun{
 #' pkg_versions <- github_packages_versions("kwb-r/kwb.utils")
 #' head(pkg_versions)
-#'
-github_package_versions <- function(repo, github_token = NULL)
+#'}
+github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
 {
   releases_url <- function(repo) sprintf(
     "https://api.github.com/repos/%s/releases", repo
@@ -39,16 +40,18 @@ github_package_versions <- function(repo, github_token = NULL)
 #'
 #' @param repos vector with full names of Github repos ("owner/repo_name",
 #' e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))
-#' @param github_token default: NULL
+#' @param github_token default: Sys.getenv("GITHUB_PAT")
 #' @return data frame for all repos with releases
 #' @export
 #' @importFrom kwb.utils catAndRun
 #' @importFrom dplyr bind_rows
 #' @examples
+#' \dontrun{
 #' repos <- paste0("kwb-r/", c("aquanes.report", "kwb.ml", "kwb.utils")
 #' pkgs_versions <- github_packages_versions(repos)
 #' head(pkgs_versions)
-github_packages_versions <- function(repos, github_token = NULL)
+#' }
+github_packages_versions <- function(repos, github_token = Sys.getenv("GITHUB_PAT"))
 {
 
 pkg_version_list <- lapply(repos, function(repo) {

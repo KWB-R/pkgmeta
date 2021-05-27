@@ -51,14 +51,14 @@ get_github_full_names <- function(github_repos = get_github_repos()) {
 #' Helper function: Get Github Metadata For Repos
 #'
 #' @param group organisation (default: "KWB-R")
-#' @param github_token default: getOption("github_token") or Sys.getenv("GITHUB_PAT")
+#' @param github_token default: Sys.getenv("GITHUB_PAT")
 #' @param dbg should debug messages be printed? (default: TRUE)
 #' @param ... additional arguments passed to gh:::gh_build_request(), see
 #' https://developer.github.com/v3/ (e.g. type = "public")
 #' @importFrom gh gh
 #' @export
 get_github_repos <- function (group = "KWB-R",
-                              github_token = getOption("github_token"),
+                              github_token = Sys.getenv("GITHUB_PAT"),
                               dbg = TRUE,
                               ...) {
 

@@ -10,7 +10,7 @@
 #' .zip files (use_zip=TRUE); default: FALSE
 #' @param quiet print messages (default: TRUE)
 #' @param auth_token auth_token (needed to download "private" repos), default:
-#' getOption("github_token")
+#' Sys.getenv("GITHUB_PAT")
 #' @return downloaded repo in dest. folder
 #' @export
 #' @import remotes
@@ -21,7 +21,7 @@ download_github <- function(repo,
                             dest_dir = tempdir(),
                             use_zip = FALSE,
                             quiet = FALSE,
-                            auth_token = getOption("github_token")) {
+                            auth_token = Sys.getenv("GITHUB_PAT")) {
   repo_sep <- as.vector(stringr::str_split(repo, pattern = "/|@", n = 3, simplify = TRUE))
 
   reference <- if (repo_sep[3] == "") {

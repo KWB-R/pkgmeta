@@ -8,7 +8,7 @@ get_github_packages(
   group = "KWB-R",
   ignore_pkgs = NULL,
   non_r_packages = kwb.pkgstatus::get_non_r_packages(),
-  github_token = getOption("github_token")
+  github_token = Sys.getenv("GITHUB_PAT")
 )
 }
 \arguments{
@@ -22,7 +22,7 @@ metadata on the license!)}
 kwb.pkgstatus::get_non_r_packages())}
 
 \item{github_token}{optionally a Github token in order to access private
-repositories (default: getOption("github_token"))}
+repositories (default: Sys.getenv("GITHUB_PAT"))}
 }
 \value{
 data frame with R packages on Github

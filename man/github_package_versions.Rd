@@ -4,12 +4,12 @@
 \alias{github_package_versions}
 \title{Get Github Versions for One Repo}
 \usage{
-github_package_versions(repo, github_token = NULL)
+github_package_versions(repo, github_token = Sys.getenv("GITHUB_PAT"))
 }
 \arguments{
 \item{repo}{full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")}
 
-\item{github_token}{default: NULL}
+\item{github_token}{default: Sys.getenv("GITHUB_PAT")}
 }
 \value{
 data frame
@@ -18,7 +18,8 @@ data frame
 Get Github Versions for One Repo
 }
 \examples{
+\dontrun{
 pkg_versions <- github_packages_versions("kwb-r/kwb.utils")
 head(pkg_versions)
-
+}
 }

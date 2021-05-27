@@ -3,6 +3,7 @@
 export("%>%")
 export(create_pkg_codemeta)
 export(download_github)
+export(get_gh_ratelimit)
 export(get_github_packages)
 export(get_github_repos)
 export(get_github_topics)

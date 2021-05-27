@@ -4,7 +4,7 @@ author: "Michael Rustler"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Analyse R Packages}
+  %\VignetteIndexEntry{Analyse R Packages on Github}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

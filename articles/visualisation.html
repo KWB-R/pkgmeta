@@ -119,16 +119,17 @@
 <span class="co">#&gt; # A tibble: 6 x 5</span>
 <span class="co">#&gt;   id                   limit  used remaining      reset</span>
 <span class="co">#&gt;   &lt;chr&gt;                &lt;int&gt; &lt;int&gt;     &lt;int&gt;      &lt;int&gt;</span>
-<span class="co">#&gt; 1 core                  1000  1000         0 1622136893</span>
-<span class="co">#&gt; 2 search                  30     0        30 1622134970</span>
-<span class="co">#&gt; 3 graphql               1000     0      1000 1622138510</span>
-<span class="co">#&gt; 4 integration_manifest  5000     0      5000 1622138510</span>
-<span class="co">#&gt; 5 source_import          100     0       100 1622134970</span>
-<span class="co">#&gt; 6 code_scanning_upload   500     0       500 1622138510</span>
-<span class="co">#pkgs &lt;- pkgmeta::get_github_packages()</span>
+<span class="co">#&gt; 1 core                  5000   266      4734 1622140442</span>
+<span class="co">#&gt; 2 search                  30     0        30 1622137098</span>
+<span class="co">#&gt; 3 graphql               5000    17      4983 1622139016</span>
+<span class="co">#&gt; 4 integration_manifest  5000     0      5000 1622140638</span>
+<span class="co">#&gt; 5 source_import          100     0       100 1622137098</span>
+<span class="co">#&gt; 6 code_scanning_upload   500     0       500 1622140638</span>
+<span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co">#pkgs &lt;- readRDS("rpackages.RData")</span>
-<span class="co">#pkgmeta::plot_github_pkgs_over_time(pkgs)</span></code></pre></div>
+<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_github_pkgs_over_time.html">plot_github_pkgs_over_time</a></span><span class="op">(</span><span class="va">pkgs</span><span class="op">)</span></code></pre></div>
+<p><img src="visualisation_files/figure-html/unnamed-chunk-1-1.png" width="672"></p>
 </div>
 <div id="releases" class="section level3">
 <h3 class="hasAnchor">
@@ -136,11 +137,154 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### wait for 60 seconds in order to be in line with GitHub API limit</span>
 <span class="co">### &lt;= 80/minute and &lt;=5000/hour</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">60</span><span class="op">)</span>
+<span class="co">#Sys.sleep(60)</span>
 <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_gh_ratelimit.html">get_gh_ratelimit</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 6 x 5</span>
+<span class="co">#&gt;   id                   limit  used remaining      reset</span>
+<span class="co">#&gt;   &lt;chr&gt;                &lt;int&gt; &lt;int&gt;     &lt;int&gt;      &lt;int&gt;</span>
+<span class="co">#&gt; 1 core                  5000   267      4733 1622140442</span>
+<span class="co">#&gt; 2 search                  30     0        30 1622137100</span>
+<span class="co">#&gt; 3 graphql               5000    17      4983 1622139016</span>
+<span class="co">#&gt; 4 integration_manifest  5000     0      5000 1622140640</span>
+<span class="co">#&gt; 5 source_import          100     0       100 1622137100</span>
+<span class="co">#&gt; 6 code_scanning_upload   500     0       500 1622140640</span>
 
 <span class="va">pkgs_releases</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/github_packages_versions.html">github_packages_versions</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">pkgs</span><span class="op">$</span><span class="va">full_name</span><span class="op">)</span>
+<span class="co">#&gt; Repo: KWB-R/algoliar ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/aquanes.report ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/dwc.ar4gw ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.72s) </span>
+<span class="co">#&gt; Repo: KWB-R/dwc.wells ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/fakin.path.app ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/fhpredict ... ok. (0.25s) </span>
+<span class="co">#&gt; Repo: KWB-R/ibathwater ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/keys.lid ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.abimo ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.base ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.budget ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.code ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.datetime ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.db ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.default ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.demeau ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.dwa.m150 ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.dwd ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.en13508.2 ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.endnote ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.event ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.fakin ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.file ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.flusshygiene ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.flusshygiene.app ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.geosalz ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.hantush ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.heatsine ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.heatsine.opencpu ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.infoworks ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.kuras.db ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.lca ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.logger ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.matomo ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ml ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.monitoring ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.nextcloud ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.odm ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ogre ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ogre.model ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.orcid ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pathdict ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pilot ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pkgbuild ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pkgstatus ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.plot ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.prep ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pubs ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.python ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.qmra ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.quantum ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.read ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.readxl ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.resilience ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.satellite ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.site ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.svn ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.swmm ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.test ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.umberto ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.utils ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.vs2dh ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.wtaq ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/pkgmeta ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/qmra.db ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/r2q ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/sema.berlin.utils ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/urbanAnnualRunoff ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/wasserportal ... Error in as.Date.default(sapply(releases, kwb.utils::selectElements, "published_at")) : </span>
+<span class="co">#&gt;   do not know how to convert 'sapply(releases, kwb.utils::selectElements, "published_at")' to class "Date"</span>
+<span class="co">#&gt; ok. (0.15s)</span>
 <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_github_pkgs_releases.html">plot_github_pkgs_releases</a></span><span class="op">(</span><span class="va">pkgs_releases</span><span class="op">)</span></code></pre></div>
+<p><img src="visualisation_files/figure-html/unnamed-chunk-2-1.png" width="672"></p>
 </div>
 </div>
   </div>

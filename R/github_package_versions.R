@@ -55,7 +55,8 @@ github_packages_versions <- function(repos, github_token = Sys.getenv("GITHUB_PA
 {
   versions <- lapply(repos, function(repo) {
     kwb.utils::catAndRun(sprintf("Repo: %s", repo), expr = try(
-      github_package_versions(repo, github_token = github_token)
+      github_package_versions(repo, github_token = github_token),
+      silent = TRUE
     ))
   })
 

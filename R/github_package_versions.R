@@ -25,7 +25,7 @@ github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"
                      per_page = 100,
                      .token = github_token)
 
- owner_repo <- as.character(stringr::str_split_fixed(repo, pattern = "/", n = 2))
+  owner_repo <- as.character(stringr::str_split_fixed(repo, pattern = "/", n = 2))
 
   data.frame(
     owner = owner_repo[1],
@@ -53,19 +53,18 @@ github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"
 #' }
 github_packages_versions <- function(repos, github_token = Sys.getenv("GITHUB_PAT"))
 {
+  pkg_version_list <- lapply(repos, function(repo) {
+    kwb.utils::catAndRun(
+      messageText = sprintf("Repo: %s", repo),
+      expr = {
+        try(github_package_versions(repo, github_token = github_token))
+      }
+    )
+  })
 
-pkg_version_list <- lapply(repos, function(repo) {
-  kwb.utils::catAndRun(messageText = sprintf("Repo: %s", repo),
-                       expr = {
-  try(github_package_versions(repo, github_token = github_token))})})
+  has_release <- which(!sapply(seq_len(length(pkg_version_list)), function(i) {
+    attr(pkg_version_list[[i]], "class") == "try-error"
+  }))
 
-has_release <- which(!sapply(seq_len(length(pkg_version_list)),
-                             function(i) {
-                               attr(pkg_version_list[[i]], "class") == "try-error"
-                             })
-                     )
-
-dplyr::bind_rows(pkg_version_list[has_release])
-
+  dplyr::bind_rows(pkg_version_list[has_release])
 }
-

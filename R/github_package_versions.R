@@ -54,12 +54,9 @@ github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"
 github_packages_versions <- function(repos, github_token = Sys.getenv("GITHUB_PAT"))
 {
   pkg_version_list <- lapply(repos, function(repo) {
-    kwb.utils::catAndRun(
-      messageText = sprintf("Repo: %s", repo),
-      expr = {
-        try(github_package_versions(repo, github_token = github_token))
-      }
-    )
+    kwb.utils::catAndRun(sprintf("Repo: %s", repo), expr = try(
+      github_package_versions(repo, github_token = github_token)
+    ))
   })
 
   has_release <- which(!sapply(seq_len(length(pkg_version_list)), function(i) {

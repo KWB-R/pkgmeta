@@ -65,7 +65,7 @@ get_github_commits <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
 #' @param github_token default: Sys.getenv("GITHUB_PAT")
 #' @return data frame for all repos with releases
 #' @export
-#' @importFrom kwb.utils catAndRun
+#' @importFrom kwb.utils catAndRun multiSubstitute
 #' @importFrom dplyr bind_rows if_else mutate
 #' @importFrom tidyr separate
 #' @examples
@@ -94,7 +94,20 @@ dplyr::bind_rows(pkg_commit_list[has_commit ]) %>%
 tidyr::separate("repo", c("owner", "repo"), sep = "/") %>%
 dplyr::mutate(author_login = dplyr::if_else(is.na(.data$author_login),
                                             .data$author_name,
-                                            .data$author_login))
+                                            .data$author_login)) %>%
+dplyr::mutate(author_login = kwb.utils::multiSubstitute(.data$author_login,
+  replacements = list("Andreas Matzinger" = "amatzi",
+  "Hauke Sonnenberg" = "hsonne",
+  "Mathias Riechel" = "mriech",
+  "Roberto Tatis-Muvdi|RobertoTatisMuvdi" = "robetatis",
+  "Michael Stapf" = "mstapf1",
+  "Mathias Riechel" = "mriech",
+  "Michael Rustler" = "mrustl",
+  "praktikant20" = "klaaskenda",
+  "Fabian Mor\u00F3n Zirfas|ff6347" = "fabianmoronzirfas",
+  "kwb.pkgbuild::use_autopkgdown\\(\\)|SarvaPulla|sarva|Sarva|jirikadlec2|Jeremy Fowler|rfun|jsadler2|rizts" = "external"))
+   ) %>%
+dplyr::filter(.data$author_login != "external")
 
 
 }

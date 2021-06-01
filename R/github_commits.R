@@ -105,7 +105,7 @@ dplyr::mutate(author_login = kwb.utils::multiSubstitute(.data$author_login,
   "Michael Rustler" = "mrustl",
   "praktikant20" = "klaaskenda",
   "Fabian Mor\u00F3n Zirfas|ff6347" = "fabianmoronzirfas",
-  "kwb.pkgbuild::use_autopkgdown\\(\\)|SarvaPulla|sarva|Sarva|jirikadlec2|Jeremy Fowler|rfun|jsadler2|rizts" = "external"))
+  "kwb.pkgbuild::use_autopkgdown\\(\\)|SarvaPulla|sarva|Sarva|jirikadlec2|Jeremy Fowler|rfun|jsadler2|rizts|testuser" = "external"))
    ) %>%
 dplyr::filter(.data$author_login != "external")
 

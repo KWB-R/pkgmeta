@@ -9,6 +9,7 @@
 #' @importFrom gh gh
 #' @importFrom kwb.utils selectElements
 #' @importFrom lubridate as_datetime
+#' @importFrom dplyr bind_rows arrange desc
 #' @examples
 #' \dontrun{
 #' pkg_commits <- pkgmeta::get_github_commits("kwb-r/kwb.utils")
@@ -38,28 +39,22 @@ get_github_commits <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
   }
   commits <- get_commits(repo)
 
-  for (commit_id in seq_along(commits)) {
+  commits_list <- lapply(seq_along(commits), function(commit_id) {
 
      sel_commit <- commits[[commit_id]]
 
-     tmp <- data.frame(repo = repo,
-                       sha = sel_commit$sha,
-                       author_login = sel_commit$author$login,
-                       author_name = sel_commit$commit$committer$name,
-                       author_email = sel_commit$commit$committer$email,
-                       datetime = lubridate::as_datetime(sel_commit$commit$author$date),
-                       message = sel_commit$commit$message)
+     data.frame(repo = repo,
+                sha = sel_commit$sha,
+                author_login = ifelse(is.null(sel_commit$author$login),
+                                      NA_character_,
+                                      sel_commit$author$login),
+                author_name = sel_commit$commit$committer$name,
+                author_email = sel_commit$commit$committer$email,
+                datetime = lubridate::as_datetime(sel_commit$commit$author$date),
+                message = sel_commit$commit$message)
+  })
 
-
-
-     if (commit_id == 1) {
-        res <- tmp
-     } else {
-        res <- rbind(res,tmp)
-     }
-  }
-  res <- res[order(res$datetime,decreasing = FALSE), ]
-  return(res)
+  dplyr::bind_rows(commits_list) %>% dplyr::arrange(dplyr::desc(.data$datetime))
 
 }
 

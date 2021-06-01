@@ -1,0 +1,100 @@
+
+#' Get Github Commits for One Repo
+#'
+#' @param repo full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")
+#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#'
+#' @return data frame
+#' @export
+#' @importFrom gh gh
+#' @importFrom kwb.utils selectElements
+#' @importFrom lubridate as_datetime
+#' @examples
+#' \dontrun{
+#' pkg_commits <- pkgmeta::get_github_commits("kwb-r/kwb.utils")
+#' head(pkg_commits )
+#'}
+get_github_commits <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
+{
+
+
+  get_commits <- function(repo, per_page = 100) {
+
+  n_results <- per_page
+  page <- 1L
+  commits_list <- list()
+  while(n_results == per_page) {
+     message(sprintf("Getting commits for repo %s (page = %d)", repo, page))
+     commits_list[[page]] <-  gh::gh(endpoint = sprintf("GET /repos/%s/commits?page=%d&per_page=%d",
+                                                        repo,
+                                                        page,
+                                                        per_page),
+                                     .token =  github_token)
+     n_results <- length(commits_list[[page]])
+     page <- page + 1L
+  }
+
+  do.call(what = c, args = commits_list)
+  }
+  commits <- get_commits(repo)
+
+  for (commit_id in seq_along(commits)) {
+
+     sel_commit <- commits[[commit_id]]
+
+     tmp <- data.frame(repo = repo,
+                       sha = sel_commit$sha,
+                       author_login = sel_commit$author$login,
+                       author_name = sel_commit$commit$committer$name,
+                       author_email = sel_commit$commit$committer$email,
+                       datetime = lubridate::as_datetime(sel_commit$commit$author$date),
+                       message = sel_commit$commit$message)
+
+
+
+     if (commit_id == 1) {
+        res <- tmp
+     } else {
+        res <- rbind(res,tmp)
+     }
+  }
+  res <- res[order(res$datetime,decreasing = FALSE), ]
+  return(res)
+
+}
+
+#' Get Github Commits for Multiple Repos
+#'
+#' @param repos vector with full names of Github repos ("owner/repo_name",
+#' e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))
+#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#' @return data frame for all repos with releases
+#' @export
+#' @importFrom kwb.utils catAndRun
+#' @importFrom dplyr bind_rows
+#' @examples
+#' \dontrun{
+#' #repos <- kwb.pkgstatus::get_github_repos(github_token = Sys.getenv("GITHUB_PAT"))
+#' #repos <- repos$full_name
+#' repos <- paste0("kwb-r/", c("aquanes.report", "kwb.ml", "kwb.utils"))
+#' pkgs_commits <- pkgmeta::get_github_commits_repos(repos)
+#' head(pkgs_commits)
+#' }
+get_github_commits_repos <- function(repos, github_token = Sys.getenv("GITHUB_PAT"))
+{
+
+pkg_commit_list <- lapply(repos, function(repo) {
+  kwb.utils::catAndRun(messageText = sprintf("Repo: %s", repo),
+                       expr = {
+  try(get_github_commits(repo, github_token = github_token))})})
+
+has_commit <- which(!sapply(seq_len(length(pkg_commit_list)),
+                             function(i) {
+                               attr(pkg_commit_list[[i]], "class") == "try-error"
+                             })
+                     )
+
+dplyr::bind_rows(pkg_commit_list[has_commit ])
+
+}
+

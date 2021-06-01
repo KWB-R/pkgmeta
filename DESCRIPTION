@@ -34,7 +34,8 @@ Imports:
     packrat,
     remotes,
     magrittr,
-    tibble
+    tibble,
+    tidyr
 Suggests: 
     covr,
     knitr,
@@ -43,7 +44,6 @@ Suggests:
     pkgnet,
     printr,
     sessioninfo,
-    tidyr,
     wordcloud2
 VignetteBuilder: 
     knitr

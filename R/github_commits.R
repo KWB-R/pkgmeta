@@ -66,7 +66,8 @@ get_github_commits <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
 #' @return data frame for all repos with releases
 #' @export
 #' @importFrom kwb.utils catAndRun
-#' @importFrom dplyr bind_rows
+#' @importFrom dplyr bind_rows if_else mutate
+#' @importFrom tidyr separate
 #' @examples
 #' \dontrun{
 #' #repos <- kwb.pkgstatus::get_github_repos(github_token = Sys.getenv("GITHUB_PAT"))
@@ -89,7 +90,12 @@ has_commit <- which(!sapply(seq_len(length(pkg_commit_list)),
                              })
                      )
 
-dplyr::bind_rows(pkg_commit_list[has_commit ])
+dplyr::bind_rows(pkg_commit_list[has_commit ]) %>%
+tidyr::separate("repo", c("owner", "repo"), sep = "/") %>%
+dplyr::mutate(author_login = dplyr::if_else(is.na(.data$author_login),
+                                            .data$author_name,
+                                            .data$author_login))
+
 
 }
 

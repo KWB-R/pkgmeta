@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GitHub rate limit — get_gh_ratelimit • pkgmeta</title>
+<title>Get Github Commits for One Repo — get_github_commits • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,8 +45,8 @@
 
 
 
-<meta property="og:title" content="Get GitHub rate limit — get_gh_ratelimit" />
-<meta property="og:description" content="Get GitHub rate limit" />
+<meta property="og:title" content="Get Github Commits for One Repo — get_github_commits" />
+<meta property="og:description" content="Get Github Commits for One Repo" />
 
 
 <meta name="robots" content="noindex">
@@ -141,42 +141,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GitHub rate limit</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/get_gh_ratelimit.R'><code>R/get_gh_ratelimit.R</code></a></small>
-    <div class="hidden name"><code>get_gh_ratelimit.Rd</code></div>
+    <h1>Get Github Commits for One Repo</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/github_commits.R'><code>R/github_commits.R</code></a></small>
+    <div class="hidden name"><code>get_github_commits.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get GitHub rate limit</p>
+    <p>Get Github Commits for One Repo</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_gh_ratelimit</span><span class='op'>(</span>github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_github_commits</span><span class='op'>(</span><span class='va'>repo</span>, github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>repo</th>
+      <td><p>full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")</p></td>
+    </tr>
+    <tr>
       <th>github_token</th>
-      <td><p>token passed to <a href='https://gh.r-lib.org/reference/gh.html'>gh</a> (default:
-Sys.getenv("GITHUB_PAT")</p></td>
+      <td><p>default: Sys.getenv("GITHUB_PAT")</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>overview of rate limit</p>
+    <p>data frame</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_gh_ratelimit</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 x 5</span>
-#&gt;   id                   limit  used remaining      reset
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span> core                  <span style='text-decoration: underline;'>5</span>000  <span style='text-decoration: underline;'>1</span>626      <span style='text-decoration: underline;'>3</span>374 <span style='text-decoration: underline;'>1</span>622<span style='text-decoration: underline;'>564</span>824
-#&gt; <span style='color: #BCBCBC;'>2</span> search                  30     0        30 <span style='text-decoration: underline;'>1</span>622<span style='text-decoration: underline;'>562</span>949
-#&gt; <span style='color: #BCBCBC;'>3</span> graphql               <span style='text-decoration: underline;'>5</span>000    38      <span style='text-decoration: underline;'>4</span>962 <span style='text-decoration: underline;'>1</span>622<span style='text-decoration: underline;'>563</span>132
-#&gt; <span style='color: #BCBCBC;'>4</span> integration_manifest  <span style='text-decoration: underline;'>5</span>000     0      <span style='text-decoration: underline;'>5</span>000 <span style='text-decoration: underline;'>1</span>622<span style='text-decoration: underline;'>566</span>489
-#&gt; <span style='color: #BCBCBC;'>5</span> source_import          100     0       100 <span style='text-decoration: underline;'>1</span>622<span style='text-decoration: underline;'>562</span>949
-#&gt; <span style='color: #BCBCBC;'>6</span> code_scanning_upload   500     0       500 <span style='text-decoration: underline;'>1</span>622<span style='text-decoration: underline;'>566</span>489</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>pkg_commits</span> <span class='op'>&lt;-</span> <span class='fu'>pkgmeta</span><span class='fu'>::</span><span class='fu'>get_github_commits</span><span class='op'>(</span><span class='st'>"kwb-r/kwb.utils"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>pkg_commits</span> <span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

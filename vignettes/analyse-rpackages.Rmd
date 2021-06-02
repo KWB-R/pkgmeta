@@ -93,15 +93,16 @@ required for pkgnet "covr":
 
 fs::dir_create(
   path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
-  recursive = TRUE
+  recurse = TRUE
 )
 
+
 for (pkg in pkgs$name) {
-  pkgmeta::download_github(
+  try(pkgmeta::download_github(
     repo = sprintf("kwb-r/%s", pkg),
     dest_dir = paths$pkgsource_zip_dir,
     use_zip = TRUE,
-    auth_token = Sys.getenv("GITHUB_PAT")
+    auth_token = Sys.getenv("GITHUB_PAT"))
   )
 }
 
@@ -148,13 +149,15 @@ pkgmeta::write_pkg_codemeta_json(codemeta)
 Create Reports with "pkgnet
 
 ```{r, echo = !is_ghactions, eval = !is_ghactions}
-fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
+fs::dir_create(paths$pkgnet_dir, recurse = TRUE)
 
-withr::with_libpaths(new = path$pkglib, code = for(x in pkgs$name) {
+withr::with_libpaths(new = c(paths$pkglib, .libPaths()), 
+                     code = for(pkg in pkgs$name) {
   
-  print(sprintf("Write report for R package: %s", x))
+  print(sprintf("Write report for R package: %s", pkg ))
   
-  pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, pattern = x)
+  pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, 
+                          pattern = sprintf(".*%s-.*", pkg))
   
   if (length(pkg_src_unzipped) > 1) {
     
@@ -176,9 +179,9 @@ withr::with_libpaths(new = path$pkglib, code = for(x in pkgs$name) {
   }
   
   try(pkgnet::CreatePackageReport(
-    pkg_name = x,
+    pkg_name = pkg ,
     pkg_path = file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
-    report_path = file.path(paths$pkgnet_dir, paste0(x, ".html"))
+    report_path = file.path(paths$pkgnet_dir, paste0(pkg, ".html"))
   ))
 })
 ```

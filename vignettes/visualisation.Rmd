@@ -14,9 +14,26 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+is_ghactions <- ifelse(identical(Sys.getenv("CI"), "true"), 
+                       TRUE,
+                       FALSE)
 ### wait for 60 seconds in order to be in line with GitHub API limit
 ### <= 80/minute and <=5000/hour
 #Sys.sleep(60)
+```
+
+## R Releases
+
+```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
+r_releases <- pkgmeta::plot_r_releases()
+htmlwidgets::saveWidget(widget = r_releases, 
+                        file = "r_releases.html")
+r_releases
+```
+
+
+```{r, eval = is_ghactions, echo = FALSE, results ="asis"}
+cat("[Overview of R releases](../r_releases.html)")
 ```
 
 ## R Packages on Github 
@@ -25,7 +42,7 @@ knitr::opts_chunk$set(
 
 
 ```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
-pkgmeta::get_gh_ratelimit()
+#pkgmeta::get_gh_ratelimit()
 pkgs <- pkgmeta::get_github_packages()
 
 #pkgs <- readRDS("rpackages.RData")
@@ -39,7 +56,7 @@ pkgmeta::plot_github_pkgs_over_time(pkgs)
 ### wait for 60 seconds in order to be in line with GitHub API limit
 ### <= 80/minute and <=5000/hour
 #Sys.sleep(60)
-pkgmeta::get_gh_ratelimit()
+#pkgmeta::get_gh_ratelimit()
 
 pkgs_releases <- pkgmeta::github_packages_versions(repos = pkgs$full_name)
 pkgmeta::plot_github_pkgs_releases(pkgs_releases)

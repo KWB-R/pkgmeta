@@ -38,11 +38,13 @@ Imports:
 Suggests: 
     covr,
     knitr,
+    htmlwidgets,
     rmarkdown,
     jsonld,
     pkgnet,
     printr,
     sessioninfo,
+    rversions,
     tidyr,
     wordcloud2
 VignetteBuilder: 

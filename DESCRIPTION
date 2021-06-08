@@ -34,6 +34,7 @@ Imports:
     packrat,
     plotly,
     remotes,
+    rversions,
     magrittr,
     tibble
 Suggests: 
@@ -45,7 +46,6 @@ Suggests:
     pkgnet,
     printr,
     sessioninfo,
-    rversions,
     tidyr,
     wordcloud2
 VignetteBuilder: 

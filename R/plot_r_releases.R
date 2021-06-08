@@ -42,7 +42,7 @@ get_r_releases <- function() {
 #' @param r_releases as retrieved by \link{get_r_releases}, (default: get_r_releases())
 #'
 #' @return plotly with R releases
-#' @importFrom ggplot2 aes_string geom_point theme_bw ggplot
+#' @importFrom ggplot2 aes aes_string geom_point theme_bw ggplot
 #' @importFrom plotly ggplotly
 #' @export
 #' @examples
@@ -56,7 +56,7 @@ ggplot2::ggplot(ggplot2::aes_string(x = "date",
                                     y = "major",
                                     col = "release_type",
                                     label = "label")) +
-ggplot2::geom_point() +
+ggplot2::geom_point(ggplot2::aes(alpha = 0.5)) +
 ggplot2::theme_bw() +
 ggplot2::labs(title = "R Releases",
               x = "Date",

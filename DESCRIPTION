@@ -32,6 +32,7 @@ Imports:
     forcats,
     dplyr,
     packrat,
+    plotly,
     remotes,
     magrittr,
     tibble

@@ -24,7 +24,7 @@ is_ghactions <- ifelse(identical(Sys.getenv("CI"), "true"),
 
 ## R Releases
 
-```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
+```{r, eval = TRUE,  fig.height = 3, fig.width = 7}
 r_releases <- pkgmeta::plot_r_releases()
 htmlwidgets::saveWidget(widget = r_releases, 
                         file = "r_releases.html")

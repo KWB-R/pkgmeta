@@ -4,7 +4,11 @@
 \alias{get_r_releases}
 \title{Get R Releases}
 \usage{
-get_r_releases()
+get_r_releases(releases = rversions::r_versions(dots = TRUE))
+}
+\arguments{
+\item{releases}{R releases as retrieved by \link[rversions]{r_versions},
+(default: rversions::r_versions(dots = TRUE))}
 }
 \value{
 data frame with R releases

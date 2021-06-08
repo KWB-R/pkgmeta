@@ -1,6 +1,7 @@
 
 #' Get R Releases
-#'
+#' @param releases R releases as retrieved by \link[rversions]{r_versions},
+#' (default: rversions::r_versions(dots = TRUE))
 #' @return data frame with R releases
 #' @export
 #' @importFrom rversions r_versions
@@ -8,8 +9,8 @@
 #' @examples
 #' releases <- get_r_releases()
 #' head(releases)
-get_r_releases <- function() {
-  rversions::r_versions(dots = TRUE) %>%
+get_r_releases <- function(releases = rversions::r_versions(dots = TRUE)) {
+  releases %>%
   tidyr::separate(col = "version",
                   into = c("major", "minor", "patch"),
                   sep = "\\.",

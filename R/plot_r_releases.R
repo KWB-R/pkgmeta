@@ -22,14 +22,14 @@ get_r_releases <- function(releases = rversions::r_versions(dots = TRUE)) {
                 diff.minor = minor - dplyr::lag(.data$minor, n = 1L),
                 diff.patch = patch - dplyr::lag(.data$patch, n = 1L),
                 release_type = dplyr::if_else(.data$diff.major > 0,
-                                         "major",
+                                         "Major",
                                          dplyr::if_else(.data$diff.minor > 0,
-                                                        "minor",
+                                                        "Minor",
                                                         dplyr::if_else(.data$diff.patch > 0,
-                                                                       "patch",
-                                                                       "initial")))) %>%
+                                                                       "Patch",
+                                                                       "Initial")))) %>%
   dplyr::mutate(release_type = dplyr::if_else(is.na(.data$release_type),
-                                              "initial",
+                                              "Initial",
                                               .data$release_type),
                 label = sprintf("v%s (%s): %s",
                                 .data$version,
@@ -41,7 +41,7 @@ get_r_releases <- function(releases = rversions::r_versions(dots = TRUE)) {
 #' Plot R Releases
 #'
 #' @param r_releases as retrieved by \link{get_r_releases}, (default: get_r_releases())
-#'
+#' @param title title (default: "R Releases")
 #' @return plotly with R releases
 #' @importFrom ggplot2 aes aes_string geom_point theme_bw ggplot
 #' @importFrom plotly ggplotly
@@ -50,7 +50,8 @@ get_r_releases <- function(releases = rversions::r_versions(dots = TRUE)) {
 #' \dontrun{
 #' plot_r_releases()
 #' }
-plot_r_releases <- function(r_releases = get_r_releases()) {
+plot_r_releases <- function(r_releases = get_r_releases(),
+                            title = "R Releases") {
 
 g <- r_releases %>%
 ggplot2::ggplot(ggplot2::aes_string(x = "date",
@@ -59,9 +60,12 @@ ggplot2::ggplot(ggplot2::aes_string(x = "date",
                                     label = "label")) +
 ggplot2::geom_point(ggplot2::aes(alpha = 0.5)) +
 ggplot2::theme_bw() +
-ggplot2::labs(title = "R Releases",
+ggplot2::scale_y_discrete() +
+ggplot2::labs(title = title,
               x = "Date",
-              y = "Major R Release Version")
+              y = "Major Release Version",
+              color = "Type",
+              alpha = "")
 
 plotly::ggplotly(g, tooltip = "label")
 }

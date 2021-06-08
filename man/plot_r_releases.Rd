@@ -4,10 +4,12 @@
 \alias{plot_r_releases}
 \title{Plot R Releases}
 \usage{
-plot_r_releases(r_releases = get_r_releases())
+plot_r_releases(r_releases = get_r_releases(), title = "R Releases")
 }
 \arguments{
 \item{r_releases}{as retrieved by \link{get_r_releases}, (default: get_r_releases())}
+
+\item{title}{title (default: "R Releases")}
 }
 \value{
 plotly with R releases

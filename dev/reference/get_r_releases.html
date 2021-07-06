@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GitHub rate limit — get_gh_ratelimit • pkgmeta</title>
+<title>Get R Releases — get_r_releases • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,8 +45,8 @@
 
 
 
-<meta property="og:title" content="Get GitHub rate limit — get_gh_ratelimit" />
-<meta property="og:description" content="Get GitHub rate limit" />
+<meta property="og:title" content="Get R Releases — get_r_releases" />
+<meta property="og:description" content="Get R Releases" />
 
 
 <meta name="robots" content="noindex">
@@ -141,42 +141,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GitHub rate limit</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/get_gh_ratelimit.R'><code>R/get_gh_ratelimit.R</code></a></small>
-    <div class="hidden name"><code>get_gh_ratelimit.Rd</code></div>
+    <h1>Get R Releases</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/plot_r_releases.R'><code>R/plot_r_releases.R</code></a></small>
+    <div class="hidden name"><code>get_r_releases.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get GitHub rate limit</p>
+    <p>Get R Releases</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_gh_ratelimit</span><span class='op'>(</span>github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_r_releases</span><span class='op'>(</span>releases <span class='op'>=</span> <span class='fu'>rversions</span><span class='fu'>::</span><span class='fu'><a href='https://r-hub.github.io/rversions/reference/r_versions.html'>r_versions</a></span><span class='op'>(</span>dots <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>github_token</th>
-      <td><p>token passed to <a href='https://gh.r-lib.org/reference/gh.html'>gh</a> (default:
-Sys.getenv("GITHUB_PAT")</p></td>
+      <th>releases</th>
+      <td><p>R releases as retrieved by <a href='https://r-hub.github.io/rversions/reference/r_versions.html'>r_versions</a>,
+(default: rversions::r_versions(dots = TRUE))</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>overview of rate limit</p>
+    <p>data frame with R releases</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_gh_ratelimit</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 x 5</span>
-#&gt;   id                   limit  used remaining      reset
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span> core                  <span style='text-decoration: underline;'>5</span>000   645      <span style='text-decoration: underline;'>4</span>355 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>587</span>036
-#&gt; <span style='color: #BCBCBC;'>2</span> search                  30     0        30 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>583</span>770
-#&gt; <span style='color: #BCBCBC;'>3</span> graphql               <span style='text-decoration: underline;'>5</span>000    66      <span style='text-decoration: underline;'>4</span>934 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>585</span>020
-#&gt; <span style='color: #BCBCBC;'>4</span> integration_manifest  <span style='text-decoration: underline;'>5</span>000     0      <span style='text-decoration: underline;'>5</span>000 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>587</span>310
-#&gt; <span style='color: #BCBCBC;'>5</span> source_import          100     0       100 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>583</span>770
-#&gt; <span style='color: #BCBCBC;'>6</span> code_scanning_upload   500     0       500 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>587</span>310</div></pre>
+    <pre class="examples"><div class='input'><span class='va'>releases</span> <span class='op'>&lt;-</span> <span class='fu'>get_r_releases</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Expected 3 pieces. Missing pieces filled with `NA` in 13 rows [1, 2, 6, 11, 15, 18, 20, 22, 23, 25, 27, 31, 33].</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>releases</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   version major minor patch                date nickname diff.major diff.minor
+#&gt; 1    0.60     0    60     0 1997-12-04 08:47:58     &lt;NA&gt;         NA         NA
+#&gt; 2    0.61     0    61     0 1997-12-21 13:09:22     &lt;NA&gt;          0          1
+#&gt; 3  0.61.1     0    61     1 1998-01-10 00:31:55     &lt;NA&gt;          0          0
+#&gt; 4  0.61.2     0    61     2 1998-03-14 19:25:55     &lt;NA&gt;          0          0
+#&gt; 5  0.61.3     0    61     3 1998-05-02 07:58:17     &lt;NA&gt;          0          0
+#&gt; 6    0.62     0    62     0 1998-06-14 12:56:20     &lt;NA&gt;          0          1
+#&gt;   diff.patch release_type                                label
+#&gt; 1         NA      Initial v0.60 (1997-12-04 08:47:58): Initial
+#&gt; 2          0        Minor   v0.61 (1997-12-21 13:09:22): Minor
+#&gt; 3          1        Patch v0.61.1 (1998-01-10 00:31:55): Patch
+#&gt; 4          1        Patch v0.61.2 (1998-03-14 19:25:55): Patch
+#&gt; 5          1        Patch v0.61.3 (1998-05-02 07:58:17): Patch
+#&gt; 6         -3        Minor   v0.62 (1998-06-14 12:56:20): Minor</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

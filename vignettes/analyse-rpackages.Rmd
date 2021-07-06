@@ -5,8 +5,10 @@ date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Analyse R Packages on Github}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
@@ -15,46 +17,29 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-is_ghactions <- ifelse(identical(Sys.getenv("CI"), "true"), 
-                       TRUE,
-                       FALSE)
+is_ghactions <- identical(Sys.getenv("CI"), "true")
 ```
-
 
 # Get Metadata for All KWB-R Github Repos
 
 For all Github repos also includes non R packages
 
 ```{r, eval = TRUE}
-
-  
 pkgmeta::write_github_repos_json()
-
-
 ```
-
 
 # Get Public KWB-R Github Package 
 
 Now limit only "public" KWB-R repos which are R packages.
 
 ```{r, eval = TRUE}
-
-
 pkgs <- pkgmeta::get_github_packages()
-
-
 ``` 
-
-
-
-
 
 # Define paths 
 
 ```{r, eval = !is_ghactions}
 # Define paths and resolve placeholders
-
 paths_list <- list(
   root_dir = tempdir(),
   pkglib = "<root_dir>/pkg-lib",
@@ -62,13 +47,10 @@ paths_list <- list(
   pkgnet_dir = "<root_dir>/pkgnet",
   pkgsource_zip_dir = "<pkgsource_dir>/zip",
   pkgsource_unzip_dir = "<pkgsource_dir>/unzip"
-  )
-
+)
 
 paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
-
 ```
-
 
 # Download dependencies
 
@@ -77,24 +59,25 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 in own library required for "codemetar" and "pkgnet" reports
 
 ```{r, echo = !is_ghactions, eval = !is_ghactions}
-
-
 fs::dir_create(paths$pkglib, recursive = TRUE)
 
-withr::with_libpaths(new = paths$pkglib,  {
-  install.packages("remotes", repos = "https://cran.rstudio.org")  }
-)
+withr::with_libpaths(new = paths$pkglib, code = {
+  install.packages("remotes", repos = "https://cran.rstudio.org")
+})
 
-for(pkg in pkgs$name) {
-
-withr::with_libpaths(new = paths$pkglib, {
-  code = remotes::install_github(repo = sprintf("kwb-r/%s", pkg),
-  dependencies = TRUE,
-  upgrade = "always",
-  auth_token =  Sys.getenv("GITHUB_PAT"))})
+for (pkg in pkgs$name) {
+  
+  withr::with_libpaths(new = paths$pkglib, code = {
+    remotes::install_github(
+      repo = sprintf("kwb-r/%s", pkg),
+      dependencies = TRUE,
+      upgrade = "always",
+      auth_token = Sys.getenv("GITHUB_PAT")
+    )
+  })
 }
-
 ```
+
 ```{r, echo = is_ghactions, eval = FALSE}
 ### On Travis already installed within .travis configuration
 ### https://github.com/KWB-R/pkgmeta/blob/master/.travis.yml
@@ -102,34 +85,34 @@ withr::with_libpaths(new = paths$pkglib, {
 pkgmeta::travis_pkg_install_script()
 ```
 
-
-
-
-
 ## Source Packages 
 
 required for pkgnet "covr":
 
 ```{r, echo = !is_ghactions, eval = !is_ghactions}
 
-fs::dir_create(path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
-               recursive = TRUE)
+fs::dir_create(
+  path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
+  recurse = TRUE
+)
 
-for(pkg in pkgs$name) {
-  pkgmeta::download_github(repo = sprintf("kwb-r/%s", pkg),
-                           dest_dir = paths$pkgsource_zip_dir,
-                           use_zip = TRUE,
-                           auth_token = Sys.getenv("GITHUB_PAT"))
+
+for (pkg in pkgs$name) {
+  try(pkgmeta::download_github(
+    repo = sprintf("kwb-r/%s", pkg),
+    dest_dir = paths$pkgsource_zip_dir,
+    use_zip = TRUE,
+    auth_token = Sys.getenv("GITHUB_PAT"))
+  )
 }
+
 zipfiles <- list.files(paths$pkgsource_zip_dir,full.names = TRUE)
 
 invisible(lapply(zipfiles, function(x) {
-  message(glue::glue("Unzipping {x} to {paths$pkgsource_unzip_dir}"))
-  unzip(x, exdir = paths$pkgsource_unzip_dir)}))
-
+  message(sprintf("Unzipping %s to %s", x, paths$pkgsource_unzip_dir))
+  unzip(x, exdir = paths$pkgsource_unzip_dir)
+}))
 ```
-
-
 
 # Perform Package Meta Analysis
 
@@ -138,73 +121,67 @@ invisible(lapply(zipfiles, function(x) {
 Generating "codemetar.json" file
 
 ```{r, echo = !is_ghactions, eval = !is_ghactions}
-
 pkgs <-  pkgmeta::get_github_packages()
 
-codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
-                                         libpath = paths$pkglib)
-
+codemeta <- pkgmeta::create_pkg_codemeta(pkgs, libpath = paths$pkglib)
 
 pkgmeta::write_pkg_codemeta_json(codemeta)
-                                                     
 ```
-
 
 ```{r, echo=FALSE, eval = TRUE}
+all_pkgs_installed <- all(pkgs$name %in% installed.packages()[, "Package"])
 
-all_pkgs_installed <- all(pkgs$name %in% installed.packages()[,"Package"])
-
-is_ghactions_and_all_pkgs_installed <-  is_ghactions && all_pkgs_installed
-
+is_ghactions_and_all_pkgs_installed <- is_ghactions && all_pkgs_installed
 ```
-
-
 
 ```{r, echo = is_ghactions, eval = is_ghactions_and_all_pkgs_installed}
-
-
 pkgs_codemetar <-  pkgmeta::get_github_packages()
 
-codemeta <- pkgmeta::create_pkg_codemeta(pkgs, 
-                                         libpath = Sys.getenv("R_LIBS_USER"))
-
-
+codemeta <- pkgmeta::create_pkg_codemeta(
+  pkgs, libpath = Sys.getenv("R_LIBS_USER")
+)
 
 pkgmeta::write_pkg_codemeta_json(codemeta)
-
 ```
-
 
 ## With R package "pkgnet"
 
 Create Reports with "pkgnet
 
 ```{r, echo = !is_ghactions, eval = !is_ghactions}
-fs::dir_create(paths$pkgnet_dir, recursive = TRUE)
+fs::dir_create(paths$pkgnet_dir, recurse = TRUE)
 
-withr::with_libpaths(new = path$pkglib,
-                     code = for(x in pkgs$name) {
-   print(sprintf("Write report for R package: %s", x))
-   pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, pattern = x)
-   if(length(pkg_src_unzipped) > 1) {
-      stop(glue::glue("Multiple unzipped pkg sources found in {paths$pkgsource_unzip_dir}:
-                      {paste(pkg_src_unzipped, collapse = ', ')}.
-                      Please delete the oldest one(s) manually"))
-     #pkg_path <- file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
-     #sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})
-    } else if(length(pkg_src_unzipped) == 0)  {
-      stop(glue::glue("No unzipped pkg sources found in {paths$pkgsource_unzip_dir}"))
-    } else {
-      try(pkgnet::CreatePackageReport(
-         pkg_name = x,
-         pkg_path = file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
-         report_path = file.path(paths$pkgnet_dir, paste0(x, ".html"))
-        ))
-  }})
-
-
+withr::with_libpaths(new = c(paths$pkglib, .libPaths()), 
+                     code = for(pkg in pkgs$name) {
+  
+  print(sprintf("Write report for R package: %s", pkg ))
+  
+  pkg_src_unzipped <- dir(paths$pkgsource_unzip_dir, 
+                          pattern = sprintf(".*%s-.*", pkg))
+  
+  if (length(pkg_src_unzipped) > 1) {
+    
+    stop(sprintf(
+      "Multiple unzipped pkg sources found in %s: %s.\n%s",
+      paths$pkgsource_unzip_dir,
+      paste(pkg_src_unzipped, collapse = ', '),
+      "Please delete the oldest one(s) manually"
+    ))
+    
+    #pkg_path <- file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
+    #sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})
+  } 
+  
+  if (length(pkg_src_unzipped) == 0L) {
+    stop(sprintf(
+      "No unzipped pkg sources found in %s", paths$pkgsource_unzip_dir
+    ))
+  }
+  
+  try(pkgnet::CreatePackageReport(
+    pkg_name = pkg ,
+    pkg_path = file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),
+    report_path = file.path(paths$pkgnet_dir, paste0(pkg, ".html"))
+  ))
+})
 ```
-
-
-
-

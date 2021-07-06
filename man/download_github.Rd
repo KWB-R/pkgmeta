@@ -6,7 +6,7 @@
 \usage{
 download_github(
   repo,
-  ref = "master",
+  ref = NULL,
   dest_dir = tempdir(),
   use_zip = FALSE,
   quiet = FALSE,
@@ -16,7 +16,7 @@ download_github(
 \arguments{
 \item{repo}{Github repo (e.g. "kwb-r/kwb.utils")}
 
-\item{ref}{default: "master"}
+\item{ref}{default: "NULL" (i.e. defaults to "master" or "main" branch)}
 
 \item{dest_dir}{dest directory (default: tempdir())}
 

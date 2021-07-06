@@ -4,7 +4,7 @@
 #' https://github.com/r-lib/remotes/blob/bd970d723facc6ede2ff0f54ce4ae917526a37f8/install-github.R
 #' (required for downloading private repos!)
 #' @param repo Github repo (e.g. "kwb-r/kwb.utils")
-#' @param ref default: "master"
+#' @param ref default: "NULL" (i.e. defaults to "master" or "main" branch)
 #' @param dest_dir dest directory (default: tempdir())
 #' @param use_zip should files be downloades as .tar.gz (use_zip=FALSE) or as
 #' .zip files (use_zip=TRUE); default: FALSE
@@ -17,12 +17,14 @@
 #' @importFrom stringr str_split
 #'
 download_github <- function(repo,
-                            ref = "master",
+                            ref = NULL,
                             dest_dir = tempdir(),
                             use_zip = FALSE,
                             quiet = FALSE,
                             auth_token = Sys.getenv("GITHUB_PAT")) {
   repo_sep <- as.vector(stringr::str_split(repo, pattern = "/|@", n = 3, simplify = TRUE))
+
+
 
   reference <- if (repo_sep[3] == "") {
     ref
@@ -38,6 +40,7 @@ download_github <- function(repo,
     auth_token = auth_token
   )
 
+  x$ref <- ifelse(is.null(ref), "" , sprintf("@%s", ref))
   # if(use_zip) {
   #
   #   file_ext <- ".zip"
@@ -55,7 +58,7 @@ download_github <- function(repo,
 
   if (!quiet) {
     message(
-      "Downloading GitHub repo ", x$username, "/", x$repo, "@", x$ref,
+      "Downloading GitHub repo ", x$username, "/", x$repo, x$ref,
       " to: ", dest
     )
   }

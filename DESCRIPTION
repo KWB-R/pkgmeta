@@ -1,6 +1,6 @@
 Package: pkgmeta
 Title: R Package for Meta-Analysis of KWB-R Packages on Github
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     c(person(given = "Michael",
              family = "Rustler",
@@ -36,7 +36,8 @@ Imports:
     remotes,
     rversions,
     magrittr,
-    tibble
+    tibble,
+    tidyr
 Suggests: 
     covr,
     knitr,
@@ -46,7 +47,6 @@ Suggests:
     pkgnet,
     printr,
     sessioninfo,
-    tidyr,
     wordcloud2
 VignetteBuilder: 
     knitr

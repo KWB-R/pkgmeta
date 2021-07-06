@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GitHub rate limit — get_gh_ratelimit • pkgmeta</title>
+<title>Create Universe Packages JSON — create_universe_pkgs_json • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,8 +45,9 @@
 
 
 
-<meta property="og:title" content="Get GitHub rate limit — get_gh_ratelimit" />
-<meta property="og:description" content="Get GitHub rate limit" />
+<meta property="og:title" content="Create Universe Packages JSON — create_universe_pkgs_json" />
+<meta property="og:description" content="Prepares a packages.json file required for R-universe for creating
+our personal CRAN-like repository on R-universe" />
 
 
 <meta name="robots" content="noindex">
@@ -141,42 +142,60 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GitHub rate limit</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/get_gh_ratelimit.R'><code>R/get_gh_ratelimit.R</code></a></small>
-    <div class="hidden name"><code>get_gh_ratelimit.Rd</code></div>
+    <h1>Create Universe Packages JSON</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/create_universe_pkgs_json.R'><code>R/create_universe_pkgs_json.R</code></a></small>
+    <div class="hidden name"><code>create_universe_pkgs_json.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get GitHub rate limit</p>
+    <p>Prepares a packages.json file required for R-universe for creating
+our personal CRAN-like repository on R-universe</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_gh_ratelimit</span><span class='op'>(</span>github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>create_universe_pkgs_json</span><span class='op'>(</span>
+  group <span class='op'>=</span> <span class='st'>"KWB-R"</span>,
+  ignore_pkgs <span class='op'>=</span> <span class='cn'>NULL</span>,
+  non_r_packages <span class='op'>=</span> <span class='fu'>kwb.pkgstatus</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/kwb.pkgstatus/man/get_non_r_packages.html'>get_non_r_packages</a></span><span class='op'>(</span><span class='op'>)</span>,
+  github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>group</th>
+      <td><p>default: "KWB-R"</p></td>
+    </tr>
+    <tr>
+      <th>ignore_pkgs</th>
+      <td><p>vector of pkg names that should be ignored to prevent
+problems with codemeta generation (e.g. "kwb.read" fails due to missing
+metadata on the license!)</p></td>
+    </tr>
+    <tr>
+      <th>non_r_packages</th>
+      <td><p>vector with repos that are not R packages (default:
+kwb.pkgstatus::get_non_r_packages())</p></td>
+    </tr>
+    <tr>
       <th>github_token</th>
-      <td><p>token passed to <a href='https://gh.r-lib.org/reference/gh.html'>gh</a> (default:
-Sys.getenv("GITHUB_PAT")</p></td>
+      <td><p>optionally a Github token in order to access private
+repositories (default: Sys.getenv("GITHUB_PAT"))</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>overview of rate limit</p>
+    <p>JSON structure as required for packages.json</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p><a href='https://ropensci.org/blog/2021/06/22/setup-runiverse/#the-packagesjson-registry-file'>https://ropensci.org/blog/2021/06/22/setup-runiverse/#the-packagesjson-registry-file</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_gh_ratelimit</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 x 5</span>
-#&gt;   id                   limit  used remaining      reset
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>                <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>
-#&gt; <span style='color: #BCBCBC;'>1</span> core                  <span style='text-decoration: underline;'>5</span>000  <span style='text-decoration: underline;'>2</span>583      <span style='text-decoration: underline;'>2</span>417 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>587</span>036
-#&gt; <span style='color: #BCBCBC;'>2</span> search                  30     0        30 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>584</span>797
-#&gt; <span style='color: #BCBCBC;'>3</span> graphql               <span style='text-decoration: underline;'>5</span>000    78      <span style='text-decoration: underline;'>4</span>922 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>585</span>020
-#&gt; <span style='color: #BCBCBC;'>4</span> integration_manifest  <span style='text-decoration: underline;'>5</span>000     0      <span style='text-decoration: underline;'>5</span>000 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>588</span>337
-#&gt; <span style='color: #BCBCBC;'>5</span> source_import          100     0       100 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>584</span>797
-#&gt; <span style='color: #BCBCBC;'>6</span> code_scanning_upload   500     0       500 <span style='text-decoration: underline;'>1</span>625<span style='text-decoration: underline;'>588</span>337</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>create_universe_pkgs_json</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in create_universe_pkgs_json(): could not find function "create_universe_pkgs_json"</span></div><div class='input'>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

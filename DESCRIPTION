@@ -32,13 +32,16 @@ Imports:
     forcats,
     dplyr,
     packrat,
+    plotly,
     remotes,
+    rversions,
     magrittr,
     tibble,
     tidyr
 Suggests: 
     covr,
     knitr,
+    htmlwidgets,
     rmarkdown,
     jsonld,
     pkgnet,

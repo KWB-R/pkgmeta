@@ -55,7 +55,7 @@ jobs:
           file_json <- file.path(getwd(), "codemetar.json")
           print(file_json)
           pkgmeta::write_pkg_codemeta_json(codemeta, file = file_json)
-          remotes::install_github("kwb-r/kwb.pkgbuild@github-actions")
+          remotes::install_github("kwb-r/kwb.pkgbuild")
         shell: Rscript {0}
 
       - name: Deploy package

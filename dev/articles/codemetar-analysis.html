@@ -101,7 +101,7 @@
       <h1 data-toc-skip>Codemetar Analysis</h1>
                         <h4 class="author">Michael Rustler</h4>
             
-            <h4 class="date">2021-07-06</h4>
+            <h4 class="date">2021-07-12</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/codemetar-analysis.Rmd"><code>vignettes/codemetar-analysis.Rmd</code></a></small>
       <div class="hidden name"><code>codemetar-analysis.Rmd</code></div>
@@ -455,8 +455,8 @@
 </table>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">wordcloud2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html">wordcloud2</a></span><span class="op">(</span><span class="va">topics</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-7f9df18193296a8c9446" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7f9df18193296a8c9446">{"x":{"word":["project-fakin","data-import","publication","data-management","groundwater-modelling","data-aggregation","data-visualisation","knowledge-repo","project-demeau","data-export","life-cycle-assessment","project-aquanes","automated-reporting","data-cleaning","data-visualization","drawdown-model","groundwater-mounding","hugo-academic","infiltration-basin","lca-modelling","literature-data-management","modelling","project-demoware","project-geosalz","project-networks4","project-optiwells2","publications","qmra-webapp-backend-engine","r-package-automation","research-data-management"],"freq":[14,7,5,4,4,3,3,3,3,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":12.8571428571429,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-057909144acffebea26f" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-057909144acffebea26f">{"x":{"word":["project-fakin","data-import","publication","data-management","groundwater-modelling","data-aggregation","data-visualisation","knowledge-repo","project-demeau","data-export","life-cycle-assessment","project-aquanes","automated-reporting","data-cleaning","data-visualization","drawdown-model","groundwater-mounding","hugo-academic","infiltration-basin","lca-modelling","literature-data-management","modelling","project-demoware","project-geosalz","project-networks4","project-optiwells2","publications","qmra-webapp-backend-engine","r-package-automation","research-data-management"],"freq":[14,7,5,4,4,3,3,3,3,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":12.8571428571429,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="authors" class="section level1">
 <h1 class="hasAnchor">
@@ -529,8 +529,8 @@
 <code class="sourceCode R"><span class="fu">wordcloud2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html">wordcloud2</a></span><span class="op">(</span><span class="va">maintainer</span>,
                        minSize <span class="op">=</span> <span class="fl">0.4</span>, 
                        size <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-70465347edbe0686e65d" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-70465347edbe0686e65d">{"x":{"word":["Sonnenberg","Rustler","Matzinger"],"freq":[18,13,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.4,"weightFactor":6,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div id="htmlwidget-506bf34ffa6855dc5f5d" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-506bf34ffa6855dc5f5d">{"x":{"word":["Sonnenberg","Rustler","Matzinger"],"freq":[18,13,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.4,"weightFactor":6,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">## number of co-authors ...</span>
 <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map_int</a></span><span class="op">(</span><span class="va">corpus</span>, <span class="kw">function</span><span class="op">(</span><span class="va">r</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">author</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/enframe.html">enframe</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
@@ -1205,8 +1205,8 @@
 <code class="sourceCode R"><span class="fu">wordcloud2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html">wordcloud2</a></span><span class="op">(</span><span class="va">dep_count</span>,
                        minSize <span class="op">=</span> <span class="fl">0.4</span>, 
                        size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-b02ebe2e78809bb0355d" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b02ebe2e78809bb0355d">{"x":{"word":["kwb.utils","dplyr","magrittr","stringr","R","tidyr","fs","ggplot2","data.table","lattice","kwb.datetime","kwb.event","kwb.plot","lubridate","readxl","xml2","digest","hydroGOF","janitor","kwb.db","openxlsx","plyr","readr","rlang","yaml","cellranger","crayon","forcats","ggforce","gh","httr","jsonlite","kwb.fakin","kwb.file","rmarkdown","rvest","shiny","tibble","usethis","withr","xts",null,"assertthat","blogdown","callr","codemetar","colorRamps","dbplyr","desc","dygraphs","EnvStats","fasttime","fst","glue","gplots","gridExtra","kwb.base","kwb.code","kwb.pkgstatus","kwb.read","kwb.readxl","kwb.vs2dh","latticeExtra","leaflet","magick","manipulate","openssl","pkgdown","plotrix","purrr","qmrparser","RCurl","rematch2","remotes","reshape","RMySQL","RODBC","rorcid","scales","sessioninfo","sfsmisc","shapefiles","shinythemes","sp","stringi","travis","treemap","wordcloud2","XML"],"freq":[21,12,11,11,7,7,6,6,5,5,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.4,"weightFactor":8.57142857142857,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-1e99bbe2ddad7a9a4627" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1e99bbe2ddad7a9a4627">{"x":{"word":["kwb.utils","dplyr","magrittr","stringr","R","tidyr","fs","ggplot2","data.table","lattice","kwb.datetime","kwb.event","kwb.plot","lubridate","readxl","xml2","digest","hydroGOF","janitor","kwb.db","openxlsx","plyr","readr","rlang","yaml","cellranger","crayon","forcats","ggforce","gh","httr","jsonlite","kwb.fakin","kwb.file","rmarkdown","rvest","shiny","tibble","usethis","withr","xts",null,"assertthat","blogdown","callr","codemetar","colorRamps","dbplyr","desc","dygraphs","EnvStats","fasttime","fst","glue","gplots","gridExtra","kwb.base","kwb.code","kwb.pkgstatus","kwb.read","kwb.readxl","kwb.vs2dh","latticeExtra","leaflet","magick","manipulate","openssl","pkgdown","plotrix","purrr","qmrparser","RCurl","rematch2","remotes","reshape","RMySQL","RODBC","rorcid","scales","sessioninfo","sfsmisc","shapefiles","shinythemes","sp","stringi","travis","treemap","wordcloud2","XML"],"freq":[21,12,11,11,7,7,6,6,5,5,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.4,"weightFactor":8.57142857142857,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="depends-imports-and-suggests" class="section level2">
 <h2 class="hasAnchor">
@@ -1646,8 +1646,8 @@
 <code class="sourceCode R"><span class="fu">wordcloud2</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html">wordcloud2</a></span><span class="op">(</span><span class="va">dep_sug_count</span>,
                        minSize <span class="op">=</span> <span class="fl">0.4</span>, 
                        size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></code></pre></div>
-<div id="htmlwidget-69c1468c696dd5148691" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
-<script type="application/json" data-for="htmlwidget-69c1468c696dd5148691">{"x":{"word":["testthat","kwb.utils","knitr","rmarkdown","covr","dplyr","magrittr","stringr","ggplot2","R","tidyr","fs","kwb.datetime","data.table","lattice","lubridate","kwb.event","kwb.plot","readxl","xml2","digest","hydroGOF","janitor","jsonlite","kwb.db","openxlsx","plyr","readr","rlang","tibble","withr","yaml","cellranger","crayon","devtools","forcats","ggforce","gh","httr","kwb.fakin","kwb.file","rvest","shiny","usethis","xts","assertthat","blogdown","callr","codemetar","colorRamps","compare","dbplyr","desc","dygraphs","EnvStats","fasttime","fst","ggrepel","glue","gplots","gridExtra","jsonld","kwb.base","kwb.code","kwb.endnote","kwb.logger","kwb.pkgstatus","kwb.read","kwb.readxl","kwb.vs2dh","latticeExtra","leaflet","magick","manipulate","networkD3","openssl","pkgdown","pkgnet","PKI","plotrix","printr","purrr","qmrparser","RCurl","rematch2","remotes","reshape","RMySQL","RODBC","rorcid","scales","sessioninfo","sfsmisc","shapefiles","shinythemes","sp","stringi","travis","treemap","wordcloud2","XML"],"freq":[28,22,18,18,15,12,11,11,8,7,7,6,6,5,5,5,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.4,"weightFactor":6.42857142857143,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3f8922a295c5fd78b31b" style="width:700px;height:432.632880098888px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3f8922a295c5fd78b31b">{"x":{"word":["testthat","kwb.utils","knitr","rmarkdown","covr","dplyr","magrittr","stringr","ggplot2","R","tidyr","fs","kwb.datetime","data.table","lattice","lubridate","kwb.event","kwb.plot","readxl","xml2","digest","hydroGOF","janitor","jsonlite","kwb.db","openxlsx","plyr","readr","rlang","tibble","withr","yaml","cellranger","crayon","devtools","forcats","ggforce","gh","httr","kwb.fakin","kwb.file","rvest","shiny","usethis","xts","assertthat","blogdown","callr","codemetar","colorRamps","compare","dbplyr","desc","dygraphs","EnvStats","fasttime","fst","ggrepel","glue","gplots","gridExtra","jsonld","kwb.base","kwb.code","kwb.endnote","kwb.logger","kwb.pkgstatus","kwb.read","kwb.readxl","kwb.vs2dh","latticeExtra","leaflet","magick","manipulate","networkD3","openssl","pkgdown","pkgnet","PKI","plotrix","printr","purrr","qmrparser","RCurl","rematch2","remotes","reshape","RMySQL","RODBC","rorcid","scales","sessioninfo","sfsmisc","shapefiles","shinythemes","sp","stringi","travis","treemap","wordcloud2","XML"],"freq":[28,22,18,18,15,12,11,11,8,7,7,6,6,5,5,5,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0.4,"weightFactor":6.42857142857143,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="session-info" class="section level1">
@@ -1696,7 +1696,7 @@
 </tr>
 <tr class="odd">
 <td align="left">date</td>
-<td align="left">2021-07-06</td>
+<td align="left">2021-07-12</td>
 </tr>
 </tbody>
 </table>
@@ -1709,7 +1709,7 @@
 #&gt;  bslib         0.2.5.1 2021-05-18 [1] CRAN (R 4.1.0)                      
 #&gt;  cachem        1.0.5   2021-05-15 [1] CRAN (R 4.1.0)                      
 #&gt;  cli           3.0.0   2021-06-30 [1] CRAN (R 4.1.0)                      
-#&gt;  codemetar   * 0.3.0   2021-07-06 [1] Github (ropensci/codemetar@5d8a3c5) 
+#&gt;  codemetar   * 0.3.0   2021-07-12 [1] Github (ropensci/codemetar@5d8a3c5) 
 #&gt;  crayon        1.4.1   2021-02-08 [1] CRAN (R 4.1.0)                      
 #&gt;  curl          4.3.2   2021-06-23 [1] CRAN (R 4.1.0)                      
 #&gt;  DBI           1.1.1   2021-01-15 [1] CRAN (R 4.1.0)                      
@@ -1743,7 +1743,7 @@
 #&gt;  purrr       * 0.3.4   2020-04-17 [1] CRAN (R 4.1.0)                      
 #&gt;  R6            2.5.0   2020-10-28 [1] CRAN (R 4.1.0)                      
 #&gt;  ragg          1.1.3   2021-06-09 [1] CRAN (R 4.1.0)                      
-#&gt;  Rcpp          1.0.6   2021-01-15 [1] CRAN (R 4.1.0)                      
+#&gt;  Rcpp          1.0.7   2021-07-07 [1] CRAN (R 4.1.0)                      
 #&gt;  rlang         0.4.11  2021-04-30 [1] CRAN (R 4.1.0)                      
 #&gt;  rmarkdown     2.9     2021-06-15 [1] CRAN (R 4.1.0)                      
 #&gt;  rprojroot     2.0.2   2020-11-15 [1] CRAN (R 4.1.0)                      
@@ -1760,7 +1760,7 @@
 #&gt;  V8            3.4.2   2021-05-01 [1] CRAN (R 4.1.0)                      
 #&gt;  vctrs         0.3.8   2021-04-29 [1] CRAN (R 4.1.0)                      
 #&gt;  withr         2.4.2   2021-04-18 [1] CRAN (R 4.1.0)                      
-#&gt;  wordcloud2    0.2.2   2021-07-06 [1] Github (Lchiffon/wordcloud2@8a12a3b)
+#&gt;  wordcloud2    0.2.2   2021-07-12 [1] Github (Lchiffon/wordcloud2@8a12a3b)
 #&gt;  xfun          0.24    2021-06-15 [1] CRAN (R 4.1.0)                      
 #&gt;  yaml          2.2.1   2020-02-01 [1] CRAN (R 4.1.0)                      
 #&gt; 

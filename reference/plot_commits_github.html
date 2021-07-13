@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Helper function: Get Github Topics — get_github_topics • pkgmeta</title>
+<title>Plot Commits GitHub — plot_commits_github • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,8 +45,8 @@
 
 
 
-<meta property="og:title" content="Helper function: Get Github Topics — get_github_topics" />
-<meta property="og:description" content="Helper function: Get Github Topics" />
+<meta property="og:title" content="Plot Commits GitHub — plot_commits_github" />
+<meta property="og:description" content="Plot Commits GitHub" />
 
 
 
@@ -141,28 +141,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Helper function: Get Github Topics</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/write_github_repos_json.R'><code>R/write_github_repos_json.R</code></a></small>
-    <div class="hidden name"><code>get_github_topics.Rd</code></div>
+    <h1>Plot Commits GitHub</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/plot_commits_github.R'><code>R/plot_commits_github.R</code></a></small>
+    <div class="hidden name"><code>plot_commits_github.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Helper function: Get Github Topics</p>
+    <p>Plot Commits GitHub</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_github_topics</span><span class='op'>(</span>full_names <span class='op'>=</span> <span class='fu'>get_github_full_names</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_commits_github</span><span class='op'>(</span><span class='va'>repos_commits</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>full_names</th>
-      <td><p>vector with full_names to Github repo e.g.
-c("kwb-r/kwb.utils", "kwb-r/kwb.base"), default: get_github_full_names()</p></td>
+      <th>repos_commits</th>
+      <td><p>tibble as retrieved by
+<code>github_commits_repos</code></p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>ggplot of temporal development of commits for KWB-R on Github</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Helper function: Get Github Topics — get_github_topics • pkgmeta</title>
+<title>Get Github Commits for Multiple Repos — get_github_commits_repos • pkgmeta</title>
 
 
 <!-- jquery -->
@@ -45,8 +45,8 @@
 
 
 
-<meta property="og:title" content="Helper function: Get Github Topics — get_github_topics" />
-<meta property="og:description" content="Helper function: Get Github Topics" />
+<meta property="og:title" content="Get Github Commits for Multiple Repos — get_github_commits_repos" />
+<meta property="og:description" content="Get Github Commits for Multiple Repos" />
 
 
 
@@ -141,28 +141,44 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Helper function: Get Github Topics</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/write_github_repos_json.R'><code>R/write_github_repos_json.R</code></a></small>
-    <div class="hidden name"><code>get_github_topics.Rd</code></div>
+    <h1>Get Github Commits for Multiple Repos</h1>
+    <small class="dont-index">Source: <a href='https://github.com/KWB-R/pkgmeta/blob/master/R/github_commits.R'><code>R/github_commits.R</code></a></small>
+    <div class="hidden name"><code>get_github_commits_repos.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Helper function: Get Github Topics</p>
+    <p>Get Github Commits for Multiple Repos</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_github_topics</span><span class='op'>(</span>full_names <span class='op'>=</span> <span class='fu'>get_github_full_names</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get_github_commits_repos</span><span class='op'>(</span><span class='va'>repos</span>, github_token <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GITHUB_PAT"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>full_names</th>
-      <td><p>vector with full_names to Github repo e.g.
-c("kwb-r/kwb.utils", "kwb-r/kwb.base"), default: get_github_full_names()</p></td>
+      <th>repos</th>
+      <td><p>vector with full names of Github repos ("owner/repo_name",
+e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))</p></td>
+    </tr>
+    <tr>
+      <th>github_token</th>
+      <td><p>default: Sys.getenv("GITHUB_PAT")</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>data frame for all repos with releases</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'>#repos &lt;- kwb.pkgstatus::get_github_repos(github_token = Sys.getenv("GITHUB_PAT"))</span>
+<span class='co'>#repos &lt;- repos$full_name</span>
+<span class='va'>repos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='st'>"kwb-r/"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"aquanes.report"</span>, <span class='st'>"kwb.ml"</span>, <span class='st'>"kwb.utils"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>pkgs_commits</span> <span class='op'>&lt;-</span> <span class='fu'>pkgmeta</span><span class='fu'>::</span><span class='fu'>get_github_commits_repos</span><span class='op'>(</span><span class='va'>repos</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>pkgs_commits</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

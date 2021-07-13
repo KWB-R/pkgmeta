@@ -18,7 +18,7 @@ get_recursive_pkg_dependencies(
 
 \item{dbg}{logical if debug should be shown (default: TRUE)}
 
-\item{...}{additional arguments passed to \link[packrat]{getPackageDependencies}}
+\item{...}{additional arguments passed to packrat:::getPackageDependencies()}
 }
 \value{
 list with recursive package dependencies

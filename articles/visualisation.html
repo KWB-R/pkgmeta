@@ -4,104 +4,83 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="pkgmeta">
 <title>Visualisation • pkgmeta</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.0/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
-<link href="../docsearch.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><meta property="og:title" content="Visualisation">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Visualisation">
 <meta property="og:description" content="pkgmeta">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">pkgmeta</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
-      </span>
-    </div>
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
+    
+    <a class="navbar-brand me-2" href="../index.html">pkgmeta</a>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../reference/index.html">Reference</a>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.2.0</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/analyse-rpackages.html">Analyse R Packages on Github</a>
-    </li>
-    <li>
-      <a href="../articles/codemetar-analysis.html">Codemetar Analysis</a>
-    </li>
-    <li>
-      <a href="../articles/visualisation.html">Visualisation</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="../news/index.html">Changelog</a>
-</li>
-      </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/KWB-R/pkgmeta/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
-        <div class="form-group">
-          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-</div>
-      </form>
-      
-    </div>
-<!--/.nav-collapse -->
+<li class="active nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/analyse-rpackages.html">Analyse R Packages on Github</a>
+    <a class="dropdown-item" href="../articles/codemetar-analysis.html">Codemetar Analysis</a>
+    <a class="dropdown-item" href="../articles/visualisation.html">Visualisation</a>
   </div>
-<!--/.container -->
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
+      </ul>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/KWB-R/pkgmeta/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
-<!--/.navbar -->
 
-      
+    
+  </div>
+</nav><div class="container template-article">
 
-      </header><script src="visualisation_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="visualisation_files/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="visualisation_files/plotly-binding-4.10.0/plotly.js"></script><script src="visualisation_files/typedarray-0.1/typedarray.min.js"></script><link href="visualisation_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+
+
+<script src="visualisation_files/accessible-code-block-0.0.1/empty-anchor.js"></script><script src="visualisation_files/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="visualisation_files/plotly-binding-4.10.0/plotly.js"></script><script src="visualisation_files/typedarray-0.1/typedarray.min.js"></script><link href="visualisation_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
 <script src="visualisation_files/crosstalk-1.2.0/js/crosstalk.min.js"></script><link href="visualisation_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet">
 <script src="visualisation_files/plotly-main-2.5.1/plotly-latest.min.js"></script><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Visualisation</h1>
+  <main id="main"><div class="page-header">
+      <img src="" class="logo" alt=""><h1>Visualisation</h1>
                         <h4 data-toc-skip class="author">Michael Rustler</h4>
             
             <h4 data-toc-skip class="date">2022-05-31</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/HEAD/vignettes/visualisation.Rmd" class="external-link"><code>vignettes/visualisation.Rmd</code></a></small>
-      <div class="hidden name"><code>visualisation.Rmd</code></div>
-
+      <div class="d-none name"><code>visualisation.Rmd</code></div>
     </div>
 
     
@@ -116,8 +95,8 @@
 <span class="fu">htmlwidgets</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/htmlwidgets/man/saveWidget.html" class="external-link">saveWidget</a></span><span class="op">(</span>widget <span class="op">=</span> <span class="va">r_releases</span>, 
                         file <span class="op">=</span> <span class="st">"r_releases.html"</span><span class="op">)</span>
 <span class="va">r_releases</span></code></pre></div>
-<div id="htmlwidget-2db02bca88421ea30e02" style="width:672px;height:288px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2db02bca88421ea30e02">{"x":{"data":[{"x":[881225278],"y":[0],"text":"label: v0.60 (1997-12-04 08:47:58): Initial","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Initial","legendgroup":"Initial","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[951814523,1096899878,1364973156,1587711934],"y":[1,2,3,4],"text":["label: v1.0 (2000-02-29 08:55:23): Major","label: v2.0.0 (2004-10-04 14:24:38): Major","label: v3.0.0 (2013-04-03 07:12:36): Major","label: v4.0.0 (2020-04-24 07:05:34): Major"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)"}},"hoveron":"points","name":"Major","legendgroup":"Major","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[882709762,897828980,910967839,923491181,935749769,943273514,949922690,961058601,976875565,993206462,1008756894,1020074486,1033466791,1050497887,1065611639,1081766198,1113863193,1128594134,1145875040,1159870504,1177407703,1191402173,1208850329,1224494641,1239957168,1256547742,1271923881,1287132117,1302683487,1320048549,1333091765,1397113870,1429168413,1462259608,1492758885,1524467078,1556262303,1621321522,1650611141],"y":[0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4],"text":["label: v0.61 (1997-12-21 13:09:22): Minor","label: v0.62 (1998-06-14 12:56:20): Minor","label: v0.63 (1998-11-13 14:37:19): Minor","label: v0.64 (1999-04-07 13:19:41): Minor","label: v0.65 (1999-08-27 10:29:29): Minor","label: v0.90 (1999-11-22 12:25:14): Minor","label: v0.99 (2000-02-07 11:24:50): Minor","label: v1.1 (2000-06-15 08:43:21): Minor","label: v1.2 (2000-12-15 10:19:25): Minor","label: v1.3 (2001-06-22 10:41:02): Minor","label: v1.4 (2001-12-19 10:14:54): Minor","label: v1.5.0 (2002-04-29 10:01:26): Minor","label: v1.6.0 (2002-10-01 10:06:31): Minor","label: v1.7.0 (2003-04-16 12:58:07): Minor","label: v1.8.0 (2003-10-08 11:13:59): Minor","label: v1.9.0 (2004-04-12 10:36:38): Minor","label: v2.1.0 (2005-04-18 22:26:33): Minor","label: v2.2.0 (2005-10-06 10:22:14): Minor","label: v2.3.0 (2006-04-24 10:37:20): Minor","label: v2.4.0 (2006-10-03 10:15:04): Minor","label: v2.5.0 (2007-04-24 09:41:43): Minor","label: v2.6.0 (2007-10-03 09:02:53): Minor","label: v2.7.0 (2008-04-22 07:45:29): Minor","label: v2.8.0 (2008-10-20 09:24:01): Minor","label: v2.9.0 (2009-04-17 08:32:48): Minor","label: v2.10.0 (2009-10-26 09:02:22): Minor","label: v2.11.0 (2010-04-22 08:11:21): Minor","label: v2.12.0 (2010-10-15 08:41:57): Minor","label: v2.13.0 (2011-04-13 08:31:27): Minor","label: v2.14.0 (2011-10-31 08:09:09): Minor","label: v2.15.0 (2012-03-30 07:16:05): Minor","label: v3.1.0 (2014-04-10 07:11:10): Minor","label: v3.2.0 (2015-04-16 07:13:33): Minor","label: v3.3.0 (2016-05-03 07:13:28): Minor","label: v3.4.0 (2017-04-21 07:14:45): Minor","label: v3.5.0 (2018-04-23 07:04:38): Minor","label: v3.6.0 (2019-04-26 07:05:03): Minor","label: v4.1.0 (2021-05-18 07:05:22): Minor","label: v4.2.0 (2022-04-22 07:05:41): Minor"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Minor","legendgroup":"Minor","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[884392315,889903555,894095897,897862405,900069225,904294939,909144521,912776788,916059350,920644034,926083543,930918195,939211984,945260947,955701858,966329658,979553881,983191405,988284587,999261952,1012391855,1024312833,1036146797,1042212874,1055757279,1069416021,1087816179,1100528190,1119259633,1135074921,1149150333,1166435363,1183029426,1196086444,1202469005,1214207072,1219654436,1229936597,1246018257,1251102154,1260786504,1275293425,1292490724,1298632039,1310117828,1317366356,1324541418,1330503010,1340348984,1351235476,1362126509,1368688293,1380093069,1394093553,1404976269,1414743092,1425888740,1434611704,1439536398,1449735188,1457597745,1460649578,1466493698,1477901595,1488788191,1498806251,1506582275,1512029105,1521101067,1530515071,1545293080,1552291489,1562310303,1576137903,1582963516,1591427116,1592809519,1602313524,1613376313,1617174315,1628579106,1635753912,1646899538],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4],"text":["label: v0.61.1 (1998-01-10 00:31:55): Patch","label: v0.61.2 (1998-03-14 19:25:55): Patch","label: v0.61.3 (1998-05-02 07:58:17): Patch","label: v0.62.1 (1998-06-14 22:13:25): Patch","label: v0.62.2 (1998-07-10 11:13:45): Patch","label: v0.62.3 (1998-08-28 09:02:19): Patch","label: v0.62.4 (1998-10-23 12:08:41): Patch","label: v0.63.1 (1998-12-04 13:06:28): Patch","label: v0.63.2 (1999-01-11 12:55:50): Patch","label: v0.63.3 (1999-03-05 14:27:14): Patch","label: v0.64.1 (1999-05-07 13:25:43): Patch","label: v0.64.2 (1999-07-02 12:23:15): Patch","label: v0.65.1 (1999-10-06 12:13:04): Patch","label: v0.90.1 (1999-12-15 12:29:07): Patch","label: v1.0.1 (2000-04-14 08:44:18): Patch","label: v1.1.1 (2000-08-15 08:54:18): Patch","label: v1.2.1 (2001-01-15 10:18:01): Patch","label: v1.2.2 (2001-02-26 12:43:25): Patch","label: v1.2.3 (2001-04-26 11:29:47): Patch","label: v1.3.1 (2001-08-31 12:45:52): Patch","label: v1.4.1 (2002-01-30 11:57:35): Patch","label: v1.5.1 (2002-06-17 11:20:33): Patch","label: v1.6.1 (2002-11-01 10:33:17): Patch","label: v1.6.2 (2003-01-10 15:34:34): Patch","label: v1.7.1 (2003-06-16 09:54:39): Patch","label: v1.8.1 (2003-11-21 12:00:21): Patch","label: v1.9.1 (2004-06-21 11:09:39): Patch","label: v2.0.1 (2004-11-15 14:16:30): Patch","label: v2.1.1 (2005-06-20 09:27:13): Patch","label: v2.2.1 (2005-12-20 10:35:21): Patch","label: v2.3.1 (2006-06-01 08:25:33): Patch","label: v2.4.1 (2006-12-18 09:49:23): Patch","label: v2.5.1 (2007-06-28 11:17:06): Patch","label: v2.6.1 (2007-11-26 14:14:04): Patch","label: v2.6.2 (2008-02-08 11:10:05): Patch","label: v2.7.1 (2008-06-23 07:44:32): Patch","label: v2.7.2 (2008-08-25 08:53:56): Patch","label: v2.8.1 (2008-12-22 09:03:17): Patch","label: v2.9.1 (2009-06-26 12:10:57): Patch","label: v2.9.2 (2009-08-24 08:22:34): Patch","label: v2.10.1 (2009-12-14 10:28:24): Patch","label: v2.11.1 (2010-05-31 08:10:25): Patch","label: v2.12.1 (2010-12-16 09:12:04): Patch","label: v2.12.2 (2011-02-25 11:07:19): Patch","label: v2.13.1 (2011-07-08 09:37:08): Patch","label: v2.13.2 (2011-09-30 07:05:56): Patch","label: v2.14.1 (2011-12-22 08:10:18): Patch","label: v2.14.2 (2012-02-29 08:10:10): Patch","label: v2.15.1 (2012-06-22 07:09:44): Patch","label: v2.15.2 (2012-10-26 07:11:16): Patch","label: v2.15.3 (2013-03-01 08:28:29): Patch","label: v3.0.1 (2013-05-16 07:11:33): Patch","label: v3.0.2 (2013-09-25 07:11:09): Patch","label: v3.0.3 (2014-03-06 08:12:33): Patch","label: v3.1.1 (2014-07-10 07:11:09): Patch","label: v3.1.2 (2014-10-31 08:11:32): Patch","label: v3.1.3 (2015-03-09 08:12:20): Patch","label: v3.2.1 (2015-06-18 07:15:04): Patch","label: v3.2.2 (2015-08-14 07:13:18): Patch","label: v3.2.3 (2015-12-10 08:13:08): Patch","label: v3.2.4 (2016-03-10 08:15:45): Patch","label: v3.2.5 (2016-04-14 15:59:38): Patch","label: v3.3.1 (2016-06-21 07:21:38): Patch","label: v3.3.2 (2016-10-31 08:13:15): Patch","label: v3.3.3 (2017-03-06 08:16:31): Patch","label: v3.4.1 (2017-06-30 07:04:11): Patch","label: v3.4.2 (2017-09-28 07:04:35): Patch","label: v3.4.3 (2017-11-30 08:05:05): Patch","label: v3.4.4 (2018-03-15 08:04:27): Patch","label: v3.5.1 (2018-07-02 07:04:31): Patch","label: v3.5.2 (2018-12-20 08:04:40): Patch","label: v3.5.3 (2019-03-11 08:04:49): Patch","label: v3.6.1 (2019-07-05 07:05:03): Patch","label: v3.6.2 (2019-12-12 08:05:03): Patch","label: v3.6.3 (2020-02-29 08:05:16): Patch","label: v4.0.1 (2020-06-06 07:05:16): Patch","label: v4.0.2 (2020-06-22 07:05:19): Patch","label: v4.0.3 (2020-10-10 07:05:24): Patch","label: v4.0.4 (2021-02-15 08:05:13): Patch","label: v4.0.5 (2021-03-31 07:05:15): Patch","label: v4.1.1 (2021-08-10 07:05:06): Patch","label: v4.1.2 (2021-11-01 08:05:12): Patch","label: v4.1.3 (2022-03-10 08:05:38): Patch"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)"}},"hoveron":"points","name":"Patch","legendgroup":"Patch","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.5814307458143,"r":7.30593607305936,"b":47.0015220700152,"l":25.5707762557078},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"R Releases","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[842755984.85,1689080434.15],"tickmode":"array","ticktext":["2000","2005","2010","2015","2020"],"tickvals":[946684800,1104537600,1262304000,1420070400,1577836800],"categoryorder":"array","categoryarray":["2000","2005","2010","2015","2020"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.6,4.6],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Major Release Version","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"<br />Type","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"341d513fa825":{"colour":{},"label":{},"x":{},"y":{},"alpha":{},"type":"scatter"}},"cur_data":"341d513fa825","visdat":{"341d513fa825":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p><a href="../r_releases.html">Overview of R releases</a></p>
+<div id="htmlwidget-225aef596ed0a2caa2cf" style="width:672px;height:288px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-225aef596ed0a2caa2cf">{"x":{"data":[{"x":[881225278],"y":[0],"text":"label: v0.60 (1997-12-04 08:47:58): Initial","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"Initial","legendgroup":"Initial","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[951814523,1096899878,1364973156,1587711934],"y":[1,2,3,4],"text":["label: v1.0 (2000-02-29 08:55:23): Major","label: v2.0.0 (2004-10-04 14:24:38): Major","label: v3.0.0 (2013-04-03 07:12:36): Major","label: v4.0.0 (2020-04-24 07:05:34): Major"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(124,174,0,1)"}},"hoveron":"points","name":"Major","legendgroup":"Major","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[882709762,897828980,910967839,923491181,935749769,943273514,949922690,961058601,976875565,993206462,1008756894,1020074486,1033466791,1050497887,1065611639,1081766198,1113863193,1128594134,1145875040,1159870504,1177407703,1191402173,1208850329,1224494641,1239957168,1256547742,1271923881,1287132117,1302683487,1320048549,1333091765,1397113870,1429168413,1462259608,1492758885,1524467078,1556262303,1621321522,1650611141],"y":[0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,4,4],"text":["label: v0.61 (1997-12-21 13:09:22): Minor","label: v0.62 (1998-06-14 12:56:20): Minor","label: v0.63 (1998-11-13 14:37:19): Minor","label: v0.64 (1999-04-07 13:19:41): Minor","label: v0.65 (1999-08-27 10:29:29): Minor","label: v0.90 (1999-11-22 12:25:14): Minor","label: v0.99 (2000-02-07 11:24:50): Minor","label: v1.1 (2000-06-15 08:43:21): Minor","label: v1.2 (2000-12-15 10:19:25): Minor","label: v1.3 (2001-06-22 10:41:02): Minor","label: v1.4 (2001-12-19 10:14:54): Minor","label: v1.5.0 (2002-04-29 10:01:26): Minor","label: v1.6.0 (2002-10-01 10:06:31): Minor","label: v1.7.0 (2003-04-16 12:58:07): Minor","label: v1.8.0 (2003-10-08 11:13:59): Minor","label: v1.9.0 (2004-04-12 10:36:38): Minor","label: v2.1.0 (2005-04-18 22:26:33): Minor","label: v2.2.0 (2005-10-06 10:22:14): Minor","label: v2.3.0 (2006-04-24 10:37:20): Minor","label: v2.4.0 (2006-10-03 10:15:04): Minor","label: v2.5.0 (2007-04-24 09:41:43): Minor","label: v2.6.0 (2007-10-03 09:02:53): Minor","label: v2.7.0 (2008-04-22 07:45:29): Minor","label: v2.8.0 (2008-10-20 09:24:01): Minor","label: v2.9.0 (2009-04-17 08:32:48): Minor","label: v2.10.0 (2009-10-26 09:02:22): Minor","label: v2.11.0 (2010-04-22 08:11:21): Minor","label: v2.12.0 (2010-10-15 08:41:57): Minor","label: v2.13.0 (2011-04-13 08:31:27): Minor","label: v2.14.0 (2011-10-31 08:09:09): Minor","label: v2.15.0 (2012-03-30 07:16:05): Minor","label: v3.1.0 (2014-04-10 07:11:10): Minor","label: v3.2.0 (2015-04-16 07:13:33): Minor","label: v3.3.0 (2016-05-03 07:13:28): Minor","label: v3.4.0 (2017-04-21 07:14:45): Minor","label: v3.5.0 (2018-04-23 07:04:38): Minor","label: v3.6.0 (2019-04-26 07:05:03): Minor","label: v4.1.0 (2021-05-18 07:05:22): Minor","label: v4.2.0 (2022-04-22 07:05:41): Minor"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,191,196,1)"}},"hoveron":"points","name":"Minor","legendgroup":"Minor","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[884392315,889903555,894095897,897862405,900069225,904294939,909144521,912776788,916059350,920644034,926083543,930918195,939211984,945260947,955701858,966329658,979553881,983191405,988284587,999261952,1012391855,1024312833,1036146797,1042212874,1055757279,1069416021,1087816179,1100528190,1119259633,1135074921,1149150333,1166435363,1183029426,1196086444,1202469005,1214207072,1219654436,1229936597,1246018257,1251102154,1260786504,1275293425,1292490724,1298632039,1310117828,1317366356,1324541418,1330503010,1340348984,1351235476,1362126509,1368688293,1380093069,1394093553,1404976269,1414743092,1425888740,1434611704,1439536398,1449735188,1457597745,1460649578,1466493698,1477901595,1488788191,1498806251,1506582275,1512029105,1521101067,1530515071,1545293080,1552291489,1562310303,1576137903,1582963516,1591427116,1592809519,1602313524,1613376313,1617174315,1628579106,1635753912,1646899538],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4],"text":["label: v0.61.1 (1998-01-10 00:31:55): Patch","label: v0.61.2 (1998-03-14 19:25:55): Patch","label: v0.61.3 (1998-05-02 07:58:17): Patch","label: v0.62.1 (1998-06-14 22:13:25): Patch","label: v0.62.2 (1998-07-10 11:13:45): Patch","label: v0.62.3 (1998-08-28 09:02:19): Patch","label: v0.62.4 (1998-10-23 12:08:41): Patch","label: v0.63.1 (1998-12-04 13:06:28): Patch","label: v0.63.2 (1999-01-11 12:55:50): Patch","label: v0.63.3 (1999-03-05 14:27:14): Patch","label: v0.64.1 (1999-05-07 13:25:43): Patch","label: v0.64.2 (1999-07-02 12:23:15): Patch","label: v0.65.1 (1999-10-06 12:13:04): Patch","label: v0.90.1 (1999-12-15 12:29:07): Patch","label: v1.0.1 (2000-04-14 08:44:18): Patch","label: v1.1.1 (2000-08-15 08:54:18): Patch","label: v1.2.1 (2001-01-15 10:18:01): Patch","label: v1.2.2 (2001-02-26 12:43:25): Patch","label: v1.2.3 (2001-04-26 11:29:47): Patch","label: v1.3.1 (2001-08-31 12:45:52): Patch","label: v1.4.1 (2002-01-30 11:57:35): Patch","label: v1.5.1 (2002-06-17 11:20:33): Patch","label: v1.6.1 (2002-11-01 10:33:17): Patch","label: v1.6.2 (2003-01-10 15:34:34): Patch","label: v1.7.1 (2003-06-16 09:54:39): Patch","label: v1.8.1 (2003-11-21 12:00:21): Patch","label: v1.9.1 (2004-06-21 11:09:39): Patch","label: v2.0.1 (2004-11-15 14:16:30): Patch","label: v2.1.1 (2005-06-20 09:27:13): Patch","label: v2.2.1 (2005-12-20 10:35:21): Patch","label: v2.3.1 (2006-06-01 08:25:33): Patch","label: v2.4.1 (2006-12-18 09:49:23): Patch","label: v2.5.1 (2007-06-28 11:17:06): Patch","label: v2.6.1 (2007-11-26 14:14:04): Patch","label: v2.6.2 (2008-02-08 11:10:05): Patch","label: v2.7.1 (2008-06-23 07:44:32): Patch","label: v2.7.2 (2008-08-25 08:53:56): Patch","label: v2.8.1 (2008-12-22 09:03:17): Patch","label: v2.9.1 (2009-06-26 12:10:57): Patch","label: v2.9.2 (2009-08-24 08:22:34): Patch","label: v2.10.1 (2009-12-14 10:28:24): Patch","label: v2.11.1 (2010-05-31 08:10:25): Patch","label: v2.12.1 (2010-12-16 09:12:04): Patch","label: v2.12.2 (2011-02-25 11:07:19): Patch","label: v2.13.1 (2011-07-08 09:37:08): Patch","label: v2.13.2 (2011-09-30 07:05:56): Patch","label: v2.14.1 (2011-12-22 08:10:18): Patch","label: v2.14.2 (2012-02-29 08:10:10): Patch","label: v2.15.1 (2012-06-22 07:09:44): Patch","label: v2.15.2 (2012-10-26 07:11:16): Patch","label: v2.15.3 (2013-03-01 08:28:29): Patch","label: v3.0.1 (2013-05-16 07:11:33): Patch","label: v3.0.2 (2013-09-25 07:11:09): Patch","label: v3.0.3 (2014-03-06 08:12:33): Patch","label: v3.1.1 (2014-07-10 07:11:09): Patch","label: v3.1.2 (2014-10-31 08:11:32): Patch","label: v3.1.3 (2015-03-09 08:12:20): Patch","label: v3.2.1 (2015-06-18 07:15:04): Patch","label: v3.2.2 (2015-08-14 07:13:18): Patch","label: v3.2.3 (2015-12-10 08:13:08): Patch","label: v3.2.4 (2016-03-10 08:15:45): Patch","label: v3.2.5 (2016-04-14 15:59:38): Patch","label: v3.3.1 (2016-06-21 07:21:38): Patch","label: v3.3.2 (2016-10-31 08:13:15): Patch","label: v3.3.3 (2017-03-06 08:16:31): Patch","label: v3.4.1 (2017-06-30 07:04:11): Patch","label: v3.4.2 (2017-09-28 07:04:35): Patch","label: v3.4.3 (2017-11-30 08:05:05): Patch","label: v3.4.4 (2018-03-15 08:04:27): Patch","label: v3.5.1 (2018-07-02 07:04:31): Patch","label: v3.5.2 (2018-12-20 08:04:40): Patch","label: v3.5.3 (2019-03-11 08:04:49): Patch","label: v3.6.1 (2019-07-05 07:05:03): Patch","label: v3.6.2 (2019-12-12 08:05:03): Patch","label: v3.6.3 (2020-02-29 08:05:16): Patch","label: v4.0.1 (2020-06-06 07:05:16): Patch","label: v4.0.2 (2020-06-22 07:05:19): Patch","label: v4.0.3 (2020-10-10 07:05:24): Patch","label: v4.0.4 (2021-02-15 08:05:13): Patch","label: v4.0.5 (2021-03-31 07:05:15): Patch","label: v4.1.1 (2021-08-10 07:05:06): Patch","label: v4.1.2 (2021-11-01 08:05:12): Patch","label: v4.1.3 (2022-03-10 08:05:38): Patch"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","opacity":0.55,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(199,124,255,1)"}},"hoveron":"points","name":"Patch","legendgroup":"Patch","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":50.5814307458143,"r":7.30593607305936,"b":47.0015220700152,"l":25.5707762557078},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"R Releases","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[842755984.85,1689080434.15],"tickmode":"array","ticktext":["2000","2005","2010","2015","2020"],"tickvals":[946684800,1104537600,1262304000,1420070400,1577836800],"categoryorder":"array","categoryarray":["2000","2005","2010","2015","2020"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Date","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.6,4.6],"tickmode":"array","ticktext":[],"tickvals":[],"categoryorder":"array","categoryarray":[],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Major Release Version","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"<br />Type","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"d77e49092706":{"colour":{},"label":{},"x":{},"y":{},"alpha":{},"type":"scatter"}},"cur_data":"d77e49092706","visdat":{"d77e49092706":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script><p><a href="../r_releases.html">Overview of R releases</a></p>
 </div>
 <div class="section level2">
 <h2 id="r-packages-on-github">R Packages on Github<a class="anchor" aria-label="anchor" href="#r-packages-on-github"></a>
@@ -143,133 +122,115 @@
 <span class="co">#pkgmeta::get_gh_ratelimit()</span>
 
 <span class="va">pkgs_releases</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/github_packages_versions.html">github_packages_versions</a></span><span class="op">(</span>repos <span class="op">=</span> <span class="va">pkgs</span><span class="op">$</span><span class="va">full_name</span><span class="op">)</span>
-<span class="co">#&gt; Repo: KWB-R/algoliar ... ok. (0.10s) </span>
+<span class="co">#&gt; Repo: KWB-R/algoliar ... ok. (0.19s) </span>
 <span class="co">#&gt; Repo: KWB-R/aquanes.report ... ok. (0.24s) </span>
-<span class="co">#&gt; Repo: KWB-R/dwc.ar4gw ... ok. (0.33s) </span>
-<span class="co">#&gt; Repo: KWB-R/dwc.wells ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/fakin.path.app ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/fhpredict ... ok. (0.36s) </span>
-<span class="co">#&gt; Repo: KWB-R/flextreat.hydrus1d ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/geosalz.phreeqc ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/ibathwater ... ok. (0.30s) </span>
-<span class="co">#&gt; Repo: KWB-R/keys.lid ... ok. (0.17s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.abimo ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.barplot ... ok. (0.10s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.base ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.budget ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.code ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.context ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.datetime ... ok. (0.16s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.db ... ok. (0.25s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.default ... ok. (0.10s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.demeau ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.dwa.m150 ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.dwd ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.dygraph ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.en13508.2 ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.endnote ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.event ... ok. (0.16s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.fakin ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.fcr ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.file ... ok. (0.17s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.flusshygiene ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.flusshygiene.app ... ok. (0.14s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.geosalz ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.graph ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.hantush ... ok. (0.20s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.heatsine ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.heatsine.opencpu ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.hydrus1d ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.infoworks ... ok. (0.10s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.iview ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.kuras.db ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.lca ... ok. (0.11s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.logger ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.matomo ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.misa ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.ml ... ok. (0.19s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.monitoring ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.nextcloud ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.odm ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.odmx ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.ogre ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.ogre.model ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.orcid ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.pathdict ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.pilot ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.pkgbuild ... ok. (0.18s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.pkgstatus ... ok. (0.20s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.plot ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.prep ... ok. (0.21s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.pubs ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.python ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.qmra ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.quantum ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.read ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.readxl ... ok. (0.11s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.resilience ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.satellite ... ok. (0.12s) </span>
+<span class="co">#&gt; Repo: KWB-R/dwc.ar4gw ... ok. (0.13s) </span>
+<span class="co">#&gt; Repo: KWB-R/dwc.wells ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/fakin.path.app ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/fhpredict ... ok. (0.31s) </span>
+<span class="co">#&gt; Repo: KWB-R/flextreat.hydrus1d ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/geosalz.phreeqc ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/ibathwater ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/keys.lid ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.abimo ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.barplot ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.base ... ok. (0.20s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.budget ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.code ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.context ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.datetime ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.db ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.default ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.demeau ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.dwa.m150 ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.dwd ... ok. (0.24s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.dygraph ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.en13508.2 ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.endnote ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.event ... ok. (0.20s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.fakin ... ok. (0.27s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.fcr ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.file ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.flusshygiene ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.flusshygiene.app ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.geosalz ... ok. (0.22s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.graph ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.hantush ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.heatsine ... ok. (0.22s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.heatsine.opencpu ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.hydrus1d ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.infoworks ... ok. (0.25s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.iview ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.kuras.db ... ok. (0.16s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.lca ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.logger ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.matomo ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.misa ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ml ... ok. (0.23s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.monitoring ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.nextcloud ... ok. (0.20s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.odm ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.odmx ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ogre ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ogre.model ... ok. (1.36s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.orcid ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pathdict ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pilot ... ok. (0.22s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pkgbuild ... ok. (0.29s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pkgstatus ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.plot ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.prep ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.pubs ... ok. (0.22s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.python ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.qmra ... ok. (0.24s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.quantum ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.read ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.readxl ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.resilience ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.satellite ... ok. (0.19s) </span>
 <span class="co">#&gt; Repo: KWB-R/kwb.site ... ok. (0.15s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.svn ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.swmm ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.test ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.twitter ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.ucode ... ok. (0.10s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.umberto ... ok. (0.11s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.utils ... ok. (0.16s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.virtualdub ... ok. (0.07s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.vs2dh ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/kwb.wtaq ... ok. (0.11s) </span>
-<span class="co">#&gt; Repo: KWB-R/pkgmeta ... ok. (0.12s) </span>
-<span class="co">#&gt; Repo: KWB-R/qmra.db ... ok. (0.27s) </span>
-<span class="co">#&gt; Repo: KWB-R/r2q ... ok. (0.09s) </span>
-<span class="co">#&gt; Repo: KWB-R/sema.berlin.utils ... ok. (0.13s) </span>
-<span class="co">#&gt; Repo: KWB-R/urbanAnnualRunoff ... ok. (0.11s) </span>
-<span class="co">#&gt; Repo: KWB-R/wasserportal ... ok. (0.08s)</span>
+<span class="co">#&gt; Repo: KWB-R/kwb.svn ... ok. (0.17s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.swmm ... ok. (0.26s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.test ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.twitter ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.ucode ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.umberto ... ok. (0.19s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.utils ... ok. (0.25s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.virtualdub ... ok. (0.15s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.vs2dh ... ok. (0.18s) </span>
+<span class="co">#&gt; Repo: KWB-R/kwb.wtaq ... ok. (0.20s) </span>
+<span class="co">#&gt; Repo: KWB-R/pkgmeta ... ok. (0.21s) </span>
+<span class="co">#&gt; Repo: KWB-R/qmra.db ... ok. (0.26s) </span>
+<span class="co">#&gt; Repo: KWB-R/r2q ... ok. (0.14s) </span>
+<span class="co">#&gt; Repo: KWB-R/sema.berlin.utils ... ok. (0.22s) </span>
+<span class="co">#&gt; Repo: KWB-R/urbanAnnualRunoff ... ok. (0.22s) </span>
+<span class="co">#&gt; Repo: KWB-R/wasserportal ... ok. (0.17s)</span>
 <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/plot_github_pkgs_releases.html">plot_github_pkgs_releases</a></span><span class="op">(</span><span class="va">pkgs_releases</span><span class="op">)</span></code></pre></div>
 <p><img src="visualisation_files/figure-html/unnamed-chunk-4-1.png" width="672"></p>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
+    <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by <a href="https://mrustl.de" class="external-link">Michael Rustler</a>, <a href="https://www.kompetenz-wasser.de/en/project/fakin/" class="external-link"><img src="https://www.kompetenz-wasser.de/wp-content/uploads/2017/08/forschung-headerbild_fakin-2-1920x449.jpg" height="24"></a>.</p>
+<p>Developed by <a href="https://mrustl.de" class="external-link">Michael Rustler</a>, <a href="https://www.kompetenz-wasser.de/en/forschung/projekte/fakin" class="external-link"><img src="https://old.kompetenz-wasser.de/wp-content/uploads/2017/08/forschung-headerbild_fakin-2-1920x449.jpg" alt="Project FAKIN" width="72"></a>.</p>
 </div>
 
-<div class="pkgdown">
+<div class="pkgdown-footer-right">
   <p></p>
 <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script><script>
-  docsearch({
-    
-    
-    apiKey: '38d84b8fc2ffc9261cc5cb2e13fc8ef5',
-    indexName: 'kwb_pkgmeta',
-    inputSelector: 'input#search-input.form-control',
-    transformData: function(hits) {
-      return hits.map(function (hit) {
-        hit.url = updateHitURL(hit);
-        return hit;
-      });
-    }
-  });
-</script>
-</body>
+
+  
+
+  </body>
 </html>

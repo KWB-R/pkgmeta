@@ -41,7 +41,7 @@ cat("[Overview of R releases](../r_releases.html)")
 ### Temporal Development
 
 
-```{r, eval = TRUE,  fig.height = 9, fig.width = 7}
+```{r, eval = TRUE,  fig.height = 13, fig.width = 7}
 #pkgmeta::get_gh_ratelimit()
 pkgs <- pkgmeta::get_github_packages()
 

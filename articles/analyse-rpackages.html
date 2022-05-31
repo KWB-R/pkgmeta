@@ -21,6 +21,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -40,16 +42,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -72,7 +68,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/KWB-R/pkgmeta/">
+  <a href="https://github.com/KWB-R/pkgmeta/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -97,26 +93,26 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Analyse R Packages on Github</h1>
-                        <h4 class="author">Michael Rustler</h4>
+                        <h4 data-toc-skip class="author">Michael Rustler</h4>
             
-            <h4 class="date">2021-07-13</h4>
+            <h4 data-toc-skip class="date">2022-05-31</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/master/vignettes/analyse-rpackages.Rmd"><code>vignettes/analyse-rpackages.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/HEAD/vignettes/analyse-rpackages.Rmd" class="external-link"><code>vignettes/analyse-rpackages.Rmd</code></a></small>
       <div class="hidden name"><code>analyse-rpackages.Rmd</code></div>
 
     </div>
 
     
     
-<div id="get-metadata-for-all-kwb-r-github-repos" class="section level1">
-<h1 class="hasAnchor">
-<a href="#get-metadata-for-all-kwb-r-github-repos" class="anchor"></a>Get Metadata for All KWB-R Github Repos</h1>
+<div class="section level2">
+<h2 id="get-metadata-for-all-kwb-r-github-repos">Get Metadata for All KWB-R Github Repos<a class="anchor" aria-label="anchor" href="#get-metadata-for-all-kwb-r-github-repos"></a>
+</h2>
 <p>For all Github repos also includes non R packages</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_github_repos_json.html">write_github_repos_json</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Fetching Github metadata for repos of organisation 'KWB-R' at 'https://github.com/KWB-R/' ... ok. (1.23s) </span>
-<span class="co">#&gt; Writting '/Users/runner/work/pkgmeta/pkgmeta/vignettes/github.json' file for 92 repos:</span>
+<span class="co">#&gt; Fetching Github metadata for repos of organisation 'KWB-R' at 'https://github.com/KWB-R/' ... ok. (1.38s) </span>
+<span class="co">#&gt; Writting '/Users/runner/work/pkgmeta/pkgmeta/vignettes/github.json' file for 100 repos:</span>
 <span class="co">#&gt; - algoliar: https://github.com/KWB-R/algoliar</span>
 <span class="co">#&gt; - apps: https://github.com/KWB-R/apps</span>
 <span class="co">#&gt; - aquanes.report: https://github.com/KWB-R/aquanes.report</span>
@@ -128,8 +124,11 @@
 <span class="co">#&gt; - fakin.doc: https://github.com/KWB-R/fakin.doc</span>
 <span class="co">#&gt; - fakin.path.app: https://github.com/KWB-R/fakin.path.app</span>
 <span class="co">#&gt; - fhpredict: https://github.com/KWB-R/fhpredict</span>
+<span class="co">#&gt; - flextreat.hydrus1d: https://github.com/KWB-R/flextreat.hydrus1d</span>
 <span class="co">#&gt; - flusshygiene: https://github.com/KWB-R/flusshygiene</span>
 <span class="co">#&gt; - GeoSalz: https://github.com/KWB-R/GeoSalz</span>
+<span class="co">#&gt; - geosalz.mf: https://github.com/KWB-R/geosalz.mf</span>
+<span class="co">#&gt; - geosalz.phreeqc: https://github.com/KWB-R/geosalz.phreeqc</span>
 <span class="co">#&gt; - HydroServerLite: https://github.com/KWB-R/HydroServerLite</span>
 <span class="co">#&gt; - ibathwater: https://github.com/KWB-R/ibathwater</span>
 <span class="co">#&gt; - keys.lid: https://github.com/KWB-R/keys.lid</span>
@@ -151,6 +150,7 @@
 <span class="co">#&gt; - kwb.endnote: https://github.com/KWB-R/kwb.endnote</span>
 <span class="co">#&gt; - kwb.event: https://github.com/KWB-R/kwb.event</span>
 <span class="co">#&gt; - kwb.fakin: https://github.com/KWB-R/kwb.fakin</span>
+<span class="co">#&gt; - kwb.fcr: https://github.com/KWB-R/kwb.fcr</span>
 <span class="co">#&gt; - kwb.file: https://github.com/KWB-R/kwb.file</span>
 <span class="co">#&gt; - kwb.flusshygiene: https://github.com/KWB-R/kwb.flusshygiene</span>
 <span class="co">#&gt; - kwb.flusshygiene.app: https://github.com/KWB-R/kwb.flusshygiene.app</span>
@@ -159,12 +159,14 @@
 <span class="co">#&gt; - kwb.hantush: https://github.com/KWB-R/kwb.hantush</span>
 <span class="co">#&gt; - kwb.heatsine: https://github.com/KWB-R/kwb.heatsine</span>
 <span class="co">#&gt; - kwb.heatsine.opencpu: https://github.com/KWB-R/kwb.heatsine.opencpu</span>
+<span class="co">#&gt; - kwb.hydrus1d: https://github.com/KWB-R/kwb.hydrus1d</span>
 <span class="co">#&gt; - kwb.infoworks: https://github.com/KWB-R/kwb.infoworks</span>
 <span class="co">#&gt; - kwb.iview: https://github.com/KWB-R/kwb.iview</span>
 <span class="co">#&gt; - kwb.kuras.db: https://github.com/KWB-R/kwb.kuras.db</span>
 <span class="co">#&gt; - kwb.lca: https://github.com/KWB-R/kwb.lca</span>
 <span class="co">#&gt; - kwb.logger: https://github.com/KWB-R/kwb.logger</span>
 <span class="co">#&gt; - kwb.matomo: https://github.com/KWB-R/kwb.matomo</span>
+<span class="co">#&gt; - kwb.misa: https://github.com/KWB-R/kwb.misa</span>
 <span class="co">#&gt; - kwb.ml: https://github.com/KWB-R/kwb.ml</span>
 <span class="co">#&gt; - kwb.monitoring: https://github.com/KWB-R/kwb.monitoring</span>
 <span class="co">#&gt; - kwb.nextcloud: https://github.com/KWB-R/kwb.nextcloud</span>
@@ -201,29 +203,31 @@
 <span class="co">#&gt; - maxflow: https://github.com/KWB-R/maxflow</span>
 <span class="co">#&gt; - pFromGrADS: https://github.com/KWB-R/pFromGrADS</span>
 <span class="co">#&gt; - pkgmeta: https://github.com/KWB-R/pkgmeta</span>
+<span class="co">#&gt; - qmra: https://github.com/KWB-R/qmra</span>
 <span class="co">#&gt; - qmra.db: https://github.com/KWB-R/qmra.db</span>
 <span class="co">#&gt; - r2q: https://github.com/KWB-R/r2q</span>
 <span class="co">#&gt; - riverPollution: https://github.com/KWB-R/riverPollution</span>
 <span class="co">#&gt; - sema.berlin.utils: https://github.com/KWB-R/sema.berlin.utils</span>
+<span class="co">#&gt; - spur.scripts: https://github.com/KWB-R/spur.scripts</span>
 <span class="co">#&gt; - status: https://github.com/KWB-R/status</span>
 <span class="co">#&gt; - universe: https://github.com/KWB-R/universe</span>
 <span class="co">#&gt; - urbanAnnualRunoff: https://github.com/KWB-R/urbanAnnualRunoff</span>
-<span class="co">#&gt; - wasserportal: https://github.com/KWB-R/wasserportal ... ok. (0.46s)</span></code></pre></div>
+<span class="co">#&gt; - wasserportal: https://github.com/KWB-R/wasserportal ... ok. (0.51s)</span></code></pre></div>
 </div>
-<div id="get-public-kwb-r-github-package" class="section level1">
-<h1 class="hasAnchor">
-<a href="#get-public-kwb-r-github-package" class="anchor"></a>Get Public KWB-R Github Package</h1>
+<div class="section level2">
+<h2 id="get-public-kwb-r-github-package">Get Public KWB-R Github Package<a class="anchor" aria-label="anchor" href="#get-public-kwb-r-github-package"></a>
+</h2>
 <p>Now limit only “public” KWB-R repos which are R packages.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="define-paths" class="section level1">
-<h1 class="hasAnchor">
-<a href="#define-paths" class="anchor"></a>Define paths</h1>
+<div class="section level2">
+<h2 id="define-paths">Define paths<a class="anchor" aria-label="anchor" href="#define-paths"></a>
+</h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Define paths and resolve placeholders</span>
-<span class="va">paths_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
-  root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span>,
+<span class="va">paths_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
+  root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,
   pkglib <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkg-lib"</span>,
   pkgsource_dir <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkg-source"</span>,
   pkgnet_dir <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkgnet"</span>,
@@ -231,14 +235,14 @@
   pkgsource_unzip_dir <span class="op">=</span> <span class="st">"&lt;pkgsource_dir&gt;/unzip"</span>
 <span class="op">)</span>
 
-<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu">kwb.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.utils/man/resolve.html">resolve</a></span><span class="op">(</span><span class="va">paths_list</span>, root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu">kwb.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.utils/man/resolve.html" class="external-link">resolve</a></span><span class="op">(</span><span class="va">paths_list</span>, root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="download-dependencies" class="section level1">
-<h1 class="hasAnchor">
-<a href="#download-dependencies" class="anchor"></a>Download dependencies</h1>
-<div id="install-packages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#install-packages" class="anchor"></a>Install Packages</h2>
+<div class="section level2">
+<h2 id="download-dependencies">Download dependencies<a class="anchor" aria-label="anchor" href="#download-dependencies"></a>
+</h2>
+<div class="section level3">
+<h3 id="install-packages">Install Packages<a class="anchor" aria-label="anchor" href="#install-packages"></a>
+</h3>
 <p>in own library required for “codemetar” and “pkgnet” reports</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### On Travis already installed within .travis configuration</span>
@@ -246,31 +250,767 @@
 <span class="co">### with function </span>
 <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/travis_pkg_install_script.html">travis_pkg_install_script</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="source-packages" class="section level2">
-<h2 class="hasAnchor">
-<a href="#source-packages" class="anchor"></a>Source Packages</h2>
+<div class="section level3">
+<h3 id="source-packages">Source Packages<a class="anchor" aria-label="anchor" href="#source-packages"></a>
+</h3>
 <p>required for pkgnet “covr”:</p>
 </div>
 </div>
-<div id="perform-package-meta-analysis" class="section level1">
-<h1 class="hasAnchor">
-<a href="#perform-package-meta-analysis" class="anchor"></a>Perform Package Meta Analysis</h1>
-<div id="with-r-package-codemetar" class="section level2">
-<h2 class="hasAnchor">
-<a href="#with-r-package-codemetar" class="anchor"></a>With R package “codemetar”</h2>
+<div class="section level2">
+<h2 id="perform-package-meta-analysis">Perform Package Meta Analysis<a class="anchor" aria-label="anchor" href="#perform-package-meta-analysis"></a>
+</h2>
+<div class="section level3">
+<h3 id="with-r-package-codemetar">With R package “codemetar”<a class="anchor" aria-label="anchor" href="#with-r-package-codemetar"></a>
+</h3>
 <p>Generating “codemetar.json” file</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">pkgs_codemetar</span> <span class="op">&lt;-</span>  <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="va">codemeta</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/create_pkg_codemeta.html">create_pkg_codemeta</a></span><span class="op">(</span>
-  <span class="va">pkgs</span>, libpath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"R_LIBS_USER"</span><span class="op">)</span>
+  <span class="va">pkgs</span>, libpath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"R_LIBS_USER"</span><span class="op">)</span>
 <span class="op">)</span>
+<span class="co">#&gt; Creating codemeta object ... Writing codemeta for R package algoliar</span>
+<span class="co">#&gt; … Getting CRAN metadata from RStudio CRAN mirror</span>
+<span class="co">#&gt; ✔ Got CRAN metadata!</span>
+<span class="co">#&gt; … Getting Bioconductor metadata</span>
+<span class="co">#&gt; ✔ Got Bioconductor metadata!</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package aquanes.report</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package dwc.ar4gw</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package dwc.wells</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package fakin.path.app</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package fhpredict</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package flextreat.hydrus1d</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package geosalz.phreeqc</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package ibathwater</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package keys.lid</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.abimo</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.barplot</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.barplot')</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.base</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.budget</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.code</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.context</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.datetime</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.db</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.default</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.demeau</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.dwa.m150</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.dwd</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.dygraph</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.dygraph')</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.en13508.2</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.endnote</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.event</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.fakin</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.fcr</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.file</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.flusshygiene</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.flusshygiene.app</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.geosalz</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.graph</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.hantush</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.heatsine</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.heatsine.opencpu</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.hydrus1d</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.infoworks</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.iview</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.iview')</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.kuras.db</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.lca</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.logger</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.matomo</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.misa</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ml</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.monitoring</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.nextcloud</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.odm</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.odm')</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✖ Did not get README URL.</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.odmx</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ogre</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ogre.model</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.orcid</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.pathdict</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.pilot</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.pkgbuild</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.pkgstatus</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.plot</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.prep</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.pubs</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.python</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.qmra</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.quantum</span>
+<span class="co">#&gt; Some elements could be improved, see our opinions via give_opinions('/Users/runner/work/_temp/Library/kwb.quantum')</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✖ Did not get README URL.</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.read</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.readxl</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.resilience</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.satellite</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.site</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.svn</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.swmm</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.test</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.twitter</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.ucode</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.umberto</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.utils</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.virtualdub</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.vs2dh</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package kwb.wtaq</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package pkgmeta</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package qmra.db</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package r2q</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package sema.berlin.utils</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package urbanAnnualRunoff</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; Writing codemeta for R package wasserportal</span>
+<span class="co">#&gt; … Getting sysreqs URL from sysreqs API</span>
+<span class="co">#&gt; ✔ Got sysreqs URL from sysreqs API!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Asking README URL from GitHub API</span>
+<span class="co">#&gt; ✔ Got README URL!</span>
+<span class="co">#&gt; … Getting repo topics from GitHub API</span>
+<span class="co">#&gt; ✔ Got repo topics!</span>
+<span class="co">#&gt; ok. (2.74s)</span>
 
-<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_pkg_codemeta_json.html">write_pkg_codemeta_json</a></span><span class="op">(</span><span class="va">codemeta</span><span class="op">)</span></code></pre></div>
+<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_pkg_codemeta_json.html">write_pkg_codemeta_json</a></span><span class="op">(</span><span class="va">codemeta</span><span class="op">)</span>
+<span class="co">#&gt; Writting codemeta to '/Users/runner/work/pkgmeta/pkgmeta/vignettes/codemetar.json' ... ok. (0.47s)</span></code></pre></div>
 </div>
-<div id="with-r-package-pkgnet" class="section level2">
-<h2 class="hasAnchor">
-<a href="#with-r-package-pkgnet" class="anchor"></a>With R package “pkgnet”</h2>
+<div class="section level3">
+<h3 id="with-r-package-pkgnet">With R package “pkgnet”<a class="anchor" aria-label="anchor" href="#with-r-package-pkgnet"></a>
+</h3>
 <p>Create Reports with "pkgnet</p>
 </div>
 </div>
@@ -287,11 +1027,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://mrustl.de">Michael Rustler</a>, <a href="https://www.kompetenz-wasser.de/en/project/fakin/"><img src="https://www.kompetenz-wasser.de/wp-content/uploads/2017/08/forschung-headerbild_fakin-2-1920x449.jpg" height="24"></a>.</p>
+  <p></p>
+<p>Developed by <a href="https://mrustl.de" class="external-link">Michael Rustler</a>, <a href="https://www.kompetenz-wasser.de/en/project/fakin/" class="external-link"><img src="https://www.kompetenz-wasser.de/wp-content/uploads/2017/08/forschung-headerbild_fakin-2-1920x449.jpg" height="24"></a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

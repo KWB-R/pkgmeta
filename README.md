@@ -4,6 +4,7 @@
 [![Project Status](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/pkgmeta)]()
 [![R-Universe_Status_Badge](https://kwb-r.r-universe.dev/badges/pkgmeta)](https://kwb-r.r-universe.dev/)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.3604092.svg)](10.5281/zenodo.3604092)
 
 # pkgmeta
 

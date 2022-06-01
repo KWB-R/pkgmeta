@@ -6019,6 +6019,7 @@
       }
     ],
     "readme": "https://github.com/KWB-R/kwb.fcr/blob/dev/README.md",
+    "keywords": ["rstats", "r-package", "risk-assessment"],
     "citation": [
       {
         "@type": "SoftwareSourceCode",
@@ -6723,12 +6724,12 @@
     "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
     "@type": "SoftwareSourceCode",
     "identifier": "kwb.geosalz",
-    "description": "R Package for Documenting Workflow Used in Project\n    \"geosalz\".",
+    "description": "R Package for Documenting Workflow Used in Project \"geosalz\".",
     "name": "kwb.geosalz: R Package for Documenting Workflow Used in Project \"geosalz\"",
     "codeRepository": "https://github.com/KWB-R/kwb.geosalz",
     "issueTracker": "https://github.com/KWB-R/kwb.geosalz/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -6759,7 +6760,12 @@
         "name": "Kompetenzzentrum Wasser Berlin gGmbH (KWB)"
       }
     ],
-    "funder": {},
+    "funder": [
+      {
+        "@type": "Organization",
+        "name": "GeoSalz"
+      }
+    ],
     "maintainer": [
       {
         "@type": "Person",
@@ -6811,6 +6817,19 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "readr",
+        "name": "readr",
+        "version": ">= 1.4.0",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=readr"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "rmarkdown",
         "name": "rmarkdown",
         "version": ">= 1.11",
@@ -6824,19 +6843,6 @@
       },
       {
         "@type": "SoftwareApplication",
-        "identifier": "tibble",
-        "name": "tibble",
-        "version": ">= 2.0.1",
-        "provider": {
-          "@id": "https://cran.r-project.org",
-          "@type": "Organization",
-          "name": "Comprehensive R Archive Network (CRAN)",
-          "url": "https://cran.r-project.org"
-        },
-        "sameAs": "https://CRAN.R-project.org/package=tibble"
-      },
-      {
-        "@type": "SoftwareApplication",
         "identifier": "sessioninfo",
         "name": "sessioninfo",
         "version": ">= 1.1.1",
@@ -6847,6 +6853,19 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=sessioninfo"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tibble",
+        "name": "tibble",
+        "version": ">= 2.0.1",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tibble"
       }
     ],
     "softwareRequirements": [
@@ -6999,6 +7018,19 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=tidyr"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tidyselect",
+        "name": "tidyselect",
+        "version": ">= 1.1.2",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tidyselect"
       }
     ],
     "readme": "https://github.com/KWB-R/kwb.geosalz/blob/master/README.md",
@@ -7018,7 +7050,7 @@
         ],
         "name": "kwb.geosalz: R Package for Documenting Workflow Used in Project \"geosalz\"",
         "url": "https://github.com/KWB-R/kwb.geosalz",
-        "description": "R package version 0.1.0"
+        "description": "R package version 0.2.0"
       }
     ]
   },
@@ -16860,7 +16892,7 @@
     "codeRepository": "https://github.com/KWB-R/wasserportal",
     "issueTracker": "https://github.com/KWB-R/wasserportal/issues",
     "license": "https://spdx.org/licenses/MIT",
-    "version": "0.0.0.9000",
+    "version": "0.1.0",
     "programmingLanguage": {
       "@type": "ComputerLanguage",
       "name": "R",
@@ -16894,6 +16926,10 @@
       {
         "@type": "Organization",
         "name": "DWC"
+      },
+      {
+        "@type": "Organization",
+        "name": "PROMISCES"
       }
     ],
     "maintainer": [
@@ -16944,6 +16980,18 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "fs",
+        "name": "fs",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=fs"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "htmlwidgets",
         "name": "htmlwidgets",
         "provider": {
@@ -16953,6 +17001,18 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=htmlwidgets"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "janitor",
+        "name": "janitor",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=janitor"
       },
       {
         "@type": "SoftwareApplication",
@@ -16989,6 +17049,18 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "gridExtra",
+        "name": "gridExtra",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=gridExtra"
       },
       {
         "@type": "SoftwareApplication",
@@ -17034,6 +17106,18 @@
       },
       {
         "@type": "SoftwareApplication",
+        "identifier": "readr",
+        "name": "readr",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=readr"
+      },
+      {
+        "@type": "SoftwareApplication",
         "identifier": "rmarkdown",
         "name": "rmarkdown",
         "provider": {
@@ -17055,6 +17139,18 @@
           "url": "https://cran.r-project.org"
         },
         "sameAs": "https://CRAN.R-project.org/package=sf"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "identifier": "tidyselect",
+        "name": "tidyselect",
+        "provider": {
+          "@id": "https://cran.r-project.org",
+          "@type": "Organization",
+          "name": "Comprehensive R Archive Network (CRAN)",
+          "url": "https://cran.r-project.org"
+        },
+        "sameAs": "https://CRAN.R-project.org/package=tidyselect"
       }
     ],
     "softwareRequirements": [
@@ -17203,7 +17299,7 @@
         ],
         "name": "wasserportal: R Package with Functions for Scraping Data of Wasserportal\nBerlin",
         "url": "https://github.com/KWB-R/wasserportal",
-        "description": "R package version 0.0.0.9000"
+        "description": "R package version 0.1.0"
       }
     ]
   }

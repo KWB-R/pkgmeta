@@ -15927,7 +15927,7 @@
         "sameAs": "https://CRAN.R-project.org/package=withr"
       }
     ],
-    "readme": "https://github.com/KWB-R/pkgmeta/blob/dev/README.md",
+    "readme": "https://github.com/KWB-R/pkgmeta/blob/master/README.md",
     "keywords": ["r", "rstats", "project-fakin", "knowledge-repo", "metadata", "r-package", "codemeta", "codemetar", "pkgnet", "github-topics", "github"],
     "citation": [
       {

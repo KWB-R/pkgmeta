@@ -1,4 +1,4 @@
-# pkgmeta 0.2.0
+# [pkgmeta 0.2.0](https://github.com/KWB-R/pkgmeta/releases/tag/v0.2.0) <small>2022-06-01</small>
 
 * Harmonise with [kwb.pkgbuild](https://github.com/kwb-r/kwb.pkgbuild)
 

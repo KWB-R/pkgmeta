@@ -1,3 +1,9 @@
+# [pkgmeta 0.2.1](https://github.com/KWB-R/pkgmeta/releases/tag/v0.2.1) <small>2022-06-01</small>
+
+* Bugfix: due to renamed organisation (formerly: `UptakeOpenSource`, now: `uptake`)
+of  [pkgnet](https://github.com/uptake/pkgnet) dependency (thanks to [@jeroen](https://github.com/r-universe-org/help/issues/169#issuecomment-1144111228))
+
+
 # [pkgmeta 0.2.0](https://github.com/KWB-R/pkgmeta/releases/tag/v0.2.0) <small>2022-06-01</small>
 
 * Harmonise with [kwb.pkgbuild](https://github.com/kwb-r/kwb.pkgbuild)

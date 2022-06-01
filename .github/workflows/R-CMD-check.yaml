@@ -20,7 +20,9 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: windows-latest, r: '4.0'}
+          - {os: windows-latest, r: 'devel'}
+          - {os: windows-latest, r: 'oldrel'}
+          - {os: windows-latest, r: 'release'}
 
     env:
       GITHUB_PAT: ${{ secrets.MY_PUBLIC_PAT }}

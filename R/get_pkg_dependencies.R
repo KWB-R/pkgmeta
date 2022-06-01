@@ -3,7 +3,7 @@
 #' @param pkgs character vector with package names
 #' @param library_path character vector with path(s) to R library (default: .libPaths())
 #' @param dbg logical if debug should be shown (default: TRUE)
-#' @param ... additional arguments passed to \link[packrat]{getPackageDependencies}
+#' @param ... additional arguments passed to packrat:::getPackageDependencies()
 #' @return list with package dependencies
 #' @importFrom stats setNames
 #' @export

@@ -1,61 +1,59 @@
 Package: pkgmeta
 Title: R Package for Meta-Analysis of KWB-R Packages on Github
-Version: 0.1.0.9000
-Authors@R: 
-    c(person(given = "Michael",
-             family = "Rustler",
-             role = c("aut", "cre"),
-             email = "michael.rustler@kompetenz-wasser.de",
-             comment = c(ORCID = "0000-0003-0647-7726")),
-      person(given = "Kompetenzzentrum Wasser Berlin gGmbH (KWB)",
-             role = "cph"))
-Description: R Package for meta-analysis of KWB-R packages on
-    Github. It is a wrapper to the R packages 'codemetar' and 'pkgnet' for
-    providing insights into the development of the R packages on Github.
+Version: 0.2.0
+Authors@R: c(
+    person("Michael", "Rustler", , "michael.rustler@kompetenz-wasser.de", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-0647-7726")),
+    person("Hauke", "Sonnenberg", , "hauke.sonnenberg@kompetenz-wasser.de", role = "ctb",
+           comment = c(ORCID = "0000-0001-9134-2871")),
+    person("FAKIN", role = "fnd"),
+    person("Kompetenzzentrum Wasser Berlin gGmbH (KWB)", role = "cph")
+  )
+Description: R Package for meta-analysis of KWB-R packages on Github. It
+    is a wrapper to the R packages 'codemetar' and 'pkgnet' for providing
+    insights into the development of the R packages on Github.
 License: MIT + file LICENSE
 URL: https://github.com/KWB-R/pkgmeta
 BugReports: https://github.com/KWB-R/pkgmeta/issues
 Imports: 
     codemetar,
+    dplyr,
+    forcats,
+    ggplot2,
     gh,
-    lubridate,
+    glue,
     jsonlite,
     kwb.pkgstatus,
     kwb.utils,
-    stringr,
-    withr,
-    scales,
-    purrr,
-    fs,
-    ggplot2,
-    glue,
-    forcats,
-    dplyr,
+    lubridate,
+    magrittr,
     packrat,
     plotly,
+    purrr,
     remotes,
     rversions,
-    magrittr,
+    stringr,
     tibble,
-    tidyr
+    tidyr,
+    withr
 Suggests: 
     covr,
-    knitr,
     htmlwidgets,
-    rmarkdown,
     jsonld,
+    knitr,
     pkgnet,
     printr,
+    rmarkdown,
     sessioninfo,
     wordcloud2
 VignetteBuilder: 
     knitr
 Remotes:
-    github::Lchiffon/wordcloud2,
     github::kwb-r/kwb.pkgstatus,
     github::kwb-r/kwb.utils,
+    github::Lchiffon/wordcloud2,
     github::ropensci/codemetar@v0.3.0,
     github::UptakeOpenSource/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2

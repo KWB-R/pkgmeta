@@ -13,7 +13,7 @@ get_pkg_dependencies(pkgs, library_path = .libPaths(), dbg = TRUE, ...)
 
 \item{dbg}{logical if debug should be shown (default: TRUE)}
 
-\item{...}{additional arguments passed to \link[packrat]{getPackageDependencies}}
+\item{...}{additional arguments passed to packrat:::getPackageDependencies()}
 }
 \value{
 list with package dependencies

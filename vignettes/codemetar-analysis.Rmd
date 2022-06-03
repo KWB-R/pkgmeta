@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-is_ghactions <- identical(Sys.getenv("CI"), "true") && identical(Sys.getenv("GH-ACTIONS_KWB-R"), TRUE)
+is_ghactions <- identical(Sys.getenv("CI"), "true") && identical(Sys.getenv("GH_ACTIONS_KWB_R"), TRUE)
 
 ```
 

@@ -14,9 +14,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-is_ghactions <- ifelse(identical(Sys.getenv("CI"), "true"), 
-                       TRUE,
-                       FALSE)
+is_ghactions <- identical(Sys.getenv("CI"), "true") && identical(Sys.getenv("GH-ACTIONS_KWB-R"), TRUE)
+
 ### wait for 60 seconds in order to be in line with GitHub API limit
 ### <= 80/minute and <=5000/hour
 #Sys.sleep(60)

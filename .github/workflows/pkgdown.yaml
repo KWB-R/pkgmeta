@@ -13,6 +13,7 @@ jobs:
   pkgdown:
     runs-on: macOS-latest
     env:
+      GH-ACTIONS_KWB-R:  ${{ secrets.GH-ACTIONS_KWB-R }}
       GITHUB_PAT: ${{ secrets.MY_PUBLIC_PAT }}
 #      LANG: de_DE.UTF-8
 #      LC_ALL: de_DE.UTF-8

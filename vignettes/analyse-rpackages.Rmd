@@ -17,7 +17,8 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-is_ghactions <- identical(Sys.getenv("CI"), "true")
+is_ghactions <- identical(Sys.getenv("CI"), "true") && identical(Sys.getenv("GH_ACTIONS_KWB_R"), TRUE)
+
 ```
 
 # Get Metadata for All KWB-R Github Repos

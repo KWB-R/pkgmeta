@@ -12,6 +12,7 @@ jobs:
   test-coverage:
     runs-on: macOS-latest
     env:
+      GH_ACTIONS_KWB_R:  ${{ secrets.GH_ACTIONS_KWB_R }}
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2

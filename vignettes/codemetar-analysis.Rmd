@@ -14,11 +14,13 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+is_ghactions <- identical(Sys.getenv("CI"), "true") && identical(Sys.getenv("GH_ACTIONS_KWB_R"), TRUE)
+
 ```
 
 # Topics
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 
 library(jsonld)
 library(jsonlite)
@@ -64,7 +66,7 @@ pkg_topics
 
 ```
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 topics <- tidyr::separate_rows(pkg_topics, topic, sep = ",\\s+") %>% 
   dplyr::count(topic) %>% 
   dplyr::filter(!topic %in% c("r", "rstats")) %>% 
@@ -78,14 +80,14 @@ knitr::kable(topics)
 
 ```
 
-```{r wordcloud_topics, eval = TRUE}
+```{r wordcloud_topics, eval = is_ghactions}
 wordcloud2::wordcloud2(topics)
 ```
 
 
 # Authors
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 
 ## deal with nulls explicitly by starting with map
 pkgs <- purrr::map(corpus, "name") %>%
@@ -111,7 +113,7 @@ purrr::map(corpus, "maintainer") %>%
 
 ## Maintainer
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 ## Mostly Hauke
 maintainer <- purrr::map(corpus, "maintainer") %>%  
   purrr::map(1) %>%  
@@ -127,7 +129,7 @@ knitr::kable(maintainer)
 
 ```
 
-```{r wordcloud_maintainer, eval = TRUE}
+```{r wordcloud_maintainer, eval = is_ghactions}
 wordcloud2::wordcloud2(maintainer,
                        minSize = 0.4, 
                        size = 0.6)
@@ -154,7 +156,7 @@ purrr::map_int(corpus, function(r) length(r$contributor)) %>%
 
 ## Depends Imports
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 purrr::map_int(corpus, function(r) length(r$softwareRequirements))  %>%
   tibble::enframe() %>%
   dplyr::group_by(value) %>%
@@ -203,7 +205,7 @@ knitr::kable(dep_count)
 
 ```
 
-```{r wordcloud_depends_imports, eval = TRUE}
+```{r wordcloud_depends_imports, eval = is_ghactions}
 wordcloud2::wordcloud2(dep_count,
                        minSize = 0.4, 
                        size = 1)
@@ -211,7 +213,7 @@ wordcloud2::wordcloud2(dep_count,
 
 ## Depends Imports and Suggests
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 #Alternate approach using a frame instead of purrr functions for subsetting the
 #Note that this gets all Depends and suggests (really all SoftwareApplication
 #types mentioned)
@@ -233,7 +235,7 @@ knitr::kable(dep_sug_count)
 
 ```
 
-```{r wordcloud_depends_imports_suggests, eval = TRUE}
+```{r wordcloud_depends_imports_suggests, eval = is_ghactions}
 wordcloud2::wordcloud2(dep_sug_count,
                        minSize = 0.4, 
                        size = 1)
@@ -243,7 +245,7 @@ wordcloud2::wordcloud2(dep_sug_count,
 
 ## Plattform
 
-```{r plattform, eval = TRUE, echo= FALSE}
+```{r plattform, eval = is_ghactions, echo= FALSE}
 environment <- sessioninfo::session_info()  
 
 knitr::kable(tibble::enframe(unlist(environment$platform)))
@@ -252,7 +254,7 @@ knitr::kable(tibble::enframe(unlist(environment$platform)))
 
 ## Packages
 
-```{r packages, eval = TRUE, echo= FALSE}
+```{r packages, eval = is_ghactions, echo= FALSE}
 
 print(environment$packages)
 
@@ -260,7 +262,7 @@ print(environment$packages)
 
 ### Pandoc
 
-```{r pandoc, eval = TRUE, echo= FALSE}
+```{r pandoc, eval = is_ghactions, echo= FALSE}
 
 if(rmarkdown::pandoc_available()) {
 data.frame(pandoc_directory = rmarkdown::pandoc_exec(),

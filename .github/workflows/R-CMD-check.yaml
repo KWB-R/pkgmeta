@@ -25,6 +25,7 @@ jobs:
           - {os: windows-latest, r: 'release'}
 
     env:
+      GH_ACTIONS_KWB_R:  ${{ secrets.GH_ACTIONS_KWB_R }}
       GITHUB_PAT: ${{ secrets.MY_PUBLIC_PAT }}
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}

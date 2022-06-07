@@ -18,14 +18,15 @@ knitr::opts_chunk$set(
 )
 
 is_ghactions <- identical(Sys.getenv("CI"), "true") && identical(Sys.getenv("GH_ACTIONS_KWB_R"), TRUE)
-
+local <- FALSE
+is_ghactions_and_all_pkgs_installed <- FALSE
 ```
 
 # Get Metadata for All KWB-R Github Repos
 
 For all Github repos also includes non R packages
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 pkgmeta::write_github_repos_json()
 ```
 
@@ -33,13 +34,13 @@ pkgmeta::write_github_repos_json()
 
 Now limit only "public" KWB-R repos which are R packages.
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 pkgs <- pkgmeta::get_github_packages()
 ``` 
 
 # Define paths 
 
-```{r, eval = !is_ghactions}
+```{r, eval = local}
 # Define paths and resolve placeholders
 paths_list <- list(
   root_dir = tempdir(),
@@ -59,7 +60,7 @@ paths <- kwb.utils::resolve(paths_list, root_dir = tempdir())
 
 in own library required for "codemetar" and "pkgnet" reports
 
-```{r, echo = !is_ghactions, eval = !is_ghactions}
+```{r, echo = FALSE, eval = local}
 fs::dir_create(paths$pkglib, recursive = TRUE)
 
 withr::with_libpaths(new = paths$pkglib, code = {
@@ -90,7 +91,7 @@ pkgmeta::travis_pkg_install_script()
 
 required for pkgnet "covr":
 
-```{r, echo = !is_ghactions, eval = !is_ghactions}
+```{r, echo = TRUE, eval = local}
 
 fs::dir_create(
   path = c(paths$pkgsource_zip_dir, paths$pkgsource_unzip_dir), 
@@ -121,7 +122,7 @@ invisible(lapply(zipfiles, function(x) {
 
 Generating "codemetar.json" file
 
-```{r, echo = !is_ghactions, eval = !is_ghactions}
+```{r, echo = TRUE, eval = local}
 pkgs <-  pkgmeta::get_github_packages()
 
 codemeta <- pkgmeta::create_pkg_codemeta(pkgs, libpath = paths$pkglib)
@@ -129,7 +130,7 @@ codemeta <- pkgmeta::create_pkg_codemeta(pkgs, libpath = paths$pkglib)
 pkgmeta::write_pkg_codemeta_json(codemeta)
 ```
 
-```{r, echo=FALSE, eval = TRUE}
+```{r, echo=FALSE, eval = local}
 all_pkgs_installed <- all(pkgs$name %in% installed.packages()[, "Package"])
 
 is_ghactions_and_all_pkgs_installed <- is_ghactions && all_pkgs_installed
@@ -149,7 +150,7 @@ pkgmeta::write_pkg_codemeta_json(codemeta)
 
 Create Reports with "pkgnet
 
-```{r, echo = !is_ghactions, eval = !is_ghactions}
+```{r, echo = TRUE, eval = local}
 fs::dir_create(paths$pkgnet_dir, recurse = TRUE)
 
 withr::with_libpaths(new = c(paths$pkglib, .libPaths()), 

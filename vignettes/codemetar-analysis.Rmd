@@ -136,7 +136,7 @@ wordcloud2::wordcloud2(maintainer,
 ```
 
 
-```{r, eval = TRUE}
+```{r, eval = is_ghactions}
 ## number of co-authors ...
 purrr::map_int(corpus, function(r) length(r$author)) %>%
   tibble::enframe() %>%

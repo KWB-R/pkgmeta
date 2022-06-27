@@ -62,12 +62,12 @@ our personal CRAN-like repository on R-universe</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_universe_pkgs_json</span><span class="op">(</span>
-  group <span class="op">=</span> <span class="st">"KWB-R"</span>,
-  ignore_pkgs <span class="op">=</span> <span class="cn">NULL</span>,
-  non_r_packages <span class="op">=</span> <span class="fu">kwb.pkgstatus</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.pkgstatus/man/get_non_r_packages.html" class="external-link">get_non_r_packages</a></span><span class="op">(</span><span class="op">)</span>,
-  github_token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_universe_pkgs_json</span><span class="op">(</span></span>
+<span>  group <span class="op">=</span> <span class="st">"KWB-R"</span>,</span>
+<span>  ignore_pkgs <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  non_r_packages <span class="op">=</span> <span class="fu">kwb.pkgstatus</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.pkgstatus/man/get_non_r_packages.html" class="external-link">get_non_r_packages</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  github_token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -105,7 +105,7 @@ repositories (default: Sys.getenv("GITHUB_PAT"))</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">create_universe_pkgs_json</span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">create_universe_pkgs_json</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   {</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     "package": "algoliar",</span>
@@ -484,8 +484,8 @@ repositories (default: Sys.getenv("GITHUB_PAT"))</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     "url": "https://github.com/KWB-R/wasserportal"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   }</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ] </span>
-<span class="r-in"></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -497,7 +497,7 @@ repositories (default: Sys.getenv("GITHUB_PAT"))</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer></div>

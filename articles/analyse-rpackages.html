@@ -75,7 +75,7 @@
       <img src="" class="logo" alt=""><h1>Analyse R Packages on Github</h1>
                         <h4 data-toc-skip class="author">Michael Rustler</h4>
             
-            <h4 data-toc-skip class="date">2022-06-20</h4>
+            <h4 data-toc-skip class="date">2022-06-27</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/KWB-R/pkgmeta/blob/HEAD/vignettes/analyse-rpackages.Rmd" class="external-link"><code>vignettes/analyse-rpackages.Rmd</code></a></small>
       <div class="d-none name"><code>analyse-rpackages.Rmd</code></div>
@@ -88,30 +88,30 @@
 </h2>
 <p>For all Github repos also includes non R packages</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_github_repos_json.html">write_github_repos_json</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_github_repos_json.html">write_github_repos_json</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="get-public-kwb-r-github-package">Get Public KWB-R Github Package<a class="anchor" aria-label="anchor" href="#get-public-kwb-r-github-package"></a>
 </h2>
 <p>Now limit only “public” KWB-R repos which are R packages.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="define-paths">Define paths<a class="anchor" aria-label="anchor" href="#define-paths"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Define paths and resolve placeholders</span>
-<span class="va">paths_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>
-  root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,
-  pkglib <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkg-lib"</span>,
-  pkgsource_dir <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkg-source"</span>,
-  pkgnet_dir <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkgnet"</span>,
-  pkgsource_zip_dir <span class="op">=</span> <span class="st">"&lt;pkgsource_dir&gt;/zip"</span>,
-  pkgsource_unzip_dir <span class="op">=</span> <span class="st">"&lt;pkgsource_dir&gt;/unzip"</span>
-<span class="op">)</span>
-
-<span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu">kwb.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.utils/man/resolve.html" class="external-link">resolve</a></span><span class="op">(</span><span class="va">paths_list</span>, root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Define paths and resolve placeholders</span></span>
+<span><span class="va">paths_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>  root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  pkglib <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkg-lib"</span>,</span>
+<span>  pkgsource_dir <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkg-source"</span>,</span>
+<span>  pkgnet_dir <span class="op">=</span> <span class="st">"&lt;root_dir&gt;/pkgnet"</span>,</span>
+<span>  pkgsource_zip_dir <span class="op">=</span> <span class="st">"&lt;pkgsource_dir&gt;/zip"</span>,</span>
+<span>  pkgsource_unzip_dir <span class="op">=</span> <span class="st">"&lt;pkgsource_dir&gt;/unzip"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">paths</span> <span class="op">&lt;-</span> <span class="fu">kwb.utils</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.utils/man/resolve.html" class="external-link">resolve</a></span><span class="op">(</span><span class="va">paths_list</span>, root_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="download-dependencies">Download dependencies<a class="anchor" aria-label="anchor" href="#download-dependencies"></a>
@@ -126,28 +126,28 @@
 </h3>
 <p>required for pkgnet “covr”:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R">
-<span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html" class="external-link">dir_create</a></span><span class="op">(</span>
-  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_zip_dir</span>, <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span><span class="op">)</span>, 
-  recurse <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span>
-
-
-<span class="kw">for</span> <span class="op">(</span><span class="va">pkg</span> <span class="kw">in</span> <span class="va">pkgs</span><span class="op">$</span><span class="va">name</span><span class="op">)</span> <span class="op">{</span>
-  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/download_github.html">download_github</a></span><span class="op">(</span>
-    repo <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"kwb-r/%s"</span>, <span class="va">pkg</span><span class="op">)</span>,
-    dest_dir <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_zip_dir</span>,
-    use_zip <span class="op">=</span> <span class="cn">TRUE</span>,
-    auth_token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">}</span>
-
-<span class="va">zipfiles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_zip_dir</span>,full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">zipfiles</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Unzipping %s to %s"</span>, <span class="va">x</span>, <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span><span class="op">)</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/unzip.html" class="external-link">unzip</a></span><span class="op">(</span><span class="va">x</span>, exdir <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span><span class="op">)</span>
-<span class="op">}</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span></span>
+<span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html" class="external-link">dir_create</a></span><span class="op">(</span></span>
+<span>  path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_zip_dir</span>, <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span><span class="op">)</span>, </span>
+<span>  recurse <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">pkg</span> <span class="kw">in</span> <span class="va">pkgs</span><span class="op">$</span><span class="va">name</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/download_github.html">download_github</a></span><span class="op">(</span></span>
+<span>    repo <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"kwb-r/%s"</span>, <span class="va">pkg</span><span class="op">)</span>,</span>
+<span>    dest_dir <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_zip_dir</span>,</span>
+<span>    use_zip <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>    auth_token <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html" class="external-link">Sys.getenv</a></span><span class="op">(</span><span class="st">"GITHUB_PAT"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">zipfiles</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_zip_dir</span>,full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">zipfiles</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">message</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Unzipping %s to %s"</span>, <span class="va">x</span>, <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/unzip.html" class="external-link">unzip</a></span><span class="op">(</span><span class="va">x</span>, exdir <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -158,52 +158,52 @@
 </h3>
 <p>Generating “codemetar.json” file</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">pkgs</span> <span class="op">&lt;-</span>  <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span>
-
-<span class="va">codemeta</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/create_pkg_codemeta.html">create_pkg_codemeta</a></span><span class="op">(</span><span class="va">pkgs</span>, libpath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">pkglib</span><span class="op">)</span>
-
-<span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_pkg_codemeta_json.html">write_pkg_codemeta_json</a></span><span class="op">(</span><span class="va">codemeta</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span>  <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/get_github_packages.html">get_github_packages</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">codemeta</span> <span class="op">&lt;-</span> <span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/create_pkg_codemeta.html">create_pkg_codemeta</a></span><span class="op">(</span><span class="va">pkgs</span>, libpath <span class="op">=</span> <span class="va">paths</span><span class="op">$</span><span class="va">pkglib</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">pkgmeta</span><span class="fu">::</span><span class="fu"><a href="../reference/write_pkg_codemeta_json.html">write_pkg_codemeta_json</a></span><span class="op">(</span><span class="va">codemeta</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="with-r-package-pkgnet">With R package “pkgnet”<a class="anchor" aria-label="anchor" href="#with-r-package-pkgnet"></a>
 </h3>
 <p>Create Reports with "pkgnet</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html" class="external-link">dir_create</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgnet_dir</span>, recurse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_libpaths.html" class="external-link">with_libpaths</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkglib</span>, <span class="fu"><a href="https://rdrr.io/r/base/libPaths.html" class="external-link">.libPaths</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, 
-                     code <span class="op">=</span> <span class="kw">for</span><span class="op">(</span><span class="va">pkg</span> <span class="kw">in</span> <span class="va">pkgs</span><span class="op">$</span><span class="va">name</span><span class="op">)</span> <span class="op">{</span>
-  
-  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Write report for R package: %s"</span>, <span class="va">pkg</span> <span class="op">)</span><span class="op">)</span>
-  
-  <span class="va">pkg_src_unzipped</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>, 
-                          pattern <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">".*%s-.*"</span>, <span class="va">pkg</span><span class="op">)</span><span class="op">)</span>
-  
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">pkg_src_unzipped</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span>
-    
-    <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span>
-      <span class="st">"Multiple unzipped pkg sources found in %s: %s.\n%s"</span>,
-      <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>,
-      <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">pkg_src_unzipped</span>, collapse <span class="op">=</span> <span class="st">', '</span><span class="op">)</span>,
-      <span class="st">"Please delete the oldest one(s) manually"</span>
-    <span class="op">)</span><span class="op">)</span>
-    
-    <span class="co">#pkg_path &lt;- file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),</span>
-    <span class="co">#sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})</span>
-  <span class="op">}</span> 
-  
-  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">pkg_src_unzipped</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0L</span><span class="op">)</span> <span class="op">{</span>
-    <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span>
-      <span class="st">"No unzipped pkg sources found in %s"</span>, <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>
-    <span class="op">)</span><span class="op">)</span>
-  <span class="op">}</span>
-  
-  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pkgnet</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pkgnet/man/CreatePackageReport.html" class="external-link">CreatePackageReport</a></span><span class="op">(</span>
-    pkg_name <span class="op">=</span> <span class="va">pkg</span> ,
-    pkg_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>, <span class="va">pkg_src_unzipped</span><span class="op">)</span>,
-    report_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgnet_dir</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">pkg</span>, <span class="st">".html"</span><span class="op">)</span><span class="op">)</span>
-  <span class="op">)</span><span class="op">)</span>
-<span class="op">}</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">fs</span><span class="fu">::</span><span class="fu"><a href="https://fs.r-lib.org/reference/create.html" class="external-link">dir_create</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgnet_dir</span>, recurse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_libpaths.html" class="external-link">with_libpaths</a></span><span class="op">(</span>new <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkglib</span>, <span class="fu"><a href="https://rdrr.io/r/base/libPaths.html" class="external-link">.libPaths</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                     code <span class="op">=</span> <span class="kw">for</span><span class="op">(</span><span class="va">pkg</span> <span class="kw">in</span> <span class="va">pkgs</span><span class="op">$</span><span class="va">name</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Write report for R package: %s"</span>, <span class="va">pkg</span> <span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">pkg_src_unzipped</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">dir</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>, </span>
+<span>                          pattern <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">".*%s-.*"</span>, <span class="va">pkg</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">pkg_src_unzipped</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    </span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Multiple unzipped pkg sources found in %s: %s.\n%s"</span>,</span>
+<span>      <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>,</span>
+<span>      <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">pkg_src_unzipped</span>, collapse <span class="op">=</span> <span class="st">', '</span><span class="op">)</span>,</span>
+<span>      <span class="st">"Please delete the oldest one(s) manually"</span></span>
+<span>    <span class="op">)</span><span class="op">)</span></span>
+<span>    </span>
+<span>    <span class="co">#pkg_path &lt;- file.path(paths$pkgsource_unzip_dir, pkg_src_unzipped),</span></span>
+<span>    <span class="co">#sapply(pkg_path, function(x) {max(fs::dir_info(pkg_path[x])$modification_time)})</span></span>
+<span>  <span class="op">}</span> </span>
+<span>  </span>
+<span>  <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">pkg_src_unzipped</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0L</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw"><a href="https://rdrr.io/r/base/stop.html" class="external-link">stop</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span></span>
+<span>      <span class="st">"No unzipped pkg sources found in %s"</span>, <span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span></span>
+<span>    <span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">pkgnet</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pkgnet/man/CreatePackageReport.html" class="external-link">CreatePackageReport</a></span><span class="op">(</span></span>
+<span>    pkg_name <span class="op">=</span> <span class="va">pkg</span> ,</span>
+<span>    pkg_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgsource_unzip_dir</span>, <span class="va">pkg_src_unzipped</span><span class="op">)</span>,</span>
+<span>    report_path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">paths</span><span class="op">$</span><span class="va">pkgnet_dir</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">pkg</span>, <span class="st">".html"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -219,7 +219,7 @@
 
 <div class="pkgdown-footer-right">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
     </footer>

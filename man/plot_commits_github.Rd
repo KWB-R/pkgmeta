@@ -7,8 +7,7 @@
 plot_commits_github(repos_commits)
 }
 \arguments{
-\item{repos_commits}{tibble as retrieved by
-\code{\link{github_commits_repos}}}
+\item{repos_commits}{tibble as retrieved by \link{\code{get_github_commits_repos}}}
 }
 \value{
 ggplot of temporal development of commits for KWB-R on Github

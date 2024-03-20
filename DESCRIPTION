@@ -1,6 +1,6 @@
 Package: pkgmeta
 Title: R Package for Meta-Analysis of KWB-R Packages on Github
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
     person("Michael", "Rustler", , "michael.rustler@kompetenz-wasser.de", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-0647-7726")),
@@ -53,6 +53,7 @@ Remotes:
     github::kwb-r/kwb.utils,
     github::Lchiffon/wordcloud2,
     github::ropensci/codemetar@v0.3.0,
+    github::rstudio/packrat@v0.7.0,
     github::uptake/pkgnet@d1e974de299d46e71b082e027a71b8b254edc9b2
 Encoding: UTF-8
 LazyData: true

@@ -1,3 +1,14 @@
+# [pkgmeta 0.2.2](https://github.com/KWB-R/pkgmeta/releases/tag/v0.2.2) <small>2024-03-20</small>
+
+Make sure that dependency [packrat](https://github.com/rstudio/packrat) is 
+installed from GitHub in version `0.7.0`, as in later versions the behavior of 
+`packrat:::recursivePackageDependencies()` changed and is incompatible with this 
+package. 
+
+To do in later releases: check what has been changed or check alternative approaches 
+for finding the reverse dependencies.
+
+
 # [pkgmeta 0.2.1](https://github.com/KWB-R/pkgmeta/releases/tag/v0.2.1) <small>2022-06-01</small>
 
 * Bugfix: due to renamed organisation (formerly: `UptakeOpenSource`, now: `uptake`)

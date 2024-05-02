@@ -15,7 +15,7 @@ write_pkg_codemeta_json <- function(
     dbg = TRUE
 )
 {
-  kwb.utils::catAndRun(
+  cat_and_run(
     sprintf("Writting codemeta to '%s'", file),
     dbg = dbg,
     expr = jsonlite::write_json(

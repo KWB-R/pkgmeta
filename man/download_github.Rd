@@ -10,7 +10,7 @@ download_github(
   dest_dir = tempdir(),
   use_zip = FALSE,
   quiet = FALSE,
-  auth_token = Sys.getenv("GITHUB_PAT")
+  auth_token = get_github_token()
 )
 }
 \arguments{
@@ -25,8 +25,8 @@ download_github(
 
 \item{quiet}{print messages (default: TRUE)}
 
-\item{auth_token}{auth_token (needed to download "private" repos), default:
-Sys.getenv("GITHUB_PAT")}
+\item{auth_token}{auth_token (needed to download "private" repos).
+Default: pkgmeta:::get_github_token()}
 }
 \value{
 downloaded repo in dest. folder

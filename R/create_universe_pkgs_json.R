@@ -16,7 +16,7 @@ create_universe_pkgs_json <- function(
     group = "KWB-R",
     ignore_pkgs = NULL,
     non_r_packages = kwb.pkgstatus::get_non_r_packages(),
-    github_token = Sys.getenv("GITHUB_PAT")
+    github_token = get_github_token()
 )
 {
   get_github_packages(

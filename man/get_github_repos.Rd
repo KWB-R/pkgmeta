@@ -6,7 +6,7 @@
 \usage{
 get_github_repos(
   group = "KWB-R",
-  github_token = Sys.getenv("GITHUB_PAT"),
+  github_token = get_github_token(),
   dbg = TRUE,
   ...
 )
@@ -14,7 +14,7 @@ get_github_repos(
 \arguments{
 \item{group}{organisation (default: "KWB-R")}
 
-\item{github_token}{default: Sys.getenv("GITHUB_PAT")}
+\item{github_token}{Default: pkgmeta:::get_github_token()}
 
 \item{dbg}{should debug messages be printed? (default: TRUE)}
 

@@ -4,13 +4,13 @@
 \alias{github_packages_versions}
 \title{Get Github Versions for Multiple Repos}
 \usage{
-github_packages_versions(repos, github_token = Sys.getenv("GITHUB_PAT"))
+github_packages_versions(repos, github_token = pkgmeta:::get_github_token())
 }
 \arguments{
 \item{repos}{vector with full names of Github repos ("owner/repo_name",
 e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))}
 
-\item{github_token}{default: Sys.getenv("GITHUB_PAT")}
+\item{github_token}{Default: pkgmeta:::get_github_token()}
 }
 \value{
 data frame for all repos with releases

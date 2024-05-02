@@ -15,14 +15,14 @@ create_pkg_codemeta <- function(
     dbg = TRUE
 )
 {
-  cat_and_run <- function(msg, expr) {
-    kwb.utils::catAndRun(msg, expr, dbg = dbg, newLine = 3L)
+  run <- function(msg, expr) {
+    cat_and_run(msg, expr, dbg = dbg, newLine = 3L)
   }
 
   # Get package names from input data frame
-  packages <- kwb.utils::selectColumns(pkgs, "name")
+  packages <- select_columns(pkgs, "name")
 
-  cat_and_run("Creating codemeta object", {
+  run("Creating codemeta object", {
 
     withr::with_libpaths(libpath, {
 
@@ -37,12 +37,12 @@ create_pkg_codemeta <- function(
           n,
           ifelse(n > 1L, "packages are", "package is"),
           libpath,
-          kwb.utils::stringList(sort(packages[!is_installed]))
+          string_list(sort(packages[!is_installed]))
         ))
       }
 
       lapply(packages[is_installed], function(package) {
-        cat_and_run(
+        run(
           sprintf("Writing codemeta for R package %s", package),
           try(codemetar::create_codemeta(file.path(libpath, package)))
         )

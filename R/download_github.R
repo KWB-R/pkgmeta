@@ -9,8 +9,8 @@
 #' @param use_zip should files be downloades as .tar.gz (use_zip=FALSE) or as
 #' .zip files (use_zip=TRUE); default: FALSE
 #' @param quiet print messages (default: TRUE)
-#' @param auth_token auth_token (needed to download "private" repos), default:
-#' Sys.getenv("GITHUB_PAT")
+#' @param auth_token auth_token (needed to download "private" repos).
+#'   Default: pkgmeta:::get_github_token()
 #' @return downloaded repo in dest. folder
 #' @export
 #' @import remotes
@@ -22,7 +22,7 @@ download_github <- function(
     dest_dir = tempdir(),
     use_zip = FALSE,
     quiet = FALSE,
-    auth_token = Sys.getenv("GITHUB_PAT")
+    auth_token = get_github_token()
 )
 {
   repo_sep <- as.vector(

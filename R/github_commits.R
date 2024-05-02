@@ -2,7 +2,7 @@
 #' Get Github Commits for One Repo
 #'
 #' @param repo full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")
-#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#' @param github_token Default: pkgmeta:::get_github_token()
 #'
 #' @return data frame
 #' @export
@@ -17,7 +17,7 @@
 #'}
 get_github_commits <- function(
     repo,
-    github_token = Sys.getenv("GITHUB_PAT")
+    github_token = get_github_token()
 )
 {
   get_commits <- function(repo, per_page = 100L) {
@@ -77,7 +77,7 @@ get_github_commits <- function(
 #'
 #' @param repos vector with full names of Github repos ("owner/repo_name",
 #' e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))
-#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#' @param github_token Default: pkgmeta:::get_github_token()
 #' @return data frame for all repos with releases
 #' @export
 #' @importFrom kwb.utils catAndRun multiSubstitute
@@ -85,7 +85,8 @@ get_github_commits <- function(
 #' @importFrom tidyr separate
 #' @examples
 #' \dontrun{
-#' #repos <- kwb.pkgstatus::get_github_repos(github_token = Sys.getenv("GITHUB_PAT"))
+#' #token <- Sys.getenv("GITHUB_PAT")
+#' #repos <- kwb.pkgstatus::get_github_repos(github_token = token)
 #' #repos <- repos$full_name
 #' repos <- paste0("kwb-r/", c("aquanes.report", "kwb.ml", "kwb.utils"))
 #' pkgs_commits <- pkgmeta::get_github_commits_repos(repos)
@@ -93,11 +94,11 @@ get_github_commits <- function(
 #' }
 get_github_commits_repos <- function(
     repos,
-    github_token = Sys.getenv("GITHUB_PAT")
+    github_token = get_github_token()
 )
 {
   pkg_commit_list <- lapply(repos, function(repo) {
-    kwb.utils::catAndRun(
+    cat_and_run(
       sprintf("Repo: %s", repo),
       try(get_github_commits(repo, github_token = github_token))
     )
@@ -115,7 +116,7 @@ get_github_commits_repos <- function(
       )
     ) %>%
     dplyr::mutate(
-      author_login = kwb.utils::multiSubstitute(.data$author_login, list(
+      author_login = multi_substitute(.data$author_login, list(
         "Andreas Matzinger" = "amatzi",
         "Hauke Sonnenberg" = "hsonne",
         "Mathias Riechel" = "mriech",

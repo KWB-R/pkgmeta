@@ -4,12 +4,12 @@
 \alias{get_github_commits}
 \title{Get Github Commits for One Repo}
 \usage{
-get_github_commits(repo, github_token = Sys.getenv("GITHUB_PAT"))
+get_github_commits(repo, github_token = get_github_token())
 }
 \arguments{
 \item{repo}{full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")}
 
-\item{github_token}{default: Sys.getenv("GITHUB_PAT")}
+\item{github_token}{Default: pkgmeta:::get_github_token()}
 }
 \value{
 data frame

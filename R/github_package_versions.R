@@ -2,7 +2,7 @@
 #' Get Github Versions for One Repo
 #'
 #' @param repo full name of Github repo ("owner/repo_name", e.g. "kwb-r/kwb.utils")
-#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#' @param github_token Default: pkgmeta:::get_github_token()
 #'
 #' @return data frame
 #' @export
@@ -17,7 +17,7 @@
 #'}
 github_package_versions <- function(
     repo,
-    github_token = Sys.getenv("GITHUB_PAT")
+    github_token = get_github_token()
 )
 {
   releases <- "https://api.github.com/repos/%s/releases" %>%
@@ -31,8 +31,8 @@ github_package_versions <- function(
   data.frame(
     owner = owner_repo[1L],
     repo = owner_repo[2L],
-    tag = sapply(releases, kwb.utils::selectElements, "tag_name"),
-    date = as.Date(sapply(releases, kwb.utils::selectElements, "published_at")),
+    tag = sapply(releases, select_elements, "tag_name"),
+    date = as.Date(sapply(releases, select_elements, "published_at")),
     author_id = purrr::map_chr(purrr::map(releases, "author"), "login")
   )
 }
@@ -41,7 +41,7 @@ github_package_versions <- function(
 #'
 #' @param repos vector with full names of Github repos ("owner/repo_name",
 #' e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))
-#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#' @param github_token Default: pkgmeta:::get_github_token()
 #' @return data frame for all repos with releases
 #' @export
 #' @importFrom kwb.utils catAndRun
@@ -54,11 +54,11 @@ github_package_versions <- function(
 #' }
 github_packages_versions <- function(
     repos,
-    github_token = Sys.getenv("GITHUB_PAT")
+    github_token = pkgmeta:::get_github_token()
 )
 {
   versions <- lapply(repos, function(repo) {
-    kwb.utils::catAndRun(
+    cat_and_run(
       sprintf("Repo: %s", repo),
       expr = try(
         github_package_versions(repo, github_token = github_token),

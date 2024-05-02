@@ -86,7 +86,7 @@ get_pkg_dependencies_impl <- function(
 
   pkgs_installed %>%
     lapply(function(pkg) {
-      kwb.utils::catAndRun(
+      cat_and_run(
         sprintf(
           "Getting %s dependencies for '%s'",
           ifelse(recursive, "recursive", "non-recursive"),

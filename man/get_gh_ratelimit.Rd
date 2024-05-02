@@ -4,11 +4,11 @@
 \alias{get_gh_ratelimit}
 \title{Get GitHub rate limit}
 \usage{
-get_gh_ratelimit(github_token = Sys.getenv("GITHUB_PAT"))
+get_gh_ratelimit(github_token = get_github_token())
 }
 \arguments{
-\item{github_token}{token passed to \link[gh]{gh} (default:
-Sys.getenv("GITHUB_PAT")}
+\item{github_token}{token passed to \link[gh]{gh}.
+Default: pkgmeta:::get_github_token()}
 }
 \value{
 overview of rate limit

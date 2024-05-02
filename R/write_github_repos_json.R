@@ -52,7 +52,7 @@ get_github_full_names <- function(github_repos = get_github_repos())
 #' Helper function: Get Github Metadata For Repos
 #'
 #' @param group organisation (default: "KWB-R")
-#' @param github_token default: Sys.getenv("GITHUB_PAT")
+#' @param github_token Default: pkgmeta:::get_github_token()
 #' @param dbg should debug messages be printed? (default: TRUE)
 #' @param ... additional arguments passed to gh:::gh_build_request(), see
 #' https://developer.github.com/v3/ (e.g. type = "public")
@@ -60,12 +60,12 @@ get_github_full_names <- function(github_repos = get_github_repos())
 #' @export
 get_github_repos <- function (
     group = "KWB-R",
-    github_token = Sys.getenv("GITHUB_PAT"),
+    github_token = get_github_token(),
     dbg = TRUE,
     ...
 )
 {
-  kwb.utils::catAndRun(
+  cat_and_run(
     messageText = sprintf(
       "\nFetching Github metadata for repos of organisation '%s' at '%s'",
       group,
@@ -104,7 +104,7 @@ write_github_repos_json <- function(
   repo_html_url <- fetch_sorted(what = "html_url")
   repo_names <- fetch_sorted(what = "name")
 
-  kwb.utils::catAndRun(
+  cat_and_run(
     sprintf(
       "Writting '%s' file for %d repos:\n%s",
       file,

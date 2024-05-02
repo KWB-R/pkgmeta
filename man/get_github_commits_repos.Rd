@@ -4,13 +4,13 @@
 \alias{get_github_commits_repos}
 \title{Get Github Commits for Multiple Repos}
 \usage{
-get_github_commits_repos(repos, github_token = Sys.getenv("GITHUB_PAT"))
+get_github_commits_repos(repos, github_token = get_github_token())
 }
 \arguments{
 \item{repos}{vector with full names of Github repos ("owner/repo_name",
 e.g. c("kwb-r/kwb.utils", "kwb-r/kwb.ml", "kwb-r/aquanes.report"))}
 
-\item{github_token}{default: Sys.getenv("GITHUB_PAT")}
+\item{github_token}{Default: pkgmeta:::get_github_token()}
 }
 \value{
 data frame for all repos with releases
@@ -20,7 +20,8 @@ Get Github Commits for Multiple Repos
 }
 \examples{
 \dontrun{
-#repos <- kwb.pkgstatus::get_github_repos(github_token = Sys.getenv("GITHUB_PAT"))
+#token <- Sys.getenv("GITHUB_PAT")
+#repos <- kwb.pkgstatus::get_github_repos(github_token = token)
 #repos <- repos$full_name
 repos <- paste0("kwb-r/", c("aquanes.report", "kwb.ml", "kwb.utils"))
 pkgs_commits <- pkgmeta::get_github_commits_repos(repos)

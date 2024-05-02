@@ -18,7 +18,8 @@ Plot Commits GitHub
 }
 \examples{
 \dontrun{
-repos <- kwb.pkgstatus::get_github_repos(github_token = Sys.getenv("GITHUB_PAT")
+token <- Sys.getenv("GITHUB_PAT")
+repos <- kwb.pkgstatus::get_github_repos(github_token = token)
 repos_commits <- pkgmeta::github_commits_repos(repos$full_name)
 pkgmeta::plot_commits_github(repos_commits)
 }

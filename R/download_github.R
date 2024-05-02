@@ -65,7 +65,10 @@ download_github <- function(
     )
   }
 
-  src_root <- remotes:::build_url(x$host, "repos", x$username, x$repo)
+  remotes_build_url <- utils::getFromNamespace("build_url", "remotes")
+  remotes_download <- utils::getFromNamespace("download", "remotes")
+
+  src_root <- remotes_build_url(x$host, "repos", x$username, x$repo)
   src <- paste0(src_root, src_dir, utils::URLencode(x$ref, reserved = TRUE))
-  remotes:::download(dest, src, auth_token = x$auth_token)
+  remotes_download(dest, src, auth_token = x$auth_token)
 }

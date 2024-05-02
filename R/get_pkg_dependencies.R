@@ -73,11 +73,13 @@ get_pkg_dependencies_impl <- function(
     dbg = TRUE
 )
 {
-  dependency_function <- if (recursive) {
-    packrat:::recursivePackageDependencies
-  } else {
-    packrat:::getPackageDependencies
-  }
+  fun_name <- ifelse(
+    recursive,
+    "recursivePackageDependencies",
+    "getPackageDependencies"
+  )
+
+  dependency_function <- utils::getFromNamespace(fun_name, "packrat")
 
   package_db <- installed.packages(lib.loc = library_path)
   pkgs_installed <- pkgs[pkgs %in% rownames(package_db)]

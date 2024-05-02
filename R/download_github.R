@@ -16,15 +16,18 @@
 #' @import remotes
 #' @importFrom stringr str_split
 #'
-download_github <- function(repo,
-                            ref = NULL,
-                            dest_dir = tempdir(),
-                            use_zip = FALSE,
-                            quiet = FALSE,
-                            auth_token = Sys.getenv("GITHUB_PAT")) {
-  repo_sep <- as.vector(stringr::str_split(repo, pattern = "/|@", n = 3, simplify = TRUE))
-
-
+download_github <- function(
+    repo,
+    ref = NULL,
+    dest_dir = tempdir(),
+    use_zip = FALSE,
+    quiet = FALSE,
+    auth_token = Sys.getenv("GITHUB_PAT")
+)
+{
+  repo_sep <- as.vector(
+    stringr::str_split(repo, pattern = "/|@", n = 3, simplify = TRUE)
+  )
 
   reference <- if (repo_sep[3] == "") {
     ref
@@ -41,8 +44,8 @@ download_github <- function(repo,
   )
 
   x$ref <- ifelse(is.null(ref), "" , sprintf("@%s", ref))
+
   # if(use_zip) {
-  #
   #   file_ext <- ".zip"
   #   src_dir <- "/zipball/"
   # } else {
@@ -53,7 +56,6 @@ download_github <- function(repo,
   file_ext <- ifelse(use_zip, ".zip", ".tar.gz")
   src_dir <- ifelse(use_zip, "/zipball/", "/tarball/")
 
-
   dest <- file.path(dest_dir, paste0(x$repo, file_ext))
 
   if (!quiet) {
@@ -62,7 +64,6 @@ download_github <- function(repo,
       " to: ", dest
     )
   }
-
 
   src_root <- remotes:::build_url(x$host, "repos", x$username, x$repo)
   src <- paste0(src_root, src_dir, utils::URLencode(x$ref, reserved = TRUE))

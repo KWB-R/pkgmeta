@@ -20,14 +20,42 @@ get_pkg_dependencies <- function(
     ...
 )
 {
+  get_pkg_dependencies_impl(
+    pkgs,
+    recursive = FALSE,
+    ...,
+    library_path = library_path,
+    dbg = dbg
+  )
+}
+
+# get_pkg_dependencies_impl ----------------------------------------------------
+get_pkg_dependencies_impl <- function(
+    pkgs,
+    recursive,
+    ...,
+    library_path = .libPaths(),
+    dbg = TRUE
+)
+{
+  dependency_function <- if (recursive) {
+    packrat:::recursivePackageDependencies
+  } else {
+    packrat:::getPackageDependencies
+  }
+
   package_db <- installed.packages(lib.loc = library_path)
   pkgs_installed <- pkgs[pkgs %in% rownames(package_db)]
 
   pkgs_installed %>%
     lapply(function(pkg) {
       kwb.utils::catAndRun(
-        sprintf("Getting recursive dependencies for '%s'", pkg),
-        packrat:::getPackageDependencies(pkg, lib.loc = library_path, ...),
+        sprintf(
+          "Getting %s dependencies for '%s'",
+          ifelse(recursive, "recursive", "non-recursive"),
+          pkg
+        ),
+        dependency_function(pkg, lib.loc = library_path, ...),
         dbg = dbg
       )
     }) %>%

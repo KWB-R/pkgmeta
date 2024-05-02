@@ -16,23 +16,30 @@
 #' head(pkgs)
 #' }
 #'
-get_github_packages <- function(group = "KWB-R",
-                                ignore_pkgs = NULL,
-                                non_r_packages = kwb.pkgstatus::get_non_r_packages(),
-                                github_token = Sys.getenv("GITHUB_PAT")) {
+get_github_packages <- function(
+    group = "KWB-R",
+    ignore_pkgs = NULL,
+    non_r_packages = kwb.pkgstatus::get_non_r_packages(),
+    github_token = Sys.getenv("GITHUB_PAT")
+)
+{
   repos <- kwb.pkgstatus::get_github_repos(group, github_token)
 
   pkgs <- repos[!repos$name %in% non_r_packages, ]
 
-  if (!is.null(ignore_pkgs)) {
-    ignore_condition <- pkgs$name %in% ignore_pkgs
-    if (any(ignore_condition)) {
-      message(sprintf(
-        "Ignoring R packages %s as requested!",
-        paste(ignore_pkgs, collapse = ", ")
-      ))
-      pkgs <- pkgs[!ignore_condition, ]
-    }
+  if (is.null(ignore_pkgs)) {
+    return(pkgs)
   }
-  return(pkgs)
+
+  if (any(is_ignored <- pkgs$name %in% ignore_pkgs)) {
+
+    message(sprintf(
+      "Ignoring R packages %s as requested!",
+      paste(ignore_pkgs, collapse = ", ")
+    ))
+
+    pkgs <- pkgs[!is_ignored, ]
+  }
+
+  pkgs
 }

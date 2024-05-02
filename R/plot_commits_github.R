@@ -1,6 +1,7 @@
 #' Plot Commits GitHub
 #'
-#' @param repos_commits tibble as retrieved by \link{\code{get_github_commits_repos}}
+#' @param repos_commits tibble as retrieved by
+#'   \code{\link{get_github_commits_repos}}
 #' @return ggplot of temporal development of commits for KWB-R on Github
 #' @export
 #' @importFrom dplyr count rename left_join

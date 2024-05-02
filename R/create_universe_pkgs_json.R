@@ -12,14 +12,19 @@
 #' create_universe_pkgs_json()
 #'
 #'
-create_universe_pkgs_json <- function(group = "KWB-R",
-                                      ignore_pkgs = NULL,
-                                      non_r_packages = kwb.pkgstatus::get_non_r_packages(),
-                                      github_token = Sys.getenv("GITHUB_PAT")) {
-    get_github_packages(group = group,
-                        ignore_pkgs = ignore_pkgs,
-                        non_r_packages = non_r_packages,
-                        github_token = github_token) %>%
+create_universe_pkgs_json <- function(
+    group = "KWB-R",
+    ignore_pkgs = NULL,
+    non_r_packages = kwb.pkgstatus::get_non_r_packages(),
+    github_token = Sys.getenv("GITHUB_PAT")
+)
+{
+  get_github_packages(
+    group = group,
+    ignore_pkgs = ignore_pkgs,
+    non_r_packages = non_r_packages,
+    github_token = github_token
+  ) %>%
     dplyr::select(.data$name, .data$url) %>%
     dplyr::rename(package = .data$name) %>%
     jsonlite::toJSON(pretty = TRUE)

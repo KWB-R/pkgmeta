@@ -9,21 +9,21 @@
 #' @export
 #' @importFrom remotes install_github
 
-install_kwb_github_packages <- function(pkgs_kwb,
-                                        dependencies = TRUE,
-                                        quiet = TRUE,
-                                        ...) {
-  pkgs_kwb_github <- sprintf("KWB-R/%s", pkgs_kwb)
+install_kwb_github_packages <- function(
+    pkgs_kwb,
+    dependencies = TRUE,
+    quiet = TRUE,
+    ...
+)
+{
+  sapply(paste0("KWB-R/", pkgs_kwb), function(repo) {
+    message("Installing R package: ", repo)
+    try(remotes::install_github(
+      repo = repo,
+      dependencies = dependencies,
+      quiet = quiet,
+      ...
+    ))
+  })
 
-
-  sapply(
-    pkgs_kwb_github,
-    FUN = function(gh_repo) {
-      message(sprintf("Installing R package: %s", gh_repo))
-      try(remotes::install_github(repo = gh_repo,
-                                  dependencies = dependencies,
-                                  quiet = quiet,
-                                  ...))
-    }
-  )
 }

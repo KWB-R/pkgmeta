@@ -4,14 +4,15 @@
 #' Sys.getenv("GITHUB_PAT")
 #' @return overview of rate limit
 #' @export
+#' @importFrom dplyr bind_rows
 #' @importFrom gh gh
-#' @importFrom  dplyr bind_rows
+#' @importFrom kwb.utils selectElements
 #' @examples
 #' get_gh_ratelimit()
-get_gh_ratelimit <- function(github_token = Sys.getenv("GITHUB_PAT")) {
-
-  res <- gh::gh(endpoint = "https://api.github.com/rate_limit",
-         .token = github_token)
-
-  dplyr::bind_rows(res$resources,.id = "id")
+get_gh_ratelimit <- function(github_token = Sys.getenv("GITHUB_PAT"))
+{
+  "https://api.github.com/rate_limit" %>%
+    gh::gh(.token = github_token) %>%
+    kwb.utils::selectElements("resources") %>%
+    dplyr::bind_rows(.id = "id")
 }

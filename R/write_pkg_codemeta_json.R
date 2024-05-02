@@ -9,17 +9,20 @@
 #' @importFrom jsonlite write_json
 #' @importFrom kwb.utils catAndRun
 #' @export
-write_pkg_codemeta_json <- function(codemeta = create_pkg_codemeta(),
-                               file = file.path(getwd(), "codemetar.json"),
-                               dbg = TRUE) {
-  kwb.utils::catAndRun(sprintf("Writting codemeta to '%s'", file),
-    expr = {
-      jsonlite::write_json(codemeta, file,
-        useBytes = TRUE,
-        pretty = TRUE,
-        auto_unbox = TRUE
-      )
-    },
-    dbg = dbg
+write_pkg_codemeta_json <- function(
+    codemeta = create_pkg_codemeta(),
+    file = file.path(getwd(), "codemetar.json"),
+    dbg = TRUE
+)
+{
+  kwb.utils::catAndRun(
+    sprintf("Writting codemeta to '%s'", file),
+    dbg = dbg,
+    expr = jsonlite::write_json(
+      codemeta, file,
+      useBytes = TRUE,
+      pretty = TRUE,
+      auto_unbox = TRUE
+    )
   )
 }

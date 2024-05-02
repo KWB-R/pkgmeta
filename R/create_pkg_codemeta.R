@@ -16,9 +16,10 @@ create_pkg_codemeta <- function(
 )
 {
   cat_and_run <- function(msg, expr) {
-    kwb.utils::catAndRun(msg, expr, dbg = dbg)
+    kwb.utils::catAndRun(msg, expr, dbg = dbg, newLine = 3L)
   }
 
+  # Get package names from input data frame
   packages <- kwb.utils::selectColumns(pkgs, "name")
 
   cat_and_run("Creating codemeta object", {
@@ -27,21 +28,24 @@ create_pkg_codemeta <- function(
 
       package_db <- utils::installed.packages()
 
-      lapply(packages, function(package) {
+      is_installed <- packages %in% package_db[, "Package"]
 
-        if (!package %in% package_db[, "Package"]) {
-          message(sprintf(
-            "Package '%s' is not installed in %s",
-            package, libpath
-          ))
-          return()
-        }
+      if (any(!is_installed)) {
+        n <- sum(!is_installed)
+        message(sprintf(
+          "%d %s not installed in '%s': %s",
+          n,
+          ifelse(n > 1L, "packages are", "package is"),
+          libpath,
+          kwb.utils::stringList(sort(packages[!is_installed]))
+        ))
+      }
 
+      lapply(packages[is_installed], function(package) {
         cat_and_run(
-          sprintf("Writing codemeta for R package %s\n", package),
-          codemetar::create_codemeta(package)
+          sprintf("Writing codemeta for R package %s", package),
+          try(codemetar::create_codemeta(file.path(libpath, package)))
         )
-
       })
 
     })

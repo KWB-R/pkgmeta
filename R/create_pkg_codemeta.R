@@ -9,30 +9,42 @@
 #' @importFrom glue glue
 #' @importFrom utils installed.packages
 #' @export
-create_pkg_codemeta <- function(pkgs = get_github_packages(),
-                                libpath = Sys.getenv("R_LIBS_USER"),
-                                dbg = TRUE) {
-  kwb.utils::catAndRun("Creating codemeta object",
-    expr = {
-      withr::with_libpaths(
-        new = libpath,
-        code = {
-          lapply(
-            pkgs$name,
-            function(x) {
-              if (x %in% utils::installed.packages()[, "Package"]) {
-                print(glue::glue("Writing codemeta for R package {x}"))
-                codemetar::create_codemeta(pkg = x)
-              }
-              else {
-                message(sprintf("Package '%s' is not installed in
-  %s", x, libpath))
-              }
-            }
-          )
+create_pkg_codemeta <- function(
+    pkgs = get_github_packages(),
+    libpath = Sys.getenv("R_LIBS_USER"),
+    dbg = TRUE
+)
+{
+  cat_and_run <- function(msg, expr) {
+    kwb.utils::catAndRun(msg, expr, dbg = dbg)
+  }
+
+  packages <- kwb.utils::selectColumns(pkgs, "name")
+
+  cat_and_run("Creating codemeta object", {
+
+    withr::with_libpaths(libpath, {
+
+      package_db <- utils::installed.packages()
+
+      lapply(packages, function(package) {
+
+        if (!package %in% package_db[, "Package"]) {
+          message(sprintf(
+            "Package '%s' is not installed in %s",
+            package, libpath
+          ))
+          return()
         }
-      )
-    },
-    dbg = dbg
-  )
+
+        cat_and_run(
+          sprintf("Writing codemeta for R package %s\n", package),
+          codemetar::create_codemeta(package)
+        )
+
+      })
+
+    })
+
+  })
 }

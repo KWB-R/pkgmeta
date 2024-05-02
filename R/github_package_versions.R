@@ -15,21 +15,22 @@
 #' pkg_versions <- pkgmeta::github_package_versions("kwb-r/kwb.utils")
 #' head(pkg_versions)
 #'}
-github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"))
+github_package_versions <- function(
+    repo,
+    github_token = Sys.getenv("GITHUB_PAT")
+)
 {
-  releases_url <- function(repo) sprintf(
-    "https://api.github.com/repos/%s/releases", repo
-  )
+  releases <- "https://api.github.com/repos/%s/releases" %>%
+    sprintf(repo) %>%
+    gh::gh(per_page = 100L, .token = github_token)
 
-  releases <- gh::gh(endpoint = releases_url(repo),
-                     per_page = 100,
-                     .token = github_token)
-
-  owner_repo <- as.character(stringr::str_split_fixed(repo, pattern = "/", n = 2))
+  owner_repo <- repo %>%
+    stringr::str_split_fixed(pattern = "/", n = 2L) %>%
+    as.character()
 
   data.frame(
-    owner = owner_repo[1],
-    repo = owner_repo[2],
+    owner = owner_repo[1L],
+    repo = owner_repo[2L],
     tag = sapply(releases, kwb.utils::selectElements, "tag_name"),
     date = as.Date(sapply(releases, kwb.utils::selectElements, "published_at")),
     author_id = purrr::map_chr(purrr::map(releases, "author"), "login")
@@ -51,16 +52,22 @@ github_package_versions <- function(repo, github_token = Sys.getenv("GITHUB_PAT"
 #' pkgs_versions <- pkgmeta::github_packages_versions(repos)
 #' head(pkgs_versions)
 #' }
-github_packages_versions <- function(repos, github_token = Sys.getenv("GITHUB_PAT"))
+github_packages_versions <- function(
+    repos,
+    github_token = Sys.getenv("GITHUB_PAT")
+)
 {
   versions <- lapply(repos, function(repo) {
-    kwb.utils::catAndRun(sprintf("Repo: %s", repo), expr = try(
-      github_package_versions(repo, github_token = github_token),
-      silent = TRUE
-    ))
+    kwb.utils::catAndRun(
+      sprintf("Repo: %s", repo),
+      expr = try(
+        github_package_versions(repo, github_token = github_token),
+        silent = TRUE
+      )
+    )
   })
 
-  has_release <- ! sapply(versions, inherits, "try-error")
+  has_release <- !sapply(versions, inherits, "try-error")
 
   dplyr::bind_rows(versions[has_release])
 }

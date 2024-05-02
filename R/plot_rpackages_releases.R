@@ -18,8 +18,11 @@
 #' plot_github_pkgs_releases(pkgs_releases)
 #' }
 #'
-plot_github_pkgs_releases <- function(pkgs_releases,
-                                      last_update = Sys.time()) {
+plot_github_pkgs_releases <- function(
+    pkgs_releases,
+    last_update = Sys.time()
+)
+{
   # fakin_date_start <- lubridate::as_date("2017-05-01")
 
   pkgs_releases %>%

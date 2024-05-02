@@ -16,14 +16,17 @@
 #' pkgmeta::plot_commits_github(repos_commits)
 #' }
 #'
-plot_commits_github <- function(repos_commits) {
+plot_commits_github <- function(repos_commits)
+{
   n_commits <- repos_commits %>%
     dplyr::count(.data$author_login) %>%
     dplyr::rename(n_commits = .data$n)
 
   repos_commits %>%
     dplyr::left_join(n_commits, by = "author_login") %>%
-    dplyr::mutate(user = sprintf("%s (n = %d)", .data$author_login, .data$n_commits)) %>%
+    dplyr::mutate(
+      user = sprintf("%s (n = %d)", .data$author_login, .data$n_commits)
+    ) %>%
     ggplot2::ggplot(ggplot2::aes(
       x = as.Date(.data$datetime) ,
       y = forcats::fct_reorder(.data$repo, .data$datetime),
@@ -39,5 +42,4 @@ plot_commits_github <- function(repos_commits) {
       y = "Repo",
       x = "Date"
     )
-
 }
